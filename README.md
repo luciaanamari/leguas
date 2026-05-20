@@ -91,27 +91,6 @@ legua/
   Dockerfile
   .env.example
 ```
-
----
-
-## Dados editáveis vs. dados no código
-
-Para evitar expectativa errada sobre o painel admin:
-
-| Recurso | Onde mora | Editável via admin |
-|---|---|---|
-| Trilhas (6) | Banco | Sim |
-| Profissões | Banco | Sim |
-| Estudantes | Banco | Sim |
-| Áreas de curso (8) | `lib/data/cursos-*.json` | Não — alterado via repositório |
-| Cursos (158) | `lib/data/cursos-*.json` | Não |
-| Perguntas de afinidade (474) | `lib/data/quiz-afinidade-cursos.json` | Não |
-| Quiz DISC (8) | `lib/data/quiz-disc.ts` | Não |
-| Cursos técnicos (41) | `lib/data/cursos-tecnicos.ts` | Não |
-| Tags, habilitadores e mensagens | `lib/data/correlacao-tecnico.ts` | Não |
-
-A página `/admin/conteudo` lista tudo isso com contagem e modal scrollável dos itens.
-
 ---
 
 ## Manual — rodar com Docker
@@ -126,7 +105,7 @@ A página `/admin/conteudo` lista tudo isso com contagem e modal scrollável dos
 
 ```bash
 # 1. Clonar o projeto
-git clone <url-do-repositorio>
+git clone https://github.com/luciaanamari/leguas.git
 cd legua
 
 # 2. Copiar variaveis de ambiente
@@ -134,7 +113,7 @@ cp .env.example .env.local
 # (Windows PowerShell: Copy-Item .env.example .env.local)
 
 # 3. Subir tudo (banco + app + schema + seed)
-docker compose up
+docker compose up --build
 
 # 4. Abrir
 #    App:   http://localhost:3000
@@ -261,15 +240,3 @@ npm run prisma:generate # regerar Prisma Client
 ```
 
 ---
-
-## Troubleshooting
-
-**`@prisma/client did not initialize yet`** — Prisma Client não foi gerado para o ambiente. No Docker o entrypoint resolve automaticamente; fora do Docker, rode `npx prisma generate`.
-
-**`SESSION_SECRET is not set`** — você não copiou `.env.example` para `.env.local` antes do `docker compose up`. Faça o `cp` e suba de novo.
-
-**`Authentication failed against database server`** — o volume `legua-pgdata` foi criado antes com outra senha. Resolva com `docker compose down -v && docker compose up` (apaga e recria o banco) ou `docker exec legua-db psql -U legua -c "ALTER USER legua WITH PASSWORD 'senha';"`.
-
-**Quero resetar tudo** — `docker compose down -v` apaga o volume. Na próxima subida o seed roda do zero.
-
-**`A tree hydrated but some attributes...`** — warning de hidratação causado por extensão de navegador (ex: ColorZilla injeta `cz-shortcut-listen` no `<body>`). Não afeta a aplicação. Já está mitigado com `suppressHydrationWarning` no `<body>` do layout raiz.
