@@ -1,0 +1,369 @@
+[
+  {
+    "slug": "tecnologia",
+    "nome": "Tecnologia",
+    "icon": "💻",
+    "descricao": "Computação, sistemas, segurança, IA e desenvolvimento de software. A área que mais cresce e que contrata de qualquer lugar do país.",
+    "cursos": [
+      {
+        "slug": "ciencia-computacao",
+        "nome": "Ciência da Computação",
+        "descricaoCurta": "Fundamentos teóricos e práticos da computação. Base para criar tecnologia de ponta.",
+        "duracao": "4 anos",
+        "salarioMedio": "R$ 5.000 – R$ 20.000",
+        "narrativaEstudante": "Você está na aula de Algoritmos da UFPI. O problema de hoje: ordenar 1 bilhão de números no menor tempo possível. Você implementa três algoritmos em C, mede o tempo de execução com cronômetro de milissegundos. O bubblesort demora 3 horas. O quicksort demora 2 minutos. O mergesort com paralelismo: 8 segundos. Você entende fisicamente o que significa complexidade algorítmica. À tarde você trabalha no projeto: construir um compilador básico de uma linguagem de programação simples. Você está na fase do parser — a parte que entende a estrutura do código. Está errando. Voltando. Errando diferente. Aprendendo.",
+        "narrativaProfissional": "Você é engenheiro de software sênior numa empresa de tecnologia de Teresina que trabalha 100% remoto com clientes dos EUA. Seu dia começa às 8h30 com a daily meeting em inglês: o time é de São Paulo, Recife e Teresina. Você está trabalhando numa feature de processamento de pagamentos em tempo real. Às 11h você identifica um bug em produção: transações duplicadas para 0,01% dos usuários. Você analisa os logs, identifica a condição de corrida, escreve o teste que reproduz o bug, corrige. O deploy vai para produção às 15h. Às 18h você encerra. Salário: R$ 18.000."
+      },
+      {
+        "slug": "sistemas-informacao",
+        "nome": "Sistemas de Informação",
+        "descricaoCurta": "Tecnologia aplicada a negócios. Desenvolvimento, análise e gestão de sistemas corporativos.",
+        "duracao": "4 anos",
+        "salarioMedio": "R$ 4.500 – R$ 15.000",
+        "narrativaEstudante": "Você está na aula de Banco de Dados da UFPI. O projeto é modelar o banco de dados de um sistema de gestão para uma cooperativa agrícola do interior do Piauí. Você faz o diagrama entidade-relacionamento, define as tabelas, as chaves estrangeiras, os índices. O professor aponta um problema: você vai ter uma tabela com 10 milhões de registros sem índice nas colunas de filtro mais usadas. Vai ser lento. Você adiciona os índices. O professor aprova. Você aprende que um modelo mal feito vira problema de sistema por anos.",
+        "narrativaProfissional": "Você é analista de sistemas numa empresa de saúde em Teresina que desenvolve software para hospitais do Nordeste. Você faz o levantamento de requisitos com os médicos e enfermeiros, transforma em histórias de usuário para a equipe de desenvolvimento, homologa as entregas. Hoje você está acompanhando um médico num turno para entender como ele usa o sistema de prescrição eletrônica. Em 4 horas, você anotou 12 pontos de melhoria que nunca apareceriam numa reunião de requisitos. Salário: R$ 9.500."
+      },
+      {
+        "slug": "analise-desenvolvimento",
+        "nome": "Análise e Desenvolvimento de Sistemas",
+        "descricaoCurta": "Tecnólogo focado em programação, banco de dados e desenvolvimento de aplicações.",
+        "duracao": "3 anos",
+        "salarioMedio": "R$ 3.500 – R$ 12.000",
+        "narrativaEstudante": "Você está no segundo ano do tecnólogo no IFPI em Teresina. A aula de hoje é Desenvolvimento Web: você está construindo uma API REST em Node.js com banco de dados PostgreSQL. O projeto é um sistema de agendamento de consultas para um posto de saúde fictício. Você implementa o endpoint de criação de consulta, testa com o Insomnia, recebe um erro 500. Você lê o stack trace, encontra que o campo de data não está sendo validado corretamente. Corrige. Funciona. Às 22h você está no ônibus voltando para casa, ainda pensando na solução do próximo endpoint.",
+        "narrativaProfissional": "Você é desenvolvedor júnior numa empresa de software em Teresina que presta serviços para clientes de todo o Brasil. Você trabalha no time que mantém um sistema de gestão de frotas de caminhões. Hoje você desenvolveu um relatório de consumo de combustível por rota que o gerente de logística pediu há duas semanas. Você fez a consulta SQL, construiu a visualização, subiu para homologação. O cliente aprovou em 30 minutos. Às 18h você encerra. Aos sábados você faz um curso online de React. Salário: R$ 4.800."
+      },
+      {
+        "slug": "engenharia-software",
+        "nome": "Engenharia de Software",
+        "descricaoCurta": "Desenvolvimento robusto de sistemas complexos com boas práticas e arquitetura de software.",
+        "duracao": "4 anos",
+        "salarioMedio": "R$ 6.000 – R$ 20.000",
+        "narrativaEstudante": "Você está na aula de Engenharia de Software Avançada da UFPI. O professor está apresentando o conceito de dívida técnica: quando o atalho que você toma hoje vira um problema em escala amanhã. Você analisa um repositório real de código aberto: um sistema de gestão escolar de município piauiense com zero testes automatizados e sem documentação. O professor pede: estime quanto custaria refatorar esse sistema para que seja seguro adicionar features. Você passa 2h analisando e entende que a estimativa é assustadora.",
+        "narrativaProfissional": "Você é tech lead de um time de 5 engenheiros numa startup de fintech em Teresina. Você é responsável pelas decisões técnicas: qual framework usar, como modelar o banco, como estruturar o CI/CD. Hoje você revisou 8 pull requests, fez uma sessão de pair programming com o dev júnior que estava travado num problema de concorrência, e participou da reunião de roadmap com produto e negócios. Às 17h você saiu cedo: amanhã tem apresentação para investidores e você vai preparar a demo técnica. Salário: R$ 18.000."
+      },
+      {
+        "slug": "redes-computadores",
+        "nome": "Redes de Computadores",
+        "descricaoCurta": "Infraestrutura de TI, conectividade e comunicação entre sistemas.",
+        "duracao": "3 anos",
+        "salarioMedio": "R$ 3.000 – R$ 10.000",
+        "narrativaEstudante": "Você está no laboratório de Redes do IFPI configurando um switch gerenciável pela primeira vez. Você cria VLANs, configura spanning tree, testa a redundância de links. Quando você derruba um link de propósito, o tráfego migra para o backup em menos de 1 segundo. O professor faz uma pergunta: o que acontece se o spanning tree for mal configurado? Você responde: loop de broadcast, rede paralisa. Certo. Você aprende que rede de computadores é como encanamento: invisível quando funciona, crítico quando para.",
+        "narrativaProfissional": "Você é analista de redes num hospital de Teresina. Você garante que a infraestrutura de TI do hospital funcione 24h por dia. Se o sistema cair às 3h da manhã, você é acionado. Hoje você está implementando a segmentação da rede de equipamentos médicos do restante da rede corporativa — uma medida de segurança que separa os tomógrafos e ventiladores das estações de trabalho administrativas. Uma invasão na rede administrativa não pode chegar ao equipamento que sustenta a vida de um paciente. Salário: R$ 6.800."
+      },
+      {
+        "slug": "seguranca-informacao",
+        "nome": "Segurança da Informação",
+        "descricaoCurta": "Proteção de sistemas, dados e infraestrutura contra ataques e violações.",
+        "duracao": "4 anos",
+        "salarioMedio": "R$ 4.000 – R$ 15.000",
+        "narrativaEstudante": "Você está na aula de Ethical Hacking da UFPI. O professor configurou uma rede de laboratório vulnerável e você tem permissão para atacar. Você usa o Kali Linux, faz varredura com nmap, identifica uma porta de banco de dados exposta sem senha. Você acessa o banco, extrai os dados fictícios de 10.000 usuários em 3 minutos. O professor interrompe e pergunta para a turma: o que a empresa deveria ter feito para impedir isso? Lista de respostas: firewall, autenticação, segmentação de rede, monitoramento. Você começa a ver todo sistema como potencialmente vulnerável.",
+        "narrativaProfissional": "Você é analista de segurança cibernética numa empresa de serviços financeiros em Teresina. Seu trabalho é identificar vulnerabilidades antes dos criminosos. Hoje você encontrou que o sistema de login da empresa ainda aceita senhas fracas sem limite de tentativas — um ataque de força bruta poderia comprometer qualquer conta. Você documenta, calcula o risco, apresenta a solução para a diretoria de TI. Em 48h a correção está implementada. Você também monitora os logs em tempo real: qualquer anomalia chega no seu painel. Salário: R$ 10.500."
+      },
+      {
+        "slug": "ciencia-dados",
+        "nome": "Ciência de Dados",
+        "descricaoCurta": "Análise avançada de dados para gerar insights e decisões de negócio. Alta demanda e salários competitivos.",
+        "duracao": "4 anos",
+        "salarioMedio": "R$ 6.000 – R$ 20.000",
+        "narrativaEstudante": "Você está na aula de Machine Learning da UFPI. O projeto de hoje é construir um modelo para prever quais alunos de escolas públicas do Piauí têm maior risco de evadir antes do fim do ano. Você usa dados reais anonimizados da Secretaria de Educação: frequência, nota, situação socioeconômica, distância de casa à escola. Você treina um Random Forest, avalia a acurácia. O professor pergunta: acurácia alta significa que o modelo é bom? Você pensa: não se a distribuição de classes for desigual. Você aprende o que é recall e por que importa mais nesse contexto.",
+        "narrativaProfissional": "Você é cientista de dados numa empresa de agronegócio que opera em todo o Nordeste. Você usa dados de sensores de solo, previsão climática e histórico de produção para construir modelos preditivos de safra. Hoje você apresentou para a diretoria um modelo que estima a produção de soja em cada talhão da fazenda com 91% de precisão. A empresa vai usar isso para ajustar os contratos de venda antecipados. Você viajou duas vezes para o campo este mês para entender os dados na prática. Salário: R$ 16.000."
+      },
+      {
+        "slug": "inteligencia-artificial",
+        "nome": "Inteligência Artificial",
+        "descricaoCurta": "Modelos de IA, aprendizado de máquina e sistemas inteligentes. A fronteira da tecnologia.",
+        "duracao": "4 anos",
+        "salarioMedio": "R$ 7.000 – R$ 25.000",
+        "narrativaEstudante": "Você está na aula de Processamento de Linguagem Natural da UFPI. Você está implementando do zero um classificador de sentimento em português usando redes neurais recorrentes. O dataset é de avaliações de produtos de e-commerce. Seu modelo depois de 10 épocas de treinamento chega a 87% de acurácia. O professor pergunta: como você faz esse modelo funcionar para o português falado no Nordeste, que tem diferenças lexicais do padrão? Você descobre que o viés de dados é um problema real em IA e que treinar em dados do Nordeste é diferente de treinar em dados do Sudeste.",
+        "narrativaProfissional": "Você é pesquisadora de IA numa empresa de saúde em Teresina que usa IA para análise de imagens médicas. Você está desenvolvendo um modelo de visão computacional para detectar lesões de pele suspeitas em fotos tiradas por celular. O objetivo é levar diagnóstico precoce de câncer de pele ao interior do Piauí onde não tem dermatologista. O modelo que você desenvolveu tem 89% de sensibilidade. Antes de ir para produção, precisa de validação clínica. Você está coordenando esse processo com médicos da UFPI. Salário: R$ 19.500."
+      },
+      {
+        "slug": "desenvolvimento-web",
+        "nome": "Desenvolvimento Web",
+        "descricaoCurta": "Criação de sites, aplicações web e sistemas online. Alta demanda e possibilidade de trabalho remoto.",
+        "duracao": "2 anos",
+        "salarioMedio": "R$ 3.000 – R$ 12.000",
+        "narrativaEstudante": "Você está no tecnólogo de Desenvolvimento Web do IFPI. Hoje você está construindo o frontend de um e-commerce para um cliente simulado que vende artesanato piauiense. Você usa React, cria os componentes de catálogo, carrinho e checkout. O professor avalia: seu layout não é responsivo no celular — 70% do tráfego de e-commerce é mobile. Você abre o DevTools, ajusta o CSS com media queries. Fica bom no desktop e no celular. Você aprende: produto web que não funciona no celular não funciona.",
+        "narrativaProfissional": "Você é desenvolvedora web freelance em Teresina atendendo pequenas e médias empresas. Você tem 5 clientes fixos e 2-3 projetos novos por trimestre. Hoje você está entregando o site de uma clínica odontológica: landing page, formulário de agendamento integrado ao WhatsApp, otimização para Google. O cliente pede um ajuste na cor do botão. Você ajusta. Ele pede outro. Você explica que o verde tem melhor performance em testes de conversão do que o azul que ele quer. Ele aceita o verde. Site vai ao ar. Faturamento mensal: R$ 8.500."
+      },
+      {
+        "slug": "desenvolvimento-mobile",
+        "nome": "Desenvolvimento Mobile",
+        "descricaoCurta": "Criação de aplicativos para Android e iOS. Mercado em expansão com alta remuneração.",
+        "duracao": "2 anos",
+        "salarioMedio": "R$ 3.500 – R$ 13.000",
+        "narrativaEstudante": "Você está no curso de Desenvolvimento Mobile do IFPI. Você está construindo um app em React Native para controlar estoque de uma lanchonete. O app precisa funcionar offline e sincronizar quando tiver conexão — realidade de muitas cidades do interior do Piauí com conexão instável. Você implementa o SQLite local, a lógica de sincronização. O professor testa no celular dele: funciona offline, sincroniza quando conecta, sem perda de dado. Você aprende que fazer app para o Brasil real é diferente de fazer app para quem sempre tem 5G.",
+        "narrativaProfissional": "Você é desenvolvedor mobile num startup de delivery para cidades do interior do Piauí. Seu app concorre com iFood em municípios de 20-50 mil habitantes onde o iFood ainda não opera bem. Você mantém os apps de cliente e entregador para Android e iOS. Hoje você lançou uma feature de agendamento de pedidos: o cliente pede o almoço às 8h para entregar às 12h. Em 48h após o lançamento, 23% dos pedidos são agendados. A feature é um sucesso. Salário: R$ 10.500."
+      },
+      {
+        "slug": "cloud-computing",
+        "nome": "Computação em Nuvem",
+        "descricaoCurta": "Infraestrutura cloud, AWS, Azure e Google Cloud. Mercado aquecido com ótimos salários.",
+        "duracao": "2 anos",
+        "salarioMedio": "R$ 4.000 – R$ 15.000",
+        "narrativaEstudante": "Você está no curso de Cloud Computing do SENAC. Você está configurando uma infraestrutura AWS para um e-commerce simulado: VPC, subnets, load balancer, auto scaling, banco de dados RDS em multi-AZ. O professor simula um pico de tráfego de Black Friday: em 3 minutos o auto scaling sobe de 2 para 8 instâncias. Em 10 minutos com pouco tráfego, desce para 2. Você calculou o custo na calculadora da AWS: R$ 340 por mês na operação normal, R$ 980 no pico de Black Friday. Você entende o que é pagar só pelo que você usa.",
+        "narrativaProfissional": "Você é arquiteta de soluções cloud numa consultoria de tecnologia que atende empresas do Nordeste. Você projeta e implementa a migração de sistemas on-premise para a nuvem. Hoje você está finalizando o projeto de migração dos sistemas de uma rede de supermercados de Teresina para AWS. O maior desafio foi o sistema legado de notas fiscais eletrônicas de 2008 que só rodava em Windows Server 2003. Você propôs uma estratégia de containerização que funcionou. O custo da empresa caiu 40% depois da migração. Salário: R$ 14.000."
+      },
+      {
+        "slug": "ux-ui-design",
+        "nome": "UX/UI Design",
+        "descricaoCurta": "Design de interfaces e experiência do usuário em produtos digitais.",
+        "duracao": "2 anos",
+        "salarioMedio": "R$ 3.500 – R$ 12.000",
+        "narrativaEstudante": "Você está no curso de UX Design do SENAC. Você foi designado para redesenhar o app de agendamento de vacinas de uma UBS de Teresina. Você começa pesquisando usuários: entrevistou 8 pessoas na fila da UBS sobre dificuldades com o app atual. As respostas são consistentes: letras pequenas demais para idosos, muitas etapas para agendar, impossível usar no sol forte. Você mapeia a jornada atual, identifica os pontos de dor, propõe a nova arquitetura de informação. Agora você vai para o Figma. O bom design começa com pesquisa.",
+        "narrativaProfissional": "Você é UX designer num time de produto de uma startup de saúde em Teresina. Você faz pesquisas com usuários, cria protótipos, testa com usuários reais antes de ir para desenvolvimento. Hoje você realizou um teste de usabilidade do novo fluxo de prescrição médica: 5 médicos usando o protótipo enquanto você observa. Um médico ficou preso 3 minutos num passo que você achou óbvio. Você voltou para o Figma e redesenhou. O time de dev ainda não tocou nessa feature — você acabou de evitar semanas de retrabalho. Salário: R$ 9.800."
+      },
+      {
+        "slug": "jogos-digitais",
+        "nome": "Jogos Digitais",
+        "descricaoCurta": "Criação de games para plataformas digitais. Combina programação, arte e design.",
+        "duracao": "4 anos",
+        "salarioMedio": "R$ 3.000 – R$ 12.000",
+        "narrativaEstudante": "Você está na aula de Game Design da UFPI. O projeto de hoje é criar o Game Design Document de um jogo que explora a cultura do semiárido piauiense. Você define o gênero, o loop principal, a progressão, a temática. O professor questiona: por que alguém em São Paulo vai querer jogar um jogo sobre o Piauí? Você pensa. Você responde: pelo mesmo motivo que alguém do Brasil joga Stardew Valley, que é sobre fazenda americana — porque a mecânica é boa e o mundo é interessante. O professor sorri. Você entendeu a diferença entre temática e gameplay.",
+        "narrativaProfissional": "Você é game designer e co-fundador de um estúdio indie em Teresina com dois sócios. Vocês lançaram um jogo de plataforma inspirado na cultura do Nordeste na Steam há 8 meses. Vendeu 12.000 cópias, gerou R$ 180.000 de receita líquida. Agora vocês trabalham no segundo jogo. Você passa o dia entre design de mecânicas, criação de level, reuniões com o programador e o artista. Às 22h você ainda está testando o boss de fase com o time pelo Discord. É trabalho duro e apaixonante. Salário: R$ 6.000 da empresa mais divisão de lucros."
+      },
+      {
+        "slug": "robotica",
+        "nome": "Robótica",
+        "descricaoCurta": "Automação, sistemas robóticos e inteligência embarcada. Alta tecnologia aplicada à indústria.",
+        "duracao": "4 anos",
+        "salarioMedio": "R$ 5.000 – R$ 18.000",
+        "narrativaEstudante": "Você está no laboratório de Robótica da UFPI. O projeto deste semestre é construir um robô autônomo que navega por um ambiente desconhecido desviando de obstáculos. Você programou o algoritmo de navegação baseado em sensores ultrassônicos. Na primeira tentativa, o robô bateu na cadeira. Na quinta tentativa, ele contornou. Você ajustou os parâmetros de sensitividade, aumentou a margem de segurança. Na décima tentativa, navegou sem bater. Você foi às 23h30 e era a última pessoa no laboratório. Você não percebeu o tempo passar.",
+        "narrativaProfissional": "Você é engenheiro de automação e robótica numa empresa de automação industrial de Teresina. Você implementa células robóticas em linhas de produção de empresas do agronegócio no Piauí. Hoje você está comissionando um braço robótico de paletização numa fábrica de ração animal em Teresina. O robô precisa empilhar sacas de 25kg em três padrões de palete diferentes sem derrubar. Após 40 horas de programação e ajustes, hoje o robô executa os três padrões sem erro. A operação que precisava de 2 trabalhadores agora é feita por 1 máquina. Salário: R$ 14.500."
+      },
+      {
+        "slug": "devops",
+        "nome": "DevOps",
+        "descricaoCurta": "Integração entre desenvolvimento e operações. Automação de deploys, pipelines e infraestrutura como código.",
+        "duracao": "2 anos",
+        "salarioMedio": "R$ 5.000 – R$ 18.000",
+        "narrativaEstudante": "Você está no curso de DevOps do SENAC. Hoje você configurou um pipeline de CI/CD completo para um projeto de exemplo: o código vai para o GitHub, dispara os testes automatizados, e se passar, faz deploy automático em ambiente de staging na AWS. Você configurou cada etapa no GitHub Actions. O professor submete um commit com um teste falhando de propósito. O pipeline para, envia notificação. O professor submete com o teste corrigido. Pipeline passa, deploy acontece. Você entendeu por que isso reduz o tempo de entrega de código de semanas para horas.",
+        "narrativaProfissional": "Você é engenheiro DevOps numa empresa de e-commerce em Teresina com 3 milhões de usuários. Você mantém a infraestrutura que sustenta o site e garante que cada deploy seja seguro. Hoje você implementou feature flags: o time de produto pode ativar uma feature nova para 1% dos usuários para testar sem risco antes de abrir para todos. É mais complexo de implementar, mas evita o lançamento com bug que você teve no último trimestre. Você trabalha de casa, tem reunião semanal com o time, e é acionado em incidentes. Salário: R$ 16.500."
+      },
+      {
+        "slug": "banco-dados",
+        "nome": "Banco de Dados",
+        "descricaoCurta": "Modelagem, administração e otimização de bancos de dados. Base de toda aplicação corporativa.",
+        "duracao": "2 anos",
+        "salarioMedio": "R$ 3.500 – R$ 12.000",
+        "narrativaEstudante": "Você está no curso de DBA do SENAC. Você está analisando o plano de execução de uma query SQL que demora 45 segundos num banco de 50 milhões de registros. Você usa o EXPLAIN ANALYZE no PostgreSQL: a query está fazendo um full table scan numa tabela sem índice na coluna de filtro. Você cria o índice. A mesma query agora leva 0,08 segundos. O professor faz a pergunta que todo DBA precisa saber responder: qual o custo do índice? Você responde: espaço em disco e lentidão nos inserts. Você aprende que otimização tem sempre trade-offs.",
+        "narrativaProfissional": "Você é DBA (Administrador de Banco de Dados) num banco regional do Nordeste em Teresina. Você cuida dos bancos de dados de produção: backup, recuperação, performance, segurança. Hoje você recebeu alerta de que uma tabela de transações está com 2 bilhões de registros e a performance está degradando. Você executa uma estratégia de particionamento: divide a tabela por ano. O processo levou 6 horas numa janela de manutenção. Na manhã seguinte, a performance voltou ao normal. Salário: R$ 9.800."
+      },
+      {
+        "slug": "ti-saude",
+        "nome": "TI na Saúde",
+        "descricaoCurta": "Tecnologia aplicada a sistemas hospitalares, prontuários eletrônicos e saúde digital.",
+        "duracao": "3 anos",
+        "salarioMedio": "R$ 3.500 – R$ 10.000",
+        "narrativaEstudante": "Você está na aula de Sistemas de Informação em Saúde da UFPI. O professor apresenta o prontuário eletrônico do paciente: o que é interoperabilidade, por que os sistemas de hospitais no Brasil não se comunicam, o que é HL7 FHIR e como está mudando isso. Você analisa um caso real de um paciente que foi a três hospitais diferentes em Teresina em um mês e nenhum tinha os dados dos outros dois. Você começa a entender por que integração de dados em saúde pode salvar vidas.",
+        "narrativaProfissional": "Você é analista de TI na saúde no Hospital Getúlio Vargas em Teresina. Você implementa e mantém os sistemas de informação hospitalar: prontuário eletrônico, SADT (Serviço de Apoio Diagnóstico), faturamento ao SUS. Hoje você está integrando o módulo de prescrição eletrônica com o sistema da farmácia hospitalar: quando o médico prescreve, a farmácia já recebe o pedido automaticamente. Isso vai eliminar o processo manual de papel que hoje causa erros de medicação. Salário: R$ 7.500."
+      },
+      {
+        "slug": "sistemas-embarcados",
+        "nome": "Sistemas Embarcados",
+        "descricaoCurta": "Programação de microcontroladores e hardware dedicado. Base da IoT e automação industrial.",
+        "duracao": "4 anos",
+        "salarioMedio": "R$ 5.000 – R$ 15.000",
+        "narrativaEstudante": "Você está no laboratório de Sistemas Embarcados da UFPI programando um STM32 em C. O projeto é um controlador de irrigação para pequenos produtores do semiárido: lê sensores de umidade do solo, temperatura e luminosidade, decide quando e quanto irrigar, envia dados por LoRa para um gateway na sede da fazenda. Você passou 3 dias depurando um bug no protocolo de comunicação serial. Hoje você encontrou: era um problema de timing entre o microcontrolador e o módulo de rádio. Você entende que embedded é onde o software encontra a física.",
+        "narrativaProfissional": "Você é engenheiro de sistemas embarcados numa empresa de tecnologia agrícola com sede em Teresina. Você desenvolve os dispositivos IoT que os agricultores instalam nas lavouras do Piauí. Hoje você está validando uma nova versão do firmware que reduz o consumo de bateria do sensor de solo em 40%. Com essa melhoria, a bateria dura 2 anos em vez de 14 meses — crítico para sensores instalados no meio do cerrado piauiense a 80km da cidade mais próxima. Salário: R$ 12.000."
+      },
+      {
+        "slug": "tecnico-informatica",
+        "nome": "Técnico em Informática",
+        "descricaoCurta": "Suporte técnico, manutenção de equipamentos e redes. Entrada rápida na área de TI.",
+        "duracao": "1,5 anos",
+        "salarioMedio": "R$ 1.800 – R$ 5.000",
+        "narrativaEstudante": "Você está no IFPI em Teresina. Hoje na prática de Redes, você cabeou uma sala de aula com patch cords Cat6, configurou um switch de 24 portas, testou a conectividade de cada ponto. Depois na aula de Manutenção, você desmontou um notebook com problema de superaquecimento: limpou o dissipador de calor, trocou a pasta térmica, remontou. O professor ligou e o notebook voltou a funcionar normalmente. Na aula de Sistemas Operacionais, você instalou e configurou um servidor Ubuntu com Apache, PHP e MySQL. Em 1,5 anos você vai sair com três competências práticas que o mercado paga bem.",
+        "narrativaProfissional": "Você é técnico de informática numa empresa de contabilidade em Teresina com 80 funcionários. Você dá suporte técnico, mantém a rede, gerencia os backups, instala e configura equipamentos. Hoje você resolveu 12 chamados: senha bloqueada, impressora que não imprime, notebook lento, problema de acesso ao servidor. À tarde, você configurou 5 novos computadores para a equipe que vai ser contratada. Às 17h30 você ainda teve um chamado urgente: sistema de NF-e caiu na hora que a empresa estava emitindo notas. Você resolveu em 20 minutos. Salário: R$ 3.200."
+      },
+      {
+        "slug": "tecnico-redes",
+        "nome": "Técnico em Redes",
+        "descricaoCurta": "Instalação e manutenção de infraestrutura de redes de computadores.",
+        "duracao": "1,5 anos",
+        "salarioMedio": "R$ 2.000 – R$ 5.500",
+        "narrativaEstudante": "Você está no IFPI aprendendo a configurar um roteador Mikrotik. O professor configurou o roteador com um firewall propositalmente mal configurado que permite qualquer tráfego. Você tem que identificar as regras problemáticas e corrigi-las. Você analisa as regras, identifica uma que permite acesso externo à porta 22 (SSH) de qualquer IP. Você a restringe para o IP do administrador. O professor simula um ataque externo. Bloqueado. Você aprende: roteador sem firewall correto é porta aberta para o mundo.",
+        "narrativaProfissional": "Você é técnico de redes numa empresa de provedor de internet regional em Teresina. Você instala e mantém a infraestrutura de rede dos clientes: configura roteadores, faz o cabeamento estruturado, resolve problemas de conectividade. Hoje você foi a uma empresa cliente que estava com instabilidade na internet. Você identificou um cabo UTP danificado no patch panel — o cabo tinha uma dobra que causava perda de pacotes intermitente. Trocou o cabo, resolveu. À tarde, você instalou uma rede WiFi em grade num hospital. Salário: R$ 3.800."
+      }
+    ]
+  },
+  {
+    "slug": "negocios",
+    "nome": "Negócios e Gestão",
+    "icon": "💼",
+    "descricao": "Administração, finanças, marketing, contabilidade, logística e empreendedorismo. Para quem quer liderar, criar e gerir.",
+    "cursos": [
+      {
+        "slug": "administracao",
+        "nome": "Administração",
+        "descricaoCurta": "Gestão de empresas, pessoas e recursos. A formação mais versátil do mercado de trabalho.",
+        "duracao": "4 anos",
+        "salarioMedio": "R$ 3.500 – R$ 12.000",
+        "narrativaEstudante": "Você está na aula de Estratégia Empresarial da UFPI. O professor apresenta o caso de uma empresa piauiense de laticínios que estava quebrando e foi virada em 3 anos pela nova gestão. Você analisa: o que mudou? Repositório de produtos, gestão de estoque, relacionamento com fornecedores rurais e corte de custos administrativos. O professor pergunta: o que você faria de diferente? Você monta sua análise SWOT, propõe as três ações prioritárias, apresenta para a turma. Um colega aponta um ponto que você não viu: o custo de logística do semiárido. Você incorpora.",
+        "narrativaProfissional": "Você é gerente operacional de uma rede de farmácias com 8 lojas em Teresina. Você cuida de estoque, equipe, fornecedores e indicadores. Hoje você identificou que uma loja está com ticket médio 22% abaixo das demais — você vai até ela, conversa com a equipe de vendas, observa o atendimento. O problema: a equipe não conhece os produtos de maior margem e não faz cross-selling. Você organiza um treinamento. Em 30 dias vai medir de novo. Salário: R$ 8.500."
+      },
+      {
+        "slug": "ciencias-contabeis",
+        "nome": "Ciências Contábeis",
+        "descricaoCurta": "Contabilidade, tributos, auditoria e finanças empresariais. Profissão com alta empregabilidade.",
+        "duracao": "4 anos",
+        "salarioMedio": "R$ 3.000 – R$ 9.000",
+        "narrativaEstudante": "Você está na aula de Contabilidade Tributária da UFPI. O professor está apresentando o Simples Nacional, o Lucro Presumido e o Lucro Real: como cada regime funciona, quem pode optar por qual, o que cada empresa paga de imposto em cada situação. Você percebe que a escolha do regime tributário correto pode economizar R$ 50.000 por ano para uma empresa pequena. Às 14h, estágio num escritório contábil: você digitou notas fiscais do mês de um cliente, conciliou o extrato bancário e preparou a folha de pagamento de 12 funcionários.",
+        "narrativaProfissional": "Você é contadora responsável por 20 clientes num escritório de contabilidade em Picos. Cada cliente tem seu regime tributário, sua folha de pagamento, seus impostos mensais. Hoje: declaração de Imposto de Renda de três clientes pessoas físicas, fechamento contábil de uma farmácia, e reunião com uma empresária que quer abrir uma segunda loja e não sabe qual regime escolher. Você analisa o faturamento projetado, mostra as simulações em cada regime. Ela sai com a resposta. Você ganha R$ 6.800 mensais entre fixo e honorários."
+      },
+      {
+        "slug": "economia",
+        "nome": "Economia",
+        "descricaoCurta": "Análise de mercados, políticas econômicas e tomada de decisão com base em dados.",
+        "duracao": "4 anos",
+        "salarioMedio": "R$ 4.000 – R$ 15.000",
+        "narrativaEstudante": "Você está na aula de Econometria da UFPI. O professor está ensinando como estimar o impacto de um programa social no PIB per capita dos municípios piauienses. Você usa R, importa dados do IPEA, ajusta o modelo de regressão com variáveis de controle. O coeficiente estimado diz que cada R$ 1 de transferência do Bolsa Família gerou R$ 1,78 de atividade econômica nos municípios do semiárido piauiense. Você aprende a diferença entre correlação e causalidade e por que essa distinção importa para políticas públicas.",
+        "narrativaProfissional": "Você é economista no Banco de Desenvolvimento do Nordeste (BNB) em Teresina. Você analisa projetos de investimento que pedem financiamento: viabilidade econômica, retorno esperado, impacto regional. Hoje você está analisando um projeto de irrigação de 5.000 hectares no Gurguéia. O projeto vai irrigar, mas você identificou que o cálculo de retorno ignora o custo do frete dos produtos até o mercado consumidor. Você devolve com questionamentos ao proponente. Quando o projeto voltar corrigido, você reavalia. Salário: R$ 11.000."
+      },
+      {
+        "slug": "marketing",
+        "nome": "Marketing",
+        "descricaoCurta": "Pesquisa de mercado, branding, comunicação e estratégia para conectar produtos a pessoas.",
+        "duracao": "4 anos",
+        "salarioMedio": "R$ 3.000 – R$ 9.000",
+        "narrativaEstudante": "Você está na aula de Comportamento do Consumidor da UFPI. O professor apresenta um estudo sobre como as decisões de compra de alimentos no Nordeste diferem das do Sudeste: preço é o critério principal para 78% das famílias nordestinas, enquanto no Sudeste é qualidade percebida. Você analisa o que isso significa para uma empresa que quer lançar um produto premium no Piauí. Você aprende que marketing sem entender o consumidor local é dinheiro desperdiçado.",
+        "narrativaProfissional": "Você é gerente de marketing de uma rede de supermercados de Teresina com 6 lojas. Você cuida das campanhas, promoções, redes sociais e relacionamento com clientes. Hoje você está analisando o resultado da campanha do Dia das Mães: ROI de 340%, melhor resultado do ano. Você apresenta para a diretoria e já propõe a estratégia de Dia dos Pais. Às 14h reunião com a agência de publicidade para briefing da nova campanha de agosto. Salário: R$ 7.200."
+      },
+      {
+        "slug": "comercio-exterior",
+        "nome": "Comércio Exterior",
+        "descricaoCurta": "Importação, exportação e operações internacionais. Conecta empresas ao mercado global.",
+        "duracao": "4 anos",
+        "salarioMedio": "R$ 3.500 – R$ 10.000",
+        "narrativaEstudante": "Você está na aula de Legislação Aduaneira da UFPI. O professor explica o processo de exportação de soja pelo Porto de Luís Correia no Piauí: classificação fiscal, licenciamento de exportação, registro de exportação, embarque, câmbio. Você percebe que por trás de cada navio de grãos existe um processo burocrático complexo que exige profissionais treinados. À tarde, simulação de operação de importação de equipamentos industriais: você calcula o Imposto de Importação, IPI, PIS/COFINS importação, ICMS estadual. O total de tributos é maior do que o produto em si.",
+        "narrativaProfissional": "Você é analista de comércio exterior numa trading de carnes bovinas com base em Teresina. Você coordena as operações de exportação para o Oriente Médio e Ásia. Hoje você está acompanhando um embarque de 40 toneladas de carne bovina para os Emirados Árabes: certificados sanitários do MAPA, fatura comercial, Bill of Lading, certificate of origin. Cada documento errado pode reter o contêiner no porto de destino por semanas, com custo para a empresa. Você confere tudo três vezes. Salário: R$ 7.800."
+      },
+      {
+        "slug": "financas",
+        "nome": "Finanças",
+        "descricaoCurta": "Gestão de investimentos, análise financeira e mercado de capitais. Alta remuneração.",
+        "duracao": "4 anos",
+        "salarioMedio": "R$ 4.000 – R$ 15.000",
+        "narrativaEstudante": "Você está na aula de Avaliação de Empresas (Valuation) da UFPI. O professor está avaliando uma empresa piauiense de distribuição de bebidas usando o método DCF (Desconto de Fluxo de Caixa). Você acompanha cada passo: projeção de receitas, estimativa do WACC, cálculo do valor terminal. O professor altera uma premissa de crescimento de 5% para 3% — o valor da empresa cai R$ 8 milhões. Você entende por que os analistas ficam horas debatendo cada premissa num valuation.",
+        "narrativaProfissional": "Você é analista financeira numa empresa de agronegócio em Teresina. Você faz a gestão do fluxo de caixa, análise de investimentos e modelagem financeira. Hoje você apresentou para a diretoria a análise de viabilidade da compra de um novo silo de armazenagem: payback em 4,2 anos, TIR de 18% ao ano. A diretoria aprova. Você vai monitorar a execução do investimento trimestre a trimestre. Salário: R$ 9.500 mais bônus por performance."
+      },
+      {
+        "slug": "logistica",
+        "nome": "Logística",
+        "descricaoCurta": "Transporte, armazenagem e distribuição de produtos. Essencial para o agronegócio do Piauí.",
+        "duracao": "3 anos",
+        "salarioMedio": "R$ 2.500 – R$ 7.000",
+        "narrativaEstudante": "Você está na aula de Gestão de Transportes da UFPI. O professor apresenta o problema real das rodovias do Piauí: 60% da malha não está em bom estado, o que aumenta o custo de frete em 25-40% comparado às médias nacionais. Você analisa o impacto no custo final de uma saca de soja saída de Balsas-MA para o porto de Itaqui: distância, pedágio, peso por eixo, consumo de combustível. O cálculo mostra por que o produtor rural piauiense tem margem menor do que o produtor do Mato Grosso, mesmo vendendo pelo mesmo preço.",
+        "narrativaProfissional": "Você é supervisor de logística numa empresa de distribuição de alimentos que atende varejo em 40 municípios do Piauí. Você coordena uma frota de 18 caminhões e planeja as rotas diariamente. Hoje você reestruturou a rota do sul do estado: unindo dois roteiros em um, reduziu 340 km rodados por semana. Economia de R$ 2.800 mensais em combustível. Quando um caminhão quebrou às 14h em Corrente, você ativou um parceiro transportador de Bom Jesus para concluir a entrega. Salário: R$ 5.800."
+      },
+      {
+        "slug": "gestao-rh",
+        "nome": "Gestão de Recursos Humanos",
+        "descricaoCurta": "Seleção, desenvolvimento e bem-estar das pessoas nas organizações.",
+        "duracao": "3 anos",
+        "salarioMedio": "R$ 2.500 – R$ 6.500",
+        "narrativaEstudante": "Você está na aula de Recrutamento e Seleção da UFPI. O professor apresenta um estudo de caso: uma empresa de TI em Teresina perdeu 30% dos funcionários em um ano — alta rotatividade com custo de R$ 500 mil. Você analisa as causas: salário abaixo do mercado e ausência de plano de carreira. Você propõe as ações corretivas. O professor pergunta: e o custo de implementar as ações versus o custo de continuar perdendo pessoas? Você faz a conta. A retenção é muito mais barata.",
+        "narrativaProfissional": "Você é analista de RH numa empresa de saúde com 350 funcionários em Teresina. Você cuida de recrutamento, onboarding, avaliação de desempenho e treinamentos. Hoje você fez 4 entrevistas para uma vaga de técnico de enfermagem, organizou o treinamento de integração de 6 novos contratados e respondeu 20 perguntas de funcionários sobre benefícios no RH virtual. À tarde, reunião com a gerente de uma área que quer demitir um funcionário: você orientou sobre o processo legal e propôs um plano de desenvolvimento como alternativa. Salário: R$ 4.800."
+      },
+      {
+        "slug": "gestao-projetos",
+        "nome": "Gestão de Projetos",
+        "descricaoCurta": "Planejamento, execução e controle de projetos em qualquer setor. Certificação PMP valorizada.",
+        "duracao": "3 anos",
+        "salarioMedio": "R$ 3.500 – R$ 10.000",
+        "narrativaEstudante": "Você está na aula de Gestão de Riscos em Projetos da UFPI. O professor simula a implantação de um hospital em cidade do interior do Piauí. Você mapeia os riscos: atraso na liberação do terreno, falta de mão de obra especializada, variação de preço dos materiais. Para cada risco, você define probabilidade, impacto e resposta. O professor introduz um risco novo a cada semana e avalia como o plano se adapta. Você aprende que projetos não falham por falta de planejamento — falham quando o plano não é revisto à medida que a realidade muda.",
+        "narrativaProfissional": "Você é gerente de projetos numa construtora de Teresina responsável por obras de infraestrutura pública. Você gerencia simultaneamente três obras: escola, UBS e reforma de praça. Cada uma tem cronograma, orçamento, equipe e contrato próprios. Hoje o fornecedor de cerâmica da escola atrasou a entrega em 3 semanas. Você analisa o impacto no cronograma, renegocia com o empreiteiro, ajusta o sequenciamento das tarefas. A entrega final não é comprometida. Salário: R$ 9.200."
+      },
+      {
+        "slug": "empreendedorismo",
+        "nome": "Empreendedorismo",
+        "descricaoCurta": "Criação e gestão de negócios próprios. Para quem quer construir algo do zero.",
+        "duracao": "3 anos",
+        "salarioMedio": "Variável — depende do negócio",
+        "narrativaEstudante": "Você está na aula de Validação de Negócios da UFPI. O professor propôs: você tem R$ 200 e duas semanas para descobrir se existe demanda real para seu produto antes de investir. Você está testando um serviço de marmita fitness para funcionários de empresas em Teresina. Você fez 30 entrevistas, criou um grupo no WhatsApp, recebeu 12 pré-pedidos com R$ 20 de sinal cada um. Você não gastou nem R$ 50. O professor diz: você acabou de fazer o que a maioria das startups leva 6 meses e R$ 100 mil para fazer — descobrir se tem cliente.",
+        "narrativaProfissional": "Você tem 24 anos e abriu uma empresa de consultoria de marketing digital para pequenas empresas em Teresina há 2 anos. Você tem 8 clientes, fatura R$ 35.000 por mês, tem um sócio e uma funcionária. Hoje você apresentou o resultado do trimestre para seus clientes maiores: aumento médio de 40% nas vendas online. Um cliente quer expandir o contrato. Outro não renova — você perdeu para concorrente mais barato. Você está contratando mais um profissional. O fluxo de caixa está positivo. Você não tem chefe. Você tem responsabilidade total."
+      },
+      {
+        "slug": "turismo",
+        "nome": "Turismo",
+        "descricaoCurta": "Gestão de destinos turísticos, hotelaria e eventos. O Piauí tem potencial turístico enorme.",
+        "duracao": "4 anos",
+        "salarioMedio": "R$ 2.500 – R$ 6.500",
+        "narrativaEstudante": "Você está na aula de Planejamento de Destinos Turísticos da UFPI. O projeto é desenvolver um plano de turismo sustentável para São Raimundo Nonato, cidade que abriga o Parque Nacional Serra da Capivara. Você pesquisa os atrativos, mapeia a infraestrutura existente, identifica os gargalos: falta de guias certificados, poucas opções de hospedagem, estrada estadual em condição ruim. Você propõe um plano com prioridades que um gestor municipal poderia implementar com o orçamento real da cidade.",
+        "narrativaProfissional": "Você é coordenador de turismo da Prefeitura de Parnaíba. Você trabalha para posicionar o Delta do Parnaíba como destino turístico nacional. Hoje você recebeu uma equipe de um operador turístico de São Paulo que quer incluir o Delta no roteiro nordestino deles. Você apresentou os atrativos, a infraestrutura, os parceiros locais. O operador ficou interessado: potencial de trazer 200 turistas por mês. Você vai elaborar o dossiê e a proposta de parceria. Salário: R$ 4.800 no cargo público."
+      },
+      {
+        "slug": "hotelaria",
+        "nome": "Hotelaria",
+        "descricaoCurta": "Gestão de hotéis, pousadas e hospedagem. Carreira para quem gosta de receber bem.",
+        "duracao": "3 anos",
+        "salarioMedio": "R$ 2.200 – R$ 6.000",
+        "narrativaEstudante": "Você está no estágio supervisionado de Hotelaria num hotel de 4 estrelas em Teresina. Hoje você ficou no setor de front desk: check-in e check-out de 35 hóspedes. Um hóspede chegou às 14h — check-in é às 15h. Ele estava cansado de viagem. Você verificou se havia quarto disponível para adiantar. Havia. Você fez o check-in antecipado. Ele agradeceu. O supervisor comentou depois: isso não custa nada para o hotel e vale o retorno do cliente. Você aprende que hospitalidade é antecipar a necessidade do outro.",
+        "narrativaProfissional": "Você é gerente de uma pousada de ecoturismo às margens do rio Parnaíba, em Parnaíba. Você cuida de tudo: reservas, manutenção, equipe de 8 pessoas, fornecedores. Hoje você recebeu um grupo de 20 turistas de Portugal que vieram fazer canoagem no Delta. Você organizou o café da manhã temático com frutas regionais, contratou dois barqueiros locais para o passeio, preparou o jantar com peixes do rio. Às 23h, tudo limpo, equipe dispensada, você faz o fechamento do caixa. Faturamento do dia: R$ 8.400. Margem: 48%. Você ama esse trabalho."
+      },
+      {
+        "slug": "eventos",
+        "nome": "Gestão de Eventos",
+        "descricaoCurta": "Planejamento e execução de eventos corporativos, culturais e sociais.",
+        "duracao": "2 anos",
+        "salarioMedio": "R$ 2.000 – R$ 6.000",
+        "narrativaEstudante": "Você está na aula de Produção de Eventos da UFPI. O projeto prático é organizar o evento de encerramento do semestre do curso: 200 pessoas, almoço, premiações, apresentação musical. Você está na equipe de logística: fornecedor de buffet, cadeiras, som. O professor avalia cada decisão: por que esse fornecedor e não aquele? Qual o plano B se o som não funcionar? Quanto está reservado para imprevistos? Você aprende que evento bem feito é invisível — os problemas são resolvidos antes que o convidado perceba.",
+        "narrativaProfissional": "Você é produtora de eventos corporativos em Teresina. Seus clientes são empresas que fazem convenções, lançamentos de produtos e treinamentos. Hoje você está na montagem de uma convenção de vendas para 300 representantes de uma distribuidora: palco, audiovisual, coffee break, crachás, programa de 2 dias. Às 15h, o telão principal não liga — você liga para o fornecedor de AV, ele manda um técnico em 40 minutos, o problema é resolvido 3h antes do evento começar. O cliente nunca fica sabendo. Faturamento pelo evento: R$ 28.000."
+      },
+      {
+        "slug": "agronegocio",
+        "nome": "Agronegócio",
+        "descricaoCurta": "Gestão do negócio rural, mercados agrícolas e cadeias produtivas do campo.",
+        "duracao": "4 anos",
+        "salarioMedio": "R$ 3.500 – R$ 10.000",
+        "narrativaEstudante": "Você está na aula de Mercados Agropecuários da UFPI. O professor está analisando a crise de preço da soja em 2023: por que o produtor piauiense vendeu a soja 30% mais barato do que o custo de produção? Você analisa: excesso de oferta global, dólar em queda, frete caro no Nordeste. Você entende por que gerir um negócio rural sem entender de mercado é plantar e rezar. À tarde, visita a uma fazenda no Cerrado piauiense onde o gestor usa análise de dados para decidir quando e como vender a produção.",
+        "narrativaProfissional": "Você é analista de agronegócio numa cooperativa de produtores de soja no sul do Piauí. Você acompanha o mercado, orienta os cooperados sobre comercialização, gerencia contratos de hedge na B3. Hoje você orientou 12 produtores a travarem 40% da próxima safra com preço de R$ 165/saca — você acredita que o preço vai cair antes da colheita. Se você estiver certo, vai economizar R$ 3,2 milhões para esses produtores. Salário: R$ 8.800."
+      },
+      {
+        "slug": "gestao-comercial",
+        "nome": "Gestão Comercial",
+        "descricaoCurta": "Vendas, negociação e gestão de equipes comerciais. Alta demanda em todos os setores.",
+        "duracao": "2 anos",
+        "salarioMedio": "R$ 2.500 – R$ 7.000",
+        "narrativaEstudante": "Você está na aula de Técnicas de Vendas Consultivas da UFPI. O professor simula uma negociação com cliente difícil. Você representa a empresa, seu colega o cliente. O cliente pede 20% de desconto. Você não pode dar mais que 8%. O professor observa. Você negocia: não oferece o desconto de imediato, pergunta o que o cliente precisa resolver. Ele diz que precisa de prazo maior. Você oferece: desconto de 5% e prazo estendido. O cliente aceita. O professor comenta: você encontrou o que realmente importava para o cliente e criou valor além do preço.",
+        "narrativaProfissional": "Você é gerente comercial de uma distribuidora de alimentos em Teresina que atende 200 pontos de venda no interior do Piauí. Você lidera uma equipe de 8 representantes. Hoje você acompanhou um representante numa visita de recuperação de cliente perdido para concorrente. Você observou a abordagem, identificou onde o argumento falhou, e depois fez um coaching de 30 minutos. À tarde, análise das metas da semana: 4 representantes acima, 4 abaixo. Você vai acompanhar os 4 de baixo individualmente. Salário fixo: R$ 5.200 mais comissão de equipe."
+      },
+      {
+        "slug": "gestao-financeira",
+        "nome": "Gestão Financeira",
+        "descricaoCurta": "Controle financeiro, fluxo de caixa e análise de investimentos para empresas.",
+        "duracao": "3 anos",
+        "salarioMedio": "R$ 3.500 – R$ 10.000",
+        "narrativaEstudante": "Você está na aula de Análise de Demonstrações Financeiras da UFPI. O professor apresenta o balanço patrimonial e o DRE de uma empresa real do Piauí (dados anonimizados). Você analisa os indicadores: liquidez corrente de 0,7 (abaixo de 1 é sinal de risco), margem líquida de 2% (muito baixa para o setor). O professor pergunta: essa empresa está saudável? Você responde: tecnicamente ela paga as contas, mas está numa trajetória perigosa. Você está aprendendo a ler a saúde de uma empresa através dos números.",
+        "narrativaProfissional": "Você é controladora financeira de uma empresa de construção civil em Teresina com 80 funcionários e R$ 12 milhões de faturamento anual. Você cuida do fluxo de caixa, das projeções financeiras e da relação com o banco. Hoje você identificou que a empresa vai ter um gap de caixa de R$ 280 mil em 45 dias por causa do atraso no recebimento de uma grande obra. Você negociou uma linha de capital de giro com o banco e reestruturou os pagamentos do mês. O problema está resolvido antes de virar crise. Salário: R$ 8.500."
+      },
+      {
+        "slug": "tecnico-administracao",
+        "nome": "Técnico em Administração",
+        "descricaoCurta": "Rotinas administrativas, departamentos e processos empresariais. Entrada rápida no mercado.",
+        "duracao": "1,5 anos",
+        "salarioMedio": "R$ 1.800 – R$ 4.000",
+        "narrativaEstudante": "Você está no IFPI aprendendo rotinas do departamento pessoal. Hoje a aula é sobre folha de pagamento: como calcular INSS, IRRF, horas extras, adicional noturno. O professor distribui fichas de funcionários com situações diferentes e pede para calcular o salário líquido de cada um. Você acerta 8 de 10. Os dois erros foram no cálculo de adicional de insalubridade. Você refaz. Acerta. À tarde, aula de Gestão de Documentos: o que é e o que não é preciso guardar, por quanto tempo, em que formato.",
+        "narrativaProfissional": "Você trabalha no departamento administrativo de uma empresa de distribuição em Teresina com 60 funcionários. Você cuida de compras, RH básico, contas a pagar e a receber. Hoje você lançou 80 notas fiscais de fornecedores no sistema, organizou os arquivos do mês, programou 12 pagamentos para a semana que vem, e respondeu os e-mails de dois fornecedores questionando atraso no pagamento. Às 15h, o diretor pediu um relatório de despesas do trimestre para amanhã. Você vai ficar mais uma hora. Salário: R$ 2.600."
+      },
+      {
+        "slug": "tecnico-contabilidade",
+        "nome": "Técnico em Contabilidade",
+        "descricaoCurta": "Escrituração fiscal e contábil, apoio ao contador em empresas e escritórios.",
+        "duracao": "2 anos",
+        "salarioMedio": "R$ 1.800 – R$ 4.000",
+        "narrativaEstudante": "Você está no SENAC aprendendo a fazer a escrituração contábil de uma empresa fictícia. O professor distribui 30 documentos: notas fiscais, extratos bancários, recibos de despesas. Você precisa classificar cada um, lançar no diário, e fazer o razão das contas principais. É trabalho meticuloso e detalhado. Um erro de R$ 1 no lançamento vai aparecer no balanço e você vai ter que encontrar. O professor faz isso de propósito — insere um erro de R$ 0,10 nos dados. Você leva 40 minutos para encontrar. Você aprende que contabilidade não tolera imprecisão.",
+        "narrativaProfissional": "Você trabalha como auxiliar contábil num escritório de contabilidade em Teresina. Você faz a escrituração fiscal de 12 clientes: lança notas fiscais de entrada e saída, apura o ICMS, calcula o SIMPLES Nacional. Todo mês tem um prazo: dia 20 é o pagamento do DAS do Simples. Se você atrasar um lançamento, a multa é do seu cliente. Você tem uma planilha de controle de prazos que nunca deixa passar. À tarde você também faz a folha de pagamento de três clientes pequenos. Salário: R$ 2.800."
+      },
+      {
+        "slug": "comercio",
+        "nome": "Técnico em Comércio",
+        "descricaoCurta": "Vendas, atendimento ao cliente e operações comerciais. Porta de entrada para carreiras em negócios.",
+        "duracao": "2 anos",
+        "salarioMedio": "R$ 1.800 – R$ 4.500",
+        "narrativaEstudante": "Você está no SENAC aprendendo técnicas de atendimento ao cliente. O professor simula situações difíceis: cliente insatisfeito, reclamação de produto com defeito, pedido de desconto. Você aprende que o bom atendimento começa com escutar: deixar o cliente falar até o fim antes de responder. À tarde, aula de Visual Merchandising: como organizar uma loja para aumentar as vendas. Você aprende que produto ao nível dos olhos vende 40% mais do que produto no chão. Pequena decisão de posicionamento, grande impacto em vendas.",
+        "narrativaProfissional": "Você é líder de atendimento numa loja de eletrodomésticos em Teresina com 15 funcionários de vendas. Você coordena a equipe, acompanha as metas diárias, resolve reclamações de clientes que a equipe não conseguiu resolver. Hoje você mediou uma devolução de geladeira que apresentou defeito na segunda semana: o cliente estava furioso. Você ouviu, verificou no sistema que o prazo de troca ainda estava válido, autorizou a troca sem burocracia. O cliente saiu agradecido e disse que vai indicar a loja. Você sabe que esse cliente vale mais do que a geladeira. Salário: R$ 4.200 com comissão."
+      }
+    ]
+  }
+]

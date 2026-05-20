@@ -1,0 +1,46 @@
+services:
+  db:
+    image: postgres:16-alpine
+    container_name: legua-db
+    restart: unless-stopped
+    env_file:
+      - .env.local
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-legua}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-senha}
+      POSTGRES_DB: ${POSTGRES_DB:-legua}
+    ports:
+      - "5432:5432"
+    volumes:
+      - legua-pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-legua}"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  app:
+    build:
+      context: .
+      target: development
+    container_name: legua-app
+    restart: unless-stopped
+    depends_on:
+      db:
+        condition: service_healthy
+    env_file:
+      - .env.local
+    environment:
+      # Sobrescreve DATABASE_URL para apontar para o container db (e nao localhost)
+      DATABASE_URL: postgresql://${POSTGRES_USER:-legua}:${POSTGRES_PASSWORD:-senha}@db:5432/${POSTGRES_DB:-legua}
+    ports:
+      - "3000:3000"
+    volumes:
+      - .:/app
+      # Volumes anonimos preservam o node_modules e .next gerados no build,
+      # evitando que o bind mount do host sobrescreva.
+      - /app/node_modules
+      - /app/.next
+
+volumes:
+  legua-pgdata:

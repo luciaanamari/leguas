@@ -1,0 +1,227 @@
+// Schema Prisma do Légua
+// Documentação: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider      = "prisma-client-js"
+  binaryTargets = ["native", "linux-musl-openssl-3.0.x"]
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+enum AdminRole {
+  SUPER_ADMIN
+  EDITOR
+}
+
+enum Preocupacao {
+  SEM_DINHEIRO_FACULDADE
+  PRECISO_TRABALHAR_LOGO
+  NAO_PASSAR_NO_ENEM
+  MEDO_ESCOLHER_ERRADO
+  NAO_CONHECO_OPCOES
+}
+
+enum AnoEscolar {
+  PRIMEIRO
+  SEGUNDO
+  TERCEIRO
+}
+
+enum ModalidadeTrilha {
+  PRESENCIAL
+  EAD
+  TECNICO
+  CONCURSO
+  MERCADO
+}
+
+enum TipoEvento {
+  SESSAO_INICIADA
+  TRILHA_VISUALIZADA
+  SIMULACAO_INICIADA
+  SIMULACAO_CONCLUIDA
+  RESULTADO_VISUALIZADO
+  RESULTADO_COMPARTILHADO
+  LOGIN
+  LOGOUT
+}
+
+enum RendaFamiliar {
+  ATE_1K
+  DE_1K_A_2_5K
+  DE_2_5K_A_5K
+  ACIMA_5K
+  PREFIRO_NAO_INFORMAR
+}
+
+enum PerfilEmpreendedor {
+  ESTAVEL
+  EQUILIBRIO
+  EMPREENDEDOR
+  ALTO_RISCO
+}
+
+enum DiscPerfil {
+  D
+  I
+  S
+  C
+}
+
+enum AreaDISC {
+  HUMANAS
+  EXATAS
+  BIOLOGICAS
+}
+
+enum FaixaResultado {
+  ALTA
+  MEDIA
+  BAIXA
+}
+
+model Estudante {
+  id                   String                @id @default(cuid())
+  nome                 String
+  email                String?               @unique
+  senhaHash            String?
+  dataNascimento       DateTime
+  cpfHash              String                @unique
+  whatsappHash         String?
+  rendaFamiliar        RendaFamiliar
+  escolaNome           String
+  escolaAno            AnoEscolar
+  cursoTecnico         String?
+  perfilEmpreendedor   PerfilEmpreendedor
+  preocupacoes         Preocupacao[]
+  // Quiz vocacional DISC (8 perguntas) — feito uma vez no cadastro
+  areaQuizH            Int                   @default(0)
+  areaQuizE            Int                   @default(0)
+  areaQuizB            Int                   @default(0)
+  discPerfil           DiscPerfil
+  respostasDisc        Json
+  ativo                Boolean               @default(true)
+  tokenSenhaHash       String?
+  tokenSenhaExpiraEm   DateTime?
+  criadoEm             DateTime              @default(now())
+  atualizadoEm         DateTime              @updatedAt
+  simulacoes           Simulacao[]
+  resultados           ResultadoMatch[]
+  eventos              EventoEngajamento[]
+
+  @@index([escolaNome])
+  @@index([criadoEm])
+}
+
+model Admin {
+  id           String    @id @default(cuid())
+  nome         String
+  email        String    @unique
+  senhaHash    String
+  role         AdminRole @default(EDITOR)
+  ativo        Boolean   @default(true)
+  criadoEm     DateTime  @default(now())
+  atualizadoEm DateTime  @updatedAt
+}
+
+model Trilha {
+  id                  String           @id @default(cuid())
+  slug                String           @unique
+  titulo              String
+  modalidade          ModalidadeTrilha
+  descricaoCurta      String
+  descricaoCompleta   String
+  comoEntrar          String
+  duracao             String
+  custoEstimado       String
+  primeirosPassos     String
+  // narrativaAluno / narrativaProfissional eram usados quando a simulacao era
+  // por trilha. Hoje a simulacao e por curso (narrativas vem do JSON do curso).
+  // Mantidos opcionais aqui apenas para nao quebrar dados existentes — nao
+  // sao lidos por nenhuma pagina nem editaveis pelo admin.
+  narrativaAluno      String?
+  narrativaProfissional String?
+  ordem               Int              @default(0)
+  ativo               Boolean          @default(true)
+  criadoEm            DateTime         @default(now())
+  atualizadoEm        DateTime         @updatedAt
+  profissoes          Profissao[]
+  simulacoes          Simulacao[]
+  resultados          ResultadoMatch[]
+
+  @@index([ativo, ordem])
+}
+
+model Profissao {
+  id        String   @id @default(cuid())
+  nome      String
+  descricao String
+  trilhaId  String
+  trilha    Trilha   @relation(fields: [trilhaId], references: [id], onDelete: Cascade)
+  ativo     Boolean  @default(true)
+  criadoEm  DateTime @default(now())
+
+  @@index([trilhaId])
+}
+
+model Simulacao {
+  id                    String         @id @default(cuid())
+  estudanteId           String
+  estudante             Estudante      @relation(fields: [estudanteId], references: [id], onDelete: Cascade)
+  trilhaId              String
+  trilha                Trilha         @relation(fields: [trilhaId], references: [id], onDelete: Cascade)
+  // Curso especifico simulado dentro da trilha (slug do JSON de cursos)
+  areaSlug              String
+  cursoSlug             String
+  narrativaAluno        String
+  narrativaProfissional String
+  // Respostas das 3 perguntas de afinidade (Sim/MaisOuMenos/Nao) por pergunta
+  respostasAfinidade    Json?
+  iniciadaEm            DateTime       @default(now())
+  concluidaEm           DateTime?
+  resultado             ResultadoMatch?
+
+  @@index([estudanteId])
+  @@index([trilhaId])
+  @@index([cursoSlug])
+}
+
+model ResultadoMatch {
+  id                    String         @id @default(cuid())
+  estudanteId           String
+  estudante             Estudante      @relation(fields: [estudanteId], references: [id], onDelete: Cascade)
+  trilhaId              String
+  trilha                Trilha         @relation(fields: [trilhaId], references: [id], onDelete: Cascade)
+  simulacaoId           String         @unique
+  simulacao             Simulacao      @relation(fields: [simulacaoId], references: [id], onDelete: Cascade)
+  pontuacao             Int            // nota final 0-100
+  pontuacaoArea         Int            // componente 0-60 (quiz DISC)
+  pontuacaoCurso        Int            // componente 0-40 (3 perguntas)
+  faixa                 FaixaResultado
+  tituloDisc            String         // ex: "voce age, decide e lidera"
+  areaDominante         AreaDISC
+  cursoSlug             String
+  justificativa         String
+  proximoPasso          String
+  contextoBlocos        Json           // [{tipo:"verde|azul|cinza", titulo, mensagem}]
+  explicacao            Json           // breakdown numerico exibido na tela "como foi calculado"
+  compartilhado         Boolean        @default(false)
+  criadoEm              DateTime       @default(now())
+
+  @@index([estudanteId])
+  @@index([trilhaId])
+}
+
+model EventoEngajamento {
+  id          String     @id @default(cuid())
+  estudanteId String?
+  estudante   Estudante? @relation(fields: [estudanteId], references: [id], onDelete: SetNull)
+  tipoEvento  TipoEvento
+  payload     Json?
+  criadoEm    DateTime   @default(now())
+
+  @@index([tipoEvento, criadoEm])
+  @@index([estudanteId])
+}

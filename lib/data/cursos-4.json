@@ -1,0 +1,378 @@
+[
+  {
+    "slug": "artes",
+    "nome": "Artes e Design",
+    "icon": "🎨",
+    "descricao": "Design gráfico, gastronomia, música, fotografia, moda, audiovisual e todos os caminhos criativos com saída profissional real.",
+    "cursos": [
+      {
+        "slug": "design-grafico",
+        "nome": "Design Gráfico",
+        "descricaoCurta": "Identidade visual, comunicação visual e produção gráfica digital e impressa.",
+        "duracao": "4 anos",
+        "salarioMedio": "R$ 2.800 – R$ 8.000",
+        "narrativaEstudante": "Você está na aula de Tipografia da UFPI. O professor apresenta dois logos: um usa Helvetica, o outro uma fonte script manualmente desenhada. Você analisa: qual comunica autoridade? Qual comunica afeto? A escolha da fonte não é estética — é semântica. Você passa a tarde desenvolvendo a identidade visual de uma marca fictícia de mel artesanal do sertão piauiense. Você propõe três direções criativas. O professor questiona cada uma: essa fonte combina com a história que a marca quer contar? Você aprende que design bom é design que serve a uma intenção.",
+        "narrativaProfissional": "Você tem um estúdio de design em Teresina com dois sócios. Seus clientes são marcas regionais que querem uma identidade forte. Hoje você apresentou o rebrand de uma cooperativa de artesãos: logo, paleta, aplicações em embalagem e digital. O presidente da cooperativa ficou emocionado — disse que pela primeira vez o produto deles parece profissional. Você cobrou R$ 4.800 pelo projeto, que levou 3 semanas de trabalho. No mês, o estúdio faturou R$ 22.000. Sua parte: R$ 7.300."
+      },
+      {
+        "slug": "arquitetura-interiores",
+        "nome": "Arquitetura de Interiores",
+        "descricaoCurta": "Projeto de ambientes internos residenciais e comerciais. Alta demanda em reformas e construções.",
+        "duracao": "4 anos",
+        "salarioMedio": "R$ 3.000 – R$ 10.000",
+        "narrativaEstudante": "Você está na aula de Projeto de Interiores da UFPI. O briefing é redesenhar a sala de espera de uma clínica em Teresina para reduzir a percepção de ansiedade dos pacientes. Você pesquisa psicologia das cores, estuda circulação, propõe mobiliário acolhedor, iluminação suave e vegetação. O professor questiona: seu projeto é bonito, mas como você garante que vai realmente reduzir a ansiedade? Você propõe um protocolo de avaliação antes e depois. O professor aprova: design responsável se mede.",
+        "narrativaProfissional": "Você é designer de interiores freelance em Teresina. Você atende residências e pequenos comércios. Hoje você está visitando o apartamento de um casal que quer reformar o quarto e a sala. Você mede o espaço, ouve o que eles precisam, fotografa tudo. Em casa, você cria o moodboard e o projeto 3D no SketchUp. Amanhã você apresenta. O cliente aprova com um ajuste: troca a cor do painel de madeira. Você ajusta no render, aprova. Orçamento da reforma: R$ 45.000. Seus honorários: R$ 4.500. Total mensal com 4 projetos: R$ 8.500."
+      },
+      {
+        "slug": "musica",
+        "nome": "Música",
+        "descricaoCurta": "Formação musical completa: composição, performance, regência e educação musical.",
+        "duracao": "4 anos",
+        "salarioMedio": "R$ 2.000 – R$ 6.000",
+        "narrativaEstudante": "Você está na aula de Harmonia na UFPI. O professor está analisando a harmonia de uma música de Dominguinhos, sanfoneiro do Nordeste. Você identifica as progressões de acordes, os empréstimos modais, a forma da música. O professor pergunta: onde está a resolução da tensão aqui? Você ouve de novo e aponta o momento. Certo. Você aprende que a teoria musical não tira a magia da música — ela te dá vocabulário para entender o que já sentiu.",
+        "narrativaProfissional": "Você é músico profissional em Teresina: dá aulas de violão e canto, toca em bares e restaurantes aos fins de semana, e faz parte de uma banda de forró que se apresenta em eventos. Às terças e quintas você tem 6 alunos de violão: dois iniciantes, dois intermediários, dois avançados. Você cobra R$ 120 por aula. Aos fins de semana, o show na banda rende R$ 600 por noite. Em meses de festa junina, você toca 10-12 shows. Você vive de música no Piauí. Não é fácil, mas é possível. Renda mensal: R$ 5.200."
+      },
+      {
+        "slug": "teatro",
+        "nome": "Teatro",
+        "descricaoCurta": "Arte cênica, interpretação e produção teatral. Carreira criativa com múltiplas possibilidades.",
+        "duracao": "4 anos",
+        "salarioMedio": "R$ 2.000 – R$ 5.500",
+        "narrativaEstudante": "Você está no ensaio de Teatro da UFPI. O grupo está montando uma peça sobre a resistência de comunidades quilombolas no Piauí. Você passou 2 semanas em pesquisa: leu relatos históricos, conversou com moradores de uma comunidade quilombola de Elesbão Veloso, gravou entrevistas. Agora você interpreta uma personagem baseada em depoimento real. O professor interrompe: você está contando a história, não vivendo. Ele pede para você encontrar a memória emocional que conecta você à experiência daquela mulher. Você para. Você respira. Você tenta de novo.",
+        "narrativaProfissional": "Você é ator e diretor de um grupo de teatro independente em Teresina. Você faz espetáculos, projetos de teatro na educação e facilitação de oficinas para jovens. Hoje você ensaiou com o grupo durante 4 horas para o espetáculo que estreia em 3 semanas. À tarde, você foi a uma escola pública conduzir uma oficina de teatro com alunos do ensino médio: 2 horas de jogos dramáticos que trabalharam expressão corporal e verbal. A escola paga R$ 300 por oficina. Você faz 6 por mês mais os cachês dos espetáculos. Renda: R$ 4.800."
+      },
+      {
+        "slug": "cinema-audiovisual",
+        "nome": "Cinema e Audiovisual",
+        "descricaoCurta": "Direção, roteiro, produção e edição de filmes e conteúdo audiovisual.",
+        "duracao": "4 anos",
+        "salarioMedio": "R$ 2.500 – R$ 9.000",
+        "narrativaEstudante": "Você está no set de filmagem do seu curta-metragem de conclusão de curso da UFPI. É 6h da manhã na Serra da Capivara, em São Raimundo Nonato. Você é diretora, e a equipe de 8 pessoas — todos colegas do curso — está montando a câmera para a cena do amanhecer. Você só tem a luz dessa hora por 20 minutos. Você deu a ordem de ação, a atriz entrou no quadro, você viu pelo monitor. A primeira tomada estava boa. A segunda foi perfeita. Você gritou corta e a equipe aplaudiu.",
+        "narrativaProfissional": "Você é videasta e cineasta independente em Teresina. Você faz dois tipos de trabalho: projetos pessoais (curtas-metragens, documentários) e trabalhos comerciais (vídeos institucionais, publicidade). Hoje você gravou um vídeo de apresentação para uma empresa de tecnologia de Teresina: 2 horas de gravação no escritório deles, entrevistas com funcionários e b-roll das operações. À tarde, reunião com um produtor cultural de Parnaíba sobre um documentário sobre a pesca artesanal no Delta. O projeto tem patrocínio. Faturamento mensal: R$ 7.500."
+      },
+      {
+        "slug": "fotografia",
+        "nome": "Fotografia",
+        "descricaoCurta": "Arte fotográfica, fotojornalismo e fotografia publicitária. Carreira criativa e versátil.",
+        "duracao": "3 anos",
+        "salarioMedio": "R$ 2.500 – R$ 8.000",
+        "narrativaEstudante": "Você está na aula de Fotografia Documental da UFPI. A proposta do semestre é documentar um aspecto da vida urbana de Teresina que o turista não vê. Você está fotografando os trabalhadores do mercado central nas primeiras horas da manhã: o carregador com caixotes de tomate, a peixeira limpando as bancadas às 5h, o vendedor de ervas medicinais montando a banca. Você tem 300 fotos. O professor pede para você selecionar 12 que contam uma história completa. Você passa 3 horas selecionando. É mais difícil do que fotografar.",
+        "narrativaProfissional": "Você é fotógrafa de casamentos e eventos em Teresina. Você fotografa 3-4 casamentos por mês e eventos corporativos quando aparecem. No casamento de hoje, você está com dois corpos e 4 objetivas. A cerimônia foi emocionante: o pai da noiva chorou ao dar a mão da filha. Você capturou. Aos sábados você passa a noite fotografando, e de domingo a terça você edita e entrega as fotos. O prazo combinado é 20 dias. Você entrega em 14. Cada casamento: R$ 3.500 a R$ 6.000. Faturamento médio: R$ 14.000/mês."
+      },
+      {
+        "slug": "danca",
+        "nome": "Dança",
+        "descricaoCurta": "Técnica, expressão e educação em diferentes estilos de dança. Carreira artística e docente.",
+        "duracao": "4 anos",
+        "salarioMedio": "R$ 1.800 – R$ 5.000",
+        "narrativaEstudante": "Você está no treino diário de Dança Contemporânea na UFPI. Você começa com 40 minutos de aquecimento e conscientização corporal antes de qualquer movimento técnico. O professor coloca uma música desconhecida e pede: dance o que essa música provoca em você, sem pensar. Você deixa o corpo responder. Depois ele analisa o que cada um fez: a maioria se moveu nos tempos fortes. Ele provoca: e se você mover nos silêncios? Você aprende que dança é conversa entre corpo e espaço, não apenas sequência de movimentos.",
+        "narrativaProfissional": "Você é professora de dança e coreógrafa em Teresina. Você tem uma escola de dança com 80 alunos, de 4 a 65 anos. Você ensina ballet, contemporâneo e forró. Aos fins de semana você coreografa para grupos de dança em shows e festivais. O maior prazo do ano é o Recital de Dezembro: 40 coreografias com 80 alunos em três turmas. Você passa setembro e outubro ensaiando. A noite do recital é 3h de espetáculo e meses de trabalho. Quando as crianças entram em cena e os pais aplaudem, vale cada hora. Renda: R$ 5.800."
+      },
+      {
+        "slug": "artes-visuais",
+        "nome": "Artes Visuais",
+        "descricaoCurta": "Pintura, escultura, arte digital e produção artística contemporânea. Carreira criativa e educacional.",
+        "duracao": "4 anos",
+        "salarioMedio": "R$ 1.800 – R$ 5.500",
+        "narrativaEstudante": "Você está no ateliê de Pintura da UFPI. O projeto deste semestre é criar uma série de cinco obras sobre identidade nordestina sem usar os clichês do sertão. Você começa pela pesquisa: o que é a identidade nordestina de 2026? Você fotografa bairros, entrevista jovens, observa como as pessoas se vestem, o que assistem, como se identificam. A série que você criou não tem cacto nem sol quente. Tem celular, laje de concreto, família numa calçada de bairro, e o sorriso de uma velha numa janela de madeira pintada de azul.",
+        "narrativaProfissional": "Você é artista visual e professor de Arte no ensino médio em Teresina. Na escola, você usa o ensino de arte para desenvolver percepção crítica nos alunos: você não ensina só técnica de desenho, você usa uma pintura de Cândido Portinari para discutir trabalho infantil, e uma fotografia de Sebastião Salgado para falar sobre migração nordestina. Nos fins de semana você produz suas próprias obras: pinturas acrílicas de paisagens urbanas de Teresina que vendem R$ 800-2.500 cada uma em galerias locais. Salário escola: R$ 2.800. Arte: R$ 1.800/mês em média."
+      },
+      {
+        "slug": "moda",
+        "nome": "Moda e Design de Moda",
+        "descricaoCurta": "Criação de roupas, estilo e gestão da moda. Carreira criativa com mercado regional em crescimento.",
+        "duracao": "4 anos",
+        "salarioMedio": "R$ 2.500 – R$ 8.000",
+        "narrativaEstudante": "Você está na aula de Modelagem da UFPI. Você está drapeando um tecido de algodão cru em um manequim para criar uma blusa sem usar molde pronto. Você dobra, alfineta, corta. A professora vem ver: tem um desequilíbrio na manga direita. Você desfaz a alfineta, reposiciona. Ela olha de novo e aprova. Você vai passar para o tecido definitivo. À tarde, aula de Fashion Business: como o mercado de moda no Nordeste funciona, as feiras regionais, as marcas autorais nordestinas que estão crescendo nacionalmente.",
+        "narrativaProfissional": "Você tem uma marca de moda autoral em Teresina focada em peças com referências nordestinas contemporâneas. Você vende online e em duas lojas multimarcas da cidade. Hoje você está finalizando a coleção de inverno — no Piauí, inverno é a estação das festas juninas. Você criou 12 peças com referência à estética do Nordeste, mas sem ser folclórico. A coleção vai ser apresentada num evento de moda em Teresina. Você espera vender 70% das peças nas duas semanas seguintes. Faturamento mensal: R$ 9.500. Margem líquida: 40%."
+      },
+      {
+        "slug": "animacao",
+        "nome": "Animação 2D e 3D",
+        "descricaoCurta": "Criação de personagens e animações para filmes, games e conteúdo digital.",
+        "duracao": "4 anos",
+        "salarioMedio": "R$ 3.000 – R$ 10.000",
+        "narrativaEstudante": "Você está na aula de Animação de Personagens da UFPI. A tarefa de hoje é animar um personagem caminhando em 2D: você precisa que o movimento seja convincente, não mecânico. O professor ensina os princípios da animação de Disney: antecipar a ação, o squash e stretch, o timing. Você cria o ciclo de caminhada frame a frame no TVPaint. A primeira tentativa parece robô. A décima começa a ter vida. O professor diz: a animação boa é quando você esquece que é animação.",
+        "narrativaProfissional": "Você é animadora freelance em Teresina trabalhando para clientes de todo o Brasil. Você faz animações explicativas (explainer videos) para empresas e vinhetas para canais do YouTube. Hoje você está finalizando uma animação de 90 segundos que explica como funciona o Programa Cisternas para o Ministério do Desenvolvimento Regional. O prazo é amanhã. Você ainda tem 20 segundos para animar. Você vai trabalhar até a meia-noite. Não é o primeiro dia assim, mas cada projeto que vai ao ar e chega a milhares de pessoas vale o esforço. Renda mensal: R$ 7.200."
+      },
+      {
+        "slug": "design-produto",
+        "nome": "Design de Produto",
+        "descricaoCurta": "Criação de objetos, embalagens e produtos físicos que unem estética e função.",
+        "duracao": "4 anos",
+        "salarioMedio": "R$ 3.000 – R$ 9.000",
+        "narrativaEstudante": "Você está na aula de Design Centrado no Usuário da UFPI. O projeto é redesenhar a embalagem de um produto de agricultura familiar piauiense para venda em supermercados de capital. Você visita o produtor de mel em Campo Maior, entende o processo de produção, conversa com compradores nos supermercados. Você descobre que o principal problema não é o design — é que ninguém sabe o que torna o mel do Piauí especial. Você propõe uma embalagem que conta a história do produto.",
+        "narrativaProfissional": "Você é designer de produto numa empresa de utensílios domésticos em Teresina. Você desenvolve produtos novos e melhora os existentes. Hoje você está apresentando ao comitê de produto o protótipo de uma panela de barro industrializada que usa o formato tradicional do artesanato de Picos: você quer levar a estética das panelas de barro piauienses para o mercado nacional com produção escalável. O comitê aprova para um teste de mercado. Você vai produzir 200 unidades para vender em dois pontos de venda de Teresina. Salário: R$ 7.500."
+      },
+      {
+        "slug": "gastronomia",
+        "nome": "Gastronomia",
+        "descricaoCurta": "Arte e técnica da cozinha profissional. Alta demanda em restaurantes, eventos e empreendimentos próprios.",
+        "duracao": "3 anos",
+        "salarioMedio": "R$ 3.000 – R$ 10.000",
+        "narrativaEstudante": "Você está na aula prática de Técnicas de Cozinha do SENAC. Hoje você aprende o mise en place de cozinha profissional: tudo picado, medido e organizado antes de ligar o fogo. O chef professor diz: cozinheiro desorganizado é cozinheiro lento, e cozinheiro lento é cozinheiro demitido. Você prepara um prato de linguado ao molho de limão siciliano com purê de mandioca e chips de jerimum. O professor prova. A acidez está alta. Você reconhece e propõe: mais manteiga no molho para equilibrar. Ele permite que você corrija.",
+        "narrativaProfissional": "Você é chef proprietária de um restaurante de comida contemporânea nordestina em Teresina. Você trabalha com ingredientes do Piauí: caju, babaçu, umbu, linha fina de peixe do rio. Hoje você está testando o prato novo do menu: uma versão desconstruída do baião de dois com feijão verde, queijo coalho curado e emulsão de manteiga de garrafa. Você ajusta o sal, testa o empratamento com sua sous-chef, fotografa para o Instagram. Seu restaurante está lotado de sexta a domingo. Faturamento mensal: R$ 85.000. Depois de custos, margem de 22%."
+      },
+      {
+        "slug": "confeitaria",
+        "nome": "Confeitaria",
+        "descricaoCurta": "Bolos, doces e sobremesas artesanais. Uma das carreiras com mais saída para empreender no Piauí.",
+        "duracao": "1 ano",
+        "salarioMedio": "R$ 2.500 – R$ 8.000",
+        "narrativaEstudante": "Você está no curso de Confeitaria do SENAC. Hoje a aula é sobre temperagem de chocolate: você aquece o chocolate ao leite, espalha na pedra de mármore, trabalha a temperatura, recolhe. Se temperar certo, o chocolate vai ter brilho e quebrar seco. Você testa. Está opaco. Você refaz. Na terceira vez, brilha. O professor explica: chocolateiro bom tempera de memória porque sente a temperatura na espátula. Você ainda não tem essa memória. Em 6 meses, vai ter.",
+        "narrativaProfissional": "Você tem uma confeitaria artesanal em Teresina. Você vende por encomenda e tem uma vitrine pequena no bairro São Francisco. Seu carro-chefe: o bolo de buriti com recheio de cupuaçu que você criou usando frutas do cerrado piauiense. Você produz sozinha com a ajuda de uma assistente dois dias por semana. Hoje você fez 3 bolos de casamento, 12 tortas e 120 doces para festa. Terminou às 22h. No fim de semana do casamento você vai montar a mesa de doces e a loja fica fechada. Faturamento mensal: R$ 12.000. Margem: 55%."
+      },
+      {
+        "slug": "culinaria-regional",
+        "nome": "Culinária Regional",
+        "descricaoCurta": "Técnicas e história da culinária nordestina e piauiense. Para quem quer valorizar a comida do Nordeste.",
+        "duracao": "1 ano",
+        "salarioMedio": "R$ 2.000 – R$ 7.000",
+        "narrativaEstudante": "Você está no curso de Culinária Regional do SENAC em Teresina. A aula de hoje é preparação do baião de dois tradicional: feijão-verde cozido com queijo coalho, manteiga de garrafa, jerimum. O chef professor vem de São Raimundo Nonato e conhece cada ingrediente como quem cresceu comendo. Ele explica: queijo coalho piauiense tem um ponto de cura específico que o do Ceará não tem. Você aprende que culinária regional não é receita — é território, clima, animal e tempo no mesmo prato.",
+        "narrativaProfissional": "Você tem um bistrô de comida piauiense contemporânea em Teresina que abriu há 2 anos. Você usa receitas da avó como base e aplica técnicas de cozinha moderna. O galinhada de caipira com açafrão da terra, frito artesanal de tapioca e vinagrete de cebolinha virou o prato mais pedido. Hoje você preparou 40 almoços. À tarde, você gravou um vídeo de receita para o YouTube — 12.000 inscritos no canal que virou vitrine do seu restaurante. Faturamento: R$ 28.000 por mês. Após custos, margem de 28%."
+      },
+      {
+        "slug": "producao-cultural",
+        "nome": "Produção Cultural",
+        "descricaoCurta": "Gestão de projetos culturais, eventos artísticos e captação de recursos para a cultura.",
+        "duracao": "4 anos",
+        "salarioMedio": "R$ 2.000 – R$ 6.000",
+        "narrativaEstudante": "Você está na aula de Legislação Cultural da UFPI. O professor explica como funciona a Lei Rouanet e a Lei Paulo Gustavo: como um artista ou grupo cultural pode captar recursos via incentivo fiscal. Você analisa um projeto real aprovado no Piauí: um festival de música regional em Floriano que captou R$ 180.000 em patrocínio. Você entende o que foi bem escrito no projeto, o que justificou o recurso, qual o retorno que o patrocinador obteve. Você aprende que produção cultural é arte de gestão tanto quanto de criação.",
+        "narrativaProfissional": "Você é produtora cultural e coordenadora do Festival de Música do Cerrado Piauiense, um evento anual em Barreiras do Piauí que acontece em julho. Você coordena a captação de recursos (R$ 350.000 anuais via Lei de Incentivo Federal e estadual), a programação artística, a logística. Hoje você está em reunião com a prefeitura para garantir o alvará de funcionamento do espaço da edição deste ano. Às 14h, reunião com o patrocinador principal. Às 17h, aprovação do cartaz com o designer. O festival é em 3 meses. Salário anual pelo festival: R$ 60.000."
+      },
+      {
+        "slug": "arte-educacao",
+        "nome": "Arte-Educação",
+        "descricaoCurta": "Ensino de artes na educação básica e projetos artísticos para comunidades.",
+        "duracao": "4 anos",
+        "salarioMedio": "R$ 2.000 – R$ 5.000",
+        "narrativaEstudante": "Você está no estágio de Arte-Educação numa escola estadual de Teresina. Você vai ensinar instalação artística para turmas do 7o e 8o anos. Você levou materiais de descarte: garrafas PET, papelão, tecido velho. Os alunos criaram uma instalação sobre o lixo que a escola descarta por semana. A diretora passou pelo corredor e ficou parada olhando. Ela perguntou se podiam deixar exposta na escola por um mês. Você descobriu que arte-educação não é entreter crianças — é criar pensadores com corpo, mãos e imaginação.",
+        "narrativaProfissional": "Você é professora de Artes numa escola pública de Picos e conduz um projeto de arte-educação comunitária num centro socioeducativo de jovens em conflito com a lei. Na escola, você tem 12 turmas por semana. Nos socioeducativos, duas tardes por semana, você conduz oficinas de música, artes visuais e expressão corporal com adolescentes internados. Um jovem de 17 anos que nunca tinha desenhado nada criou uma série de ilustrações que foram expostas na Câmara Municipal. Salário escola: R$ 2.800. Socioeducativo: R$ 1.200."
+      },
+      {
+        "slug": "ilustracao",
+        "nome": "Ilustração",
+        "descricaoCurta": "Arte gráfica para livros, publicações, produtos digitais e comunicação visual.",
+        "duracao": "2 anos",
+        "salarioMedio": "R$ 2.500 – R$ 9.000",
+        "narrativaEstudante": "Você está no curso de Ilustração do SENAC. Hoje a aula é sobre composição e narrativa visual: como uma sequência de imagens conta uma história sem texto. O professor apresenta livros ilustrados como referência. Você recebe um texto simples de 4 parágrafos e precisa criar 4 ilustrações que o representem usando só cor, forma e linha — sem texto. Você começa com esboços rápidos, 20 tentativas em 30 minutos. O professor passa vendo: esse não tem ritmo, esse tem excesso de detalhe, esse está próximo. Você refina o que estava próximo.",
+        "narrativaProfissional": "Você é ilustradora freelance em Teresina. Você ilustra livros infantis, capas de livros, conteúdo para redes sociais e materiais educativos. Hoje você está finalizando as 28 ilustrações para um livro infantil sobre animais do cerrado piauiense que vai ser distribuído em escolas públicas do estado. Você levou 3 meses no projeto. O pagamento total: R$ 12.000. Você também tem contratos mensais com duas editoras digitais: R$ 2.400 mensais. Total mensal médio: R$ 6.500."
+      },
+      {
+        "slug": "cenografia",
+        "nome": "Cenografia",
+        "descricaoCurta": "Criação de cenários para teatro, TV, cinema e eventos. Carreira no universo das artes cênicas.",
+        "duracao": "4 anos",
+        "salarioMedio": "R$ 2.000 – R$ 6.000",
+        "narrativaEstudante": "Você está na aula de Cenografia da UFPI. O projeto é criar o cenário de uma peça ambientada num mercado público nordestino dos anos 1970. Você pesquisa fotografias de época, visita o Mercado do Artesanato em Teresina, conversa com vendedores mais antigos. Você cria a maquete em escala 1:25 com os materiais certos: madeira, palha, tecido de algodão cru. O professor comenta: os detalhes pequenos fazem o público acreditar que aquele lugar existe.",
+        "narrativaProfissional": "Você é cenógrafa do grupo de teatro mais reconhecido do Piauí. Você cria os cenários de todos os espetáculos. Atualmente você está construindo o cenário de uma peça sobre a seca no semiárido: a solução criativa é um palco com 200kg de terra vermelha real trazida do sertão. O impacto visual é imediato. Você também faz cenografia para eventos corporativos em Teresina quando o calendário permite. Um stand em feira de negócios rendeuhoje R$ 8.000. Salário fixo no grupo: R$ 2.200 mais cachês variáveis."
+      },
+      {
+        "slug": "producao-audiovisual",
+        "nome": "Produção Audiovisual",
+        "descricaoCurta": "Produção de vídeos, filmes e conteúdo para plataformas digitais e TV.",
+        "duracao": "3 anos",
+        "salarioMedio": "R$ 2.500 – R$ 7.000",
+        "narrativaEstudante": "Você está no terceiro semestre de Produção Audiovisual da UFPI. O projeto integrador deste semestre é produzir um documentário de 10 minutos sobre um aspecto da cultura piauiense. Você escolheu os vaqueiros das vaquejadas do interior. Você viajou para Fronteiras, entrevistou 3 vaqueiros e o organizador do evento. Você gravou a corrida, o preparo dos cavalos, a conversa depois da prova. Na ilha de edição, você descobre que o melhor material foi uma conversa informal que você gravou por acaso. Você aprende que documentário bom é o que você está presente para filmar.",
+        "narrativaProfissional": "Você é produtora audiovisual em Teresina com foco em conteúdo corporativo e cultural. Você tem uma empresa pequena com um sócio editor e uma câmera de qualidade. Hoje você está no set de uma campanha de varejo para uma rede de lojas de materiais de construção em Teresina: 6 horas de gravação, 3 modelos, 8 cenários de obra simulada. A campanha vai ao ar em 5 dias. No mês, você tem 4 projetos desse tamanho mais 2 projetos menores. Faturamento: R$ 38.000. Margem líquida: 35%."
+      },
+      {
+        "slug": "design-interiores",
+        "nome": "Design de Interiores",
+        "descricaoCurta": "Projeto de espaços funcionais e esteticamente agradáveis. Alta demanda em reformas e construções.",
+        "duracao": "3 anos",
+        "salarioMedio": "R$ 2.800 – R$ 9.000",
+        "narrativaEstudante": "Você está na aula de Iluminação de Interiores da UFPI. O professor demonstra como uma mesma sala, com o mesmo mobiliário, parece completamente diferente com três tipos de iluminação: luz fria direta, luz quente indireta, e iluminação de destaque em pontos específicos. Você anota cada especificação técnica: temperatura de cor, IRC, ângulo de abertura. À tarde, você vai ao estágio numa loja de móveis planejados: o gerente te explica como cada cliente começa pedindo só uma cozinha e termina reformando três cômodos.",
+        "narrativaProfissional": "Você é designer de interiores com 5 anos de mercado em Teresina. Você tem parceria com três arquitetos que te indicam para os projetos de interiores dos empreendimentos deles. Hoje você visitou uma cobertura de 180m² que está sendo entregue em 3 meses: você precisa projetar a decoração completa em 6 semanas para que os móveis sejam encomendados a tempo. O cliente tem um orçamento de R$ 120.000 para móveis e decoração. Seus honorários de projeto: R$ 9.500. Salário médio mensal: R$ 11.000 com 3-4 projetos simultâneos."
+      }
+    ]
+  },
+  {
+    "slug": "agropecuaria",
+    "nome": "Agropecuária",
+    "icon": "🌱",
+    "descricao": "Agronomia, veterinária, agroecologia e todas as carreiras ligadas ao campo, à produção de alimentos e ao meio ambiente.",
+    "cursos": [
+      {
+        "slug": "agronomia",
+        "nome": "Agronomia",
+        "descricaoCurta": "Produção vegetal, manejo de solos e gestão de propriedades rurais. Essencial para o agronegócio do Piauí.",
+        "duracao": "5 anos",
+        "salarioMedio": "R$ 3.500 – R$ 10.000",
+        "narrativaEstudante": "Você está na aula de campo de Solos da UFPI no cerrado piauiense. O professor abre um perfil de solo com trado: você vê as camadas — A, B, C. Você coleta amostras de cada camada, vai analisar pH, matéria orgânica, teor de argila no laboratório. Depois, interpreta os resultados e recomenda calagem e adubação para uma cultura de soja hipotética naquela área. O professor corrige: sua dose de potássio está subestimada para o teor de argila dessa camada B. Você refaz.",
+        "narrativaProfissional": "Você é agrônomo de uma empresa de consultoria agronômica que atende produtores de soja e milho no sul do Piauí. Você visita propriedades, faz amostragem de solo, coleta dados de talhão, recomenda manejos. Hoje você está em Uruçuí: uma fazenda de 2.000 hectares com produtividade abaixo da média. Você caminha pelos talhões, coleta solo em 40 pontos, verifica plantas. Você identifica deficiência de boro e compactação subsuperficial por tráfego de máquinas. Recomendação vai para o produtor via laudo técnico. Honorários da visita: R$ 3.500. Salário fixo mais visitas: R$ 9.500."
+      },
+      {
+        "slug": "zootecnia",
+        "nome": "Zootecnia",
+        "descricaoCurta": "Criação animal, nutrição e melhoramento genético de bovinos, caprinos, aves e peixes.",
+        "duracao": "5 anos",
+        "salarioMedio": "R$ 3.000 – R$ 8.000",
+        "narrativaEstudante": "Você está na Estação Experimental da UFPI avaliando condição corporal em bovinos para a aula de Bovinocultura. Você aprende a avaliação visual e por palpação: nota 1 a 5, onde 3 é o ideal para vaca em lactação. Você avalia 15 animais, atribui notas, discute com o professor os critérios. O professor coloca um animal de nota 2 que você avaliou como 3 — você volta, palpa novamente, percebe a diferença. À tarde, aula de Nutrição Animal: formulação de dieta para bovino de corte em confinamento usando softwares de otimização.",
+        "narrativaProfissional": "Você é zootecnista numa empresa integradora de frango de corte que opera no Piauí. Você assessora os avicultores integrados: visita os aviários, analisa índices zootécnicos (conversão alimentar, mortalidade, ganho de peso), identifica problemas e propõe soluções. Hoje você visitou dois aviários em Beneditinos: num deles a conversão alimentar está 8% acima da meta. Você analisa o histórico de lotes, temperatura dos aviários, formulação da ração. Você identifica que o bebedouro central está com vazão reduzida: animal com sede come menos e converte pior. Solução simples, impacto grande. Salário: R$ 6.800."
+      },
+      {
+        "slug": "medicina-veterinaria-rural",
+        "nome": "Medicina Veterinária",
+        "descricaoCurta": "Saúde animal em grandes e pequenos animais, produção e saúde pública veterinária.",
+        "duracao": "5 anos",
+        "salarioMedio": "R$ 3.500 – R$ 9.000",
+        "narrativaEstudante": "Você está no Hospital Veterinário da UFPI num plantão do quinto ano. Uma égua chegou com cólica severa — dor abdominal intensa. Você ajuda no exame clínico: ausculta intestinal, frequência cardíaca, mucosa. O professor diagnostica: cólica espamódica. Você aplica a medicação prescrita sob supervisão. Em 40 minutos o animal começa a melhorar. Você aprende que grandes animais têm linguagem corporal que o veterinário precisa ler rápido — um diagnóstico errado ou lento pode perder o animal.",
+        "narrativaProfissional": "Você é médica veterinária numa haras de cavalos de vaquejada em São João do Piauí. Você cuida da saúde do plantel de 40 cavalos: vacinações, vermifugações, diagnóstico de gestação, exames pré-competição. Hoje um cavalo está com marcha anormal depois do treino de ontem. Você faz o exame de claudicação, testes de flexão, e identifica: principio de tendopatia no metacarpo. Você aplica a terapia, define o protocolo de repouso e retorno. O cavalo é avaliado em R$ 80.000 — a saúde dele é sua responsabilidade. Salário: R$ 5.500 mais bonificação por performance do plantel."
+      },
+      {
+        "slug": "engenharia-florestal",
+        "nome": "Engenharia Florestal",
+        "descricaoCurta": "Gestão de florestas, reflorestamento e manejo de recursos naturais.",
+        "duracao": "5 anos",
+        "salarioMedio": "R$ 3.500 – R$ 9.000",
+        "narrativaEstudante": "Você está na aula de campo de Inventário Florestal da UFPI numa área de cerrado no sul do Piauí. Você instala parcelas de 20x20m, mede diâmetro e altura de todas as árvores com DAP acima de 5cm, identifica cada espécie. Você encontra uma espécie que não estava no seu guia de campo: você fotografa, coleta um ramo com folhas e flor, vai identificar no laboratório. Pode ser endêmica dessa região. O professor fica animado: dados de campo revelam o que os livros ainda não têm.",
+        "narrativaProfissional": "Você é engenheira florestal num instituto de conservação ambiental que trabalha no semiárido piauiense. Você coordena projetos de restauração de Caatinga degradada: identifica as espécies nativas a replantrar, coordena a produção de mudas no viveiro, supervisiona o plantio. Hoje você avaliou uma área de 50 hectares que foi plantada há 18 meses: você mede a taxa de sobrevivência das mudas — 78%, acima da meta de 70%. Você documenta, fotografa, registra no sistema de monitoramento para o relatório ao financiador. Salário: R$ 6.200."
+      },
+      {
+        "slug": "gestao-ambiental",
+        "nome": "Gestão Ambiental",
+        "descricaoCurta": "Gestão de impactos ambientais, sustentabilidade e licenciamento. Carreira em crescimento.",
+        "duracao": "3 anos",
+        "salarioMedio": "R$ 2.800 – R$ 7.000",
+        "narrativaEstudante": "Você está na aula de Avaliação de Impacto Ambiental da UFPI. O professor apresenta um EIA real de uma linha de transmissão que passou pelo interior do Piauí. Você analisa o mapeamento dos impactos sobre a fauna, flora, recursos hídricos e comunidades. Você identificou um impacto que o EIA classificou como baixo mas que, pelo que você estudou de aves migratórias na região, pode ser significativo. Você levanta a questão. O professor confirma: laudos mal elaborados passam em agências frágeis e causam danos reais.",
+        "narrativaProfissional": "Você é gestora ambiental numa empresa de energia solar que instala usinas no Piauí. Você coordena o processo de licenciamento ambiental de cada nova usina: levantamento de fauna e flora, identificação de áreas sensíveis, relatório para o IBAMA. Hoje você recebeu a Licença de Operação de uma usina de 50 MW em Bom Jesus que você acompanhou por 18 meses. Agora você já está iniciando o processo para a próxima usina. Salário: R$ 6.500."
+      },
+      {
+        "slug": "agroecologia",
+        "nome": "Agroecologia",
+        "descricaoCurta": "Produção de alimentos sustentável sem agrotóxicos. Crescendo no mercado de produtos orgânicos.",
+        "duracao": "4 anos",
+        "salarioMedio": "R$ 2.500 – R$ 6.500",
+        "narrativaEstudante": "Você está na aula de campo de Sistemas Agroflorestais da UFPI numa comunidade rural no Cariri piauiense. O agricultor que vocês visitam não usa agrotóxico há 12 anos: combina árvores nativas com culturas alimentares e criação de galinhas no mesmo espaço. O solo está escuro, úmido, cheio de minhocas — ao contrário da terra cinza das monoculturas vizinhas. O professor explica: ele reconstruiu o ecossistema e agora o sistema funciona com menos trabalho e custo. Você enxerga que a agroecologia não é idealismo — é ciência.",
+        "narrativaProfissional": "Você é técnica agroecológica de uma ONG que apoia agricultores familiares no semiárido piauiense a fazer a transição para a produção orgânica. Você visita 30 famílias em 5 municípios por mês: diagnóstico da propriedade, orientação sobre manejo, introdução de espécies nativas e culturas diversificadas. Hoje você acompanhou uma família de São João do Piauí que passou para o orgânico há 2 anos: hoje eles vendem para a merenda escolar e para um supermercado de Teresina, com renda 60% maior do que antes. Salário: R$ 4.800 mais diárias."
+      },
+      {
+        "slug": "tecnico-agropecuaria",
+        "nome": "Técnico em Agropecuária",
+        "descricaoCurta": "Manejo de animais, culturas e propriedades rurais. Porta de entrada para o campo com diploma técnico.",
+        "duracao": "2 anos",
+        "salarioMedio": "R$ 1.800 – R$ 4.000",
+        "narrativaEstudante": "Você está no IFPI de Floriano, no segundo semestre do técnico em Agropecuária. A aula de hoje é manejo de caprinos e ovinos: você está no pátio da escola agrotécnica, avaliando a condição corporal dos animais, fazendo a casqueação de uma cabra e administrando vermífugo. O professor explica por que o vermífugo sempre muda: resistência parasitária. Você aprende que quem lida com animal precisa de conhecimento atualizado, não apenas de tradição. À tarde, aula de irrigação: montagem e cálculo de um sistema de gotejamento para o horto da escola.",
+        "narrativaProfissional": "Você é técnico agropecuário numa empresa de assistência técnica rural que atende pequenos produtores em municípios do Piauí. Você visita famílias de agricultores, diagnostica problemas nas criações e plantações, orienta sobre manejos, ajuda a acessar crédito rural e programas do governo. Hoje você visitou uma família que perdeu metade do rebanho de cabras para diarreia hemorrágica: você coletou material, enviou para análise, instaurou protocolo de tratamento para os animais ainda vivos. Você está em campo mais de 15 dias por mês. Salário: R$ 3.800 mais diárias."
+      },
+      {
+        "slug": "pesca-aquicultura",
+        "nome": "Pesca e Aquicultura",
+        "descricaoCurta": "Criação de peixes, camarões e gestão dos recursos pesqueiros. Piauí tem grande potencial aquícola.",
+        "duracao": "4 anos",
+        "salarioMedio": "R$ 2.500 – R$ 6.500",
+        "narrativaEstudante": "Você está na aula prática de Aquicultura da UFPI em Teresina. Você está monitorando a qualidade da água de um tanque de tilápia experimental: pH, oxigênio dissolvido, amônia, temperatura. O pH está levemente ácido e o oxigênio caiu. O professor pergunta: o que pode ter causado isso? Você analisa: excesso de ração nas últimas 24h gerou mais matéria orgânica, que consumiu oxigênio na decomposição. Solução: aeração emergencial e redução da ração. Você aprende que aquicultura é controle de ecossistema em escala pequena.",
+        "narrativaProfissional": "Você é aquicultor e técnico responsável por uma fazenda de tilápia nas margens da Represa de Boa Esperança no Piauí. Você gerencia 8 tanques de engorda com 200.000 tilápias. Você monitora diariamente a qualidade da água, ajusta a alimentação conforme o crescimento, realiza biometrias mensais. Hoje chegou o caminhão para o despescamento de dois tanques: 18 toneladas de peixe para entregar ao frigorífico. Você coordena a equipe, supervisiona a pesagem e o carregamento. O lote vai ser processado e vendido para supermercados de Teresina. Salário: R$ 5.200."
+      },
+      {
+        "slug": "cooperativismo",
+        "nome": "Cooperativismo",
+        "descricaoCurta": "Gestão de cooperativas agropecuárias e gestão coletiva de negócios.",
+        "duracao": "3 anos",
+        "salarioMedio": "R$ 2.500 – R$ 6.000",
+        "narrativaEstudante": "Você está na aula de Gestão de Cooperativas da UFPI. O professor apresenta o caso de uma cooperativa de mel no Vale do Gurguéia que transformou 40 apicultores individuais em uma marca que exporta para a Europa. O que mudou? Padronização da qualidade, registro de marca, poder de negociação coletivo. Você percebe que cooperativismo não é dividir pobreza — é multiplicar força.",
+        "narrativaProfissional": "Você é gestor administrativo de uma cooperativa de agricultura familiar no Vale do Rio Poti. Você coordena a logística de coleta dos produtos dos 120 cooperados, a comercialização com supermercados e prefeituras, o crédito rural coletivo. Hoje você apresentou para a assembleia os resultados do semestre: faturamento 18% acima do mesmo período do ano passado. A cooperativa agora vai investir em um pequeno frigorífico próprio para processar carne caprina. Salário: R$ 5.600."
+      },
+      {
+        "slug": "agronegocio-rural",
+        "nome": "Gestão do Agronegócio",
+        "descricaoCurta": "Administração de propriedades rurais e cadeias produtivas do campo.",
+        "duracao": "4 anos",
+        "salarioMedio": "R$ 3.000 – R$ 9.000",
+        "narrativaEstudante": "Você está na aula de Custos de Produção Agropecuária da UFPI. O professor apresenta o custo de produção real da soja no sul do Piauí: 8 mil por saca produzida, com o preço de mercado em R$ 75. Nesse preço, o produtor tem margem zero. O professor pergunta: o que o gestor pode controlar para não quebrar? Você analisa: custo de frete (incontrolável), custo de insumos (negociação coletiva ajuda), custo de maquinário (manutenção preventiva vs. corretiva), produtividade (manejo). Você aprende a diferença entre custos controláveis e não controláveis.",
+        "narrativaProfissional": "Você é gerente de uma fazenda de soja e milho de 4.000 hectares em Ribeiro Gonçalves, no sul do Piauí. Você coordena todos os aspectos da operação: planejamento das lavouras, gestão da equipe de 15 funcionários fixos e 30 temporários na colheita, controle dos custos, compra de insumos, comercialização da produção. Hoje você está negociando com dois fornecedores de herbicida para a próxima safra: você conseguiu reduzir o custo por hectare em R$ 35 comprando o volume de três anos. Salário: R$ 12.000 mais bônus por resultado."
+      },
+      {
+        "slug": "fruticultura",
+        "nome": "Fruticultura",
+        "descricaoCurta": "Produção de frutas tropicais e temperadas. Piauí é um dos maiores produtores de frutas do Nordeste.",
+        "duracao": "2 anos",
+        "salarioMedio": "R$ 2.000 – R$ 5.500",
+        "narrativaEstudante": "Você está na aula prática de Fruticultura Tropical no IFPI de Parnaíba. O professor está demonstrando a poda de produção do caju: como selecionar os ramos que vão produzir, como eliminar os que competem, como a poda correta aumenta a produção por árvore em até 40%. Você faz a poda de 3 árvores sob supervisão. O professor avalia: você cortou um ramo que deveria manter. Ele explica o critério. Você aprende que poda parece simples mas é cirurgia em planta.",
+        "narrativaProfissional": "Você é técnica em fruticultura numa empresa de produção e exportação de manga e banana no Vale do Gurguéia. Você acompanha a produção: irrigação, nutrição, controle fitossanitário, poda e colheita. Hoje você inspecionou 20 hectares de manga Tommy Atkins no ponto de colheita: cor, tamanho, firmeza. Você liberou 15 hectares e reteve 5 que ainda não atingiram o ponto. A manga exportada tem padrão rigoroso — fruta fora do padrão é rejeitada no destino e você não quer explicar isso ao diretor. Salário: R$ 4.200."
+      },
+      {
+        "slug": "ovinocultura-caprinocultura",
+        "nome": "Ovinocultura e Caprinocultura",
+        "descricaoCurta": "Criação de ovinos e caprinos. O Piauí tem um dos maiores rebanhos caprinos do Brasil.",
+        "duracao": "2 anos",
+        "salarioMedio": "R$ 2.000 – R$ 5.000",
+        "narrativaEstudante": "Você está no estágio de Ovinocultura do IFPI em Picos. Hoje você está acompanhando a vacinação do rebanho de 200 caprinos contra clostridioses: você contém o animal, o técnico aplica, você registra o número do brinco e a dose no caderno de controle. À tarde, você aprende sobre a avaliação do escore de condição corporal: a régua que vai de 1 a 5 que determina quando a cabra está pronta para cobrir e quando precisa de suplementação. Você avalia 30 animais.",
+        "narrativaProfissional": "Você tem um rebanho de 300 caprinos da raça Canindé numa propriedade rural de São Raimundo Nonato. Você vende queijo de coalho artesanal e carne para mercados locais e para o programa de alimentação escolar do município. Hoje você fez a pesagem mensal do rebanho de engorda: a média de ganho de peso foi 120g/dia, dentro da meta. Você ajustou a formulação do sal mineral para reduzir o custo. Sua renda mensal da propriedade: R$ 6.500. Você tem mais 8 hectares de caatinga que você está manejando para aumentar a pastagem nativa."
+      },
+      {
+        "slug": "avicultura",
+        "nome": "Avicultura",
+        "descricaoCurta": "Criação de aves de corte e postura. Alta tecnologia e cadeia produtiva bem estruturada.",
+        "duracao": "1,5 anos",
+        "salarioMedio": "R$ 1.800 – R$ 4.500",
+        "narrativaEstudante": "Você está no curso técnico de Avicultura do IFPI em Teresina. A aula de hoje é sobre biosseguridade em aviário industrial: por que cada visitante que entra num aviário precisa tomar banho, trocar roupa, respeitar a vazio sanitário entre lotes. O professor apresenta um caso de Newcastle que dizimou 80.000 frangos numa granja de Beneditinos por descuido com biosseguridade. Você aprende que prevenção é barata e remediação é cara — às vezes impossível.",
+        "narrativaProfissional": "Você trabalha como técnico avicultor numa integradora de frango de corte em Teresina. Você acompanha 6 aviários integrados na região: cada visita dura 2h, você verifica temperatura, umidade, ventilação, manejo alimentar, mortalidade e comportamento do lote. Hoje você identificou que um aviário está com mortalidade acima do padrão nos primeiros 7 dias do lote. Você coleta material para enviar ao laboratório, orienta o avicultor a ajustar a temperatura do aquecimento. Em 24h você vai rever. Salário: R$ 3.800 mais diárias de campo."
+      },
+      {
+        "slug": "apicultura",
+        "nome": "Apicultura",
+        "descricaoCurta": "Criação de abelhas e produção de mel. Alta valorização do mel do Piauí no mercado internacional.",
+        "duracao": "1 ano",
+        "salarioMedio": "R$ 1.800 – R$ 4.000",
+        "narrativaEstudante": "Você está no curso de Apicultura do SENAR em Campo Maior. O professor é apicultor há 25 anos e conhece cada colmeia pelo comportamento das abelhas na entrada. Hoje a prática é manejo de revisão: você veste o macacão, acende o fumigador, abre a colmeia com cuidado. O professor mostra onde está a rainha, como avaliar a postura, como identificar sinais de enxameação. Você ficou nervoso quando as abelhas começaram a zumbir alto. O professor disse: fique tranquilo, elas sentem o medo. Você respirou, os movimentos ficaram lentos e suaves. As abelhas acalmaram.",
+        "narrativaProfissional": "Você tem 80 colmeias de abelha nativa sem ferrão Jandaíra na Chapada das Mangabeiras. Você produz mel puro de vegetação nativa de cerrado, com certificação orgânica. O mel de Jandaíra tem alta concentração de compostos bioativos e é vendido 5x mais caro que o mel convencional. Você vende direto para clientes de Teresina e para um importador que distribui para Portugal. Você produz 400 kg por ano. Preço médio: R$ 120/kg. Faturamento: R$ 48.000 por ano. Você cuida das colmeias 3 dias por semana. Nos outros, você trabalha como técnico agropecuário freelance."
+      },
+      {
+        "slug": "irrigacao-drenagem",
+        "nome": "Irrigação e Drenagem",
+        "descricaoCurta": "Sistemas de irrigação para produção no semiárido. Essencial para o Piauí.",
+        "duracao": "2 anos",
+        "salarioMedio": "R$ 2.500 – R$ 6.000",
+        "narrativaEstudante": "Você está na aula prática de Hidráulica Aplicada do IFPI. Você está dimensionando um sistema de irrigação por gotejamento para 1 hectare de banana. Você calcula a vazão necessária, define o espaçamento dos gotejadores, dimensiona a tubulação principal e secundária, seleciona a bomba pelo ponto de operação. O professor pede para refazer com 2 hectares. Você percebe como o dimensionamento da bomba muda. Você aprende que água no semiárido é ouro — e jogar água fora por sistema mal dimensionado é desperdiçar o que não se pode desperdiçar.",
+        "narrativaProfissional": "Você é técnico de irrigação na empresa de desenvolvimento rural do governo do Piauí. Você assessora famílias de pequenos produtores na instalação e manutenção de sistemas de irrigação. Hoje você visitou uma família no Gurguéia que instalou gotejamento para 0,5 ha de hortaliças há 3 meses. A produção de alface e tomate foi suficiente para vender na feira local e para o PAA. A família triplicou a renda mensal. Você ajudou a tornar isso possível. Salário: R$ 4.500."
+      },
+      {
+        "slug": "tecnico-meio-ambiente",
+        "nome": "Técnico em Meio Ambiente",
+        "descricaoCurta": "Monitoramento ambiental, controle de poluição e gestão de resíduos.",
+        "duracao": "2 anos",
+        "salarioMedio": "R$ 2.000 – R$ 4.500",
+        "narrativaEstudante": "Você está no IFPI aprendendo sobre coleta e análise de amostras de água para monitoramento de qualidade de rios. Você coleta amostras do Rio Poti em 3 pontos distintos: antes da área urbana, durante e depois. Você analisa pH, DBO, coliformes totais e fecais. O ponto de coleta após a área urbana de Teresina tem DBO 12 vezes acima do limite da resolução CONAMA para rios de classe 2. Você documenta. Esses dados vão para o relatório da SEMAR-PI. O problema não é novo, mas documentar é o que permite que seja cobrado.",
+        "narrativaProfissional": "Você é técnico ambiental numa empresa cimenteira em Teresina. Você monitora as emissões atmosféricas da planta, o efluente líquido, o descarte de resíduos sólidos. Você garante que a empresa esteja dentro dos parâmetros da licença ambiental e prepara os relatórios periódicos para o IBAMA e a SEMAR. Hoje você coletou amostras de efluente do processo de fabricação para análise de metais pesados. Os resultados chegam em 5 dias. Se estiverem dentro dos limites, a empresa fica em conformidade. Se não estiverem, você tem 24h para acionar a diretoria e propor ação corretiva. Salário: R$ 3.800."
+      },
+      {
+        "slug": "tecnico-agroindustria",
+        "nome": "Técnico em Agroindústria",
+        "descricaoCurta": "Processamento de alimentos de origem agropecuária. Transformar produto bruto em produto de valor.",
+        "duracao": "2 anos",
+        "salarioMedio": "R$ 2.000 – R$ 4.500",
+        "narrativaEstudante": "Você está no laboratório de Processamento de Carnes do IFPI. Você está fabricando linguiça toscana artesanal: você pesa a carne e a gordura suína, adiciona os condimentos, mistura, embute na tripa, testa o ponto de sal. O professor avisa: a mistura de sal e nitrito precisa ser exata. Excesso de nitrito em produto final é infração sanitária e intoxicação para o consumidor. Você aprende que processamento de alimentos é ciência aplicada à saúde.",
+        "narrativaProfissional": "Você é técnico de agroindústria numa cooperativa de agricultores familiares de Picos que processa frutas do semiárido. Você supervisiona a fabricação de polpas de cajá, tamarindo e umbu que são vendidas para escolas e supermercados. Você controla a higiene do ambiente, os parâmetros de pasteurização, o envase e a rotulagem. Quando um lote de polpa vem com aspecto diferente, você para a produção, coleta amostra, envia para análise. A cooperativa perde um dia de produção mas não coloca produto ruim no mercado. Salário: R$ 3.200."
+      },
+      {
+        "slug": "producao-organica",
+        "nome": "Produção Orgânica",
+        "descricaoCurta": "Cultivo sem agrotóxicos com certificação. Mercado em expansão no Brasil e no mundo.",
+        "duracao": "1,5 anos",
+        "salarioMedio": "R$ 2.000 – R$ 5.500",
+        "narrativaEstudante": "Você está no curso de Produção Orgânica do SENAR em Teresina. O professor está explicando o processo de certificação orgânica: o que a empresa certificadora visita, o que precisa estar documentado, quanto tempo leva a conversão de convencional para orgânico. Você percebe que certificação não é burocracia — é o que garante ao consumidor que o produto é o que diz ser. A certificadora visita a propriedade, verifica os registros de manejo, analisa as amostras. Você aprende que produção orgânica de qualidade começa com documentação rigorosa.",
+        "narrativaProfissional": "Você tem uma horta orgânica certificada em Teresina que fornece para cestas semanais por assinatura e para dois restaurantes da cidade. Você cultiva 30 variedades de hortaliças e ervas aromáticas em 2.000 m². Hoje você colheu alface, rúcula, cebolinha, manjericão e tomate cereja. Amanhã você entrega 35 cestas semanais. Você conhece cada assinante pelo nome. Dois deles são celíacos e você separa itens especiais para eles. Faturamento mensal: R$ 9.800. Margem: 55%. Você ama saber que o que você cultiva chega direto na mesa de famílias."
+      },
+      {
+        "slug": "extrativismo-sustentavel",
+        "nome": "Extrativismo Sustentável",
+        "descricaoCurta": "Manejo e comercialização de produtos florestais não madeireiros: babaçu, buriti, caju e outros.",
+        "duracao": "2 anos",
+        "salarioMedio": "R$ 1.800 – R$ 4.000",
+        "narrativaEstudante": "Você está no curso de Extrativismo Sustentável da UFPI em campo em Caxias do Maranhão, região de transição cerrado-babaçual. O professor apresenta a cadeia do babaçu: extração manual pelas quebradeiras de coco, prensagem do leite de babaçu, produção de azeite, cosméticos, farinha do endosperma. Você acompanha uma família extrativista por um dia: você quebrou 200 cocos em 4 horas. As mulheres da família quebram 500 em menos. É trabalho duro que sustenta renda de comunidades inteiras. Você aprende que extrativismo sustentável é economia, cultura e direito ao mesmo tempo.",
+        "narrativaProfissional": "Você é técnica de desenvolvimento de produtos numa cooperativa de extrativistas de babaçu no Piauí. Você trabalha no desenvolvimento de novos produtos a partir do babaçu: azeite, leite vegetal, carvão ativado, cosméticos. Hoje você está testando uma receita de sabão artesanal com azeite de babaçu e lavanda que vai ser lançado para venda online. Você fez 5 lotes com diferentes proporções, avaliou espuma, dureza, aroma. O lote 3 ficou ideal. Você fotografa para o Instagram da cooperativa. Salário: R$ 3.200 mais participação nas vendas."
+      },
+      {
+        "slug": "gestao-propriedades-rurais",
+        "nome": "Gestão de Propriedades Rurais",
+        "descricaoCurta": "Administração de fazendas e propriedades do campo. Combina gestão e conhecimento agrícola.",
+        "duracao": "3 anos",
+        "salarioMedio": "R$ 2.800 – R$ 7.000",
+        "narrativaEstudante": "Você está na aula de Gestão Rural da UFPI. O professor apresenta o caso de uma fazenda familiar de 500 hectares no sertão piauiense que estava operando no prejuízo por 3 anos consecutivos: produzia bem mas não sabia gerenciar. O problema: sem controle de custos, sem planejamento de venda, sem gestão de estoque de insumos. Você analisa o caso, propõe as ferramentas de gestão básicas que transformariam o resultado. Você entende que no campo, quem não gerencia trabalha para o banco.",
+        "narrativaProfissional": "Você é gerente de uma propriedade rural de gado e grãos em Ribeiro Gonçalves com 1.200 hectares. Você coordena uma equipe de 8 funcionários, toma as decisões de manejo junto com o proprietário, controla todos os custos em planilha gerencial. Este mês você implantou o controle individual de custos por vaca de cria: agora o proprietário sabe qual vaca está gerando lucro e qual está gerando prejuízo. Essa informação vai guiar o descarte do rebanho neste ano. Salário: R$ 7.800."
+      }
+    ]
+  }
+]
