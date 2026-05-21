@@ -50,3 +50,4 @@ _docx_extracted.txt
 
 # Claude Code (ferramentas locais)
 .claude/
+.docs/*
