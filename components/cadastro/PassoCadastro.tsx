@@ -179,15 +179,37 @@ export default function PassoCadastro() {
 
   function validaPasso1(): boolean {
     const novos: Record<string, string> = {};
-    if (estado.nome.trim().length < 2) novos.nome = "Informe seu nome completo";
+    const nomeTrim = estado.nome.trim();
+    if (nomeTrim.length < 2) novos.nome = "Informe seu nome completo";
+    else if (nomeTrim.length > 100) novos.nome = "Nome muito longo (máximo 100 caracteres)";
+
     if (!estado.email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(estado.email))
       novos.email = "Informe um e-mail válido";
     if (estado.senha.length < 8) novos.senha = "A senha deve ter pelo menos 8 caracteres";
     if (estado.senha !== estado.confirmarSenha) novos.confirmarSenha = "As senhas não coincidem";
-    if (!estado.dataNascimento) novos.dataNascimento = "Informe a data de nascimento";
+
+    if (!estado.dataNascimento) {
+      novos.dataNascimento = "Informe a data de nascimento";
+    } else {
+      const nascimento = new Date(estado.dataNascimento);
+      const hoje = new Date();
+      if (isNaN(nascimento.getTime())) {
+        novos.dataNascimento = "Data de nascimento inválida";
+      } else if (nascimento > hoje) {
+        novos.dataNascimento = "A data de nascimento não pode estar no futuro";
+      } else {
+        const idade = Math.floor(
+          (hoje.getTime() - nascimento.getTime()) / (1000 * 60 * 60 * 24 * 365.25),
+        );
+        if (idade < 14) novos.dataNascimento = "Você precisa ter pelo menos 14 anos";
+        else if (idade > 30) novos.dataNascimento = "Idade fora do público do Légua (máximo 30 anos)";
+      }
+    }
+
     if (estado.cpf.replace(/\D/g, "").length !== 11) novos.cpf = "CPF deve ter 11 dígitos";
     else if (!validaCpfMath(estado.cpf))
       novos.cpf = "CPF inválido. Verifique os números digitados.";
+
     const wapp = estado.whatsapp.replace(/\D/g, "");
     if (wapp.length > 0 && (wapp.length < 10 || wapp.length > 11))
       novos.whatsapp = "WhatsApp inválido (10 ou 11 dígitos)";
@@ -280,10 +302,31 @@ export default function PassoCadastro() {
     }
   }
 
-  function avancar() {
-    if (passo === 1 && validaPasso1()) setPasso(2);
-    else if (passo === 2 && validaPasso2()) setPasso(3);
-    else if (passo === 3 && validaPasso3()) {
+  async function avancar() {
+    if (passo === 1) {
+      if (!validaPasso1()) return;
+
+      // Verifica no servidor se o CPF ja esta cadastrado
+      try {
+        const resp = await fetch("/api/estudantes/verificar-cpf", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ cpf: estado.cpf }),
+        });
+        const data = (await resp.json()) as { existe: boolean };
+        if (data.existe) {
+          setErros({ cpf: "Já existe um cadastro com esse CPF." });
+          return;
+        }
+      } catch {
+        setErros({ cpf: "Não foi possível verificar o CPF agora. Tente novamente." });
+        return;
+      }
+
+      setPasso(2);
+    } else if (passo === 2 && validaPasso2()) {
+      setPasso(3);
+    } else if (passo === 3 && validaPasso3()) {
       setPasso(4);
       setPerguntaDiscIdx(0);
     }
@@ -334,6 +377,7 @@ export default function PassoCadastro() {
             id="nome"
             className="input"
             type="text"
+            maxLength={100}
             value={estado.nome}
             onChange={(e) => atualiza("nome", e.target.value)}
             autoComplete="name"
