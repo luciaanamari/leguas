@@ -4,6 +4,7 @@ import { lerSessaoEstudante } from "@/lib/auth";
 import LoginEstudanteForm from "@/components/cadastro/LoginEstudanteForm";
 
 export const metadata = { title: "Entrar — Légua" };
+export const dynamic = "force-dynamic";
 
 export default async function EntrarPage() {
   if (await lerSessaoEstudante()) redirect("/trilhas");

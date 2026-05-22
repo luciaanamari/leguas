@@ -8,6 +8,8 @@ export const metadata = {
   robots: { index: false, follow: false },
 };
 
+export const dynamic = "force-dynamic";
+
 type SearchParams = Promise<{ redirect?: string }>;
 
 export default async function AdminLoginPage({ searchParams }: { searchParams: SearchParams }) {

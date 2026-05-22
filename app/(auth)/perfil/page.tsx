@@ -4,7 +4,7 @@ import { prisma } from "@/lib/db";
 import { lerSessaoEstudante } from "@/lib/auth";
 import EditarPerfilForm from "@/components/perfil/EditarPerfilForm";
 import ApagarSimulacao from "@/components/perfil/ApagarSimulacao";
-import { tituloDiscArea } from "@/lib/data/quiz-disc";
+import { tituloDiscArea, type DiscLetra } from "@/lib/data/quiz-disc";
 
 const labelAnoEscolar: Record<string, string> = {
   PRIMEIRO: "1º ano",
@@ -100,7 +100,7 @@ export default async function PerfilPage() {
   const areaDominante = (Object.entries(areas) as ["HUMANAS" | "EXATAS" | "BIOLOGICAS", number][])
     .sort((a, b) => b[1] - a[1])[0]?.[0] ?? "HUMANAS";
 
-  const tituloPerfil = tituloDiscArea[estudante.discPerfil][areaDominante];
+  const tituloPerfil = tituloDiscArea[estudante.discPerfil as DiscLetra][areaDominante];
 
   const simulacoes = await prisma.simulacao.findMany({
     where: { estudanteId: sessao.sub },
