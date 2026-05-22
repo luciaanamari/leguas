@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import { cursosTecnicos} from "@/lib/data/cursos-tecnicos";
 
 interface Estudante {
   nome: string;
@@ -145,14 +146,20 @@ export default function EditarPerfilForm({ estudante }: { estudante: Estudante }
         </div>
       </div>
 
-      <div>
+         <div>
         <label style={labelStyle}>Curso técnico (se houver)</label>
-        <input
+        <select
           style={inputStyle}
           value={form.cursoTecnico ?? ""}
           onChange={(e) => mudar("cursoTecnico", e.target.value)}
-          placeholder="Deixe em branco se não tiver"
-        />
+        >
+          <option value="">Não faço nenhum</option>
+          {cursosTecnicos.map((c) => (
+            <option key={c.slug} value={c.slug}>
+              {c.nome}
+            </option>
+          ))}
+        </select>
       </div>
 
       {erro && (
