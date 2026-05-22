@@ -1,5 +1,6 @@
 import { redirect } from "next/navigation";
 import Link from "next/link";
+import Image from "next/image";
 import { lerSessaoEstudante } from "@/lib/auth";
 import { prisma } from "@/lib/db";
 import LogoutButton from "@/components/ui/LogoutButton";
@@ -37,13 +38,19 @@ export default async function AuthLayout({ children }: { children: React.ReactNo
           <Link
             href="/trilhas"
             style={{
-              color: "var(--color-text)",
+              display: "flex",
+              alignItems: "center",
               textDecoration: "none",
-              fontWeight: 700,
-              letterSpacing: "0.04em",
             }}
+            aria-label="Légua — voltar para o mapa de trilhas"
           >
-            Légua
+            <Image
+              src="/images/logo.svg"
+              alt="Légua"
+              width={80}
+              height={80}
+              priority
+            />
           </Link>
           <nav style={{ display: "flex", gap: "1rem", alignItems: "center" }}>
             <Link href="/trilhas" style={{ color: "var(--color-text)" }}>

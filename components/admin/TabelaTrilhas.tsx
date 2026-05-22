@@ -1,5 +1,13 @@
 import Link from "next/link";
-import type { Trilha } from "@prisma/client";
+
+type Trilha = {
+  id: string;
+  ordem: number;
+  titulo: string;
+  slug: string;
+  modalidade: string;
+  ativo: boolean;
+};
 
 type Props = {
   trilhas: Trilha[];
