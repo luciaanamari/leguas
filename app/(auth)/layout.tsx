@@ -5,6 +5,8 @@ import { lerSessaoEstudante } from "@/lib/auth";
 import { prisma } from "@/lib/db";
 import LogoutButton from "@/components/ui/LogoutButton";
 
+export const dynamic = "force-dynamic";
+
 export default async function AuthLayout({ children }: { children: React.ReactNode }) {
   const sessao = await lerSessaoEstudante();
   if (!sessao) redirect("/entrar");
