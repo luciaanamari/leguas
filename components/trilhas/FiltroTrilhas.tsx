@@ -1,38 +1,38 @@
 "use client";
 
 import { useRouter } from "next/navigation";
-import type { ModalidadeTrilha } from "@prisma/client";
+
+export type GrupoTrilha = "superior" | "tecnico" | "concurso" | "mercado";
 
 type Props = {
-  selecionada: ModalidadeTrilha | null;
+  selecionado: GrupoTrilha | null;
 };
 
-const opcoes: { valor: ModalidadeTrilha; rotulo: string }[] = [
-  { valor: "PRESENCIAL", rotulo: "Presencial" },
-  { valor: "EAD", rotulo: "EAD" },
-  { valor: "TECNICO", rotulo: "Técnico" },
-  { valor: "CONCURSO", rotulo: "Concurso" },
-  { valor: "MERCADO", rotulo: "Mercado" },
+const opcoes: { valor: GrupoTrilha; rotulo: string }[] = [
+  { valor: "superior", rotulo: "Ensino Superior" },
+  { valor: "tecnico", rotulo: "Técnico" },
+  { valor: "concurso", rotulo: "Concurso Público" },
+  { valor: "mercado", rotulo: "Mercado Direto" },
 ];
 
-export default function FiltroTrilhas({ selecionada }: Props) {
+export default function FiltroTrilhas({ selecionado }: Props) {
   const router = useRouter();
 
-  function selecionar(m: ModalidadeTrilha | null) {
-    if (m) router.push(`/trilhas?modalidade=${m.toLowerCase()}`);
+  function selecionar(g: GrupoTrilha | null) {
+    if (g) router.push(`/trilhas?grupo=${g}`);
     else router.push(`/trilhas`);
   }
 
   return (
     <div
       role="group"
-      aria-label="Filtrar trilhas por modalidade"
+      aria-label="Filtrar trilhas por grupo"
       style={{ display: "flex", flexWrap: "wrap", gap: "0.5rem" }}
     >
       <button
         type="button"
         onClick={() => selecionar(null)}
-        className={selecionada === null ? "btn btn-primary" : "btn btn-ghost"}
+        className={selecionado === null ? "btn btn-primary" : "btn btn-ghost"}
         style={{ minHeight: 38, padding: "0.4rem 0.9rem", fontSize: "0.9rem" }}
       >
         Todos
@@ -42,9 +42,9 @@ export default function FiltroTrilhas({ selecionada }: Props) {
           key={o.valor}
           type="button"
           onClick={() => selecionar(o.valor)}
-          className={selecionada === o.valor ? "btn btn-primary" : "btn btn-ghost"}
+          className={selecionado === o.valor ? "btn btn-primary" : "btn btn-ghost"}
           style={{ minHeight: 38, padding: "0.4rem 0.9rem", fontSize: "0.9rem" }}
-          aria-pressed={selecionada === o.valor}
+          aria-pressed={selecionado === o.valor}
         >
           {o.rotulo}
         </button>
