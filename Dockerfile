@@ -31,15 +31,23 @@ RUN addgroup --system --gid 1001 nodejs \
 COPY --from=builder /app/public ./public
 COPY --from=builder --chown=nextjs:nodejs /app/.next/standalone ./
 COPY --from=builder --chown=nextjs:nodejs /app/.next/static ./.next/static
-COPY --from=builder /app/prisma ./prisma
-COPY --from=builder /app/node_modules/.prisma ./node_modules/.prisma
-COPY --from=builder /app/node_modules/@prisma ./node_modules/@prisma
+
+# Override the standalone minimal node_modules with the full one from builder.
+# Required so the entrypoint can call `npx prisma migrate deploy` and `npx tsx prisma/seed.ts`.
+COPY --from=builder --chown=nextjs:nodejs /app/node_modules ./node_modules
+
+COPY --from=builder --chown=nextjs:nodejs /app/prisma ./prisma
+COPY --from=builder --chown=nextjs:nodejs /app/prisma.config.ts ./prisma.config.ts
+
+COPY --chown=nextjs:nodejs scripts/docker-entrypoint.sh ./scripts/docker-entrypoint.sh
+RUN chmod +x ./scripts/docker-entrypoint.sh
 
 USER nextjs
 EXPOSE 3000
 ENV PORT=3000
 ENV HOSTNAME=0.0.0.0
 
+ENTRYPOINT ["sh", "/app/scripts/docker-entrypoint.sh"]
 CMD ["node", "server.js"]
 
 # ----- Development (alvo separado, usado pelo docker-compose) -----
