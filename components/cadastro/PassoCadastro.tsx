@@ -197,12 +197,6 @@ export default function PassoCadastro() {
         novos.dataNascimento = "Data de nascimento inválida";
       } else if (nascimento > hoje) {
         novos.dataNascimento = "A data de nascimento não pode estar no futuro";
-      } else {
-        const idade = Math.floor(
-          (hoje.getTime() - nascimento.getTime()) / (1000 * 60 * 60 * 24 * 365.25),
-        );
-        if (idade < 14) novos.dataNascimento = "Você precisa ter pelo menos 14 anos";
-        else if (idade > 30) novos.dataNascimento = "Idade fora do público do Légua (máximo 30 anos)";
       }
     }
 

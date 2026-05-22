@@ -41,12 +41,9 @@ export const cadastroSchema = z
       .regex(/^\d{4}-\d{2}-\d{2}$/, "Data inválida")
       .refine((s) => {
         const d = new Date(s);
-        const minima = new Date();
-        minima.setFullYear(minima.getFullYear() - 100);
-        const maxima = new Date();
-        maxima.setFullYear(maxima.getFullYear() - 13);
-        return d >= minima && d <= maxima;
-      }, "Data de nascimento inválida"),
+        if (isNaN(d.getTime())) return false;
+        return d <= new Date();
+      }, "A data de nascimento não pode estar no futuro"),
     cpf: z
       .string()
       .transform(cpfDigits)
