@@ -32,7 +32,7 @@ services:
       - .env.local
     environment:
       # Sobrescreve DATABASE_URL para apontar para o container db (e nao localhost)
-      DATABASE_URL: postgresql://${POSTGRES_USER:-legua}:${POSTGRES_PASSWORD:-senha}@db:5432/${POSTGRES_DB:-legua}
+      DATABASE_URL: postgresql://${POSTGRES_USER:-legua}:${POSTGRES_PASSWORD:-senha}@legua-db:5432/${POSTGRES_DB:-legua}
     ports:
       - "3000:3000"
     volumes:
