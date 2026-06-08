@@ -23,10 +23,10 @@ const rotuloArea: Record<string, string> = {
 };
 
 const rotuloDisc: Record<string, string> = {
-  D: "D — Decisor",
-  I: "I — Influenciador",
-  S: "S — Estável",
-  C: "C — Analítico",
+  D: "D - Decisor",
+  I: "I - Influenciador",
+  S: "S - Estável",
+  C: "C - Analítico",
 };
 
 const rotuloRenda: Record<string, string> = {
@@ -65,11 +65,11 @@ const rotuloResposta: Record<string, string> = {
 };
 
 const rotuloCorrelacao: Record<string, string> = {
-  DIRETA: "Direta — curso técnico está na lista de carreiras relacionadas",
+  DIRETA: "Direta - curso técnico está na lista de carreiras relacionadas",
   TRANSVERSAL:
-    "Transversal — curso simulado pode atuar no setor do seu curso técnico",
-  AREA: "Indireta — mesma área de conhecimento, mas curso diferente",
-  NENHUMA: "Nenhuma — não influenciou a pontuação",
+    "Transversal - curso simulado pode atuar no setor do seu curso técnico",
+  AREA: "Indireta - mesma área de conhecimento, mas curso diferente",
+  NENHUMA: "Nenhuma - não influenciou a pontuação",
 };
 
 function Linha({
@@ -289,7 +289,7 @@ export default function ComoFoiCalculado({
             {explicacao.curso.respostas.map((r) => (
               <Linha
                 key={r.perguntaId}
-                rotulo={`Pergunta ${r.perguntaId} (peso ${r.peso}) — você respondeu "${rotuloResposta[r.resposta]}"`}
+                rotulo={`Pergunta ${r.perguntaId} (peso ${r.peso}) - você respondeu "${rotuloResposta[r.resposta]}"`}
                 valor={`${r.pontosGanhos} / ${r.peso} pts`}
               />
             ))}
@@ -342,7 +342,7 @@ export default function ComoFoiCalculado({
           {/* Contexto do cadastro */}
           <Bloco
             titulo="Contexto do seu cadastro"
-            subtitulo="Não afeta a nota — gera os blocos de orientação acima"
+            subtitulo="Não afeta a nota - gera os blocos de orientação acima"
           >
             <Linha rotulo="Trilha simulada" valor={trilhaTitulo} />
             <Linha rotulo="Ano escolar" valor={rotuloAno[anoEscolar] ?? anoEscolar} />

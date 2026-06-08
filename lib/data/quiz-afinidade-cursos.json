@@ -1,38 +1,38 @@
 {
   "medicina": [
     { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você consegue tomar decisões rápidas e firmes em situações de pressão?" },
-    { "id": 1, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você se sente bem cuidando de pessoas doentes ou em sofrimento — sem se sentir enjoado ou angustiado?" },
+    { "id": 1, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você se sente bem cuidando de pessoas doentes ou em sofrimento - sem se sentir enjoado ou angustiado?" },
     { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você tem disciplina para estudar muito por anos seguidos, mesmo sem ver resultado imediato?" }
   ],
   "enfermagem": [
     { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você consegue trabalhar bem em turnos, incluindo noites e finais de semana, se necessário?" },
-    { "id": 1, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você se sente confortável em ambientes hospitalares — sangue, procedimentos médicos e dor não te impedem de agir?" },
-    { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você gosta de cuidar de alguém de forma prática — não só emocional, mas também físico?" }
+    { "id": 1, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você se sente confortável em ambientes hospitalares - sangue, procedimentos médicos e dor não te impedem de agir?" },
+    { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você gosta de cuidar de alguém de forma prática - não só emocional, mas também físico?" }
   ],
   "farmacia": [
     { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você se sente confortável orientando pessoas sobre medicamentos e tratamentos de saúde?" },
     { "id": 1, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você tem interesse em química, substâncias e como os medicamentos funcionam no organismo?" },
-    { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você gosta de trabalho laboratorial — experimentos, análises e atenção a detalhes precisos?" }
+    { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você gosta de trabalho laboratorial - experimentos, análises e atenção a detalhes precisos?" }
   ],
   "odontologia": [
     { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você tolera o som da broca, o cheiro do consultório odontológico e a proximidade física com o paciente?" },
-    { "id": 1, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você tem destreza manual fina — consegue fazer movimentos pequenos e precisos por longos períodos sem perder firmeza?" },
-    { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você se sente bem em conduzir o medo do outro — explicar, acalmar e seguir mesmo com o paciente tenso na cadeira?" }
+    { "id": 1, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você tem destreza manual fina - consegue fazer movimentos pequenos e precisos por longos períodos sem perder firmeza?" },
+    { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você se sente bem em conduzir o medo do outro - explicar, acalmar e seguir mesmo com o paciente tenso na cadeira?" }
   ],
   "fisioterapia": [
-    { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você tem boa percepção corporal — entende como o corpo se move e onde dói só observando alguém andar?" },
+    { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você tem boa percepção corporal - entende como o corpo se move e onde dói só observando alguém andar?" },
     { "id": 1, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você teria paciência para repetir um mesmo exercício com um paciente por semanas até ver evolução real?" },
-    { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você gosta de trabalhar fisicamente com pessoas — tocar, posicionar, conduzir movimentos manualmente?" }
+    { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você gosta de trabalhar fisicamente com pessoas - tocar, posicionar, conduzir movimentos manualmente?" }
   ],
   "biologia": [
-    { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você se interessa por como a vida funciona — célula, ecossistema, evolução — mais do que pela aplicação prática imediata?" },
+    { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você se interessa por como a vida funciona - célula, ecossistema, evolução - mais do que pela aplicação prática imediata?" },
     { "id": 1, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você se vê dando aula numa escola ou trabalhando em campo coletando dados durante meses até publicar uma pesquisa?" },
     { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você aceita que o salário inicial é modesto, mas o trabalho tem impacto científico e ambiental de longo prazo?" }
   ],
   "nutricao": [
     { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você consegue trabalhar com pessoas em momentos difíceis, como doenças ou distúrbios alimentares?" },
     { "id": 1, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você tem interesse em como os alimentos afetam o corpo e a saúde das pessoas?" },
-    { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você gosta de biologia e química — especialmente quando aplicadas ao funcionamento do corpo humano?" }
+    { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você gosta de biologia e química - especialmente quando aplicadas ao funcionamento do corpo humano?" }
   ],
   "psicologia": [
     { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você consegue ouvir histórias difíceis sem se deixar abalar emocionalmente a ponto de não conseguir ajudar?" },
@@ -45,24 +45,24 @@
     { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você é meticuloso a ponto de não errar uma pipetagem mesmo no fim de um plantão longo de análises?" }
   ],
   "educacao-fisica": [
-    { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você tem disposição física para passar o dia inteiro em movimento — quadra, academia, escola — em vez de sentado numa sala?" },
-    { "id": 1, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você gosta de ensinar movimento — corrigir postura, motivar alguém a passar do limite que se impôs, comemorar evolução de aluno?" },
-    { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você se importa em entender como o corpo responde ao exercício — biomecânica, fisiologia, treinamento esportivo?" }
+    { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você tem disposição física para passar o dia inteiro em movimento - quadra, academia, escola - em vez de sentado numa sala?" },
+    { "id": 1, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você gosta de ensinar movimento - corrigir postura, motivar alguém a passar do limite que se impôs, comemorar evolução de aluno?" },
+    { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você se importa em entender como o corpo responde ao exercício - biomecânica, fisiologia, treinamento esportivo?" }
   ],
   "fonoaudiologia": [
-    { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você presta atenção em como as pessoas falam — pronúncia, tom, fluidez — sem perceber que está prestando?" },
+    { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você presta atenção em como as pessoas falam - pronúncia, tom, fluidez - sem perceber que está prestando?" },
     { "id": 1, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você teria paciência para acompanhar uma criança que está aprendendo a falar do zero ou um idoso que perdeu a fala depois de AVC?" },
-    { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você se vê fazendo um trabalho que mistura clínica, ciência da linguagem e contato humano — e não é só uma das três?" }
+    { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você se vê fazendo um trabalho que mistura clínica, ciência da linguagem e contato humano - e não é só uma das três?" }
   ],
   "terapia-ocupacional": [
-    { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você consegue ver autonomia onde os outros vêem limitação — uma rampa, uma adaptação, um jeito novo de pegar a colher?" },
+    { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você consegue ver autonomia onde os outros vêem limitação - uma rampa, uma adaptação, um jeito novo de pegar a colher?" },
     { "id": 1, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você teria paciência para passar semanas reaprendendo com um paciente o que para nós é automático: vestir, comer, escovar os dentes?" },
-    { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você se importa em devolver dignidade a pessoas com deficiência ou em recuperação — mesmo que o avanço seja milimétrico por mês?" }
+    { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você se importa em devolver dignidade a pessoas com deficiência ou em recuperação - mesmo que o avanço seja milimétrico por mês?" }
   ],
   "medicina-veterinaria": [
-    { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você lida bem com animais agitados, com dor ou agressivos — sem ter medo nem perder o controle da situação?" },
+    { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você lida bem com animais agitados, com dor ou agressivos - sem ter medo nem perder o controle da situação?" },
     { "id": 1, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você aceita que parte do trabalho é dar má notícia para o dono e, em alguns casos, optar pela eutanásia humanizada?" },
-    { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você se interessa por anatomia e fisiologia comparada — cão, gato, boi, ave — e não só pelo lado fofo da profissão?" }
+    { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você se interessa por anatomia e fisiologia comparada - cão, gato, boi, ave - e não só pelo lado fofo da profissão?" }
   ],
   "servico-social": [
     { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você consegue olhar para um problema social grande (fome, violência, abandono) e ainda fazer o pequeno passo possível hoje, sem desistir?" },
@@ -70,32 +70,32 @@
     { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você aceita trabalhar com burocracia pesada (CRAS, CREAS, conselho tutelar) sabendo que documento bem feito é o que garante direito?" }
   ],
   "tecnico-enfermagem": [
-    { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você consegue seguir rotinas rigorosas com precisão — dose errada, horário errado ou procedimento trocado podem custar uma vida, e isso não te paralisa, te faz querer ser ainda mais cuidadoso?" },
-    { "id": 1, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você já imaginou estar num plantão de hospital às 3h da manhã, monitorando pacientes e aplicando medicação — e isso te parece algo que você conseguiria fazer sem entrar em colapso?" },
-    { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Quando você vê sangue, ferimento ou alguém em dor aguda, sua reação natural é querer agir e ajudar — não se afastar ou sentir tontura?" }
+    { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você consegue seguir rotinas rigorosas com precisão - dose errada, horário errado ou procedimento trocado podem custar uma vida, e isso não te paralisa, te faz querer ser ainda mais cuidadoso?" },
+    { "id": 1, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você já imaginou estar num plantão de hospital às 3h da manhã, monitorando pacientes e aplicando medicação - e isso te parece algo que você conseguiria fazer sem entrar em colapso?" },
+    { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Quando você vê sangue, ferimento ou alguém em dor aguda, sua reação natural é querer agir e ajudar - não se afastar ou sentir tontura?" }
   ],
   "tecnico-farmacia": [
-    { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você tem cuidado com prazo de validade, lote e nome de medicamento — coisas pequenas que outros ignoram mas mudam vidas?" },
+    { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você tem cuidado com prazo de validade, lote e nome de medicamento - coisas pequenas que outros ignoram mas mudam vidas?" },
     { "id": 1, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você se vê atrás do balcão de uma drogaria orientando uma senhora sobre como tomar três medicamentos diferentes sem confundir?" },
     { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você aceita decorar nomes complicados de princípios ativos e seguir checklists rigorosos de dispensação todos os dias?" }
   ],
   "tecnico-radiologia": [
     { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você consegue posicionar com calma um paciente com dor para fazer um raio-X, mesmo quando ele só quer terminar logo?" },
-    { "id": 1, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você tem disciplina para seguir protocolos de radioproteção todo dia — chumbo, dosímetro, distância — sem relaxar com o tempo?" },
-    { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você gosta de tecnologia médica — tomógrafo, ressonância, mamógrafo — e tem curiosidade de entender como cada equipamento funciona?" }
+    { "id": 1, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você tem disciplina para seguir protocolos de radioproteção todo dia - chumbo, dosímetro, distância - sem relaxar com o tempo?" },
+    { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você gosta de tecnologia médica - tomógrafo, ressonância, mamógrafo - e tem curiosidade de entender como cada equipamento funciona?" }
   ],
   "tecnico-analises-clinicas": [
     { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você tem mão firme e nervo estável para colher sangue em criança, em idoso de veia difícil, em paciente apavorado?" },
     { "id": 1, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você se vê passando o dia num laboratório, identificando microorganismos no microscópio e relatando resultados que vão guiar um diagnóstico?" },
-    { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você aceita que erro de identificação de amostra ou contaminação cruzada pode estragar diagnóstico — e por isso o protocolo é sagrado?" }
+    { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você aceita que erro de identificação de amostra ou contaminação cruzada pode estragar diagnóstico - e por isso o protocolo é sagrado?" }
   ],
   "tecnico-saude-bucal": [
-    { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você tem interesse genuíno na saúde bucal como área — não só como emprego, mas como algo que faz diferença na vida das pessoas, especialmente em cidades do interior?" },
-    { "id": 1, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você tem habilidade manual — consegue fazer coisas que exigem precisão e controle fino das mãos, como artesanato, desenho técnico ou montagem de peças pequenas?" },
-    { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você se sente confortável com a proximidade física que o trabalho odontológico exige — estar bem perto do paciente, trabalhar dentro da boca, lidar com saliva e sangue sem problema?" }
+    { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você tem interesse genuíno na saúde bucal como área - não só como emprego, mas como algo que faz diferença na vida das pessoas, especialmente em cidades do interior?" },
+    { "id": 1, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você tem habilidade manual - consegue fazer coisas que exigem precisão e controle fino das mãos, como artesanato, desenho técnico ou montagem de peças pequenas?" },
+    { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você se sente confortável com a proximidade física que o trabalho odontológico exige - estar bem perto do paciente, trabalhar dentro da boca, lidar com saliva e sangue sem problema?" }
   ],
   "tecnico-nutricao": [
-    { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você se importa com a alimentação coletiva — escola, hospital, refeitório — sabendo que uma refeição mal feita afeta dezenas?" },
+    { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você se importa com a alimentação coletiva - escola, hospital, refeitório - sabendo que uma refeição mal feita afeta dezenas?" },
     { "id": 1, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você aceita acordar cedo para conferir entrega de alimento na cozinha de uma escola, checar temperatura de geladeira e prever cardápio da semana?" },
     { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você tem atenção para padrões de higiene rigorosos e gosta de ensinar os colegas a manterem esses padrões mesmo na correria?" }
   ],
@@ -106,99 +106,99 @@
     { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você tem interesse em construções, estruturas e como as coisas são feitas na prática?" }
   ],
   "engenharia-eletrica": [
-    { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você tem paciência para entender um sistema invisível — corrente, tensão, campo elétrico — como se enxergasse com clareza?" },
+    { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você tem paciência para entender um sistema invisível - corrente, tensão, campo elétrico - como se enxergasse com clareza?" },
     { "id": 1, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você se vê dimensionando o sistema elétrico de um hospital, uma indústria ou um parque eólico, com responsabilidade por gente e equipamento?" },
-    { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você se interessa por energia renovável e modernização das redes — temas que vão dominar a indústria nos próximos 20 anos?" }
+    { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você se interessa por energia renovável e modernização das redes - temas que vão dominar a indústria nos próximos 20 anos?" }
   ],
   "engenharia-mecanica": [
-    { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você desmonta as coisas para entender — eletrodoméstico, motor, bicicleta — em vez de só usar?" },
-    { "id": 1, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você se vê projetando peças que vão girar, vibrar e suportar carga real — não só no papel, mas na linha de produção?" },
-    { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você aceita trabalhar em chão de fábrica com barulho, óleo e poeira — não só atrás de um computador?" }
+    { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você desmonta as coisas para entender - eletrodoméstico, motor, bicicleta - em vez de só usar?" },
+    { "id": 1, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você se vê projetando peças que vão girar, vibrar e suportar carga real - não só no papel, mas na linha de produção?" },
+    { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você aceita trabalhar em chão de fábrica com barulho, óleo e poeira - não só atrás de um computador?" }
   ],
   "engenharia-producao": [
-    { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você se incomoda quando vê um processo desperdiçando tempo, material ou esforço — e mentalmente já reorganiza tudo?" },
+    { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você se incomoda quando vê um processo desperdiçando tempo, material ou esforço - e mentalmente já reorganiza tudo?" },
     { "id": 1, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você se vê olhando uma linha de produção e identificando o gargalo que ninguém percebeu nos últimos 6 meses?" },
     { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você consegue equilibrar habilidades técnicas (matemática, estatística) com gestão de pessoas e processos?" }
   ],
   "arquitetura-urbanismo": [
     { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você gosta de desenhar, projetar ou criar coisas visuais com atenção aos detalhes?" },
     { "id": 1, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você tem senso estético e gosta de pensar em como os espaços deveriam ser organizados e parecer?" },
-    { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você consegue combinar criatividade com precisão técnica — um projeto precisa ser bonito e funcionar?" }
+    { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você consegue combinar criatividade com precisão técnica - um projeto precisa ser bonito e funcionar?" }
   ],
   "matematica": [
-    { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você fica satisfeito quando entende a demonstração de um teorema — não só sabe usá-lo, mas entende por que ele é verdade?" },
+    { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você fica satisfeito quando entende a demonstração de um teorema - não só sabe usá-lo, mas entende por que ele é verdade?" },
     { "id": 1, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você se vê dando aula numa escola pública ou cursando mestrado para fazer pesquisa em matemática pura ou aplicada?" },
-    { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você aceita que a matemática brasileira hoje tem grande demanda no ensino básico — e que essa pode ser sua porta de entrada e impacto real?" }
+    { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você aceita que a matemática brasileira hoje tem grande demanda no ensino básico - e que essa pode ser sua porta de entrada e impacto real?" }
   ],
   "fisica": [
-    { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você sente curiosidade pela natureza no nível mais fundamental — por que o céu é azul, por que tempo passa diferente em altitude?" },
+    { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você sente curiosidade pela natureza no nível mais fundamental - por que o céu é azul, por que tempo passa diferente em altitude?" },
     { "id": 1, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você se vê alternando entre sala de aula, laboratório e estudo individual por anos para se tornar pesquisador ou professor?" },
     { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você lida bem com o fato de que muitas conclusões em física vêm de cálculo e simulação, não de experimento que se vê a olho nu?" }
   ],
   "quimica": [
-    { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você gosta de trabalhar de jaleco, pipeta e luva — e a balança analítica te parece um instrumento poético em vez de chato?" },
+    { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você gosta de trabalhar de jaleco, pipeta e luva - e a balança analítica te parece um instrumento poético em vez de chato?" },
     { "id": 1, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você se vê dentro de uma indústria de tinta, cosmético ou medicamento controlando qualidade lote a lote, hora a hora?" },
-    { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você é meticuloso com norma de segurança — gases tóxicos, descarte de reagente, ácido concentrado — sem nunca tratar como excesso?" }
+    { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você é meticuloso com norma de segurança - gases tóxicos, descarte de reagente, ácido concentrado - sem nunca tratar como excesso?" }
   ],
   "engenharia-ambiental": [
-    { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você se importa com saneamento, qualidade da água e resíduo sólido — mesmo sabendo que esse trabalho dá menos visibilidade do que outras engenharias?" },
+    { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você se importa com saneamento, qualidade da água e resíduo sólido - mesmo sabendo que esse trabalho dá menos visibilidade do que outras engenharias?" },
     { "id": 1, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você se vê visitando aterro, estação de tratamento e indústria poluidora para autuar, orientar ou projetar solução técnica?" },
-    { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você aceita lidar com regulamentação ambiental complexa, audiência pública e conflitos de interesse — sem desistir do propósito?" }
+    { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você aceita lidar com regulamentação ambiental complexa, audiência pública e conflitos de interesse - sem desistir do propósito?" }
   ],
   "engenharia-quimica": [
-    { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você consegue pensar em escala — o que funciona num béquer pode falhar num reator de 5 toneladas, e isso te interessa em vez de assustar?" },
+    { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você consegue pensar em escala - o que funciona num béquer pode falhar num reator de 5 toneladas, e isso te interessa em vez de assustar?" },
     { "id": 1, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você se vê numa indústria petroquímica, sucroalcooleira ou de fertilizantes operando processo contínuo, lendo gráficos e tomando decisão rápida?" },
-    { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você aceita morar perto de polo industrial para entrar nessa carreira — Camaçari, Suape, Triunfo — e construir trajetória nesse contexto?" }
+    { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você aceita morar perto de polo industrial para entrar nessa carreira - Camaçari, Suape, Triunfo - e construir trajetória nesse contexto?" }
   ],
   "estatistica": [
-    { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você duvida de dado solto — e quer ver intervalo de confiança, amostragem e premissa antes de aceitar qualquer afirmação numérica?" },
+    { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você duvida de dado solto - e quer ver intervalo de confiança, amostragem e premissa antes de aceitar qualquer afirmação numérica?" },
     { "id": 1, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você se vê trabalhando no IBGE, num banco, ou num laboratório clínico decifrando dados que mudam decisão pública e privada?" },
-    { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você gosta de programação aplicada — R, Python — e enxerga a estatística como ponte entre matemática e mundo real?" }
+    { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você gosta de programação aplicada - R, Python - e enxerga a estatística como ponte entre matemática e mundo real?" }
   ],
   "engenharia-computacao": [
-    { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você gosta tanto de hardware quanto de software — e quer entender o silício até o aplicativo final?" },
-    { "id": 1, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você se vê projetando o cérebro de um drone, de um carro autônomo ou de um equipamento médico — onde código e circuito vivem juntos?" },
+    { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você gosta tanto de hardware quanto de software - e quer entender o silício até o aplicativo final?" },
+    { "id": 1, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você se vê projetando o cérebro de um drone, de um carro autônomo ou de um equipamento médico - onde código e circuito vivem juntos?" },
     { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você aceita que esse curso é um dos mais densos da engenharia, com física, eletrônica, programação e matemática pesada em paralelo?" }
   ],
   "geociencias": [
-    { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você acha empolgante a ideia de campo — andar em afloramento de rocha, mapear bacia, coletar amostra em região remota do Brasil?" },
-    { "id": 1, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você se vê trabalhando em mineração, prospecção de petróleo, hidrogeologia ou risco geológico — áreas técnicas com salário acima da média?" },
+    { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você acha empolgante a ideia de campo - andar em afloramento de rocha, mapear bacia, coletar amostra em região remota do Brasil?" },
+    { "id": 1, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você se vê trabalhando em mineração, prospecção de petróleo, hidrogeologia ou risco geológico - áreas técnicas com salário acima da média?" },
     { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você tem disposição para passar dias fora de casa em expedição e equilibrar isso com escritório, software e laudo técnico?" }
   ],
   "meteorologia": [
-    { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você consegue olhar para o céu e tentar adivinhar o tempo antes mesmo de abrir o aplicativo — e isso te diverte?" },
+    { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você consegue olhar para o céu e tentar adivinhar o tempo antes mesmo de abrir o aplicativo - e isso te diverte?" },
     { "id": 1, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você se vê analisando imagem de satélite, modelo numérico e prevendo chuva para defesa civil, agricultura ou aviação?" },
-    { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você lida com o peso de errar previsão num cenário climático extremo — sem entrar em paralisia e seguir refinando seu modelo?" }
+    { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você lida com o peso de errar previsão num cenário climático extremo - sem entrar em paralisia e seguir refinando seu modelo?" }
   ],
   "tecnico-eletrotecnica": [
     { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você não tem medo de subir num poste, abrir um quadro de força ou trabalhar com cabos energizados depois do treinamento de segurança?" },
-    { "id": 1, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você se vê fazendo manutenção elétrica em fábrica, hospital ou parque solar — e gosta da ideia de resolver pane crítica em tempo real?" },
-    { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você respeita procedimento de segurança ao ponto de parar uma intervenção se algo não está em conformidade — mesmo sob pressão de prazo?" }
+    { "id": 1, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você se vê fazendo manutenção elétrica em fábrica, hospital ou parque solar - e gosta da ideia de resolver pane crítica em tempo real?" },
+    { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você respeita procedimento de segurança ao ponto de parar uma intervenção se algo não está em conformidade - mesmo sob pressão de prazo?" }
   ],
   "tecnico-edificacoes": [
-    { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você consegue ler um desenho técnico ou uma planta baixa e imaginar como aquele espaço vai ficar na prática — ou teria facilidade para aprender isso?" },
-    { "id": 1, "peso": 2, "fase": "PROFISSIONAL", "texto": "Quando você passa por uma obra ou construção, você tende a olhar com curiosidade — como está sendo feito, o que está sustentando aquilo, se vai ficar resistente?" },
-    { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você não tem problema em trabalhar exposto ao sol, à poeira e ao barulho de obra — e prefere um dia movimentado no campo a ficar horas sentado na frente de uma tela?" }
+    { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você consegue ler um desenho técnico ou uma planta baixa e imaginar como aquele espaço vai ficar na prática - ou teria facilidade para aprender isso?" },
+    { "id": 1, "peso": 2, "fase": "PROFISSIONAL", "texto": "Quando você passa por uma obra ou construção, você tende a olhar com curiosidade - como está sendo feito, o que está sustentando aquilo, se vai ficar resistente?" },
+    { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você não tem problema em trabalhar exposto ao sol, à poeira e ao barulho de obra - e prefere um dia movimentado no campo a ficar horas sentado na frente de uma tela?" }
   ],
   "tecnico-quimica": [
-    { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você tem o hábito de seguir receita ao pé da letra — quantidade, tempo, temperatura — e entende que improvisar em laboratório é receita para acidente?" },
-    { "id": 1, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você se vê analisando lote de produto numa indústria — química, farmacêutica, alimentícia — e bloqueando a saída se algo estiver fora do padrão?" },
+    { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você tem o hábito de seguir receita ao pé da letra - quantidade, tempo, temperatura - e entende que improvisar em laboratório é receita para acidente?" },
+    { "id": 1, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você se vê analisando lote de produto numa indústria - química, farmacêutica, alimentícia - e bloqueando a saída se algo estiver fora do padrão?" },
     { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você aceita usar EPI o tempo todo, manipular reagente perigoso e descartar resíduo com rastreabilidade?" }
   ],
   "tecnico-mecanica": [
-    { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você tem mão boa para ferramenta — chave de fenda, paquímetro, torno — e aprende observando alguém mais experiente operar?" },
+    { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você tem mão boa para ferramenta - chave de fenda, paquímetro, torno - e aprende observando alguém mais experiente operar?" },
     { "id": 1, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você se vê na manutenção de máquina pesada, motor industrial ou linha automatizada, com graxa nas mãos e diagnóstico afiado?" },
-    { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você prefere o trabalho que tem entrega tangível no fim do dia — peça torneada, máquina rodando — a tarefa abstrata?" }
+    { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você prefere o trabalho que tem entrega tangível no fim do dia - peça torneada, máquina rodando - a tarefa abstrata?" }
   ],
   "tecnico-seguranca-trabalho": [
-    { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você tem disciplina para estudar normas técnicas e regulamentações — como as NRs do Ministério do Trabalho — de forma autônoma, sabendo que esse conhecimento vai proteger vidas?" },
-    { "id": 1, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você tem o hábito de notar riscos que outras pessoas ignoram — fio desencapado, piso escorregadio, extintores vencidos, máquina sem proteção — e sente vontade de alertar ou corrigir?" },
-    { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você se vê como alguém que gosta de ajudar pessoas a trabalhar melhor e com mais segurança — mesmo que isso signifique falar o que os outros não querem ouvir?" }
+    { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você tem disciplina para estudar normas técnicas e regulamentações - como as NRs do Ministério do Trabalho - de forma autônoma, sabendo que esse conhecimento vai proteger vidas?" },
+    { "id": 1, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você tem o hábito de notar riscos que outras pessoas ignoram - fio desencapado, piso escorregadio, extintores vencidos, máquina sem proteção - e sente vontade de alertar ou corrigir?" },
+    { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você se vê como alguém que gosta de ajudar pessoas a trabalhar melhor e com mais segurança - mesmo que isso signifique falar o que os outros não querem ouvir?" }
   ],
   "engenharia-sanitaria": [
-    { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você consegue se importar com sistema de esgoto, drenagem urbana e resíduo — temas pouco glamurosos mas essenciais para saúde pública?" },
+    { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você consegue se importar com sistema de esgoto, drenagem urbana e resíduo - temas pouco glamurosos mas essenciais para saúde pública?" },
     { "id": 1, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você se vê projetando estação de tratamento de água numa cidade do interior, sabendo que isso muda indicador de mortalidade infantil?" },
-    { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você aceita lidar com gestão pública lenta, licitação travada e contrato de empreiteira — sem perder o foco no que precisa ser entregue?" }
+    { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você aceita lidar com gestão pública lenta, licitação travada e contrato de empreiteira - sem perder o foco no que precisa ser entregue?" }
   ],
 
   "direito": [
@@ -207,19 +207,19 @@
     { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você tem paciência para ler textos longos e complexos, como leis e documentos jurídicos?" }
   ],
   "historia": [
-    { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você fica satisfeito quando entende por que um evento aconteceu — não só a data, mas o encadeamento das causas?" },
+    { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você fica satisfeito quando entende por que um evento aconteceu - não só a data, mas o encadeamento das causas?" },
     { "id": 1, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você se vê dando aula no ensino médio ou seguindo pesquisa acadêmica em programa de pós-graduação?" },
-    { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você aceita que o mercado natural é educação pública — e que esse trabalho forma cidadão tanto quanto historiador?" }
+    { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você aceita que o mercado natural é educação pública - e que esse trabalho forma cidadão tanto quanto historiador?" }
   ],
   "filosofia": [
-    { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você gosta de perguntar 'por quê?' até onde a pergunta vai — e não se contenta com resposta fácil?" },
+    { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você gosta de perguntar 'por quê?' até onde a pergunta vai - e não se contenta com resposta fácil?" },
     { "id": 1, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você se vê dando aula sobre ética, lógica e teoria do conhecimento para adolescentes que estão começando a pensar criticamente?" },
-    { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você aceita um campo profissional centrado em ensino, escrita e pesquisa — não em consultoria nem em prática direta de mercado?" }
+    { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você aceita um campo profissional centrado em ensino, escrita e pesquisa - não em consultoria nem em prática direta de mercado?" }
   ],
   "ciencias-sociais": [
-    { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você observa relações de poder, classe e cultura na sua cidade — e quer entender por que as coisas estão como estão?" },
+    { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você observa relações de poder, classe e cultura na sua cidade - e quer entender por que as coisas estão como estão?" },
     { "id": 1, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você se vê pesquisando, escrevendo e dando aula sobre temas como desigualdade, gênero, urbanização ou política pública?" },
-    { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você aceita um campo que mistura sociologia, antropologia e ciência política — sem se especializar antes do final da graduação?" }
+    { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você aceita um campo que mistura sociologia, antropologia e ciência política - sem se especializar antes do final da graduação?" }
   ],
   "servico-social-humanas": [
     { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você consegue olhar para um problema social grande (fome, violência, abandono) e ainda fazer o pequeno passo possível hoje, sem desistir?" },
@@ -228,7 +228,7 @@
   ],
   "relacoes-internacionais": [
     { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você acompanha geopolítica, conflito internacional e diplomacia com o mesmo interesse que outras pessoas dão para futebol?" },
-    { "id": 1, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você se vê trabalhando em comércio exterior, ONG internacional, ministério ou consultoria de risco-país — fora do circuito tradicional?" },
+    { "id": 1, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você se vê trabalhando em comércio exterior, ONG internacional, ministério ou consultoria de risco-país - fora do circuito tradicional?" },
     { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você tem ou desenvolveria fluência em inglês e ao menos uma segunda língua, sabendo que isso é pré-requisito da área?" }
   ],
   "pedagogia": [
@@ -237,266 +237,266 @@
     { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você tem paciência para lidar com crianças ou pessoas que aprendem mais devagar?" }
   ],
   "ciencia-politica": [
-    { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você consegue separar opinião pessoal de análise política — e entende por que um governo do partido oposto faz o que faz?" },
+    { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você consegue separar opinião pessoal de análise política - e entende por que um governo do partido oposto faz o que faz?" },
     { "id": 1, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você se vê assessorando mandato, fazendo análise eleitoral, pesquisa em instituto ou docência sobre democracia e instituições?" },
-    { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você lida bem com o fato de que essa área é altamente politizada — e mesmo assim a pesquisa séria continua sendo necessária?" }
+    { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você lida bem com o fato de que essa área é altamente politizada - e mesmo assim a pesquisa séria continua sendo necessária?" }
   ],
   "antropologia": [
-    { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você consegue suspender seu próprio julgamento ao conhecer uma cultura diferente — escutar primeiro, entender depois?" },
+    { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você consegue suspender seu próprio julgamento ao conhecer uma cultura diferente - escutar primeiro, entender depois?" },
     { "id": 1, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você se vê fazendo trabalho de campo em comunidade indígena, quilombola ou periférica por meses, observando e registrando?" },
     { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você aceita um campo profissional pequeno e majoritariamente acadêmico, mas com impacto em laudo, política e direitos?" }
   ],
   "arqueologia": [
     { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você se interessa por sítio arqueológico, escavação e o que pode ser aprendido com fragmento de cerâmica do século XII?" },
     { "id": 1, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você se vê trabalhando em escavação de campo, em laboratório de análise ou em laudo de licenciamento ambiental?" },
-    { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você aceita a realidade do mercado: vagas concentradas em pesquisa, museu, IPHAN e consultoria — não em emprego massivo?" }
+    { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você aceita a realidade do mercado: vagas concentradas em pesquisa, museu, IPHAN e consultoria - não em emprego massivo?" }
   ],
   "geografia": [
-    { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você gosta de mapa, escala e relação espaço–sociedade — onde uma cidade cresce e por quê?" },
+    { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você gosta de mapa, escala e relação espaço–sociedade - onde uma cidade cresce e por quê?" },
     { "id": 1, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você se vê dando aula numa escola pública ou trabalhando em geoprocessamento, planejamento urbano ou estudo ambiental?" },
     { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você consegue equilibrar duas habilidades muito diferentes: pensamento humano-social e ferramentas técnicas (GIS, sensoriamento remoto)?" }
   ],
   "gestao-publica": [
-    { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você se interessa por como governo funciona — orçamento, licitação, política pública — em vez de só reclamar?" },
+    { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você se interessa por como governo funciona - orçamento, licitação, política pública - em vez de só reclamar?" },
     { "id": 1, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você se vê dentro de uma prefeitura, secretaria de estado ou autarquia melhorando processo que afeta milhões de cidadãos?" },
-    { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você aguenta lentidão do setor público sem perder o foco — sabendo que mudança boa leva mandato para acontecer?" }
+    { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você aguenta lentidão do setor público sem perder o foco - sabendo que mudança boa leva mandato para acontecer?" }
   ],
   "sociologia": [
-    { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você se incomoda com explicação simplista de fenômeno social — e quer descer um nível de análise para entender mecanismo, não só sintoma?" },
-    { "id": 1, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você se vê pesquisando temas como violência urbana, mercado de trabalho, religião ou mídia — e ensinando o que descobriu?" },
-    { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você aceita um campo predominantemente acadêmico no Brasil — com saída adicional em consultoria, governo e ONG?" }
+    { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você se incomoda com explicação simplista de fenômeno social - e quer descer um nível de análise para entender mecanismo, não só sintoma?" },
+    { "id": 1, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você se vê pesquisando temas como violência urbana, mercado de trabalho, religião ou mídia - e ensinando o que descobriu?" },
+    { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você aceita um campo predominantemente acadêmico no Brasil - com saída adicional em consultoria, governo e ONG?" }
   ],
   "licenciatura-historia": [
-    { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você sente vocação para sala de aula — explicar, mediar discussão, lidar com adolescente com humor e firmeza?" },
+    { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você sente vocação para sala de aula - explicar, mediar discussão, lidar com adolescente com humor e firmeza?" },
     { "id": 1, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você se vê dando aula de história para turmas inteiras de ensino fundamental e médio, na rede pública, por décadas?" },
     { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você aceita o salário inicial de professor estadual sabendo que estabilidade via concurso é o caminho mais comum?" }
   ],
   "educacao-especial": [
-    { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você tem paciência infinita — e enxerga progresso milimétrico de uma criança autista ou com deficiência intelectual como vitória real?" },
-    { "id": 1, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você se vê trabalhando com criança com TEA, surdez, deficiência intelectual ou múltipla — adaptando material, mediando inclusão na escola comum?" },
-    { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você aceita que essa área pede formação contínua — Libras, AEE, comunicação alternativa — e que sua bagagem nunca está pronta?" }
+    { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você tem paciência infinita - e enxerga progresso milimétrico de uma criança autista ou com deficiência intelectual como vitória real?" },
+    { "id": 1, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você se vê trabalhando com criança com TEA, surdez, deficiência intelectual ou múltipla - adaptando material, mediando inclusão na escola comum?" },
+    { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você aceita que essa área pede formação contínua - Libras, AEE, comunicação alternativa - e que sua bagagem nunca está pronta?" }
   ],
   "teologia": [
-    { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você tem curiosidade por texto sagrado, doutrina e história religiosa — independentemente de fé pessoal?" },
+    { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você tem curiosidade por texto sagrado, doutrina e história religiosa - independentemente de fé pessoal?" },
     { "id": 1, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você se vê em ministério pastoral, capelania hospitalar, ensino religioso ou pesquisa em ciência da religião?" },
-    { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você aceita um campo profissional muito ligado à comunidade religiosa de origem — com remuneração variável e vocacional?" }
+    { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você aceita um campo profissional muito ligado à comunidade religiosa de origem - com remuneração variável e vocacional?" }
   ],
   "museologia": [
-    { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você fica fascinado por acervo — objeto antigo, documento raro, arte — e enxerga ali história que precisa ser preservada?" },
+    { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você fica fascinado por acervo - objeto antigo, documento raro, arte - e enxerga ali história que precisa ser preservada?" },
     { "id": 1, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você se vê catalogando, curando exposição e gerenciando coleção em museu de uma capital brasileira?" },
-    { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você aceita uma área pequena, principalmente em museus públicos e privados consolidados — com poucas vagas, mas trabalho com sentido?" }
+    { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você aceita uma área pequena, principalmente em museus públicos e privados consolidados - com poucas vagas, mas trabalho com sentido?" }
   ],
   "administracao-publica": [
-    { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você se interessa pela engrenagem do Estado — receita, despesa, licitação, RH público — e enxerga ali grande oportunidade de impacto?" },
+    { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você se interessa pela engrenagem do Estado - receita, despesa, licitação, RH público - e enxerga ali grande oportunidade de impacto?" },
     { "id": 1, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você se vê passando em concurso público de nível superior em órgão como Receita, TCE, prefeitura ou autarquia?" },
-    { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você consegue ser técnico em ambiente politizado — defender o procedimento certo mesmo quando há pressão para flexibilizar?" }
+    { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você consegue ser técnico em ambiente politizado - defender o procedimento certo mesmo quando há pressão para flexibilizar?" }
   ],
   "defesa-social": [
-    { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você quer trabalhar em segurança pública — não como agente operacional, mas como gestor, analista ou estrategista?" },
+    { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você quer trabalhar em segurança pública - não como agente operacional, mas como gestor, analista ou estrategista?" },
     { "id": 1, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você se vê analisando dados criminais, coordenando operação integrada ou elaborando política de prevenção à violência?" },
-    { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você aguenta lidar com tema pesado — violência, crime, dependência — sem desumanizar pessoas e nem se anestesiar?" }
+    { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você aguenta lidar com tema pesado - violência, crime, dependência - sem desumanizar pessoas e nem se anestesiar?" }
   ],
   "politicas-publicas": [
-    { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você quer ver problema social ser resolvido por desenho institucional — não só por boa intenção?" },
+    { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você quer ver problema social ser resolvido por desenho institucional - não só por boa intenção?" },
     { "id": 1, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você se vê desenhando, monitorando ou avaliando programa social num governo, ONG ou organismo internacional?" },
-    { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você consegue equilibrar pesquisa empírica com sensibilidade política — sabendo que dado sem narrativa não muda política pública?" }
+    { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você consegue equilibrar pesquisa empírica com sensibilidade política - sabendo que dado sem narrativa não muda política pública?" }
   ],
 
   "jornalismo": [
-    { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você lê notícia com olho crítico — quem fala, com que interesse, o que está faltando?" },
-    { "id": 1, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você aguenta rotina de fechamento — fonte difícil, prazo curto, salário comprimido — em troca de furar uma matéria que ninguém mais tem?" },
-    { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você se vê apurando, escrevendo e publicando em jornal, rádio, TV, portal ou independente — com mídia em transformação?" }
+    { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você lê notícia com olho crítico - quem fala, com que interesse, o que está faltando?" },
+    { "id": 1, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você aguenta rotina de fechamento - fonte difícil, prazo curto, salário comprimido - em troca de furar uma matéria que ninguém mais tem?" },
+    { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você se vê apurando, escrevendo e publicando em jornal, rádio, TV, portal ou independente - com mídia em transformação?" }
   ],
   "publicidade-propaganda": [
-    { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você presta atenção em propaganda — quando ela funciona, por que mexe com você, o que vendeu sem você perceber?" },
-    { "id": 1, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você se vê numa agência de publicidade pensando campanha — briefing, criação, mídia, defesa para o cliente — com prazo de duas semanas?" },
+    { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você presta atenção em propaganda - quando ela funciona, por que mexe com você, o que vendeu sem você perceber?" },
+    { "id": 1, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você se vê numa agência de publicidade pensando campanha - briefing, criação, mídia, defesa para o cliente - com prazo de duas semanas?" },
     { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você consegue criar sob pressão e aceitar que sua ideia favorita pode ser refeita três vezes antes de virar campanha?" }
   ],
   "letras-portugues": [
-    { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você tem interesse em como a língua funciona — por que falamos do jeito que falamos e como o idioma muda?" },
-    { "id": 1, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você gosta de ler — livros, textos, artigos — e sente prazer nisso, não obrigação?" },
-    { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você se expressa bem por escrito e gosta de escrever — seja texto, história ou qualquer formato?" }
+    { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você tem interesse em como a língua funciona - por que falamos do jeito que falamos e como o idioma muda?" },
+    { "id": 1, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você gosta de ler - livros, textos, artigos - e sente prazer nisso, não obrigação?" },
+    { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você se expressa bem por escrito e gosta de escrever - seja texto, história ou qualquer formato?" }
   ],
   "letras-ingles": [
-    { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você já estuda inglês com gosto — assistindo, lendo, jogando em inglês — e quer aprofundar até o nível da gramática e literatura?" },
+    { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você já estuda inglês com gosto - assistindo, lendo, jogando em inglês - e quer aprofundar até o nível da gramática e literatura?" },
     { "id": 1, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você se vê dando aula de inglês em escola pública, particular, curso livre ou plataforma online por décadas?" },
     { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você aceita que essa carreira combina muito bem com renda extra (aulas particulares, tradução, conteúdo digital)?" }
   ],
   "relacoes-publicas": [
     { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você é o tipo de pessoa que organiza o grupo, articula gente diferente e sabe falar no microfone sem travar?" },
-    { "id": 1, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você se vê cuidando da imagem de uma empresa ou figura pública — assessoria, evento, comunicação interna, crise?" },
-    { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você lida bem com pressão de crise — algo deu errado às 23h e a resposta sua de manhã decide a reputação do cliente?" }
+    { "id": 1, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você se vê cuidando da imagem de uma empresa ou figura pública - assessoria, evento, comunicação interna, crise?" },
+    { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você lida bem com pressão de crise - algo deu errado às 23h e a resposta sua de manhã decide a reputação do cliente?" }
   ],
   "secretariado-executivo": [
     { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você é organizado a ponto de assumir agenda alheia, lembrar prazos dos outros e manter três planilhas simultâneas em ordem?" },
-    { "id": 1, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você se vê como mão direita de executivo ou diretoria — antecipando demanda, filtrando comunicação, sendo confiança absoluta?" },
-    { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você gosta de papel de bastidor — onde sua eficiência libera outros para entregar resultado público — sem precisar do holofote?" }
+    { "id": 1, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você se vê como mão direita de executivo ou diretoria - antecipando demanda, filtrando comunicação, sendo confiança absoluta?" },
+    { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você gosta de papel de bastidor - onde sua eficiência libera outros para entregar resultado público - sem precisar do holofote?" }
   ],
   "licenciatura-letras": [
-    { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você quer ensinar adolescente a ler bem, escrever bem, e ainda achar sentido em literatura — uma das missões mais subestimadas do Brasil?" },
+    { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você quer ensinar adolescente a ler bem, escrever bem, e ainda achar sentido em literatura - uma das missões mais subestimadas do Brasil?" },
     { "id": 1, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você se vê em sala de aula da rede pública lendo Drummond, Machado, Conceição Evaristo com adolescente que nunca tinha ouvido o nome desses autores?" },
     { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você aguenta uma carreira de magistério com salário inicial modesto, mas com possibilidade de estabilidade e plano de carreira via concurso?" }
   ],
   "comunicacao-digital": [
-    { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você passa tempo entendendo por que um conteúdo funciona — capa, gancho, tempo, formato — mesmo quando é entretenimento puro?" },
-    { "id": 1, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você se vê produzindo, editando e publicando conteúdo em Instagram, TikTok, YouTube ou blog — com leitura semanal de métrica?" },
-    { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você aceita o ritmo das redes — algoritmo que muda, formato que vira velho em meses, e a necessidade constante de adaptar?" }
+    { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você passa tempo entendendo por que um conteúdo funciona - capa, gancho, tempo, formato - mesmo quando é entretenimento puro?" },
+    { "id": 1, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você se vê produzindo, editando e publicando conteúdo em Instagram, TikTok, YouTube ou blog - com leitura semanal de métrica?" },
+    { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você aceita o ritmo das redes - algoritmo que muda, formato que vira velho em meses, e a necessidade constante de adaptar?" }
   ],
   "linguistica": [
-    { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você se diverte percebendo regionalismo, gíria, mudança fonética — o jeito que as pessoas falam é estudo pra você, não só conversa?" },
-    { "id": 1, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você se vê na pesquisa acadêmica em fonética, sintaxe, sociolinguística — ou aplicando isso em tecnologia de fala?" },
-    { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você aceita que é uma área de nicho — saída forte em pós-graduação, processamento de linguagem natural e ensino superior?" }
+    { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você se diverte percebendo regionalismo, gíria, mudança fonética - o jeito que as pessoas falam é estudo pra você, não só conversa?" },
+    { "id": 1, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você se vê na pesquisa acadêmica em fonética, sintaxe, sociolinguística - ou aplicando isso em tecnologia de fala?" },
+    { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você aceita que é uma área de nicho - saída forte em pós-graduação, processamento de linguagem natural e ensino superior?" }
   ],
   "editoracao": [
-    { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você se importa com tipografia, espaçamento, fluxo de leitura — coisas que leitor comum nem nota mas mudam tudo?" },
-    { "id": 1, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você se vê numa editora, gráfica ou casa de comunicação cuidando do trajeto do texto até o leitor — diagramação, capa, revisão final?" },
+    { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você se importa com tipografia, espaçamento, fluxo de leitura - coisas que leitor comum nem nota mas mudam tudo?" },
+    { "id": 1, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você se vê numa editora, gráfica ou casa de comunicação cuidando do trajeto do texto até o leitor - diagramação, capa, revisão final?" },
     { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você consegue equilibrar olhar técnico (InDesign, normas) com olhar editorial (o que vale a pena publicar e como apresentar)?" }
   ],
   "letras-espanhol": [
-    { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você tem afinidade com a língua espanhola e a literatura de países hispano-falantes — Cervantes, Borges, García Márquez?" },
+    { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você tem afinidade com a língua espanhola e a literatura de países hispano-falantes - Cervantes, Borges, García Márquez?" },
     { "id": 1, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você se vê dando aula de espanhol em escola, curso livre e ainda fazendo tradução ou intérprete em evento?" },
-    { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você aceita que essa é uma carreira de ensino — com possibilidade de complemento em tradução e turismo, mas com base na docência?" }
+    { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você aceita que essa é uma carreira de ensino - com possibilidade de complemento em tradução e turismo, mas com base na docência?" }
   ],
   "traducao-interpretacao": [
-    { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você é detalhista com idioma — sabe que 'traduzir' é mais transmitir intenção do que trocar palavra por palavra?" },
-    { "id": 1, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você se vê traduzindo livro, contrato, vídeo legendado ou interpretando ao vivo numa conferência — com responsabilidade alta?" },
-    { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você aguenta autonomia de freela — sem patrão, mas com prazo, cliente exigente e renda variável até consolidar reputação?" }
+    { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você é detalhista com idioma - sabe que 'traduzir' é mais transmitir intenção do que trocar palavra por palavra?" },
+    { "id": 1, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você se vê traduzindo livro, contrato, vídeo legendado ou interpretando ao vivo numa conferência - com responsabilidade alta?" },
+    { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você aguenta autonomia de freela - sem patrão, mas com prazo, cliente exigente e renda variável até consolidar reputação?" }
   ],
   "assessoria-imprensa": [
     { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você consegue traduzir o que uma empresa, político ou artista faz para uma manchete que jornalista queira escrever?" },
     { "id": 1, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você se vê redigindo release, preparando porta-voz para entrevista e cultivando rede de contato em redação?" },
-    { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você lida bem com gestão de crise — quando algo deu errado e cada minuto sua resposta vale reputação?" }
+    { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você lida bem com gestão de crise - quando algo deu errado e cada minuto sua resposta vale reputação?" }
   ],
   "radio-tv": [
-    { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você se sente confortável diante de microfone ou câmera — ou sente que poderia desenvolver isso com treino?" },
+    { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você se sente confortável diante de microfone ou câmera - ou sente que poderia desenvolver isso com treino?" },
     { "id": 1, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você se vê apresentando, repórtando, dirigindo ou operando equipamento em rádio comunitária, emissora local ou produção independente?" },
-    { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você aceita um mercado em transformação — com TV linear perdendo espaço, mas com streaming e podcast em expansão?" }
+    { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você aceita um mercado em transformação - com TV linear perdendo espaço, mas com streaming e podcast em expansão?" }
   ],
   "producao-editorial": [
-    { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você acha que livro é um objeto que merece ser bem feito — capa, papel, miolo, revisão — e não só mais um produto?" },
-    { "id": 1, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você se vê coordenando o trajeto de um livro desde o original do autor até a vitrine da livraria — com prazo, custo e qualidade sob controle?" },
+    { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você acha que livro é um objeto que merece ser bem feito - capa, papel, miolo, revisão - e não só mais um produto?" },
+    { "id": 1, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você se vê coordenando o trajeto de um livro desde o original do autor até a vitrine da livraria - com prazo, custo e qualidade sob controle?" },
     { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você consegue trabalhar em equipe pequena (editora) onde a pessoa pode fazer revisão, contratar capa e negociar tradução no mesmo dia?" }
   ],
   "libras": [
-    { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você se interessa pela cultura surda — não vê surdez como falta, mas como uma comunidade linguística com identidade própria?" },
-    { "id": 1, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você se vê como intérprete de Libras em escola inclusiva, evento público ou faculdade — sendo ponte entre dois mundos?" },
-    { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você está disposto a anos de estudo de língua de sinais e a contato profundo com a comunidade surda — não dá pra fazer pela metade?" }
+    { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você se interessa pela cultura surda - não vê surdez como falta, mas como uma comunidade linguística com identidade própria?" },
+    { "id": 1, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você se vê como intérprete de Libras em escola inclusiva, evento público ou faculdade - sendo ponte entre dois mundos?" },
+    { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você está disposto a anos de estudo de língua de sinais e a contato profundo com a comunidade surda - não dá pra fazer pela metade?" }
   ],
   "midias-digitais": [
-    { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você acompanha rede social com olhar profissional — entende quando algo vai viralizar antes de viralizar?" },
+    { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você acompanha rede social com olhar profissional - entende quando algo vai viralizar antes de viralizar?" },
     { "id": 1, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você se vê produzindo conteúdo para marca, planejando campanha digital ou crescendo audiência própria como criador?" },
-    { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você consegue lidar com o ritmo das mídias — métrica diária, formato mudando, conteúdo que envelhece em semanas?" }
+    { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você consegue lidar com o ritmo das mídias - métrica diária, formato mudando, conteúdo que envelhece em semanas?" }
   ],
   "gestao-redes-sociais": [
-    { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você sabe a diferença entre seguidor que gosta e seguidor que compra — e quer aprender o que faz a diferença?" },
+    { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você sabe a diferença entre seguidor que gosta e seguidor que compra - e quer aprender o que faz a diferença?" },
     { "id": 1, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você se vê administrando perfil de empresa, respondendo cliente público em comentário e planejando calendário editorial?" },
-    { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você aguenta crise de imagem em tempo real — quando um post errado vira manchete e exige resposta rápida e firme?" }
+    { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você aguenta crise de imagem em tempo real - quando um post errado vira manchete e exige resposta rápida e firme?" }
   ],
   "escrita-criativa": [
-    { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você escreve por prazer — diário, conto, poema, roteiro — mesmo quando ninguém pediu?" },
-    { "id": 1, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você se vê combinando escrita criativa com renda — copywriter, ghostwriter, oficina, conteúdo de marca — para viver do texto?" },
-    { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você aceita receber crítica direta sobre o que escreveu — e reescrever várias vezes até o texto realmente ficar bom?" }
+    { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você escreve por prazer - diário, conto, poema, roteiro - mesmo quando ninguém pediu?" },
+    { "id": 1, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você se vê combinando escrita criativa com renda - copywriter, ghostwriter, oficina, conteúdo de marca - para viver do texto?" },
+    { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você aceita receber crítica direta sobre o que escreveu - e reescrever várias vezes até o texto realmente ficar bom?" }
   ],
 
   "ciencia-computacao": [
     { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você usa tecnologia de forma curiosa, indo além do básico para entender como as coisas funcionam por dentro?" },
     { "id": 1, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você gosta de resolver problemas lógicos e encontra satisfação quando descobre a solução de algo complexo?" },
-    { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você tem ou teria paciência para aprender a programar — escrever código, errar, corrigir e tentar de novo?" }
+    { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você tem ou teria paciência para aprender a programar - escrever código, errar, corrigir e tentar de novo?" }
   ],
   "sistemas-informacao": [
-    { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você se interessa por software e por negócio ao mesmo tempo — quer saber como sistema gera valor pra empresa?" },
-    { "id": 1, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você se vê desenvolvendo sistema corporativo, ERP, integração — mais aplicado a problema de negócio do que à teoria da computação?" },
-    { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você aceita ser ponte entre área técnica e área de negócio — entender requisito, traduzir em sistema, validar entrega?" }
+    { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você se interessa por software e por negócio ao mesmo tempo - quer saber como sistema gera valor pra empresa?" },
+    { "id": 1, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você se vê desenvolvendo sistema corporativo, ERP, integração - mais aplicado a problema de negócio do que à teoria da computação?" },
+    { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você aceita ser ponte entre área técnica e área de negócio - entender requisito, traduzir em sistema, validar entrega?" }
   ],
   "analise-desenvolvimento": [
-    { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você quer entrar no mercado de tecnologia rápido — em 2 anos formado e codando — sem perder qualidade?" },
+    { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você quer entrar no mercado de tecnologia rápido - em 2 anos formado e codando - sem perder qualidade?" },
     { "id": 1, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você se vê programando em time ágil, fazendo revisão de código, deploy contínuo e absorvendo nova tecnologia a cada projeto?" },
-    { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você está disposto a estudar fora do trabalho — porque a tecnologia muda mais rápido do que qualquer faculdade consegue acompanhar?" }
+    { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você está disposto a estudar fora do trabalho - porque a tecnologia muda mais rápido do que qualquer faculdade consegue acompanhar?" }
   ],
   "engenharia-software": [
-    { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você se importa não só com fazer o código rodar, mas com fazer ele rodar bem por anos — testável, manutenível, escalável?" },
+    { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você se importa não só com fazer o código rodar, mas com fazer ele rodar bem por anos - testável, manutenível, escalável?" },
     { "id": 1, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você se vê desenhando arquitetura de sistema, escolhendo trade-off, mentorando time e liderando entrega complexa?" },
-    { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você gosta de processos e ferramentas — testes automatizados, CI/CD, code review — e enxerga ali parte do produto, não burocracia?" }
+    { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você gosta de processos e ferramentas - testes automatizados, CI/CD, code review - e enxerga ali parte do produto, não burocracia?" }
   ],
   "redes-computadores": [
     { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você é o tipo que descobre por que o Wi-Fi não pega num cômodo da casa, e gosta dessa investigação?" },
-    { "id": 1, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você se vê em data center, ISP ou empresa grande administrando roteador, switch, firewall e VPN — com responsabilidade pela conexão?" },
-    { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você aguenta plantão eventual quando rede cai — e gosta da sensação de resolver pane que afeta dezenas ou milhares de usuários?" }
+    { "id": 1, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você se vê em data center, ISP ou empresa grande administrando roteador, switch, firewall e VPN - com responsabilidade pela conexão?" },
+    { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você aguenta plantão eventual quando rede cai - e gosta da sensação de resolver pane que afeta dezenas ou milhares de usuários?" }
   ],
   "seguranca-informacao": [
     { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você tem o instinto de pensar 'como isso pode ser quebrado?' antes de pensar 'como faço isso funcionar?'" },
     { "id": 1, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você se vê fazendo teste de invasão, auditoria, resposta a incidente ou desenho de política de segurança em empresa?" },
-    { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você lida com responsabilidade alta — sua negligência num controle pode vazar dado de milhares — e isso te empurra a ser ainda mais rigoroso?" }
+    { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você lida com responsabilidade alta - sua negligência num controle pode vazar dado de milhares - e isso te empurra a ser ainda mais rigoroso?" }
   ],
   "ciencia-dados": [
-    { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você gosta de número, gráfico e hipótese — e duvida da intuição quando não vê dado por trás?" },
-    { "id": 1, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você se vê extraindo dados, limpando, analisando e construindo modelo que gera decisão de negócio — em banco, varejo, saúde, governo?" },
-    { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você consegue equilibrar matemática, estatística, programação e comunicação — porque dado sem narrativa não move ninguém?" }
+    { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você gosta de número, gráfico e hipótese - e duvida da intuição quando não vê dado por trás?" },
+    { "id": 1, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você se vê extraindo dados, limpando, analisando e construindo modelo que gera decisão de negócio - em banco, varejo, saúde, governo?" },
+    { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você consegue equilibrar matemática, estatística, programação e comunicação - porque dado sem narrativa não move ninguém?" }
   ],
   "inteligencia-artificial": [
-    { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você está disposto a pegar matemática pesada — álgebra linear, cálculo, probabilidade — para entender o que tem por dentro do modelo?" },
-    { "id": 1, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você se vê construindo modelo de visão, linguagem ou recomendação — em uma das áreas que mais cresceu no Brasil nos últimos anos?" },
-    { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você consegue lidar com incerteza — modelo erra, dado tem viés, resultado depende de premissa — sem perder rigor técnico?" }
+    { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você está disposto a pegar matemática pesada - álgebra linear, cálculo, probabilidade - para entender o que tem por dentro do modelo?" },
+    { "id": 1, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você se vê construindo modelo de visão, linguagem ou recomendação - em uma das áreas que mais cresceu no Brasil nos últimos anos?" },
+    { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você consegue lidar com incerteza - modelo erra, dado tem viés, resultado depende de premissa - sem perder rigor técnico?" }
   ],
   "desenvolvimento-web": [
-    { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você fica curioso sobre como um site funciona por trás — e tenta inspecionar página, abrir DevTools, entender estrutura?" },
-    { "id": 1, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você se vê programando front-end ou back-end de produto digital — entregando funcionalidade nova no ar a cada poucas semanas?" },
-    { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você se mantém atualizado num campo que muda rápido — framework, padrão, ferramenta — sem virar refém de modismo?" }
+    { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você fica curioso sobre como um site funciona por trás - e tenta inspecionar página, abrir DevTools, entender estrutura?" },
+    { "id": 1, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você se vê programando front-end ou back-end de produto digital - entregando funcionalidade nova no ar a cada poucas semanas?" },
+    { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você se mantém atualizado num campo que muda rápido - framework, padrão, ferramenta - sem virar refém de modismo?" }
   ],
   "desenvolvimento-mobile": [
-    { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você passou alguma vez pensando 'eu queria fazer um app que faça X' — e tem vontade de descobrir como construir isso?" },
-    { "id": 1, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você se vê programando para Android, iOS ou cross-platform — entregando aplicativo na loja e iterando com base em uso real?" },
-    { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você consegue dosar exigência da UX com restrição técnica (bateria, conexão fraca, tela pequena) — sem brigar com nenhum dos dois?" }
+    { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você passou alguma vez pensando 'eu queria fazer um app que faça X' - e tem vontade de descobrir como construir isso?" },
+    { "id": 1, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você se vê programando para Android, iOS ou cross-platform - entregando aplicativo na loja e iterando com base em uso real?" },
+    { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você consegue dosar exigência da UX com restrição técnica (bateria, conexão fraca, tela pequena) - sem brigar com nenhum dos dois?" }
   ],
   "cloud-computing": [
-    { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você quer aprender a infraestrutura por trás dos sistemas — AWS, Azure, GCP — e construir base técnica sólida nessa área?" },
-    { "id": 1, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você se vê projetando e operando ambiente em nuvem para empresas — disponibilidade, custo, escala, segurança em equilíbrio?" },
-    { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você lida bem com responsabilidade financeira — uma config errada na nuvem pode gerar conta de milhares de reais em horas?" }
+    { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você quer aprender a infraestrutura por trás dos sistemas - AWS, Azure, GCP - e construir base técnica sólida nessa área?" },
+    { "id": 1, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você se vê projetando e operando ambiente em nuvem para empresas - disponibilidade, custo, escala, segurança em equilíbrio?" },
+    { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você lida bem com responsabilidade financeira - uma config errada na nuvem pode gerar conta de milhares de reais em horas?" }
   ],
   "ux-ui-design": [
-    { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você abre um aplicativo e pensa 'isso aqui devia ser mais simples' — e mentalmente já redesenhou meia tela?" },
+    { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você abre um aplicativo e pensa 'isso aqui devia ser mais simples' - e mentalmente já redesenhou meia tela?" },
     { "id": 1, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você se vê fazendo entrevista com usuário, prototipando em Figma, validando com teste e entregando design para o time dev?" },
-    { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você equilibra estética com função — sem brigar com o desenvolvedor pelo pixel nem entregar tela bonita que ninguém entende?" }
+    { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você equilibra estética com função - sem brigar com o desenvolvedor pelo pixel nem entregar tela bonita que ninguém entende?" }
   ],
   "jogos-digitais": [
-    { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você joga e pensa em por que aquele jogo te prendeu — mecânica, narrativa, recompensa — em vez de só jogar?" },
-    { "id": 1, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você se vê programando jogo, desenhando level, fazendo arte ou produzindo som — em estúdio independente ou grande?" },
-    { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você aceita um mercado competitivo e instável — onde projeto pode levar anos para virar produto e nem sempre dá certo financeiramente?" }
+    { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você joga e pensa em por que aquele jogo te prendeu - mecânica, narrativa, recompensa - em vez de só jogar?" },
+    { "id": 1, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você se vê programando jogo, desenhando level, fazendo arte ou produzindo som - em estúdio independente ou grande?" },
+    { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você aceita um mercado competitivo e instável - onde projeto pode levar anos para virar produto e nem sempre dá certo financeiramente?" }
   ],
   "robotica": [
-    { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você gosta de construir coisa física que se mexe — Arduino, Lego Mindstorms, projeto de feira de ciências?" },
-    { "id": 1, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você se vê desenvolvendo robô para linha de produção, agricultura, saúde ou logística — onde mecânica, eletrônica e código se encontram?" },
-    { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você lida bem com projeto demorado — robô de verdade leva meses até funcionar bem, e não dá pra apressar?" }
+    { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você gosta de construir coisa física que se mexe - Arduino, Lego Mindstorms, projeto de feira de ciências?" },
+    { "id": 1, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você se vê desenvolvendo robô para linha de produção, agricultura, saúde ou logística - onde mecânica, eletrônica e código se encontram?" },
+    { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você lida bem com projeto demorado - robô de verdade leva meses até funcionar bem, e não dá pra apressar?" }
   ],
   "devops": [
-    { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você acha que automatizar processo é mais elegante do que repetir tarefa manual — sempre que vê algo manual, pensa em script?" },
+    { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você acha que automatizar processo é mais elegante do que repetir tarefa manual - sempre que vê algo manual, pensa em script?" },
     { "id": 1, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você se vê construindo pipeline de deploy, gerenciando container, observando sistema em produção e respondendo incidente?" },
-    { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você aceita rotina de plantão (oncall) — sabendo que parte do trabalho é manter sistema rodando 24/7?" }
+    { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você aceita rotina de plantão (oncall) - sabendo que parte do trabalho é manter sistema rodando 24/7?" }
   ],
   "banco-dados": [
-    { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você gosta de organização — tabela bem estruturada, dado coerente, query eficiente são prazerosos pra você?" },
+    { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você gosta de organização - tabela bem estruturada, dado coerente, query eficiente são prazerosos pra você?" },
     { "id": 1, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você se vê modelando, otimizando e administrando banco de dados para empresa que depende disso para operar todo dia?" },
-    { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você lida com responsabilidade de backup e recuperação — sabendo que perda de dado pode ser perda de empresa?" }
+    { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você lida com responsabilidade de backup e recuperação - sabendo que perda de dado pode ser perda de empresa?" }
   ],
   "ti-saude": [
-    { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você se interessa pela interseção entre tecnologia e saúde — prontuário eletrônico, telemedicina, dispositivo médico?" },
-    { "id": 1, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você se vê desenvolvendo sistema para hospital, plano de saúde ou ministério — onde uma falha técnica pode afetar atendimento?" },
-    { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você aceita regulamentação rigorosa — LGPD, ANVISA, normas de saúde — sem ver isso como obstáculo, mas como garantia?" }
+    { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você se interessa pela interseção entre tecnologia e saúde - prontuário eletrônico, telemedicina, dispositivo médico?" },
+    { "id": 1, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você se vê desenvolvendo sistema para hospital, plano de saúde ou ministério - onde uma falha técnica pode afetar atendimento?" },
+    { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você aceita regulamentação rigorosa - LGPD, ANVISA, normas de saúde - sem ver isso como obstáculo, mas como garantia?" }
   ],
   "sistemas-embarcados": [
     { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você é o tipo que abre o circuito do brinquedo, do controle remoto, e quer entender o que faz cada componente?" },
-    { "id": 1, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você se vê programando microcontrolador para equipamento médico, automotivo, agro ou IoT — onde firmware vive perto do hardware?" },
-    { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você é detalhista com memória, latência e consumo de energia — restrições que dev de aplicação web nem pensa?" }
+    { "id": 1, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você se vê programando microcontrolador para equipamento médico, automotivo, agro ou IoT - onde firmware vive perto do hardware?" },
+    { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você é detalhista com memória, latência e consumo de energia - restrições que dev de aplicação web nem pensa?" }
   ],
   "tecnico-informatica": [
-    { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você tem paciência para atender pessoas que não entendem nada de tecnologia e explicar a mesma coisa de formas diferentes até elas entenderem — sem perder a calma?" },
-    { "id": 1, "peso": 2, "fase": "PROFISSIONAL", "texto": "Quando um computador ou celular dá problema, você costuma tentar resolver sozinho antes de pedir ajuda — e sente satisfação quando descobre o que estava errado?" },
-    { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você se sente bem sendo a pessoa que \"sabe de tecnologia\" no grupo — aquela que os outros chamam para resolver problema de impressora, senha, vírus ou rede?" }
+    { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você tem paciência para atender pessoas que não entendem nada de tecnologia e explicar a mesma coisa de formas diferentes até elas entenderem - sem perder a calma?" },
+    { "id": 1, "peso": 2, "fase": "PROFISSIONAL", "texto": "Quando um computador ou celular dá problema, você costuma tentar resolver sozinho antes de pedir ajuda - e sente satisfação quando descobre o que estava errado?" },
+    { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você se sente bem sendo a pessoa que \"sabe de tecnologia\" no grupo - aquela que os outros chamam para resolver problema de impressora, senha, vírus ou rede?" }
   ],
   "tecnico-redes": [
-    { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você consegue passar tempo passando cabo, configurando equipamento, mexendo em quadro de comunicação — gostando da parte física da rede?" },
-    { "id": 1, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você se vê numa empresa, condomínio ou provedor de internet montando e mantendo rede — Wi-Fi, fibra, switch, roteamento?" },
-    { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você lida bem com cliente — porque rede que não funciona vira reclamação na hora, e quem aparece pra resolver é você?" }
+    { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você consegue passar tempo passando cabo, configurando equipamento, mexendo em quadro de comunicação - gostando da parte física da rede?" },
+    { "id": 1, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você se vê numa empresa, condomínio ou provedor de internet montando e mantendo rede - Wi-Fi, fibra, switch, roteamento?" },
+    { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você lida bem com cliente - porque rede que não funciona vira reclamação na hora, e quem aparece pra resolver é você?" }
   ],
 
   "administracao": [
@@ -505,295 +505,295 @@
     { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você se sente à vontade liderando pessoas ou coordenando um grupo para atingir um objetivo?" }
   ],
   "ciencias-contabeis": [
-    { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você gosta quando o número fecha — e fica curioso quando não fecha, querendo encontrar o centavo perdido?" },
+    { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você gosta quando o número fecha - e fica curioso quando não fecha, querendo encontrar o centavo perdido?" },
     { "id": 1, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você se vê numa contabilidade ou na controladoria de empresa fazendo balanço, demonstrativo, conciliação e imposto?" },
-    { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você aceita prazo legal não-negociável — DCTF, RAIS, IR, eSocial — e fica calmo no fechamento do mês?" }
+    { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você aceita prazo legal não-negociável - DCTF, RAIS, IR, eSocial - e fica calmo no fechamento do mês?" }
   ],
   "economia": [
-    { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você lê sobre juros, inflação, política monetária com curiosidade — e não acha esses temas chatos?" },
+    { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você lê sobre juros, inflação, política monetária com curiosidade - e não acha esses temas chatos?" },
     { "id": 1, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você se vê fazendo análise em banco, em órgão público (BACEN, IBGE, secretaria de Fazenda) ou em consultoria estratégica?" },
-    { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você consegue combinar matemática, estatística e leitura crítica de mundo — porque economia é o cruzamento dos três?" }
+    { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você consegue combinar matemática, estatística e leitura crítica de mundo - porque economia é o cruzamento dos três?" }
   ],
   "marketing": [
-    { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você presta atenção em como produto é vendido, posicionado, embalado — e percebe estratégia por trás da embalagem do supermercado?" },
+    { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você presta atenção em como produto é vendido, posicionado, embalado - e percebe estratégia por trás da embalagem do supermercado?" },
     { "id": 1, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você se vê planejando lançamento, gerenciando marca ou conduzindo campanha em empresa de qualquer porte?" },
-    { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você lida bem com criatividade sob pressão de resultado — venda precisa subir, ou a campanha não foi boa?" }
+    { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você lida bem com criatividade sob pressão de resultado - venda precisa subir, ou a campanha não foi boa?" }
   ],
   "comercio-exterior": [
-    { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você se interessa por câmbio, importação, exportação — e por como o mundo se conecta via comércio?" },
+    { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você se interessa por câmbio, importação, exportação - e por como o mundo se conecta via comércio?" },
     { "id": 1, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você se vê em trading company, despachante aduaneiro ou departamento de COMEX gerenciando processo internacional?" },
-    { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você aceita estudar inglês forte e conhecer Incoterms, alfândega, BACEN — porque a área inteira gira em torno dessa burocracia técnica?" }
+    { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você aceita estudar inglês forte e conhecer Incoterms, alfândega, BACEN - porque a área inteira gira em torno dessa burocracia técnica?" }
   ],
   "financas": [
-    { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você gosta de pensar sobre dinheiro como sistema — investimento, juros compostos, alocação de capital — antes mesmo de ter muito?" },
+    { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você gosta de pensar sobre dinheiro como sistema - investimento, juros compostos, alocação de capital - antes mesmo de ter muito?" },
     { "id": 1, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você se vê analisando crédito, montando carteira, planejando capital de giro de empresa ou avaliando investimento?" },
-    { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você lida bem com responsabilidade financeira — decisão sua move milhões em alguns cargos, e isso te motiva em vez de paralisar?" }
+    { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você lida bem com responsabilidade financeira - decisão sua move milhões em alguns cargos, e isso te motiva em vez de paralisar?" }
   ],
   "logistica": [
-    { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você sente prazer em reorganizar caminhão, depósito ou estoque — e enxergou ineficiência em algum lugar que frequenta?" },
-    { "id": 1, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você se vê coordenando entrega, roteirização, estoque ou compra — onde uma decisão sua afeta cliente final no mesmo dia?" },
-    { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você lida bem com imprevisto — caminhão quebra, transportadora atrasa, fornecedor falha — e ainda tem que entregar prazo?" }
+    { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você sente prazer em reorganizar caminhão, depósito ou estoque - e enxergou ineficiência em algum lugar que frequenta?" },
+    { "id": 1, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você se vê coordenando entrega, roteirização, estoque ou compra - onde uma decisão sua afeta cliente final no mesmo dia?" },
+    { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você lida bem com imprevisto - caminhão quebra, transportadora atrasa, fornecedor falha - e ainda tem que entregar prazo?" }
   ],
   "gestao-rh": [
-    { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você gosta de gente — entender motivação, conflito, trajetória — e enxerga isso como tema profissional, não só fofoca?" },
+    { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você gosta de gente - entender motivação, conflito, trajetória - e enxerga isso como tema profissional, não só fofoca?" },
     { "id": 1, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você se vê recrutando, treinando, mediando conflito e desenhando política de pessoas em empresa pública ou privada?" },
-    { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você lida bem com decisão difícil — demissão, ajuste de equipe, comunicação de mudança — sem perder a empatia?" }
+    { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você lida bem com decisão difícil - demissão, ajuste de equipe, comunicação de mudança - sem perder a empatia?" }
   ],
   "gestao-projetos": [
-    { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você se vira pra organizar trabalho de grupo — cobra prazo, alinha papel, garante entrega final mesmo sob caos?" },
-    { "id": 1, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você se vê coordenando projeto multidisciplinar — tecnologia, obra, evento, pesquisa — com escopo, prazo e orçamento sob controle?" },
-    { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você consegue ser firme com prazo sem perder o time — projeto bom é o que entrega sem queimar quem fez?" }
+    { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você se vira pra organizar trabalho de grupo - cobra prazo, alinha papel, garante entrega final mesmo sob caos?" },
+    { "id": 1, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você se vê coordenando projeto multidisciplinar - tecnologia, obra, evento, pesquisa - com escopo, prazo e orçamento sob controle?" },
+    { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você consegue ser firme com prazo sem perder o time - projeto bom é o que entrega sem queimar quem fez?" }
   ],
   "empreendedorismo": [
-    { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você já teve ideia de negócio — escala pequena, escala grande — e sentiu vontade de tentar fazer acontecer?" },
-    { "id": 1, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você se vê tocando o próprio negócio — autônomo, MEI, sócio — com renda variável e responsabilidade total pelo resultado?" },
-    { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você aguenta meses iniciais sem salário garantido, com endividamento ou ajuda familiar — para colher depois?" }
+    { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você já teve ideia de negócio - escala pequena, escala grande - e sentiu vontade de tentar fazer acontecer?" },
+    { "id": 1, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você se vê tocando o próprio negócio - autônomo, MEI, sócio - com renda variável e responsabilidade total pelo resultado?" },
+    { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você aguenta meses iniciais sem salário garantido, com endividamento ou ajuda familiar - para colher depois?" }
   ],
   "turismo": [
-    { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você fica curioso sobre cidade nova — gastronomia, história, geografia — e gostaria de transmitir isso a quem visita?" },
-    { "id": 1, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você se vê em agência, operadora, hotel ou guiando — em destino turístico do Piauí (Sete Cidades, Delta do Parnaíba, Serra da Capivara)?" },
-    { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você aceita um setor que oscila com sazonalidade e crise — alta temporada intensa, baixa temporada lenta?" }
+    { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você fica curioso sobre cidade nova - gastronomia, história, geografia - e gostaria de transmitir isso a quem visita?" },
+    { "id": 1, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você se vê em agência, operadora, hotel ou guiando - em destino turístico do Piauí (Sete Cidades, Delta do Parnaíba, Serra da Capivara)?" },
+    { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você aceita um setor que oscila com sazonalidade e crise - alta temporada intensa, baixa temporada lenta?" }
   ],
   "hotelaria": [
-    { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você presta atenção em detalhe que torna estadia memorável — recepção, café da manhã, conserto rápido — e gostaria de cuidar disso?" },
-    { "id": 1, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você se vê na operação de hotel, pousada ou rede — coordenando equipe de atendimento e cuidando da experiência do hóspede?" },
-    { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você aguenta turno noturno, feriado e fim de semana — porque hospedagem nunca para, mesmo no Natal?" }
+    { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você presta atenção em detalhe que torna estadia memorável - recepção, café da manhã, conserto rápido - e gostaria de cuidar disso?" },
+    { "id": 1, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você se vê na operação de hotel, pousada ou rede - coordenando equipe de atendimento e cuidando da experiência do hóspede?" },
+    { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você aguenta turno noturno, feriado e fim de semana - porque hospedagem nunca para, mesmo no Natal?" }
   ],
   "eventos": [
-    { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você é a pessoa que organiza aniversário, formatura, encontro — e gosta da sensação de ver tudo dar certo no dia?" },
-    { "id": 1, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você se vê planejando casamento, convenção corporativa, feira ou show — com fornecedor, prazo e orçamento sob controle?" },
-    { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você aguenta noite mal dormida, imprevisto de última hora e cliente nervoso — e ainda sai sorrindo do evento entregue?" }
+    { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você é a pessoa que organiza aniversário, formatura, encontro - e gosta da sensação de ver tudo dar certo no dia?" },
+    { "id": 1, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você se vê planejando casamento, convenção corporativa, feira ou show - com fornecedor, prazo e orçamento sob controle?" },
+    { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você aguenta noite mal dormida, imprevisto de última hora e cliente nervoso - e ainda sai sorrindo do evento entregue?" }
   ],
   "agronegocio": [
-    { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você se interessa pelo lado empresarial do campo — produção, custo, mercado, exportação — e vê o agronegócio como motor econômico?" },
+    { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você se interessa pelo lado empresarial do campo - produção, custo, mercado, exportação - e vê o agronegócio como motor econômico?" },
     { "id": 1, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você se vê gerindo propriedade rural, cooperativa, trading agrícola ou consultoria em produção animal e vegetal?" },
-    { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você aceita viver entre escritório e fazenda — com viagem, campo aberto, sazonalidade, e olho atento ao clima?" }
+    { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você aceita viver entre escritório e fazenda - com viagem, campo aberto, sazonalidade, e olho atento ao clima?" }
   ],
   "gestao-comercial": [
-    { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você não tem vergonha de oferecer um produto, ouvir 'não' e tentar de outro jeito — vende com naturalidade?" },
+    { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você não tem vergonha de oferecer um produto, ouvir 'não' e tentar de outro jeito - vende com naturalidade?" },
     { "id": 1, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você se vê liderando equipe comercial, definindo meta, treinando vendedor e respondendo pelo resultado de vendas da empresa?" },
-    { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você aguenta pressão por meta — todo mês começa em zero — e enxerga isso como combustível em vez de tormento?" }
+    { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você aguenta pressão por meta - todo mês começa em zero - e enxerga isso como combustível em vez de tormento?" }
   ],
   "gestao-financeira": [
-    { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você é organizado com suas finanças pessoais — planilha, controle de gasto, reserva — sem ser obsessivo?" },
-    { "id": 1, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você se vê na área financeira de pequena ou média empresa — fluxo de caixa, contas, conciliação, controle?" },
-    { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você é detalhista — porque um erro de classificação de despesa pode atrapalhar declaração e gerar problema com a Receita?" }
+    { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você é organizado com suas finanças pessoais - planilha, controle de gasto, reserva - sem ser obsessivo?" },
+    { "id": 1, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você se vê na área financeira de pequena ou média empresa - fluxo de caixa, contas, conciliação, controle?" },
+    { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você é detalhista - porque um erro de classificação de despesa pode atrapalhar declaração e gerar problema com a Receita?" }
   ],
   "tecnico-administracao": [
-    { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Quando há um problema burocrático numa empresa — documento errado, processo travado, prazo perdido — você sente vontade de entender o que aconteceu e resolver, não de ignorar?" },
-    { "id": 1, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você se sente bem quando tudo está organizado — arquivo em ordem, planilha atualizada, prazo cumprido — e fica incomodado quando as coisas estão bagunçadas ou fora do lugar?" },
-    { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você consegue lidar com rotinas que se repetem todo dia — emitir nota fiscal, atualizar cadastro, conferir relatório — sem sentir que está desperdiçando seu tempo?" }
+    { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Quando há um problema burocrático numa empresa - documento errado, processo travado, prazo perdido - você sente vontade de entender o que aconteceu e resolver, não de ignorar?" },
+    { "id": 1, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você se sente bem quando tudo está organizado - arquivo em ordem, planilha atualizada, prazo cumprido - e fica incomodado quando as coisas estão bagunçadas ou fora do lugar?" },
+    { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você consegue lidar com rotinas que se repetem todo dia - emitir nota fiscal, atualizar cadastro, conferir relatório - sem sentir que está desperdiçando seu tempo?" }
   ],
   "tecnico-contabilidade": [
-    { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você tem interesse em entender como as empresas funcionam financeiramente — de onde vem o dinheiro, para onde vai, quanto sobra e quanto é imposto?" },
-    { "id": 1, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você sente satisfação quando fecha uma conta e os números batem — e fica incomodado quando algo não fecha e precisa encontrar o erro, por menor que seja?" },
-    { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você consegue trabalhar com prazos que não podem ser negociados — declaração de imposto no dia certo, folha de pagamento fechada na data — sem entrar em pânico?" }
+    { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você tem interesse em entender como as empresas funcionam financeiramente - de onde vem o dinheiro, para onde vai, quanto sobra e quanto é imposto?" },
+    { "id": 1, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você sente satisfação quando fecha uma conta e os números batem - e fica incomodado quando algo não fecha e precisa encontrar o erro, por menor que seja?" },
+    { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você consegue trabalhar com prazos que não podem ser negociados - declaração de imposto no dia certo, folha de pagamento fechada na data - sem entrar em pânico?" }
   ],
   "comercio": [
-    { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você gosta de movimento de loja — atendimento, vitrine, estoque, fluxo de caixa — e se vê em ambiente comercial?" },
+    { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você gosta de movimento de loja - atendimento, vitrine, estoque, fluxo de caixa - e se vê em ambiente comercial?" },
     { "id": 1, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você se vê em loja, distribuidora ou rede atendendo cliente, controlando estoque e fazendo a roda girar todo dia?" },
-    { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você aguenta cliente difícil, fim de mês corrido, devolução, troca — sem perder o sorriso para o próximo que entra?" }
+    { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você aguenta cliente difícil, fim de mês corrido, devolução, troca - sem perder o sorriso para o próximo que entra?" }
   ],
 
   "design-grafico": [
-    { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você presta atenção em tipografia, cor e composição — e percebe quando algo está feio mas não sabe nomear o porquê?" },
-    { "id": 1, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você se vê criando identidade visual, layout de revista, embalagem, social media — para cliente externo ou time interno?" },
-    { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você aceita feedback duro — refazer cinco vezes até o cliente aprovar — sem se desmotivar profundamente?" }
+    { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você presta atenção em tipografia, cor e composição - e percebe quando algo está feio mas não sabe nomear o porquê?" },
+    { "id": 1, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você se vê criando identidade visual, layout de revista, embalagem, social media - para cliente externo ou time interno?" },
+    { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você aceita feedback duro - refazer cinco vezes até o cliente aprovar - sem se desmotivar profundamente?" }
   ],
   "arquitetura-interiores": [
-    { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você entra num ambiente e mentalmente repensa móvel, iluminação, cor — sem nem terminar a primeira observação?" },
-    { "id": 1, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você se vê projetando ambiente residencial, comercial ou corporativo — coordenando marceneiro, eletricista e fornecedor?" },
-    { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você consegue equilibrar gosto do cliente com bom design — sem brigar com ele nem entregar projeto sem personalidade?" }
+    { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você entra num ambiente e mentalmente repensa móvel, iluminação, cor - sem nem terminar a primeira observação?" },
+    { "id": 1, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você se vê projetando ambiente residencial, comercial ou corporativo - coordenando marceneiro, eletricista e fornecedor?" },
+    { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você consegue equilibrar gosto do cliente com bom design - sem brigar com ele nem entregar projeto sem personalidade?" }
   ],
   "musica": [
-    { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você toca, canta, compõe ou produz — e estuda música além de só ouvir?" },
-    { "id": 1, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você se vê dando aula, tocando em banda, gravando em estúdio ou produzindo música para mídia — com renda combinada?" },
-    { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você aceita renda variável e a importância de construir reputação local — porque sucesso musical é principalmente trajetória de longo prazo?" }
+    { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você toca, canta, compõe ou produz - e estuda música além de só ouvir?" },
+    { "id": 1, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você se vê dando aula, tocando em banda, gravando em estúdio ou produzindo música para mídia - com renda combinada?" },
+    { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você aceita renda variável e a importância de construir reputação local - porque sucesso musical é principalmente trajetória de longo prazo?" }
   ],
   "teatro": [
-    { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você gosta de palco, expressão corporal, jogo cênico — e tem vontade de incorporar personagem, não só assistir?" },
-    { "id": 1, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você se vê em companhia teatral, produção independente, escola de arte ou TV — com trajetória feita de ensaio e oficina constante?" },
-    { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você aceita um campo de renda irregular — onde aula, projeto e edital são complemento essencial à arte?" }
+    { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você gosta de palco, expressão corporal, jogo cênico - e tem vontade de incorporar personagem, não só assistir?" },
+    { "id": 1, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você se vê em companhia teatral, produção independente, escola de arte ou TV - com trajetória feita de ensaio e oficina constante?" },
+    { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você aceita um campo de renda irregular - onde aula, projeto e edital são complemento essencial à arte?" }
   ],
   "cinema-audiovisual": [
-    { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você analisa filme em vez de só assistir — luz, corte, enquadramento, som — entendendo ali o ofício, não só o resultado?" },
-    { "id": 1, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você se vê em set como diretor, roteirista, fotógrafo, editor ou produtor — em curta, longa, série ou conteúdo digital?" },
-    { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você aceita um caminho de projeto a projeto — sem CLT, com edital, freela e dependência de rede profissional?" }
+    { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você analisa filme em vez de só assistir - luz, corte, enquadramento, som - entendendo ali o ofício, não só o resultado?" },
+    { "id": 1, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você se vê em set como diretor, roteirista, fotógrafo, editor ou produtor - em curta, longa, série ou conteúdo digital?" },
+    { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você aceita um caminho de projeto a projeto - sem CLT, com edital, freela e dependência de rede profissional?" }
   ],
   "fotografia": [
-    { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você olha o mundo procurando enquadramento, luz e momento — e acha que sua câmera (mesmo do celular) é instrumento?" },
-    { "id": 1, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você se vê fotografando casamento, evento, retrato, jornalismo ou publicidade — com renda combinada de várias frentes?" },
-    { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você consegue tratar fotografia como negócio — preço, contrato, entrega — sem deixar a parte criativa atropelar a operacional?" }
+    { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você olha o mundo procurando enquadramento, luz e momento - e acha que sua câmera (mesmo do celular) é instrumento?" },
+    { "id": 1, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você se vê fotografando casamento, evento, retrato, jornalismo ou publicidade - com renda combinada de várias frentes?" },
+    { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você consegue tratar fotografia como negócio - preço, contrato, entrega - sem deixar a parte criativa atropelar a operacional?" }
   ],
   "danca": [
-    { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você dança ou dançaria com seriedade — não só por divertimento, mas como linguagem que merece estudo?" },
-    { "id": 1, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você se vê em companhia, escola, projeto cultural ou educação — com prática diária do corpo e ensino sendo parte central?" },
-    { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você aceita uma carreira que cobra do corpo — disciplina física, lesão eventual, transição vocacional depois de certa idade?" }
+    { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você dança ou dançaria com seriedade - não só por divertimento, mas como linguagem que merece estudo?" },
+    { "id": 1, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você se vê em companhia, escola, projeto cultural ou educação - com prática diária do corpo e ensino sendo parte central?" },
+    { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você aceita uma carreira que cobra do corpo - disciplina física, lesão eventual, transição vocacional depois de certa idade?" }
   ],
   "artes-visuais": [
-    { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você cria — pinta, desenha, esculpe, faz instalação — mesmo quando ninguém pede?" },
+    { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você cria - pinta, desenha, esculpe, faz instalação - mesmo quando ninguém pede?" },
     { "id": 1, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você se vê em galeria, residência artística, ateliê próprio, edital cultural ou ensino de arte?" },
     { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você aceita um campo onde reconhecimento e renda dependem de trajetória de longo prazo, edital, premiação e rede pessoal?" }
   ],
   "moda": [
-    { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você observa roupa — corte, caimento, tecido — com olhar técnico, e não só como consumidor?" },
+    { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você observa roupa - corte, caimento, tecido - com olhar técnico, e não só como consumidor?" },
     { "id": 1, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você se vê criando coleção, dirigindo loja conceito, estilizando produção editorial ou tocando marca própria?" },
-    { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você lida bem com cobrança de tendência — coleção que vira velha em meses e mercado que pede reinvenção constante?" }
+    { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você lida bem com cobrança de tendência - coleção que vira velha em meses e mercado que pede reinvenção constante?" }
   ],
   "animacao": [
-    { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você se diverte estudando movimento — como personagem anda, expressa emoção, transmite ritmo — quadro a quadro?" },
-    { "id": 1, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você se vê em estúdio de animação, agência ou produtora — criando série, comercial, vinheta ou game cinematics?" },
-    { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você aguenta o trabalho minucioso e repetitivo da animação — segundos de tela podem levar dias de produção?" }
+    { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você se diverte estudando movimento - como personagem anda, expressa emoção, transmite ritmo - quadro a quadro?" },
+    { "id": 1, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você se vê em estúdio de animação, agência ou produtora - criando série, comercial, vinheta ou game cinematics?" },
+    { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você aguenta o trabalho minucioso e repetitivo da animação - segundos de tela podem levar dias de produção?" }
   ],
   "design-produto": [
-    { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você pega objeto cotidiano e pensa 'isso aqui podia ser melhor' — abridor, cadeira, controle remoto, tudo é alvo?" },
-    { "id": 1, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você se vê projetando móvel, embalagem, eletrodoméstico ou produto industrial — com olhar para ergonomia, custo e estética?" },
-    { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você consegue trabalhar com restrição técnica e produtiva — sem perder a coragem de fazer um produto que tenha presença?" }
+    { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você pega objeto cotidiano e pensa 'isso aqui podia ser melhor' - abridor, cadeira, controle remoto, tudo é alvo?" },
+    { "id": 1, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você se vê projetando móvel, embalagem, eletrodoméstico ou produto industrial - com olhar para ergonomia, custo e estética?" },
+    { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você consegue trabalhar com restrição técnica e produtiva - sem perder a coragem de fazer um produto que tenha presença?" }
   ],
   "gastronomia": [
     { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você cozinha por prazer, lê receita como literatura e fica curioso sobre técnica e ingrediente novo?" },
-    { "id": 1, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você se vê em cozinha profissional — calor, ritmo, hierarquia — ou tocando restaurante próprio com tudo o que isso implica?" },
-    { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você aguenta jornada longa, em pé, em fim de semana e feriado — sabendo que esse é o ritmo natural do setor?" }
+    { "id": 1, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você se vê em cozinha profissional - calor, ritmo, hierarquia - ou tocando restaurante próprio com tudo o que isso implica?" },
+    { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você aguenta jornada longa, em pé, em fim de semana e feriado - sabendo que esse é o ritmo natural do setor?" }
   ],
   "confeitaria": [
-    { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você tem o tipo de paciência da confeitaria — pesar grama, esperar massa crescer, medir temperatura, sem tomar atalho?" },
+    { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você tem o tipo de paciência da confeitaria - pesar grama, esperar massa crescer, medir temperatura, sem tomar atalho?" },
     { "id": 1, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você se vê produzindo bolo de casamento, doce para festa, vendendo por encomenda ou tendo loja própria?" },
-    { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você lida bem com cliente exigente — bolo torto, recheio errado, atraso na entrega podem virar reclamação pública na hora?" }
+    { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você lida bem com cliente exigente - bolo torto, recheio errado, atraso na entrega podem virar reclamação pública na hora?" }
   ],
   "culinaria-regional": [
-    { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você valoriza ingrediente local — caju, jenipapo, peixe de rio, carne de sol — e quer cozinhar com essa identidade?" },
+    { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você valoriza ingrediente local - caju, jenipapo, peixe de rio, carne de sol - e quer cozinhar com essa identidade?" },
     { "id": 1, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você se vê liderando cozinha em restaurante regional, hotel turístico ou projeto cultural ligado à culinária do Nordeste?" },
-    { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você se importa em preservar e atualizar receita tradicional — sem caricaturar, mas também sem engessar?" }
+    { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você se importa em preservar e atualizar receita tradicional - sem caricaturar, mas também sem engessar?" }
   ],
   "producao-cultural": [
-    { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você gosta de articular gente — artista, espaço, patrocínio, edital — pra um projeto cultural sair do papel?" },
-    { "id": 1, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você se vê produzindo show, mostra de cinema, exposição, festival — captando recurso e cuidando da entrega artística?" },
-    { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você lida bem com captação — Lei Rouanet, edital, patrocínio — e burocracia de prestação de contas?" }
+    { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você gosta de articular gente - artista, espaço, patrocínio, edital - pra um projeto cultural sair do papel?" },
+    { "id": 1, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você se vê produzindo show, mostra de cinema, exposição, festival - captando recurso e cuidando da entrega artística?" },
+    { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você lida bem com captação - Lei Rouanet, edital, patrocínio - e burocracia de prestação de contas?" }
   ],
   "arte-educacao": [
-    { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você acredita que arte na escola é coisa séria — e quer ser quem ensina criança a desenhar, ouvir música, encenar?" },
-    { "id": 1, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você se vê em sala de aula da rede pública como professor de arte — articulando música, teatro, artes visuais e dança?" },
-    { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você aceita um cargo subvalorizado em muitas escolas — mas com chance real de transformar vida de aluno com pouco repertório?" }
+    { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você acredita que arte na escola é coisa séria - e quer ser quem ensina criança a desenhar, ouvir música, encenar?" },
+    { "id": 1, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você se vê em sala de aula da rede pública como professor de arte - articulando música, teatro, artes visuais e dança?" },
+    { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você aceita um cargo subvalorizado em muitas escolas - mas com chance real de transformar vida de aluno com pouco repertório?" }
   ],
   "ilustracao": [
-    { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você desenha há tempo — caderno cheio, projeto pessoal, técnica favorita — e quer profissionalizar o ofício?" },
-    { "id": 1, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você se vê ilustrando livro infantil, editorial, publicidade, game ou identidade visual — combinando freela e projeto próprio?" },
+    { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você desenha há tempo - caderno cheio, projeto pessoal, técnica favorita - e quer profissionalizar o ofício?" },
+    { "id": 1, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você se vê ilustrando livro infantil, editorial, publicidade, game ou identidade visual - combinando freela e projeto próprio?" },
     { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você aceita renda variável e a importância de manter portfólio atualizado para conquistar cliente em outro estado ou país?" }
   ],
   "cenografia": [
-    { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você assiste peça ou filme prestando atenção no espaço cenográfico — entende como o cenário conta parte da história?" },
-    { "id": 1, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você se vê em teatro, cinema, TV ou evento — desenhando, construindo e operando cenário em equipe técnica?" },
-    { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você aguenta o ritmo entre planejamento e montagem — onde a noite de estreia é prazo absoluto e tudo precisa funcionar?" }
+    { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você assiste peça ou filme prestando atenção no espaço cenográfico - entende como o cenário conta parte da história?" },
+    { "id": 1, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você se vê em teatro, cinema, TV ou evento - desenhando, construindo e operando cenário em equipe técnica?" },
+    { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você aguenta o ritmo entre planejamento e montagem - onde a noite de estreia é prazo absoluto e tudo precisa funcionar?" }
   ],
   "producao-audiovisual": [
-    { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você gosta de organizar projeto audiovisual — equipe, equipamento, locação, autorização — antes mesmo da gravação?" },
-    { "id": 1, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você se vê produzindo curta, comercial, vídeo institucional ou conteúdo digital — coordenando dezenas de pessoas?" },
-    { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você lida bem com imprevisto de set — equipamento falhou, locação caiu, autor chegou atrasado — e ainda fecha a diária?" }
+    { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você gosta de organizar projeto audiovisual - equipe, equipamento, locação, autorização - antes mesmo da gravação?" },
+    { "id": 1, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você se vê produzindo curta, comercial, vídeo institucional ou conteúdo digital - coordenando dezenas de pessoas?" },
+    { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você lida bem com imprevisto de set - equipamento falhou, locação caiu, autor chegou atrasado - e ainda fecha a diária?" }
   ],
   "design-interiores": [
-    { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você passa em loja de móvel, decoração, marcenaria com olhar curioso — e mentalmente já compõe um ambiente?" },
+    { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você passa em loja de móvel, decoração, marcenaria com olhar curioso - e mentalmente já compõe um ambiente?" },
     { "id": 1, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você se vê com cliente residencial e comercial, desenvolvendo projeto de interiores que se adapta ao orçamento e ao gosto dele?" },
-    { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você lida bem com indústria de fornecedor — marceneiro, gesseiro, eletricista — coordenando entrega para um cliente final?" }
+    { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você lida bem com indústria de fornecedor - marceneiro, gesseiro, eletricista - coordenando entrega para um cliente final?" }
   ],
 
   "agronomia": [
-    { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você gosta da ideia de combinar ciência (solo, planta, clima) com prática de campo — não só uma das duas?" },
+    { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você gosta da ideia de combinar ciência (solo, planta, clima) com prática de campo - não só uma das duas?" },
     { "id": 1, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você se vê acompanhando lavoura, recomendando manejo, identificando praga, planejando safra em fazenda de qualquer porte?" },
-    { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você aceita morar perto da produção ou viajar bastante — porque essa carreira é incompatível com escritório central permanente?" }
+    { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você aceita morar perto da produção ou viajar bastante - porque essa carreira é incompatível com escritório central permanente?" }
   ],
   "zootecnia": [
-    { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você se interessa por criação animal — bovino, ovino, ave, suíno — em escala produtiva, não só de estimação?" },
-    { "id": 1, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você se vê melhorando produção de leite, carne ou ovo — com manejo, nutrição, genética, sanidade na ponta?" },
-    { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você lida bem com o lado prático e às vezes duro da pecuária — abate, vacinação em massa, cuidado com manejo populacional?" }
+    { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você se interessa por criação animal - bovino, ovino, ave, suíno - em escala produtiva, não só de estimação?" },
+    { "id": 1, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você se vê melhorando produção de leite, carne ou ovo - com manejo, nutrição, genética, sanidade na ponta?" },
+    { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você lida bem com o lado prático e às vezes duro da pecuária - abate, vacinação em massa, cuidado com manejo populacional?" }
   ],
   "medicina-veterinaria-rural": [
-    { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você se vê atendendo gado, equino, ovino, em fazenda — não só pet em consultório urbano?" },
+    { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você se vê atendendo gado, equino, ovino, em fazenda - não só pet em consultório urbano?" },
     { "id": 1, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você se vê numa rotina de viagem por propriedades rurais, sanidade do rebanho, parto, cirurgia em campo?" },
-    { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você aguenta uma rotina física e remota — sol, calor, distância — em troca de uma profissão decisiva para a economia regional?" }
+    { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você aguenta uma rotina física e remota - sol, calor, distância - em troca de uma profissão decisiva para a economia regional?" }
   ],
   "engenharia-florestal": [
-    { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você se interessa por mata, manejo de espécie, reflorestamento — e enxerga floresta como sistema produtivo e ambiental?" },
-    { "id": 1, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você se vê trabalhando em reflorestamento, ICMBio, papel e celulose, ou consultoria ambiental — com forte componente de campo?" },
-    { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você lida bem com tensão entre produção e conservação — e quer ser quem encontra equilíbrio técnico entre os dois?" }
+    { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você se interessa por mata, manejo de espécie, reflorestamento - e enxerga floresta como sistema produtivo e ambiental?" },
+    { "id": 1, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você se vê trabalhando em reflorestamento, ICMBio, papel e celulose, ou consultoria ambiental - com forte componente de campo?" },
+    { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você lida bem com tensão entre produção e conservação - e quer ser quem encontra equilíbrio técnico entre os dois?" }
   ],
   "gestao-ambiental": [
-    { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você se importa com licença ambiental, sustentabilidade corporativa, ESG — não como modismo, mas como agenda real?" },
+    { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você se importa com licença ambiental, sustentabilidade corporativa, ESG - não como modismo, mas como agenda real?" },
     { "id": 1, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você se vê em empresa, prefeitura, ONG ou consultoria desenhando programa ambiental e cobrando entrega?" },
-    { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você consegue ser técnico em ambiente politicamente sensível — sem desistir do rigor por pressão de prazo ou interesse econômico?" }
+    { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você consegue ser técnico em ambiente politicamente sensível - sem desistir do rigor por pressão de prazo ou interesse econômico?" }
   ],
   "agroecologia": [
-    { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você acredita que dá pra produzir alimento sem agrotóxico, em escala e qualidade — e quer fazer parte desse caminho?" },
+    { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você acredita que dá pra produzir alimento sem agrotóxico, em escala e qualidade - e quer fazer parte desse caminho?" },
     { "id": 1, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você se vê em assistência técnica para agricultura familiar, cooperativa orgânica, projeto de soberania alimentar?" },
-    { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você aceita rotina entre escritório, campo e diálogo com agricultor — onde técnica e saber tradicional precisam conversar?" }
+    { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você aceita rotina entre escritório, campo e diálogo com agricultor - onde técnica e saber tradicional precisam conversar?" }
   ],
   "tecnico-agropecuaria": [
-    { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você cresceu perto de roça, fazenda ou criação — ou tem interesse genuíno em produzir alimento e cuidar do solo?" },
+    { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você cresceu perto de roça, fazenda ou criação - ou tem interesse genuíno em produzir alimento e cuidar do solo?" },
     { "id": 1, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você se vê em propriedade rural, cooperativa ou EMATER orientando produtor, fazendo análise e manejo prático?" },
-    { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você não tem problema com poeira, animal, ferramenta, calor — e prefere campo movimentado a sala fechada?" }
+    { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você não tem problema com poeira, animal, ferramenta, calor - e prefere campo movimentado a sala fechada?" }
   ],
   "pesca-aquicultura": [
-    { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você se interessa por água — rio, açude, mar — e por criar ou capturar peixe e fauna aquática de forma sustentável?" },
-    { "id": 1, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você se vê em piscicultura, carcinicultura ou pesca artesanal — com componente técnico, ambiental e comercial?" },
+    { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você se interessa por água - rio, açude, mar - e por criar ou capturar peixe e fauna aquática de forma sustentável?" },
+    { "id": 1, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você se vê em piscicultura, carcinicultura ou pesca artesanal - com componente técnico, ambiental e comercial?" },
     { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você aguenta atividade ao ar livre, em ambiente úmido, com sol forte, dependente de variação climática constante?" }
   ],
   "cooperativismo": [
-    { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você acredita em força coletiva — gente pequena se organizando vira poder real — e quer atuar nesse modelo?" },
-    { "id": 1, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você se vê tocando ou apoiando cooperativa de produção, crédito, consumo — onde sócio é dono e participa da decisão?" },
-    { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você lida bem com reunião, assembleia, decisão coletiva — entendendo que cooperativa anda só na velocidade do diálogo?" }
+    { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você acredita em força coletiva - gente pequena se organizando vira poder real - e quer atuar nesse modelo?" },
+    { "id": 1, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você se vê tocando ou apoiando cooperativa de produção, crédito, consumo - onde sócio é dono e participa da decisão?" },
+    { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você lida bem com reunião, assembleia, decisão coletiva - entendendo que cooperativa anda só na velocidade do diálogo?" }
   ],
   "agronegocio-rural": [
-    { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você gosta de pensar a propriedade rural como empresa — produção, custo, preço, mercado, gestão profissional?" },
-    { "id": 1, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você se vê gerenciando fazenda própria ou de terceiro com olhar de negócio — produção, comercialização, finanças?" },
-    { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você aguenta volatilidade de preço, clima imprevisível e ciclo longo — sem perder o controle financeiro do dia a dia?" }
+    { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você gosta de pensar a propriedade rural como empresa - produção, custo, preço, mercado, gestão profissional?" },
+    { "id": 1, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você se vê gerenciando fazenda própria ou de terceiro com olhar de negócio - produção, comercialização, finanças?" },
+    { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você aguenta volatilidade de preço, clima imprevisível e ciclo longo - sem perder o controle financeiro do dia a dia?" }
   ],
   "fruticultura": [
-    { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você se interessa por cultura específica — manga, melão, uva, caju, banana — sabendo que fruta é commodity de exigência alta?" },
+    { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você se interessa por cultura específica - manga, melão, uva, caju, banana - sabendo que fruta é commodity de exigência alta?" },
     { "id": 1, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você se vê em polo fruticultor (vale do São Francisco, litoral do Piauí) gerenciando produção, colheita e exportação?" },
-    { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você aceita rotina marcada pelo calendário da fruta — janela de colheita curta, qualidade rigorosa, exigência do comprador internacional?" }
+    { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você aceita rotina marcada pelo calendário da fruta - janela de colheita curta, qualidade rigorosa, exigência do comprador internacional?" }
   ],
   "ovinocultura-caprinocultura": [
-    { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você reconhece a vocação do semiárido para ovino e caprino — e quer atuar nessa cadeia que cresce no Nordeste?" },
+    { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você reconhece a vocação do semiárido para ovino e caprino - e quer atuar nessa cadeia que cresce no Nordeste?" },
     { "id": 1, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você se vê cuidando de rebanho, melhorando genética, conduzindo manejo e abrindo mercado para carne, leite e derivados?" },
-    { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você aguenta vida rural, condição climática dura e gestão de pequena propriedade — sem perder ambição comercial?" }
+    { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você aguenta vida rural, condição climática dura e gestão de pequena propriedade - sem perder ambição comercial?" }
   ],
   "avicultura": [
-    { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você se interessa pelo modelo industrial da avicultura — ovo e frango como produto de alta escala e baixo custo?" },
-    { "id": 1, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você se vê gerenciando granja de postura ou corte — sanidade, nutrição, manejo, biossegurança em equilíbrio?" },
-    { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você aceita responsabilidade absoluta com biossegurança — uma falha pode descartar lote inteiro e custar caro?" }
+    { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você se interessa pelo modelo industrial da avicultura - ovo e frango como produto de alta escala e baixo custo?" },
+    { "id": 1, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você se vê gerenciando granja de postura ou corte - sanidade, nutrição, manejo, biossegurança em equilíbrio?" },
+    { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você aceita responsabilidade absoluta com biossegurança - uma falha pode descartar lote inteiro e custar caro?" }
   ],
   "apicultura": [
-    { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você se interessa por abelha — produção de mel, polinização, sustentabilidade — sem medo de manejo com colmeia?" },
-    { "id": 1, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você se vê tocando apiário próprio, vendendo mel, própolis, cera — em mercado local, regional ou exportação?" },
+    { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você se interessa por abelha - produção de mel, polinização, sustentabilidade - sem medo de manejo com colmeia?" },
+    { "id": 1, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você se vê tocando apiário próprio, vendendo mel, própolis, cera - em mercado local, regional ou exportação?" },
     { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você aceita uma atividade de baixo investimento inicial, mas que pede paciência, conhecimento da espécie e cuidado constante?" }
   ],
   "irrigacao-drenagem": [
-    { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você se interessa por engenharia da água no campo — onde a planta come, onde a planta afoga, como o solo respira?" },
+    { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você se interessa por engenharia da água no campo - onde a planta come, onde a planta afoga, como o solo respira?" },
     { "id": 1, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você se vê dimensionando, instalando e mantendo sistema de irrigação em projeto produtivo do semiárido ou cerrado?" },
-    { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você lida bem com restrição hídrica — porque cada litro de água conta no manejo eficiente que essa área exige?" }
+    { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você lida bem com restrição hídrica - porque cada litro de água conta no manejo eficiente que essa área exige?" }
   ],
   "tecnico-meio-ambiente": [
-    { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você presta atenção a impacto ambiental no seu entorno — descarte irregular, queimada, desmate — e fica incomodado?" },
+    { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você presta atenção a impacto ambiental no seu entorno - descarte irregular, queimada, desmate - e fica incomodado?" },
     { "id": 1, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você se vê em órgão ambiental, prefeitura, empresa ou ONG fazendo monitoramento, denúncia e ação técnica de campo?" },
-    { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você aguenta lidar com norma, processo administrativo e conflito local — sem virar apenas burocrata?" }
+    { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você aguenta lidar com norma, processo administrativo e conflito local - sem virar apenas burocrata?" }
   ],
   "tecnico-agroindustria": [
-    { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você se interessa pela transformação do produto da fazenda em produto de prateleira — queijo, doce, polpa, embutido?" },
-    { "id": 1, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você se vê em laticínio, frigorífico, beneficiadora — onde rigor de higiene, qualidade e processo é absoluto?" },
-    { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você aguenta ambiente refrigerado, jornada operacional e rotina industrial de alimento — onde uma falha vira recall?" }
+    { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você se interessa pela transformação do produto da fazenda em produto de prateleira - queijo, doce, polpa, embutido?" },
+    { "id": 1, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você se vê em laticínio, frigorífico, beneficiadora - onde rigor de higiene, qualidade e processo é absoluto?" },
+    { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você aguenta ambiente refrigerado, jornada operacional e rotina industrial de alimento - onde uma falha vira recall?" }
   ],
   "producao-organica": [
-    { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você acredita em produção orgânica como modelo viável — não só nicho de consumidor rico — e quer trabalhar nessa cadeia?" },
-    { "id": 1, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você se vê tocando ou apoiando produção sem agrotóxico — feira, certificação, hortaliça, fruta, grão?" },
-    { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você aceita rotina rígida de manejo orgânico — controle biológico, rotação, certificação — sem atalho?" }
+    { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você acredita em produção orgânica como modelo viável - não só nicho de consumidor rico - e quer trabalhar nessa cadeia?" },
+    { "id": 1, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você se vê tocando ou apoiando produção sem agrotóxico - feira, certificação, hortaliça, fruta, grão?" },
+    { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você aceita rotina rígida de manejo orgânico - controle biológico, rotação, certificação - sem atalho?" }
   ],
   "extrativismo-sustentavel": [
-    { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você valoriza produto extrativo — babaçu, buriti, castanha, pequi — e enxerga ali oportunidade econômica e cultural?" },
+    { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você valoriza produto extrativo - babaçu, buriti, castanha, pequi - e enxerga ali oportunidade econômica e cultural?" },
     { "id": 1, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você se vê apoiando comunidade extrativista, cooperativa de pequeno produtor, agregação de valor ao produto da floresta?" },
-    { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você aceita rotina dividida entre comunidade rural, escritório técnico e cadeia comercial — sendo ponte entre os três mundos?" }
+    { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você aceita rotina dividida entre comunidade rural, escritório técnico e cadeia comercial - sendo ponte entre os três mundos?" }
   ],
   "gestao-propriedades-rurais": [
-    { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você se interessa por administração rural — folha, imposto rural, custeio, comercialização — não só pela produção em si?" },
-    { "id": 1, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você se vê administrando fazenda ou conjunto de propriedades — pessoal, finança, controle de safra e gestão de risco?" },
-    { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você equilibra escritório e campo — entendendo que controle de propriedade vira papel, mas resultado depende de quem está no chão?" }
+    { "id": 3, "peso": 1, "fase": "ALUNO", "texto": "Você se interessa por administração rural - folha, imposto rural, custeio, comercialização - não só pela produção em si?" },
+    { "id": 1, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você se vê administrando fazenda ou conjunto de propriedades - pessoal, finança, controle de safra e gestão de risco?" },
+    { "id": 2, "peso": 2, "fase": "PROFISSIONAL", "texto": "Você equilibra escritório e campo - entendendo que controle de propriedade vira papel, mas resultado depende de quem está no chão?" }
   ]
 }

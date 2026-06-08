@@ -2,7 +2,7 @@
 
 ## Visão Geral do Produto
 
-O Légua é uma plataforma web responsiva para estudantes do 3o ano do ensino médio de escolas públicas, com foco inicial no Piauí. O objetivo é apresentar, de forma visual e acessível, todos os caminhos possíveis após o ensino médio, permitindo que o estudante simule como seria a vida em cada carreira escolhida e receba um resultado de compatibilidade com um próximo passo concreto.
+O Léguas é uma plataforma web responsiva para estudantes do 3o ano do ensino médio de escolas públicas, com foco inicial no Piauí. O objetivo é apresentar, de forma visual e acessível, todos os caminhos possíveis após o ensino médio, permitindo que o estudante simule como seria a vida em cada carreira escolhida e receba um resultado de compatibilidade com um próximo passo concreto.
 
 O produto não é um PWA. É uma aplicação web responsiva, mobile-first, acessível por link direto no navegador do celular sem instalação.
 
@@ -385,7 +385,7 @@ As tres perguntas de sucesso do MVP precisam ser respondidas com dados reais.
 
 ### Modulo 10 - Design System e Responsividade
 
-O design system do Légua e baseado em contraste forte: fundo azul escuro, tipografia clara e amarelo como cor de destaque. A paleta foi definida a partir da identidade visual do produto.
+O design system do Léguas e baseado em contraste forte: fundo azul escuro, tipografia clara e amarelo como cor de destaque. A paleta foi definida a partir da identidade visual do produto.
 
 #### Paleta de Cores
 
@@ -527,7 +527,7 @@ docker compose up
 
 #### Secao: O que Sao Migrations
 
-Explicacao objetiva: migrations sao arquivos que descrevem as mudancas no schema do banco de dados ao longo do tempo. No Légua, o Prisma gerencia as migrations automaticamente: quando o `prisma/schema.prisma` e alterado, o Prisma CLI gera um novo arquivo de migration em `prisma/migrations/` e o aplica no banco. Isso garante que todos os ambientes (desenvolvimento, staging, producao) tenham exatamente o mesmo schema.
+Explicacao objetiva: migrations sao arquivos que descrevem as mudancas no schema do banco de dados ao longo do tempo. No Léguas, o Prisma gerencia as migrations automaticamente: quando o `prisma/schema.prisma` e alterado, o Prisma CLI gera um novo arquivo de migration em `prisma/migrations/` e o aplica no banco. Isso garante que todos os ambientes (desenvolvimento, staging, producao) tenham exatamente o mesmo schema.
 
 #### Secao: Comandos Prisma
 

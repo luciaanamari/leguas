@@ -176,7 +176,7 @@ export default async function PerfilPage() {
 
         <div className="card" style={{ padding: "0 1.25rem" }}>
           <InfoRow label="Nome" value={estudante.nome} />
-          <InfoRow label="E-mail" value={estudante.email ?? "—"} />
+          <InfoRow label="E-mail" value={estudante.email ?? "-"} />
           <InfoRow label="Escola" value={estudante.escolaNome} />
           <InfoRow
             label="Ano"

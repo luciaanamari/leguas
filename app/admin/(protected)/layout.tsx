@@ -37,7 +37,7 @@ export default async function AdminProtectedLayout({ children }: { children: Rea
             marginBottom: "2rem",
           }}
         >
-          Légua <span style={{ color: "var(--color-accent-hover)" }}>Admin</span>
+          Léguas <span style={{ color: "var(--color-accent-hover)" }}>Admin</span>
         </Link>
         <AdminNav />
         <div

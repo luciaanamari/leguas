@@ -69,7 +69,7 @@ export async function DELETE(_req: Request, ctx: Ctx) {
   });
   if (!existe) return NextResponse.json({ error: "Não encontrado." }, { status: 404 });
 
-  // Hard delete — cascades to Simulacao, ResultadoMatch, EventoEngajamento
+  // Hard delete - cascades to Simulacao, ResultadoMatch, EventoEngajamento
   await prisma.estudante.delete({ where: { id } });
   return new NextResponse(null, { status: 204 });
 }

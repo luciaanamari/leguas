@@ -1,6 +1,6 @@
-// Quiz de afinidade por curso — perguntas individuais para cada um dos 158 cursos
+// Quiz de afinidade por curso - perguntas individuais para cada um dos 158 cursos
 // listados em lib/data/cursos-*.json. 3 perguntas por curso (1 fase ALUNO peso 1
-// + 2 fase PROFISSIONAL peso 2). Cada curso tem suas proprias perguntas — sem
+// + 2 fase PROFISSIONAL peso 2). Cada curso tem suas proprias perguntas - sem
 // reuso entre cursos.
 //
 // Banco de perguntas mora em quiz-afinidade-cursos.json. Esse arquivo apenas
@@ -21,7 +21,7 @@ const banco = bancoPerguntas as unknown as Record<string, PerguntaAfinidade[]>;
 
 // Fallback raro: usado apenas se um curso for adicionado nos JSONs de cursos
 // sem registrar suas perguntas. Mantemos perguntas claramente neutras pra
-// nao distorcer o match silenciosamente — a tela vai funcionar mas o
+// nao distorcer o match silenciosamente - a tela vai funcionar mas o
 // estudante percebe que foi generico.
 const generico: PerguntaAfinidade[] = [
   {

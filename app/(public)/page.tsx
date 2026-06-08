@@ -14,7 +14,7 @@ export default function HomePage() {
             fontSize: "0.85rem",
           }}
         >
-          Légua
+          Léguas
         </p>
         <h1
           style={{
@@ -38,7 +38,7 @@ export default function HomePage() {
           </Link>
         </div>
         <p className="muted" style={{ marginTop: "2rem" }}>
-          O Légua é gratuito, funciona no celular e foi feito pensando no estudante de escola
+          O Léguas é gratuito, funciona no celular e foi feito pensando no estudante de escola
           pública do Piauí.
         </p>
       </section>

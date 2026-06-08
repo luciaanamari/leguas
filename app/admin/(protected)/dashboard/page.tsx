@@ -31,7 +31,7 @@ export default async function DashboardPage() {
     <div>
       <h1 style={{ fontSize: "1.75rem", marginBottom: "0.25rem" }}>Dashboard</h1>
       <p className="muted" style={{ marginBottom: "2rem" }}>
-        Visão geral dos números do Légua.
+        Visão geral dos números do Léguas.
       </p>
 
       <section

@@ -8,7 +8,7 @@
 //   - AREA         (+3):  mesma area DISC, sem ponte transversal
 //   - NENHUMA      (0):   sem relacao
 //
-// Vocabulario de tags e fechado e curado — 19 termos. Habilitadores tem familia
+// Vocabulario de tags e fechado e curado - 19 termos. Habilitadores tem familia
 // (tecnologia/marketing/design/gestao/comunicacao) usada para escolher a
 // mensagem mostrada ao aluno.
 
@@ -98,7 +98,7 @@ const TODAS_TAGS: TagAplicacao[] = [
 ];
 
 // Lista de cursos habilitadores e suas tags de compatibilidade.
-// Cursos NAO listados aqui sao tratados como verticais — neles a correlacao
+// Cursos NAO listados aqui sao tratados como verticais - neles a correlacao
 // transversal nao se aplica.
 export const cursosHabilitadores: Record<string, CursoHabilitador> = {
   // ── Tecnologia ─────────────────────────────────────────────────────────
@@ -209,7 +209,7 @@ type MensagensCuradas = Partial<
 export const mensagensCuradas: MensagensCuradas = {
   alimentos: {
     tecnologia:
-      "A indústria alimentícia depende cada vez mais de software para rastreabilidade, controle de qualidade e cadeia logística — quem entende os dois lados é raro no mercado.",
+      "A indústria alimentícia depende cada vez mais de software para rastreabilidade, controle de qualidade e cadeia logística - quem entende os dois lados é raro no mercado.",
     marketing:
       "Marca de alimento vive de comunicação. Quem conhece a cadeia produtiva tem vantagem real ao criar campanha que conversa com produtor e consumidor.",
     design:
@@ -219,7 +219,7 @@ export const mensagensCuradas: MensagensCuradas = {
   },
   saude: {
     tecnologia:
-      "TI na saúde explodiu — prontuário eletrônico, telemedicina, dispositivo médico — e o setor precisa de quem entende protocolo clínico, não só código.",
+      "TI na saúde explodiu - prontuário eletrônico, telemedicina, dispositivo médico - e o setor precisa de quem entende protocolo clínico, não só código.",
     marketing:
       "Comunicação em saúde é altamente regulada. Entender o lado clínico ajuda a criar campanha que respeita norma e fala com paciente.",
     design:
@@ -229,7 +229,7 @@ export const mensagensCuradas: MensagensCuradas = {
   },
   agro: {
     tecnologia:
-      "Agritech é uma das áreas que mais cresceu no Brasil — software, sensor, drone, satélite — e quem entende lavoura ou pecuária tem vantagem ao desenhar solução.",
+      "Agritech é uma das áreas que mais cresceu no Brasil - software, sensor, drone, satélite - e quem entende lavoura ou pecuária tem vantagem ao desenhar solução.",
     marketing:
       "Comunicação para agronegócio é mercado próprio. Quem fala a língua do produtor rural cria campanha que ressoa no setor.",
     design:
@@ -241,7 +241,7 @@ export const mensagensCuradas: MensagensCuradas = {
     tecnologia:
       "Indústria 4.0 conecta software, automação e processo produtivo. Quem entende chão de fábrica acelera projeto de transformação digital.",
     marketing:
-      "Marketing B2B industrial é nicho onde técnico vira ativo — falar com engenheiro de cliente, entender o produto, criar material técnico que vende.",
+      "Marketing B2B industrial é nicho onde técnico vira ativo - falar com engenheiro de cliente, entender o produto, criar material técnico que vende.",
     design:
       "Design industrial pede gente que conhece restrição de produção. Seu técnico vira ponte entre estética e fabricação real.",
     gestao:
@@ -249,7 +249,7 @@ export const mensagensCuradas: MensagensCuradas = {
   },
   varejo: {
     tecnologia:
-      "Varejo digital é grande motor de tecnologia — e-commerce, ERP, integração de loja. Quem viveu operação desenha sistema melhor.",
+      "Varejo digital é grande motor de tecnologia - e-commerce, ERP, integração de loja. Quem viveu operação desenha sistema melhor.",
     marketing:
       "Marketing de varejo vive de campanha de conversão e fidelização. Entender o ponto de venda é vantagem na criação.",
     design:
@@ -259,7 +259,7 @@ export const mensagensCuradas: MensagensCuradas = {
   },
   "meio-ambiente": {
     tecnologia:
-      "Tecnologia ambiental — monitoramento, sensor, sistema de informação geográfica — precisa de quem entende campo, não só código.",
+      "Tecnologia ambiental - monitoramento, sensor, sistema de informação geográfica - precisa de quem entende campo, não só código.",
     marketing:
       "Sustentabilidade virou agenda de marca. Quem conhece norma e prática ambiental cria comunicação que convence em vez de greenwashing.",
     gestao:
@@ -267,7 +267,7 @@ export const mensagensCuradas: MensagensCuradas = {
   },
   cultura: {
     tecnologia:
-      "Tecnologia para cultura — streaming, jogo, plataforma criativa, edição — precisa de quem domina o ofício artístico.",
+      "Tecnologia para cultura - streaming, jogo, plataforma criativa, edição - precisa de quem domina o ofício artístico.",
     marketing:
       "Marketing cultural depende de quem conhece linguagem artística e público. Combinação rara no mercado.",
     design:
@@ -277,7 +277,7 @@ export const mensagensCuradas: MensagensCuradas = {
   },
   turismo: {
     tecnologia:
-      "Tech para turismo — plataforma de reserva, app de guia, gestão hoteleira — precisa de quem viveu o setor para desenhar bem.",
+      "Tech para turismo - plataforma de reserva, app de guia, gestão hoteleira - precisa de quem viveu o setor para desenhar bem.",
     marketing:
       "Marketing turístico vive de imagem, narrativa e jornada. Quem conhece o destino por dentro entrega comunicação mais autêntica.",
     gestao:
@@ -285,13 +285,13 @@ export const mensagensCuradas: MensagensCuradas = {
   },
   logistica: {
     tecnologia:
-      "Logtech é grande área — roteirização, gestão de frota, integração de marketplace. Precisa de quem entende fluxo físico real.",
+      "Logtech é grande área - roteirização, gestão de frota, integração de marketplace. Precisa de quem entende fluxo físico real.",
     gestao:
       "Gestão logística é coração de muita empresa. Seu técnico cria atalho para coordenação em distribuição e transporte.",
   },
   educacao: {
     tecnologia:
-      "Edtech precisa de quem entende sala de aula — plataforma de ensino, ferramenta de gestão escolar, aprendizagem adaptativa.",
+      "Edtech precisa de quem entende sala de aula - plataforma de ensino, ferramenta de gestão escolar, aprendizagem adaptativa.",
     marketing:
       "Marketing educacional fala com aluno, pai e gestor. Entender o trabalho pedagógico ajuda a criar campanha que respeita a sala de aula.",
     design:
@@ -299,7 +299,7 @@ export const mensagensCuradas: MensagensCuradas = {
   },
   "seguranca-publica": {
     tecnologia:
-      "Tecnologia para segurança pública — análise criminal, vigilância, gestão de operação — precisa de quem entende dinâmica de campo.",
+      "Tecnologia para segurança pública - análise criminal, vigilância, gestão de operação - precisa de quem entende dinâmica de campo.",
     gestao:
       "Gestão pública em segurança pede quem entende operação. Seu técnico vira ativo em coordenação e política pública.",
   },
@@ -319,25 +319,25 @@ export const mensagensCuradas: MensagensCuradas = {
   },
   financeiro: {
     tecnologia:
-      "Fintech é setor enorme — pagamento, crédito, investimento — e quem entende rotina contábil ou financeira desenha produto melhor.",
+      "Fintech é setor enorme - pagamento, crédito, investimento - e quem entende rotina contábil ou financeira desenha produto melhor.",
     marketing:
       "Marketing de banco e financeira é regulado e técnico. Quem entende produto financeiro cria campanha mais responsável.",
   },
   juridico: {
     tecnologia:
-      "Lawtech cresce rápido — automação de petição, análise de contrato, jurimetria — e precisa de quem fala a língua jurídica.",
+      "Lawtech cresce rápido - automação de petição, análise de contrato, jurimetria - e precisa de quem fala a língua jurídica.",
     marketing:
       "Comunicação para escritório de advocacia tem norma rígida da OAB. Quem entende o lado jurídico evita risco.",
   },
   comunicacao: {
     tecnologia:
-      "Mídia e comunicação migraram para plataforma digital — newsroom integrada, automação editorial. Precisa de quem entende a redação.",
+      "Mídia e comunicação migraram para plataforma digital - newsroom integrada, automação editorial. Precisa de quem entende a redação.",
     design:
       "Design editorial, identidade visual de veículo e produto de mídia pedem quem entende o ritmo da redação.",
   },
   "bem-estar-animal": {
     tecnologia:
-      "Petech — app, telemedicina veterinária, gestão de clínica animal — é setor em alta e pede quem entende o lado clínico animal.",
+      "Petech - app, telemedicina veterinária, gestão de clínica animal - é setor em alta e pede quem entende o lado clínico animal.",
   },
   "qualidade-controle": {
     tecnologia:

@@ -1,6 +1,6 @@
-// Quiz vocacional DISC — 8 perguntas
+// Quiz vocacional DISC - 8 perguntas
 // Cada opcao pontua simultaneamente uma area (H/E/B) e um perfil DISC (D/I/S/C).
-// O estudante nunca ve os rotulos — escolhe apenas a opcao que mais combina com ele.
+// O estudante nunca ve os rotulos - escolhe apenas a opcao que mais combina com ele.
 
 export type AreaDiscSlug = "HUMANAS" | "EXATAS" | "BIOLOGICAS";
 export type DiscLetra = "D" | "I" | "S" | "C";
@@ -128,7 +128,7 @@ export function calcularDisc(respostas: RespostaDisc[]): ResultadoDisc {
     contagemDisc[opcao.disc] += 1;
   }
 
-  // Perfil DISC dominante (desempate prioriza D > I > S > C — letra de maior contagem)
+  // Perfil DISC dominante (desempate prioriza D > I > S > C - letra de maior contagem)
   const ordemDisc: DiscLetra[] = ["D", "I", "S", "C"];
   let disc: DiscLetra = "D";
   let maxDisc = -1;
@@ -190,7 +190,7 @@ export const nomesArea: Record<AreaDiscSlug, string> = {
   BIOLOGICAS: "Biológicas",
 };
 
-// Descricoes humanizadas — usadas na tela de perfil vocacional apos o cadastro.
+// Descricoes humanizadas - usadas na tela de perfil vocacional apos o cadastro.
 // Nunca expoem a sigla DISC ao estudante.
 export const descricaoPerfil: Record<DiscLetra, { rotulo: string; resumo: string; pontosFortes: string[]; cuidados: string }> = {
   D: {
@@ -199,7 +199,7 @@ export const descricaoPerfil: Record<DiscLetra, { rotulo: string; resumo: string
       "Você age rápido, gosta de resultado concreto e não tem medo de tomar decisões difíceis quando precisa. Em grupo, costuma assumir liderança naturalmente.",
     pontosFortes: ["Iniciativa", "Pragmatismo", "Velocidade de decisão", "Foco em resultado"],
     cuidados:
-      "Atenção para não atropelar processos longos. Carreiras que exigem muito tempo de estudo antes de ver impacto podem te frustrar — escolha caminhos com entregas frequentes.",
+      "Atenção para não atropelar processos longos. Carreiras que exigem muito tempo de estudo antes de ver impacto podem te frustrar - escolha caminhos com entregas frequentes.",
   },
   I: {
     rotulo: "Você é um Influenciador",
@@ -207,7 +207,7 @@ export const descricaoPerfil: Record<DiscLetra, { rotulo: string; resumo: string
       "Você se conecta com pessoas com facilidade, sabe se expressar e contagia o grupo com entusiasmo. Brilha quando o trabalho envolve comunicar, ensinar ou inspirar.",
     pontosFortes: ["Comunicação", "Empatia", "Criatividade", "Networking"],
     cuidados:
-      "Cuidado com trabalhos isolados e muito técnicos sem contato humano — você pode perder motivação. Busque ambientes coletivos.",
+      "Cuidado com trabalhos isolados e muito técnicos sem contato humano - você pode perder motivação. Busque ambientes coletivos.",
   },
   S: {
     rotulo: "Você é Estável e Confiável",

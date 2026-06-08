@@ -3,7 +3,7 @@ import { redirect } from "next/navigation";
 import { lerSessaoEstudante } from "@/lib/auth";
 import LoginEstudanteForm from "@/components/cadastro/LoginEstudanteForm";
 
-export const metadata = { title: "Entrar — Légua" };
+export const metadata = { title: "Entrar - Léguas" };
 export const dynamic = "force-dynamic";
 
 export default async function EntrarPage() {
@@ -15,7 +15,7 @@ export default async function EntrarPage() {
       </Link>
       <h1 style={{ marginTop: "1rem", marginBottom: "0.25rem" }}>Já tenho cadastro</h1>
       <p className="muted" style={{ marginBottom: "1.5rem" }}>
-        Entre com o CPF e o WhatsApp que você usou no cadastro.
+        Entre com o seu Email e senha.
       </p>
       <LoginEstudanteForm />
       <p className="muted" style={{ marginTop: "1.5rem", textAlign: "center" }}>

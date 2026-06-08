@@ -1,10 +1,10 @@
-// Cursos tecnicos disponiveis no Piaui — usados no cadastro como dropdown padronizado
+// Cursos tecnicos disponiveis no Piaui - usados no cadastro como dropdown padronizado
 // (substitui o input livre antigo).
 //
 // Cada curso tem:
 //   - slug: identificador interno (kebab-case)
 //   - nome: rotulo exibido ao usuario (capitalizado)
-//   - area: H (Humanas) / E (Exatas) / B (Biologicas) — segue o modelo DISC do projeto
+//   - area: H (Humanas) / E (Exatas) / B (Biologicas) - segue o modelo DISC do projeto
 //   - cursosRelacionados: slugs de cursos do JSON de cursos onde esse tecnico
 //     conta como correlacao direta (peso forte no match). Se vazio, so vale a
 //     correlacao por area.
@@ -426,7 +426,7 @@ export function classificarCorrelacao(
     return { correlacao: "DIRETA", tagsCompartilhadas: [], familiaHabilitador: null };
   }
 
-  // 2) TRANSVERSAL — curso simulado e habilitador e compartilha tag
+  // 2) TRANSVERSAL - curso simulado e habilitador e compartilha tag
   if (ehHabilitador(cursoSimuladoSlug)) {
     const habilitador = cursosHabilitadores[cursoSimuladoSlug];
     const compartilhadas = tec.tagsAplicacao.filter((t) =>

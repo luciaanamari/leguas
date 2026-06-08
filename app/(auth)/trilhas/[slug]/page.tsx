@@ -95,7 +95,7 @@ export default async function TrilhaPage({ params }: { params: Params }) {
           {trilha.profissoes.map((p) => (
             <li key={p.id} style={{ marginBottom: "0.5rem" }}>
               <strong>{p.nome}</strong>{" "}
-              <span className="muted">— {p.descricao}</span>
+              <span className="muted">- {p.descricao}</span>
             </li>
           ))}
         </ul>

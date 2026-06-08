@@ -54,7 +54,7 @@ export async function POST(req: Request) {
   const cursoNome = curso?.nome ?? simulacao.cursoSlug;
 
   const estudante = simulacao.estudante;
-  // Recalcula a contagem DISC a partir das respostas armazenadas — usada para a
+  // Recalcula a contagem DISC a partir das respostas armazenadas - usada para a
   // tela de transparencia. Falha silenciosa se respostas estiverem corrompidas.
   let contagemDisc = { D: 0, I: 0, S: 0, C: 0 };
   try {

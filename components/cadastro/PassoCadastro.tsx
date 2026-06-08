@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, type FormEvent } from "react";
+import { useState, useEffect, useRef, type FormEvent } from "react";
 import { useRouter } from "next/navigation";
 import { perguntasDisc } from "@/lib/data/quiz-disc";
 import { cursosTecnicos } from "@/lib/data/cursos-tecnicos";
@@ -46,7 +46,7 @@ type EstadoForm = {
   // Passo 3
   perfilEmpreendedor: "" | PerfilEmpreendedorOpcao;
   preocupacoes: PreocupacaoOpcao[];
-  // Passo 4 — respostas DISC indexadas por perguntaId
+  // Passo 4 - respostas DISC indexadas por perguntaId
   respostasDisc: Record<number, OpcaoDisc | undefined>;
 };
 
@@ -139,12 +139,314 @@ function mascaraWhatsapp(v: string) {
   return d.replace(/(\d{2})(\d{5})(\d)/, "($1) $2-$3");
 }
 
+function IconeOlho({ aberto }: { aberto: boolean }) {
+  const comum = {
+    width: 20,
+    height: 20,
+    viewBox: "0 0 24 24",
+    fill: "none",
+    stroke: "currentColor",
+    strokeWidth: 2,
+    strokeLinecap: "round" as const,
+    strokeLinejoin: "round" as const,
+    "aria-hidden": true,
+  };
+  return aberto ? (
+    <svg {...comum}>
+      <path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7z" />
+      <circle cx="12" cy="12" r="3" />
+    </svg>
+  ) : (
+    <svg {...comum}>
+      <path d="M17.94 17.94A10.07 10.07 0 0 1 12 19c-6.5 0-10-7-10-7a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 5c6.5 0 10 7 10 7a18.5 18.5 0 0 1-2.16 3.19" />
+      <path d="M9.9 9.9a3 3 0 1 0 4.2 4.2" />
+      <line x1="2" y1="2" x2="22" y2="22" />
+    </svg>
+  );
+}
+
+function CampoSenha({
+  id,
+  label,
+  placeholder,
+  value,
+  onChange,
+  erro,
+  marginTop,
+}: {
+  id: string;
+  label: string;
+  placeholder: string;
+  value: string;
+  onChange: (v: string) => void;
+  erro?: string;
+  marginTop?: string;
+}) {
+  const [mostrar, setMostrar] = useState(false);
+  return (
+    <>
+      <label
+        className="label"
+        htmlFor={id}
+        style={marginTop ? { marginTop } : undefined}
+      >
+        {label}
+      </label>
+      <div style={{ position: "relative" }}>
+        <input
+          id={id}
+          className="input"
+          type={mostrar ? "text" : "password"}
+          placeholder={placeholder}
+          value={value}
+          onChange={(e) => onChange(e.target.value)}
+          autoComplete="new-password"
+          style={{ paddingRight: "3rem" }}
+        />
+        <button
+          type="button"
+          onClick={() => setMostrar((v) => !v)}
+          aria-label={mostrar ? "Ocultar senha" : "Mostrar senha"}
+          aria-pressed={mostrar}
+          title={mostrar ? "Ocultar senha" : "Mostrar senha"}
+          style={{
+            position: "absolute",
+            top: 0,
+            right: 0,
+            height: "100%",
+            width: "2.75rem",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            background: "transparent",
+            border: 0,
+            cursor: "pointer",
+            color: "var(--color-text-muted)",
+            padding: 0,
+          }}
+        >
+          <IconeOlho aberto={mostrar} />
+        </button>
+      </div>
+      {erro && <p className="error">{erro}</p>}
+    </>
+  );
+}
+
+function SelecaoCursoTecnico({
+  value,
+  onChange,
+}: {
+  value: string;
+  onChange: (slug: string) => void;
+}) {
+  // Inicializa o texto do campo com o nome do curso ja selecionado
+  // (importante ao voltar para o passo 2, que remonta o componente).
+  const [busca, setBusca] = useState(
+    () => cursosTecnicos.find((c) => c.slug === value)?.nome ?? "",
+  );
+  const [aberto, setAberto] = useState(false);
+  const [destaque, setDestaque] = useState(-1);
+  const wrapRef = useRef<HTMLDivElement>(null);
+
+  const termo = busca.trim().toLowerCase();
+  // Filtra apenas quando o texto digitado nao for exatamente o curso ja
+  // selecionado — assim, abrir o campo com uma selecao mostra a lista inteira.
+  const nomeSelecionado = cursosTecnicos.find((c) => c.slug === value)?.nome;
+  const filtrados =
+    termo && termo !== nomeSelecionado?.toLowerCase()
+      ? cursosTecnicos.filter((c) => c.nome.toLowerCase().includes(termo))
+      : cursosTecnicos;
+
+  // Fecha o dropdown ao clicar fora
+  useEffect(() => {
+    function fora(e: MouseEvent) {
+      if (wrapRef.current && !wrapRef.current.contains(e.target as Node)) {
+        setAberto(false);
+      }
+    }
+    document.addEventListener("mousedown", fora);
+    return () => document.removeEventListener("mousedown", fora);
+  }, []);
+
+  function selecionar(slug: string, nome: string) {
+    onChange(slug);
+    setBusca(nome);
+    setAberto(false);
+    setDestaque(-1);
+  }
+
+  function limpar() {
+    onChange("");
+    setBusca("");
+    setAberto(false);
+    setDestaque(-1);
+  }
+
+  return (
+    <div ref={wrapRef} style={{ position: "relative" }}>
+      <input
+        id="tecnico"
+        className="input"
+        type="text"
+        role="combobox"
+        aria-expanded={aberto}
+        aria-autocomplete="list"
+        aria-controls="lista-tecnicos"
+        autoComplete="off"
+        placeholder="Digite para buscar seu curso técnico"
+        value={busca}
+        style={{ paddingRight: value || busca ? "2.75rem" : undefined }}
+        onFocus={(e) => {
+          setAberto(true);
+          e.target.select();
+        }}
+        onChange={(e) => {
+          setBusca(e.target.value);
+          setAberto(true);
+          setDestaque(-1);
+          if (e.target.value === "" && value) onChange("");
+        }}
+        onKeyDown={(e) => {
+          if (e.key === "ArrowDown") {
+            e.preventDefault();
+            setAberto(true);
+            setDestaque((i) => Math.min(filtrados.length - 1, i + 1));
+          } else if (e.key === "ArrowUp") {
+            e.preventDefault();
+            setDestaque((i) => Math.max(0, i - 1));
+          } else if (e.key === "Enter") {
+            if (aberto && destaque >= 0 && filtrados[destaque]) {
+              e.preventDefault();
+              selecionar(filtrados[destaque].slug, filtrados[destaque].nome);
+            }
+          } else if (e.key === "Escape") {
+            setAberto(false);
+          }
+        }}
+      />
+      {(value || busca) && (
+        <button
+          type="button"
+          onClick={limpar}
+          aria-label="Limpar seleção"
+          title="Limpar seleção"
+          style={{
+            position: "absolute",
+            top: 0,
+            right: 0,
+            height: "100%",
+            width: "2.75rem",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            background: "transparent",
+            border: 0,
+            cursor: "pointer",
+            color: "var(--color-text-muted)",
+            fontSize: "1.25rem",
+            lineHeight: 1,
+            padding: 0,
+          }}
+        >
+          ×
+        </button>
+      )}
+
+      {aberto && (
+        <ul
+          id="lista-tecnicos"
+          role="listbox"
+          style={{
+            position: "absolute",
+            zIndex: 20,
+            top: "calc(100% + 4px)",
+            left: 0,
+            right: 0,
+            maxHeight: 240,
+            overflowY: "auto",
+            margin: 0,
+            padding: 4,
+            listStyle: "none",
+            background: "#ffffff",
+            border: "2px solid var(--color-border)",
+            borderRadius: "var(--radius-sm)",
+            boxShadow: "0 8px 24px rgba(0,0,0,0.18)",
+          }}
+        >
+          <li role="option" aria-selected={value === ""}>
+            <button
+              type="button"
+              onClick={limpar}
+              style={{
+                display: "block",
+                width: "100%",
+                textAlign: "left",
+                padding: "0.6rem 0.75rem",
+                border: 0,
+                borderRadius: "0.4rem",
+                cursor: "pointer",
+                background: value === "" ? "var(--color-accent-soft)" : "transparent",
+                color: "var(--color-text-muted)",
+                fontStyle: "italic",
+              }}
+            >
+              Não faço nenhum
+            </button>
+          </li>
+
+          {filtrados.length === 0 ? (
+            <li
+              style={{
+                padding: "0.6rem 0.75rem",
+                color: "var(--color-text-muted)",
+              }}
+            >
+              Nenhum curso encontrado
+            </li>
+          ) : (
+            filtrados.map((c, idx) => {
+              const sel = c.slug === value;
+              const hi = idx === destaque;
+              return (
+                <li key={c.slug} role="option" aria-selected={sel}>
+                  <button
+                    type="button"
+                    onMouseEnter={() => setDestaque(idx)}
+                    onClick={() => selecionar(c.slug, c.nome)}
+                    style={{
+                      display: "block",
+                      width: "100%",
+                      textAlign: "left",
+                      padding: "0.6rem 0.75rem",
+                      border: 0,
+                      borderRadius: "0.4rem",
+                      cursor: "pointer",
+                      background:
+                        hi || sel ? "var(--color-accent-soft)" : "transparent",
+                      color: "var(--color-text)",
+                      fontWeight: sel ? 700 : 400,
+                    }}
+                  >
+                    {c.nome}
+                  </button>
+                </li>
+              );
+            })
+          )}
+        </ul>
+      )}
+    </div>
+  );
+}
+
 export default function PassoCadastro() {
   const router = useRouter();
   const [passo, setPasso] = useState<Passo>(1);
   const [estado, setEstado] = useState<EstadoForm>(inicial);
   const [erros, setErros] = useState<Record<string, string>>({});
   const [enviando, setEnviando] = useState(false);
+  const [verificando, setVerificando] = useState(false);
   const [erroGeral, setErroGeral] = useState<string | null>(null);
   const [perguntaDiscIdx, setPerguntaDiscIdx] = useState(0);
 
@@ -300,21 +602,48 @@ export default function PassoCadastro() {
     if (passo === 1) {
       if (!validaPasso1()) return;
 
-      // Verifica no servidor se o CPF ja esta cadastrado
+      // Verifica no servidor se o e-mail e o CPF ja estao em uso
+      setVerificando(true);
       try {
-        const resp = await fetch("/api/estudantes/verificar-cpf", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ cpf: estado.cpf }),
-        });
-        const data = (await resp.json()) as { existe: boolean };
-        if (data.existe) {
-          setErros({ cpf: "Já existe um cadastro com esse CPF." });
+        const [respEmail, respCpf] = await Promise.all([
+          fetch("/api/estudantes/verificar-email", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ email: estado.email }),
+          }),
+          fetch("/api/estudantes/verificar-cpf", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ cpf: estado.cpf }),
+          }),
+        ]);
+        const dataEmail = (await respEmail.json()) as {
+          valido: boolean;
+          existe: boolean;
+        };
+        const dataCpf = (await respCpf.json()) as { existe: boolean };
+
+        const novos: Record<string, string> = {};
+        if (!dataEmail.valido) {
+          novos.email = "Informe um e-mail válido";
+        } else if (dataEmail.existe) {
+          novos.email =
+            "Já existe uma conta com esse e-mail. Faça login para continuar.";
+        }
+        if (dataCpf.existe) {
+          novos.cpf = "Já existe um cadastro com esse CPF.";
+        }
+        if (Object.keys(novos).length > 0) {
+          setErros(novos);
           return;
         }
       } catch {
-        setErros({ cpf: "Não foi possível verificar o CPF agora. Tente novamente." });
+        setErros({
+          email: "Não foi possível verificar seus dados agora. Tente novamente.",
+        });
         return;
+      } finally {
+        setVerificando(false);
       }
 
       setPasso(2);
@@ -393,33 +722,25 @@ export default function PassoCadastro() {
           />
           {erros.email && <p className="error">{erros.email}</p>}
 
-          <label className="label" htmlFor="senha" style={{ marginTop: "1rem" }}>
-            Senha
-          </label>
-          <input
+          <CampoSenha
             id="senha"
-            className="input"
-            type="password"
+            label="Senha"
             placeholder="Mínimo 8 caracteres"
             value={estado.senha}
-            onChange={(e) => atualiza("senha", e.target.value)}
-            autoComplete="new-password"
+            onChange={(v) => atualiza("senha", v)}
+            erro={erros.senha}
+            marginTop="1rem"
           />
-          {erros.senha && <p className="error">{erros.senha}</p>}
 
-          <label className="label" htmlFor="confirmar" style={{ marginTop: "1rem" }}>
-            Confirmar senha
-          </label>
-          <input
+          <CampoSenha
             id="confirmar"
-            className="input"
-            type="password"
+            label="Confirmar senha"
             placeholder="Repita a senha"
             value={estado.confirmarSenha}
-            onChange={(e) => atualiza("confirmarSenha", e.target.value)}
-            autoComplete="new-password"
+            onChange={(v) => atualiza("confirmarSenha", v)}
+            erro={erros.confirmarSenha}
+            marginTop="1rem"
           />
-          {erros.confirmarSenha && <p className="error">{erros.confirmarSenha}</p>}
 
           <label className="label" htmlFor="data" style={{ marginTop: "1rem" }}>
             Data de nascimento
@@ -552,19 +873,10 @@ export default function PassoCadastro() {
           <label className="label" htmlFor="tecnico" style={{ marginTop: "1rem" }}>
             Faz ou já fez algum curso técnico?
           </label>
-          <select
-            id="tecnico"
-            className="select"
+          <SelecaoCursoTecnico
             value={estado.cursoTecnico}
-            onChange={(e) => atualiza("cursoTecnico", e.target.value)}
-          >
-            <option value="">Não faço nenhum</option>
-            {cursosTecnicos.map((c) => (
-              <option key={c.slug} value={c.slug}>
-                {c.nome}
-              </option>
-            ))}
-          </select>
+            onChange={(slug) => atualiza("cursoTecnico", slug)}
+          />
           <p className="muted" style={{ marginTop: "0.25rem", fontSize: "0.8rem" }}>
             Se já tem um curso técnico, ele aumenta o match das carreiras
             relacionadas.
@@ -831,8 +1143,14 @@ export default function PassoCadastro() {
           <span />
         )}
         {passo < 4 ? (
-          <button type="button" className="btn btn-primary" onClick={avancar}>
-            Continuar
+          <button
+            type="button"
+            className="btn btn-primary"
+            onClick={avancar}
+            disabled={verificando}
+            aria-disabled={verificando}
+          >
+            {verificando ? "Verificando..." : "Continuar"}
           </button>
         ) : (
           <button

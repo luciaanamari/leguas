@@ -236,7 +236,7 @@ export default async function PerfilVocacionalPage() {
       >
         Esse perfil é um <strong>ponto de partida</strong>, não um diagnóstico
         definitivo. Ele te ajuda a olhar com mais clareza para carreiras que
-        combinam com seu jeito — mas você pode crescer em qualquer caminho que
+        combinam com seu jeito - mas você pode crescer em qualquer caminho que
         escolher de verdade.
       </section>
 

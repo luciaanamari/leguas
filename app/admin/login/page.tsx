@@ -4,7 +4,7 @@ import LoginAdminForm from "@/components/admin/LoginAdminForm";
 import { lerSessaoAdmin } from "@/lib/auth";
 
 export const metadata = {
-  title: "Légua Admin — Login",
+  title: "Léguas Admin - Login",
   robots: { index: false, follow: false },
 };
 
@@ -21,7 +21,7 @@ export default async function AdminLoginPage({ searchParams }: { searchParams: S
       <Link href="/" className="muted" style={{ textDecoration: "none" }}>
         ← voltar
       </Link>
-      <h1 style={{ marginTop: "1rem", marginBottom: "0.5rem" }}>Légua Admin</h1>
+      <h1 style={{ marginTop: "1rem", marginBottom: "0.5rem" }}>Léguas Admin</h1>
       <p className="muted" style={{ marginBottom: "1.5rem" }}>
         Acesso restrito. Use seu email e senha de administrador.
       </p>

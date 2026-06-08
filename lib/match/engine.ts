@@ -1,11 +1,11 @@
-// Motor de match — Secao 4 do documento "Piaui para o Mundo"
+// Motor de match - Secao 4 do documento "Piaui para o Mundo"
 //
 // Resultado final dividido em dois blocos:
 // Bloco 1 (Compatibilidade real, 0-100%):
 //   - 60% afinidade de area (quiz DISC do cadastro: areaH/E/B + curso)
 //   - 40% identificacao com a simulacao (3 perguntas do quiz por curso)
 //   + bonus pelo curso tecnico do aluno quando ha correlacao com o curso simulado
-//     (DIRETA = +10, AREA = +4, NENHUMA = 0) — bonus entra na parte de area.
+//     (DIRETA = +10, AREA = +4, NENHUMA = 0) - bonus entra na parte de area.
 // Bloco 2 (Analise de contexto, sem impacto na nota):
 //   - Cruza renda, perfil empreendedor, preocupacoes, ano escolar, curso tecnico
 //     com a trilha simulada e gera blocos verde/azul/cinza.
@@ -62,7 +62,7 @@ export type BlocoContexto = {
   mensagem: string;
 };
 
-// Memoria explicita do calculo — exibida na tela de "como foi calculado".
+// Memoria explicita do calculo - exibida na tela de "como foi calculado".
 export type ExplicacaoMatch = {
   area: {
     contagemH: number;
@@ -199,10 +199,10 @@ export function calcularMatch(input: CalcularInput): ResultadoMatchEngine {
       ? `Ótima notícia: o quiz mostrou que ${input.cursoNome} está alinhado com seu perfil.`
       : faixa === "MEDIA"
         ? `Você tem afinidade parcial com a área de ${input.cursoNome}.`
-        : `Seu perfil principal aponta para outra área — mas isso é informação, não limite.`;
-  const mensagemDisc = ` Seu jeito de agir mostra que ${tituloDisc} — característico de quem se destaca em ${nomeAreaPerfil}.`;
+        : `Seu perfil principal aponta para outra área - mas isso é informação, não limite.`;
+  const mensagemDisc = ` Seu jeito de agir mostra que ${tituloDisc} - característico de quem se destaca em ${nomeAreaPerfil}.`;
 
-  // Justificativa principal — apenas faixa + DISC. A correlacao com o tecnico
+  // Justificativa principal - apenas faixa + DISC. A correlacao com o tecnico
   // vira card proprio na tela de resultado (ver tituloOrientacao/mensagemOrientacao).
   const justificativa = mensagemFaixa + mensagemDisc;
 
@@ -216,7 +216,7 @@ export function calcularMatch(input: CalcularInput): ResultadoMatchEngine {
   if (tec) {
     if (correlacao === "DIRETA") {
       tituloOrientacao = `${tec.nome} é trilha direta para ${input.cursoNome}`;
-      mensagemOrientacao = `Como você já cursa ${tec.nome}, sua experiência prática conta como reforço direto para a carreira de ${input.cursoNome}. Você entra na faculdade ou no mercado com vantagem sobre quem nunca viveu essa rotina — aproveite isso no currículo, em entrevista e no estágio.`;
+      mensagemOrientacao = `Como você já cursa ${tec.nome}, sua experiência prática conta como reforço direto para a carreira de ${input.cursoNome}. Você entra na faculdade ou no mercado com vantagem sobre quem nunca viveu essa rotina - aproveite isso no currículo, em entrevista e no estágio.`;
     } else if (
       correlacao === "TRANSVERSAL" &&
       resultadoCorrelacao.familiaHabilitador
@@ -230,7 +230,7 @@ export function calcularMatch(input: CalcularInput): ResultadoMatchEngine {
       );
     } else if (correlacao === "AREA") {
       tituloOrientacao = `${tec.nome} compartilha terreno com ${input.cursoNome}`;
-      mensagemOrientacao = `Seu curso técnico (${tec.nome}) está na mesma área de conhecimento de ${input.cursoNome}. Mesmo sendo profissões diferentes, parte do que você aprende agora — vocabulário, raciocínio, contato com o setor — facilita o caminho adiante.`;
+      mensagemOrientacao = `Seu curso técnico (${tec.nome}) está na mesma área de conhecimento de ${input.cursoNome}. Mesmo sendo profissões diferentes, parte do que você aprende agora - vocabulário, raciocínio, contato com o setor - facilita o caminho adiante.`;
     }
   }
 
@@ -354,7 +354,7 @@ function gerarContexto(input: CalcularInput): BlocoContexto[] {
       tipo: "verde",
       titulo: "Oportunidade real",
       mensagem:
-        "Esta trilha tem custo baixo ou é gratuita — encaixa direto na sua realidade familiar sem depender de bolsa ou financiamento.",
+        "Esta trilha tem custo baixo ou é gratuita - encaixa direto na sua realidade familiar sem depender de bolsa ou financiamento.",
     });
   }
   if (isTrilhaTecnica && input.cursoTecnicoFeito) {
@@ -395,7 +395,7 @@ function gerarContexto(input: CalcularInput): BlocoContexto[] {
       tipo: "azul",
       titulo: "ENEM não é a única porta",
       mensagem:
-        "Concurso público, curso técnico e entrada direta no mercado não exigem ENEM. E o ENEM tem segunda chamada — não passar uma vez não fecha o caminho.",
+        "Concurso público, curso técnico e entrada direta no mercado não exigem ENEM. E o ENEM tem segunda chamada - não passar uma vez não fecha o caminho.",
     });
   }
   if (input.preocupacoes.includes("NAO_CONHECO_OPCOES")) {
@@ -403,7 +403,7 @@ function gerarContexto(input: CalcularInput): BlocoContexto[] {
       tipo: "azul",
       titulo: "Explore antes de decidir",
       mensagem:
-        "Simule mais de uma carreira aqui no Légua antes de fechar a sua escolha. Cada simulação leva 5 minutos e te dá referência de comparação.",
+        "Simule mais de uma carreira aqui no Léguas antes de fechar a sua escolha. Cada simulação leva 5 minutos e te dá referência de comparação.",
     });
   }
   if (input.preocupacoes.includes("MEDO_ESCOLHER_ERRADO")) {
@@ -411,7 +411,7 @@ function gerarContexto(input: CalcularInput): BlocoContexto[] {
       tipo: "azul",
       titulo: "Escolher hoje não fecha amanhã",
       mensagem:
-        "Mudanças de curso são comuns e legais. O importante é começar — você ajusta a rota com a experiência. Quem nunca começa é que perde tempo.",
+        "Mudanças de curso são comuns e legais. O importante é começar - você ajusta a rota com a experiência. Quem nunca começa é que perde tempo.",
     });
   }
 
@@ -431,7 +431,7 @@ function gerarContexto(input: CalcularInput): BlocoContexto[] {
       tipo: "cinza",
       titulo: "Atenção ao seu perfil",
       mensagem:
-        "Você indicou que quer empreender. Concurso público garante estabilidade, mas pode limitar autonomia e iniciativa próprias — pondere o que pesa mais para você.",
+        "Você indicou que quer empreender. Concurso público garante estabilidade, mas pode limitar autonomia e iniciativa próprias - pondere o que pesa mais para você.",
     });
   }
   if (
@@ -442,7 +442,7 @@ function gerarContexto(input: CalcularInput): BlocoContexto[] {
       tipo: "cinza",
       titulo: "Atenção ao seu perfil",
       mensagem:
-        "Você prioriza estabilidade. Entrada direta no mercado pode trazer variabilidade de renda e ausência de benefícios — vale começar com algo que ofereça mais previsibilidade.",
+        "Você prioriza estabilidade. Entrada direta no mercado pode trazer variabilidade de renda e ausência de benefícios - vale começar com algo que ofereça mais previsibilidade.",
     });
   }
   if (

@@ -1,6 +1,6 @@
-# Légua
+# Léguas
 
-Plataforma web responsiva (mobile-first) que ajuda estudantes do 3º ano do ensino médio a descobrir caminhos depois da escola — bacharelado presencial, EAD, tecnólogo, curso técnico, concurso público e entrada direta no mercado.
+Plataforma web responsiva (mobile-first) que ajuda estudantes do 3º ano do ensino médio a descobrir caminhos depois da escola - bacharelado presencial, EAD, tecnólogo, curso técnico, concurso público e entrada direta no mercado.
 
 O foco inicial é o Piauí. As narrativas dos cursos trazem referências do contexto nordestino.
 
@@ -26,7 +26,7 @@ O foco inicial é o Piauí. As narrativas dos cursos trazem referências do cont
 - **Dashboard** com contagens de estudantes, simulações iniciadas/concluídas e compartilhamentos.
 - **CRUD de trilhas** (as 6 modalidades) e **profissões** vinculadas a cada trilha.
 - **Listagem de estudantes** com busca, filtro por escola, ano e perfil DISC, e detalhe individual.
-- **Painel "Conteúdo do produto"**: lista read-only com contagens e amostras de tudo que vive em código (cursos, perguntas, técnicos, tags) — para o admin saber o que existe e onde mexer.
+- **Painel "Conteúdo do produto"**: lista read-only com contagens e amostras de tudo que vive em código (cursos, perguntas, técnicos, tags) - para o admin saber o que existe e onde mexer.
 
 ---
 
@@ -47,7 +47,7 @@ Princípio BFF: front e back na mesma stack. Route Handlers em `app/api/**` e Se
 
 ## Como o match funciona
 
-1. **Quiz DISC do cadastro (60%)**: 8 perguntas determinam a área dominante do aluno (Humanas/Exatas/Biológicas) e seu perfil comportamental (D/I/S/C — Decisor, Influenciador, Estável, Analítico). O aluno nunca vê as siglas — só o título resultante ("você age, decide e lidera", etc.).
+1. **Quiz DISC do cadastro (60%)**: 8 perguntas determinam a área dominante do aluno (Humanas/Exatas/Biológicas) e seu perfil comportamental (D/I/S/C - Decisor, Influenciador, Estável, Analítico). O aluno nunca vê as siglas - só o título resultante ("você age, decide e lidera", etc.).
 2. **Quiz do curso (40%)**: 3 perguntas específicas por curso (1 fase aluno peso 1 + 2 fase profissional peso 2) com respostas Sim / Mais ou menos / Não.
 3. **Bônus por curso técnico**: se o aluno cadastrou um técnico, ganha +10 (correlação direta), +5 (correlação transversal via setor em comum) ou +3 (mesma área DISC).
 4. **Blocos de contexto** (sem afetar nota): cruza renda, preocupações, perfil empreendedor e ano escolar com a trilha simulada para gerar avisos verdes (oportunidade), azuis (orientação) ou cinzas (ponto neutro).
@@ -93,7 +93,7 @@ legua/
 ```
 ---
 
-## Manual — rodar com Docker
+## Manual - rodar com Docker
 
 ### Pré-requisitos
 
@@ -122,9 +122,9 @@ docker compose up --build
 
 Na primeira execução o entrypoint do container cuida de tudo, na ordem:
 
-1. `prisma generate` — gera o client.
-2. `prisma db push` (ou `migrate deploy` se houver migrations) — sincroniza o schema.
-3. `prisma db seed` — popula 6 trilhas, profissões e o admin inicial. Idempotente (`upsert`), só roda se ainda não houver admin no banco.
+1. `prisma generate` - gera o client.
+2. `prisma db push` (ou `migrate deploy` se houver migrations) - sincroniza o schema.
+3. `prisma db seed` - popula 6 trilhas, profissões e o admin inicial. Idempotente (`upsert`), só roda se ainda não houver admin no banco.
 4. Inicia o Next.js em modo dev com hot reload.
 
 ### Acesso inicial
@@ -210,7 +210,7 @@ Documentadas em `.env.example`:
 - **Autenticação do estudante** por e-mail + senha (bcrypt). Tokens temporários (8 chars, 24h) podem ser gerados pelo admin se necessário.
 - **WhatsApp** opcional, também armazenado como hash quando informado.
 - **Match** é uma fórmula explícita (60/40 + bônus contextual), facilmente substituível por modelo mais sofisticado no futuro.
-- **Conteúdo do quiz e dos cursos** mora em código (`lib/data/`) — alterações exigem PR. A página `/admin/conteudo` deixa essa fronteira explícita.
+- **Conteúdo do quiz e dos cursos** mora em código (`lib/data/`) - alterações exigem PR. A página `/admin/conteudo` deixa essa fronteira explícita.
 
 ---
 

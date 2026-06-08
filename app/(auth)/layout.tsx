@@ -44,11 +44,11 @@ export default async function AuthLayout({ children }: { children: React.ReactNo
               alignItems: "center",
               textDecoration: "none",
             }}
-            aria-label="Légua — voltar para o mapa de trilhas"
+            aria-label="Léguas - voltar para o mapa de trilhas"
           >
             <Image
               src="/images/logo.svg"
-              alt="Légua"
+              alt="Léguas"
               width={80}
               height={80}
               priority
@@ -75,7 +75,7 @@ export default async function AuthLayout({ children }: { children: React.ReactNo
           paddingBottom: "2rem",
         }}
       >
-        Légua — descubra seu caminho depois do ensino médio.
+        Léguas - descubra seu caminho depois do ensino médio.
       </footer>
     </div>
   );

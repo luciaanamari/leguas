@@ -2,7 +2,7 @@ import Link from "next/link";
 import PassoCadastro from "@/components/cadastro/PassoCadastro";
 
 export const metadata = {
-  title: "Cadastro — Légua",
+  title: "Cadastro - Léguas",
 };
 
 export default function CadastroPage() {

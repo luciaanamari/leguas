@@ -29,7 +29,7 @@ export default async function AdminProfissoesPage() {
         <div>
           <h1 style={{ fontSize: "1.75rem", margin: 0 }}>Profissões</h1>
           <p className="muted" style={{ margin: "0.25rem 0 0", maxWidth: 620 }}>
-            Lista descritiva de carreiras associadas a cada trilha — aparece para o
+            Lista descritiva de carreiras associadas a cada trilha - aparece para o
             aluno na página da trilha, na seção &ldquo;Profissões nesse caminho&rdquo;.
             Não confundir com os cursos do mapa (Medicina, Engenharia, etc.), que
             têm narrativa e quiz próprios e são gerenciados via repositório.

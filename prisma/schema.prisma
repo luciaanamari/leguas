@@ -1,4 +1,4 @@
-// Schema Prisma do Légua
+// Schema Prisma do Léguas
 // Documentação: https://pris.ly/d/prisma-schema
 
 generator client {
@@ -96,7 +96,7 @@ model Estudante {
   cursoTecnico         String?
   perfilEmpreendedor   PerfilEmpreendedor
   preocupacoes         Preocupacao[]
-  // Quiz vocacional DISC (8 perguntas) — feito uma vez no cadastro
+  // Quiz vocacional DISC (8 perguntas) - feito uma vez no cadastro
   areaQuizH            Int                   @default(0)
   areaQuizE            Int                   @default(0)
   areaQuizB            Int                   @default(0)
@@ -139,7 +139,7 @@ model Trilha {
   primeirosPassos     String
   // narrativaAluno / narrativaProfissional eram usados quando a simulacao era
   // por trilha. Hoje a simulacao e por curso (narrativas vem do JSON do curso).
-  // Mantidos opcionais aqui apenas para nao quebrar dados existentes — nao
+  // Mantidos opcionais aqui apenas para nao quebrar dados existentes - nao
   // sao lidos por nenhuma pagina nem editaveis pelo admin.
   narrativaAluno      String?
   narrativaProfissional String?

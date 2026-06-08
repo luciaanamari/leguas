@@ -60,7 +60,7 @@ export default async function DetalheEstudantePage({ params }: { params: Params 
         {estudante.nome}
       </h1>
       <p className="muted" style={{ marginBottom: "1.5rem" }}>
-        Cadastrado em {estudante.criadoEm.toLocaleDateString("pt-BR")} —{" "}
+        Cadastrado em {estudante.criadoEm.toLocaleDateString("pt-BR")} -{" "}
         {estudante.ativo ? "ativo" : "inativo"}
       </p>
 
@@ -75,7 +75,7 @@ export default async function DetalheEstudantePage({ params }: { params: Params 
       >
         <Campo label="Escola" valor={estudante.escolaNome} />
         <Campo label="Ano" valor={estudante.escolaAno} />
-        <Campo label="Curso técnico" valor={estudante.cursoTecnico ?? "—"} />
+        <Campo label="Curso técnico" valor={estudante.cursoTecnico ?? "-"} />
         <Campo label="WhatsApp" valor="(armazenado como hash)" />
         <Campo
           label="Renda familiar"
@@ -100,14 +100,14 @@ export default async function DetalheEstudantePage({ params }: { params: Params 
               ? estudante.preocupacoes
                   .map((p) => labelPreocupacao[p] ?? p)
                   .join(" · ")
-              : "—"
+              : "-"
           }
         />
         <Campo
           label="Data de nascimento"
           valor={estudante.dataNascimento.toLocaleDateString("pt-BR")}
         />
-        <Campo label="CPF" valor="(armazenado como hash — não recuperável)" />
+        <Campo label="CPF" valor="(armazenado como hash - não recuperável)" />
       </section>
 
       <AcoesEstudante estudante={{ id: estudante.id, ativo: estudante.ativo }} />
@@ -121,7 +121,7 @@ export default async function DetalheEstudantePage({ params }: { params: Params 
             <li key={s.id} className="card">
               <strong>{s.trilha.titulo}</strong>{" "}
               <span className="muted" style={{ fontSize: "0.85rem" }}>
-                — curso: {s.cursoSlug}
+                - curso: {s.cursoSlug}
               </span>
               <p className="muted" style={{ margin: "0.25rem 0 0" }}>
                 Iniciada em {s.iniciadaEm.toLocaleDateString("pt-BR")} •{" "}

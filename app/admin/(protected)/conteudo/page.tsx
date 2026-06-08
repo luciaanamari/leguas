@@ -13,7 +13,7 @@ import ListaConteudoModal, {
 } from "@/components/admin/ListaConteudoModal";
 
 export const metadata = {
-  title: "Conteúdo do produto — Légua Admin",
+  title: "Conteúdo do produto - Léguas Admin",
 };
 
 type PerguntaJSON = {
@@ -142,7 +142,7 @@ export default function ConteudoAdminPage() {
       rotulo: "Cursos habilitadores (correlação transversal)",
       contagem: itensHabilitadores.length,
       descricao:
-        "Cursos de TI, marketing, design, gestão e comunicação marcados como 'habilitadores' — usados para identificar pontes transversais com o curso técnico do aluno.",
+        "Cursos de TI, marketing, design, gestão e comunicação marcados como 'habilitadores' - usados para identificar pontes transversais com o curso técnico do aluno.",
       itens: itensHabilitadores,
     },
     {
@@ -167,7 +167,7 @@ export default function ConteudoAdminPage() {
         <h1 style={{ fontSize: "1.75rem", margin: 0 }}>Conteúdo do produto</h1>
         <p className="muted" style={{ margin: "0.5rem 0 0", maxWidth: 720 }}>
           Conteúdo essencial do produto que <strong>não é editável por aqui</strong>{" "}
-          — vive no código e é alterado via pull request no repositório. Esta
+          - vive no código e é alterado via pull request no repositório. Esta
           página existe para você saber o que está disponível, onde mora cada
           coisa, e descartar a expectativa de editar pela interface.
         </p>
