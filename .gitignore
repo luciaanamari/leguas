@@ -56,3 +56,5 @@ _docx_extracted.txt
 /scripts/test-*.ts
 /scripts/verificar-ciclo1.ts
 /scripts/neutralizar-narrativas.ts
+
+docs/

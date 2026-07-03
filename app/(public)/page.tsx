@@ -40,14 +40,6 @@ export default function HomePage() {
             Acesso institucional
           </Link>
         </div>
-        <p className="muted" style={{ marginTop: "1.5rem" }}>
-          Estuda numa escola parceira? Ela pode ter um link próprio do Léguas — é só pedir o link
-          (ou o QR code) na sua escola.
-        </p>
-        <p className="muted" style={{ marginTop: "1rem" }}>
-          O Léguas é gratuito, funciona no celular e foi feito pensando no estudante de escola
-          pública do Piauí.
-        </p>
       </section>
     </main>
   );
