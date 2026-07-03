@@ -1,3 +1,4 @@
+import { redirect } from "next/navigation";
 import { todasAsAreas } from "@/lib/data/cursos";
 import { perguntasDisc } from "@/lib/data/quiz-disc";
 import { cursosTecnicos } from "@/lib/data/cursos-tecnicos";
@@ -11,6 +12,7 @@ import bancoPerguntas from "@/lib/data/quiz-afinidade-cursos.json";
 import ListaConteudoModal, {
   type ItemConteudo,
 } from "@/components/admin/ListaConteudoModal";
+import { lerEscopoAdminGlobal } from "@/lib/auth";
 
 export const metadata = {
   title: "Conteúdo do produto - Léguas Admin",
@@ -30,7 +32,11 @@ type Bloco = {
   itens: ItemConteudo[];
 };
 
-export default function ConteudoAdminPage() {
+export default async function ConteudoAdminPage() {
+  if (!(await lerEscopoAdminGlobal())) {
+    redirect("/admin/dashboard");
+  }
+
   // ── Áreas ────────────────────────────────────────────────────────────
   const itensAreas: ItemConteudo[] = todasAsAreas.map((a) => ({
     principal: `${a.icon} ${a.nome}`,

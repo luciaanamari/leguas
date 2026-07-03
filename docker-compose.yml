@@ -19,6 +19,36 @@ services:
       timeout: 5s
       retries: 10
 
+  # Object storage local (S3-compativel) para dev. Em producao usa-se o MinIO
+  # provisionado no Coolify; aqui e so para desenvolver/testar sem a infra.
+  minio:
+    image: minio/minio:latest
+    container_name: legua-minio
+    restart: unless-stopped
+    command: server /data --console-address ":9001"
+    environment:
+      MINIO_ROOT_USER: ${MINIO_ROOT_USER:-minioadmin}
+      MINIO_ROOT_PASSWORD: ${MINIO_ROOT_PASSWORD:-minioadmin}
+    ports:
+      - "9000:9000" # API S3
+      - "9001:9001" # console web
+    volumes:
+      - legua-minio-data:/data
+
+  # Cria os buckets e libera leitura anonima no bucket publico. Roda uma vez e sai.
+  createbuckets:
+    image: minio/mc:latest
+    depends_on:
+      - minio
+    entrypoint: >
+      /bin/sh -c "
+      until mc alias set local http://minio:9000 $${MINIO_ROOT_USER:-minioadmin} $${MINIO_ROOT_PASSWORD:-minioadmin}; do echo 'aguardando minio...'; sleep 2; done;
+      mc mb -p local/legua-public;
+      mc mb -p local/legua-private;
+      mc anonymous set download local/legua-public;
+      echo 'buckets prontos';
+      "
+
   app:
     build:
       context: .
@@ -33,6 +63,9 @@ services:
     environment:
       # Sobrescreve DATABASE_URL para apontar para o container db (e nao localhost)
       DATABASE_URL: postgresql://${POSTGRES_USER:-legua}:${POSTGRES_PASSWORD:-senha}@legua-db:5432/${POSTGRES_DB:-legua}
+      # Endpoint interno do MinIO (server-side). A URL publica (browser) segue
+      # vindo do .env.local como localhost:9000.
+      S3_ENDPOINT: http://legua-minio:9000
     ports:
       - "3000:3000"
     volumes:
@@ -44,3 +77,4 @@ services:
 
 volumes:
   legua-pgdata:
+  legua-minio-data:

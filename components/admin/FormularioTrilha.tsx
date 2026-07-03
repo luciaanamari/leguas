@@ -168,6 +168,10 @@ export default function FormularioTrilha({ trilha }: Props) {
       </Bloco>
 
       <Bloco label="Descrição completa">
+        <p className="muted" style={{ fontSize: "0.85rem", marginBottom: "0.5rem", lineHeight: 1.45 }}>
+          Use linguagem neutra em gênero: prefira &quot;você&quot;, &quot;estudante&quot; e
+          &quot;profissional&quot;. Evite flexões como preparado/a ou inferir gênero do leitor.
+        </p>
         <textarea
           className="textarea"
           rows={5}

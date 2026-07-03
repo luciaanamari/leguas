@@ -4,6 +4,7 @@ import {
   RendaFamiliar,
   PerfilEmpreendedor,
   Preocupacao,
+  Sexo,
 } from "@prisma/client";
 import { cursosTecnicos } from "@/lib/data/cursos-tecnicos";
 
@@ -30,6 +31,10 @@ const respostaDiscSchema = z.object({
   opcaoId: z.enum(["A", "B", "C", "D"]),
 });
 
+export const respostasDiscQuizSchema = z
+  .array(respostaDiscSchema)
+  .length(8, "Responda as 8 perguntas do quiz vocacional");
+
 export const cadastroSchema = z
   .object({
     nome: z.string().trim().min(2, "Informe o nome completo").max(120, "Nome muito longo"),
@@ -44,11 +49,12 @@ export const cadastroSchema = z
         if (isNaN(d.getTime())) return false;
         return d <= new Date();
       }, "A data de nascimento não pode estar no futuro"),
+    // CPF é opcional em qualquer cadastro. Se informado, deve ser válido.
     cpf: z
       .string()
       .transform(cpfDigits)
-      .refine((s) => s.length === 11, "CPF deve ter 11 dígitos")
-      .refine(validaCpf, "CPF inválido"),
+      .refine((s) => s.length === 0 || s.length === 11, "CPF deve ter 11 dígitos")
+      .refine((s) => s.length === 0 || validaCpf(s), "CPF inválido"),
     whatsapp: z
       .string()
       .transform((v) => v.replace(/\D/g, ""))
@@ -59,7 +65,15 @@ export const cadastroSchema = z
       .optional()
       .or(z.literal("")),
     rendaFamiliar: z.nativeEnum(RendaFamiliar),
-    escolaNome: z.string().trim().min(2, "Informe o nome da escola").max(160),
+    sexo: z.nativeEnum(Sexo, { required_error: "Selecione uma opção de sexo" }),
+    // No cadastro por link institucional, organização/escola vêm fixadas pela
+    // rota. No cadastro independente, ficam vazias e o aluno informa apenas o
+    // nome da escola em texto livre (campo não obrigatório).
+    organizacaoId: z.string().optional(),
+    escolaId: z.string().optional(),
+    escolaNome: z.string().trim().max(120, "Nome da escola muito longo").optional(),
+    // Matrícula: obrigatória só no front do cadastro por link; opcional aqui.
+    matricula: z.string().trim().max(50, "Matrícula muito longa").optional(),
     escolaAno: z.nativeEnum(AnoEscolar),
     cursoTecnico: z
       .string()
@@ -76,9 +90,7 @@ export const cadastroSchema = z
       .array(z.nativeEnum(Preocupacao))
       .min(1, "Selecione ao menos uma preocupação")
       .max(5),
-    respostasDisc: z
-      .array(respostaDiscSchema)
-      .length(8, "Responda as 8 perguntas do quiz vocacional"),
+    respostasDisc: respostasDiscQuizSchema,
   })
   .refine((d) => d.senha === d.confirmarSenha, {
     message: "As senhas não coincidem.",

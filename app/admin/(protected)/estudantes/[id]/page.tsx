@@ -1,7 +1,10 @@
 import Link from "next/link";
-import { notFound } from "next/navigation";
+import { notFound, redirect } from "next/navigation";
 import { prisma } from "@/lib/db";
+import { lerEscopoAdmin, podeGerenciarEstudante } from "@/lib/auth";
 import AcoesEstudante from "@/components/admin/AcoesEstudante";
+import CampoCopiavel from "@/components/admin/CampoCopiavel";
+import { urlAssinada } from "@/lib/storage";
 
 type Params = Promise<{ id: string }>;
 
@@ -35,11 +38,40 @@ const labelDisc: Record<string, string> = {
   C: "Analítico (C)",
 };
 
+const labelSexo: Record<string, string> = {
+  FEMININO: "Feminino",
+  MASCULINO: "Masculino",
+  NAO_INFORMADO: "Prefiro não informar",
+};
+
+function rotuloEscola(estudante: {
+  escolaNome: string;
+  escola: {
+    nome: string;
+    organizacao: { nome: string };
+  } | null;
+}) {
+  if (estudante.escola) {
+    return `${estudante.escola.nome} (${estudante.escola.organizacao.nome})`;
+  }
+  return estudante.escolaNome;
+}
+
 export default async function DetalheEstudantePage({ params }: { params: Params }) {
+  const escopo = await lerEscopoAdmin();
+  if (!escopo) redirect("/admin/login");
+
   const { id } = await params;
   const estudante = await prisma.estudante.findUnique({
     where: { id },
     include: {
+      escola: {
+        select: {
+          nome: true,
+          organizacaoId: true,
+          organizacao: { select: { nome: true } },
+        },
+      },
       simulacoes: {
         include: {
           trilha: { select: { titulo: true, slug: true } },
@@ -51,14 +83,43 @@ export default async function DetalheEstudantePage({ params }: { params: Params 
   });
   if (!estudante) notFound();
 
+  if (
+    !podeGerenciarEstudante(escopo, {
+      escolaId: estudante.escolaId,
+      escola: estudante.escola,
+    })
+  ) {
+    redirect("/admin/estudantes");
+  }
+
+  const fotoUrl = estudante.fotoPerfilKey
+    ? await urlAssinada(estudante.fotoPerfilKey)
+    : null;
+
   return (
     <div>
       <Link href="/admin/estudantes" className="muted" style={{ textDecoration: "none" }}>
         ← voltar
       </Link>
-      <h1 style={{ fontSize: "1.75rem", marginTop: "1rem", marginBottom: "0.25rem" }}>
-        {estudante.nome}
-      </h1>
+      <div style={{ display: "flex", alignItems: "center", gap: "1rem", marginTop: "1rem" }}>
+        {fotoUrl && (
+          // eslint-disable-next-line @next/next/no-img-element
+          <img
+            src={fotoUrl}
+            alt={`Foto de ${estudante.nome}`}
+            width={64}
+            height={64}
+            style={{
+              width: 64,
+              height: 64,
+              borderRadius: "50%",
+              objectFit: "cover",
+              border: "1px solid var(--color-border)",
+            }}
+          />
+        )}
+        <h1 style={{ fontSize: "1.75rem", margin: 0 }}>{estudante.nome}</h1>
+      </div>
       <p className="muted" style={{ marginBottom: "1.5rem" }}>
         Cadastrado em {estudante.criadoEm.toLocaleDateString("pt-BR")} -{" "}
         {estudante.ativo ? "ativo" : "inativo"}
@@ -73,10 +134,12 @@ export default async function DetalheEstudantePage({ params }: { params: Params 
           gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))",
         }}
       >
-        <Campo label="Escola" valor={estudante.escolaNome} />
+        <CampoCopiavel label="E-mail" valor={estudante.email} />
+        <Campo label="Escola" valor={rotuloEscola(estudante)} />
+        <Campo label="Matrícula" valor={estudante.matricula ?? "-"} />
         <Campo label="Ano" valor={estudante.escolaAno} />
+        <Campo label="Sexo" valor={labelSexo[estudante.sexo] ?? estudante.sexo} />
         <Campo label="Curso técnico" valor={estudante.cursoTecnico ?? "-"} />
-        <Campo label="WhatsApp" valor="(armazenado como hash)" />
         <Campo
           label="Renda familiar"
           valor={labelRenda[estudante.rendaFamiliar] ?? estudante.rendaFamiliar}
@@ -107,7 +170,6 @@ export default async function DetalheEstudantePage({ params }: { params: Params 
           label="Data de nascimento"
           valor={estudante.dataNascimento.toLocaleDateString("pt-BR")}
         />
-        <Campo label="CPF" valor="(armazenado como hash - não recuperável)" />
       </section>
 
       <AcoesEstudante estudante={{ id: estudante.id, ativo: estudante.ativo }} />

@@ -1,644 +1,399 @@
-# CLAUDE.md - Legua: Planejamento Técnico do MVP
+# CLAUDE.md - Léguas: Documentação Técnica
+
+> Este arquivo descreve o **estado atual implementado** do Léguas. Ele substitui o
+> antigo planejamento do MVP: várias decisões evoluíram durante o desenvolvimento
+> (login com e-mail e senha, quiz vocacional DISC no cadastro, simulação por curso,
+> catálogo estático de cursos, motor de match em dois componentes, paleta de fundo
+> claro). Quando houver dúvida entre este documento e o código, **o código é a
+> fonte de verdade** — mas mantenha este arquivo atualizado ao alterar arquitetura.
 
 ## Visão Geral do Produto
 
-O Léguas é uma plataforma web responsiva para estudantes do 3o ano do ensino médio de escolas públicas, com foco inicial no Piauí. O objetivo é apresentar, de forma visual e acessível, todos os caminhos possíveis após o ensino médio, permitindo que o estudante simule como seria a vida em cada carreira escolhida e receba um resultado de compatibilidade com um próximo passo concreto.
+O Léguas é uma plataforma web responsiva para estudantes do 3º ano do ensino médio de escolas públicas, com foco inicial no Piauí. O objetivo é apresentar, de forma visual e acessível, todos os caminhos possíveis após o ensino médio, permitindo que o estudante simule como seria a vida em cada carreira escolhida e receba um resultado de compatibilidade com um próximo passo concreto.
 
 O produto não é um PWA. É uma aplicação web responsiva, mobile-first, acessível por link direto no navegador do celular sem instalação.
 
-O fluxo central do MVP é simples: o estudante entra, diz quem é, vê o que existe, clica no que chama atenção, simula como seria a vida naquele caminho e recebe um resultado. Pode voltar e testar outra carreira sem limite e sem pressão.
+O fluxo central é simples: o estudante entra, se cadastra (incluindo um quiz vocacional), descobre seu perfil, navega pelas trilhas e áreas, escolhe um curso, simula como seria a vida naquele caminho e recebe um resultado de compatibilidade. Pode voltar e testar outros cursos sem limite e sem pressão.
 
 
-## Decisoes de Produto e Escopo do MVP
+## Decisões de Produto e Escopo do MVP
 
-### O que e MVP
+### O que é MVP
 
-O MVP entrega exatamente quatro funcionalidades principais, nesta ordem de prioridade:
+1. Cadastro em quatro passos (dados pessoais + renda, dados da escola + curso técnico, perfil de futuro + preocupações, quiz vocacional DISC de 8 perguntas)
+2. Perfil vocacional gerado a partir do quiz (perfil DISC + área dominante)
+3. Mapa de Trilhas com seis caminhos possíveis representados como cards visuais
+4. Navegação Trilha → Área de conhecimento → Curso específico
+5. Simulador de Carreira por curso, com narrativas "um dia como aluno" e "um dia como profissional" intercaladas com um quiz de afinidade
+6. Motor de Match com resultado de compatibilidade (0–100), análise de contexto e próximo passo concreto
+7. Área administrativa para gerenciamento de trilhas, profissões e estudantes
 
-1. Cadastro em tres passos (dados pessoais, dados da escola, perfil de interesse)
-2. Mapa de Trilhas com seis caminhos possiveis representados como cards visuais
-3. Simulador de Carreira com narrativas escritas sobre um dia como aluno e um dia como profissional, seguido de uma tela de match com resultado de compatibilidade e proximo passo concreto
-4. Area administrativa para gerenciamento de trilhas, profissoes e estudantes
+### O que não é MVP
 
-### O que nao e MVP
+Não fazem parte do MVP: simulador interativo com escolhas ramificadas, trilha de preparação, dashboard para escolas, personalização por região, integração com conteúdo externo, painel de parceiros ou qualquer funcionalidade de versão 1.1 ou 2.0.
 
-Nao fazem parte do MVP: simulador interativo com escolhas, trilha de preparacao, dashboard para escolas, personalizacao por regiao, integracao com conteudo externo, painel de parceiros ou qualquer funcionalidade de versao 1.1 ou 2.0.
+### Métricas de Sucesso do MVP
 
-### Metricas de Sucesso do MVP
-
-Antes de qualquer evolucao do produto, as tres perguntas que definem se o MVP cumpriu o que prometeu sao:
+As três perguntas que definem se o MVP cumpriu o que prometeu:
 
 - O estudante voltou mais de uma vez?
-- Ele completou ao menos uma simulacao?
+- Ele completou ao menos uma simulação?
 - Ele clicou em compartilhar?
 
-O criterio de validacao e: 60% ou mais dos testadores completam ao menos uma simulacao na primeira sessao e conseguem nomear pelo menos um caminho que pretendem explorar.
+Critério de validação: 60% ou mais dos testadores completam ao menos uma simulação na primeira sessão e conseguem nomear pelo menos um caminho que pretendem explorar. Os eventos de engajamento (ver seção de Métricas) instrumentam essas respostas.
 
 
-## Arquitetura Tecnica
+## Arquitetura Técnica
 
 ### Stack
 
-- Runtime: Node.js 24
-- Framework: Next.js 16 (App Router)
-- ORM: Prisma 6
+- Runtime: Node.js 24 (imagem `node:24-alpine` no Docker)
+- Framework: Next.js 16 (App Router), `output: "standalone"`, `reactStrictMode: true`
+- UI: React 19 com CSS puro (CSS custom properties em `app/globals.css` + estilos inline nas páginas). Não há Tailwind nem CSS-in-JS.
+- ORM: Prisma 7 com **driver adapter** (`@prisma/adapter-pg` sobre um `pg.Pool`)
 - Banco de dados: PostgreSQL 16
-- Containerizacao: Docker com Docker Compose
+- Autenticação: JWT assinado (HS256) via `jose`, em cookie HttpOnly; senhas com `bcryptjs`
+- Validação: Zod 3 (cliente e servidor)
+- Hash de dados sensíveis: `node:crypto` SHA-256 (CPF e WhatsApp)
+- Containerização: Docker multi-stage + Docker Compose
 - Linguagem: TypeScript em todo o projeto
 
-### Principio BFF (Backend for Frontend)
+### Princípio BFF (Backend for Frontend)
 
-O frontend e o backend vivem no mesmo repositorio e na mesma stack Next.js. Nao existe servidor Express separado. A camada de backend e implementada exclusivamente por meio dos mecanismos nativos do Next.js:
+Frontend e backend vivem no mesmo repositório e na mesma stack Next.js. Não existe servidor Express separado. A camada de backend usa exclusivamente os mecanismos nativos do Next.js:
 
-- Route Handlers em `app/api/**/route.ts` para endpoints REST consumidos pelo cliente
-- Server Actions para mutacoes iniciadas diretamente nos Server Components
-- Server Components para busca de dados e renderizacao no servidor, eliminando round-trips desnecessarios ao cliente
-- Middleware do Next.js para autenticacao, protecao de rotas e validacao de sessao
+- **Server Components** para busca de dados e renderização no servidor (a maioria das páginas autenticadas chama `prisma.*` diretamente)
+- **Route Handlers** em `app/api/**/route.ts` para endpoints REST consumidos pelos Client Components (cadastro, simulador, ações)
+- **`proxy.ts`** na raiz (o "middleware" do Next 16, renomeado) para o guard de rotas no edge runtime
 
-Toda logica de acesso ao banco de dados, validacao de negocio e regras de dominio fica nos Route Handlers e Server Actions. O cliente nunca acessa o banco diretamente.
+Toda lógica de acesso ao banco, validação e regra de domínio fica nos Server Components, Route Handlers e na camada `lib/`. O cliente nunca acessa o banco diretamente.
 
-### Prisma como ORM
+### Prisma como ORM (Prisma 7)
 
-O Prisma e o unico mecanismo de acesso ao banco de dados no projeto. Nao existe query SQL escrita a mao fora do Prisma. O schema em `prisma/schema.prisma` e a fonte de verdade de todos os modelos. As migrations sao geradas e aplicadas pelo proprio Prisma CLI.
+O Prisma é o único mecanismo de acesso ao banco. Não existe SQL escrito à mão fora das migrations geradas pelo Prisma CLI. O `prisma/schema.prisma` é a fonte de verdade dos modelos.
 
-O `PrismaClient` e instanciado uma unica vez em `lib/db/index.ts` com tratamento de singleton para evitar multiplas conexoes no ambiente de desenvolvimento com hot reload.
+Particularidades do Prisma 7 neste projeto:
+- O `PrismaClient` é instanciado em `lib/db/index.ts` com um **driver adapter** (`PrismaPg` sobre `pg.Pool`), e usa o padrão singleton via `globalThis` para evitar múltiplas conexões no hot reload.
+- A URL do datasource é configurada em `prisma.config.ts` (`defineConfig`), lendo `DATABASE_URL`.
+- O `generator client` define `binaryTargets = ["native", "linux-musl-openssl-3.0.x"]` para funcionar no Alpine.
 
-### Estrutura de Pastas
+### Estrutura de Pastas (real)
 
 ```
-legua/
+leguas/
   app/
+    layout.tsx                        # root layout (html/body, metadata, viewport)
+    globals.css                       # design system (CSS custom properties)
     (public)/
-      page.tsx                    # tela de boas-vindas
-      cadastro/
-        page.tsx                  # fluxo de cadastro em 3 passos
-    (auth)/
-      layout.tsx                  # layout com verificacao de sessao do estudante
+      page.tsx                        # landing de boas-vindas
+      cadastro/page.tsx               # wizard de cadastro (Client Component)
+      entrar/page.tsx                 # login do estudante
+    (auth)/                           # exige sessão de estudante
+      layout.tsx                      # header + verificação de sessão
+      perfil-vocacional/page.tsx      # retrato DISC pós-cadastro
+      perfil/page.tsx                 # histórico de simulações + editar cadastro
       trilhas/
-        page.tsx                  # mapa de trilhas
+        page.tsx                      # mapa de trilhas (com filtro por grupo)
         [slug]/
-          page.tsx                # tela interna do card de trilha
-          simulador/
-            page.tsx              # simulador de carreira
-            resultado/
-              page.tsx            # tela de match e resultado
-      perfil/
-        page.tsx                  # historico de simulacoes do estudante
-    (admin)/
-      layout.tsx                  # layout com verificacao de sessao de admin
-      login/
-        page.tsx                  # login exclusivo de administradores
-      dashboard/
-        page.tsx                  # visao geral do admin
-      trilhas/
-        page.tsx                  # listagem de trilhas
-        nova/
-          page.tsx                # formulario de criacao de trilha
-        [id]/
-          editar/
-            page.tsx              # formulario de edicao de trilha
-      profissoes/
-        page.tsx                  # listagem de profissoes
-        nova/
-          page.tsx                # formulario de criacao de profissao
-        [id]/
-          editar/
-            page.tsx              # formulario de edicao de profissao
-      estudantes/
-        page.tsx                  # listagem de estudantes
-        [id]/
-          page.tsx                # detalhe e edicao do estudante
+          page.tsx                    # detalhe da trilha
+          simulador/page.tsx          # rota LEGADA -> redireciona para /areas
+          areas/
+            page.tsx                  # áreas de conhecimento da trilha
+            [areaSlug]/
+              page.tsx                # cursos da área (filtrados pela trilha)
+              [cursoSlug]/
+                page.tsx              # detalhe do curso (narrativas em abas)
+                simulador/
+                  page.tsx            # cria a Simulacao e roda o simulador
+                  resultado/page.tsx  # tela de match e resultado
+    admin/
+      layout.tsx                      # meta noindex
+      page.tsx                        # redireciona para /admin/dashboard
+      login/page.tsx                  # login de admin
+      (protected)/                    # exige sessão de admin
+        layout.tsx                    # sidebar + verificação de sessão
+        dashboard/page.tsx
+        trilhas/{page,nova,[id]/editar}
+        profissoes/{page,nova,[id]/editar}
+        estudantes/{page,[id]}
+        conteudo/page.tsx
     api/
-      auth/
-        route.ts                  # login e criacao de sessao do estudante
-        logout/
-          route.ts                # encerramento de sessao
+      auth/route.ts                   # POST login do estudante
+      auth/logout/route.ts            # POST logout do estudante
+      estudantes/route.ts             # POST cadastro
+      estudantes/me/route.ts          # PUT atualizar próprio cadastro
+      estudantes/verificar-cpf/route.ts     # POST checagem de unicidade
+      estudantes/verificar-email/route.ts   # POST checagem de unicidade
+      trilhas/route.ts                # GET listagem de trilhas ativas
+      trilhas/[slug]/route.ts         # GET detalhe de trilha
+      simulacoes/route.ts             # POST (legado) + GET histórico
+      simulacoes/[id]/route.ts        # DELETE simulação do próprio estudante
+      match/route.ts                  # POST cálculo e persistência do resultado
+      eventos/route.ts                # POST registro de eventos de engajamento
       admin/
-        auth/
-          route.ts                # login de administrador
-          logout/
-            route.ts              # encerramento de sessao de admin
-        trilhas/
-          route.ts                # GET listagem e POST criacao de trilha
-          [id]/
-            route.ts              # GET detalhe, PUT edicao, DELETE remocao
-        profissoes/
-          route.ts                # GET listagem e POST criacao de profissao
-          [id]/
-            route.ts              # GET detalhe, PUT edicao, DELETE remocao
-        estudantes/
-          route.ts                # GET listagem de estudantes
-          [id]/
-            route.ts              # GET detalhe, PUT edicao, DELETE remocao
-          [id]/
-            senha/
-              route.ts            # POST geracao de nova senha temporaria
-      estudantes/
-        route.ts                  # POST cadastro de estudante
-      trilhas/
-        route.ts                  # GET listagem de trilhas ativas
-        [slug]/
-          route.ts                # GET detalhe de trilha
-      simulacoes/
-        route.ts                  # POST inicio e GET listagem de simulacoes
-      match/
-        route.ts                  # POST calculo e persistencia do resultado
-      eventos/
-        route.ts                  # POST registro de eventos de engajamento
+        auth/route.ts                 # POST login admin
+        auth/logout/route.ts          # POST logout admin
+        trilhas/route.ts              # GET/POST
+        trilhas/[id]/route.ts         # GET/PUT/DELETE (lógico)
+        profissoes/route.ts           # GET/POST
+        profissoes/[id]/route.ts      # GET/PUT/DELETE (lógico)
+        estudantes/route.ts           # GET paginado
+        estudantes/[id]/route.ts      # GET/PUT/DELETE (físico, cascata)
+        estudantes/[id]/senha/route.ts# POST token de senha temporária
   components/
-    ui/                           # componentes genericos de interface
-    trilhas/                      # componentes especificos do mapa de trilhas
-    simulador/                    # componentes especificos do simulador
-    cadastro/                     # componentes do fluxo de cadastro
-    admin/                        # componentes exclusivos da area administrativa
+    ui/                               # genéricos (LogoutButton)
+    trilhas/                          # CardTrilha, FiltroTrilhas
+    simulador/                        # SimuladorCurso, TabsCurso, CompartilharResultado, ComoFoiCalculado
+    cadastro/                         # PassoCadastro, LoginEstudanteForm
+    perfil/                           # EditarPerfilForm, ApagarSimulacao
+    admin/                            # AdminNav, TabelaTrilhas, FormularioTrilha, FormularioProfissao, etc.
   lib/
-    db/
-      index.ts                    # instancia singleton do PrismaClient
+    db/index.ts                       # singleton do PrismaClient (com adapter pg)
     auth/
-      session.ts                  # sessao do estudante via cookie HTTPOnly
-      admin-session.ts            # sessao do administrador via cookie HTTPOnly
-    validations/                  # schemas de validacao com Zod
-    match/
-      engine.ts                   # logica de calculo do match de compatibilidade
+      edge.ts                         # verifySessionToken (edge-safe, só jwtVerify)
+      session.ts                      # sessão do estudante (cookie legua_session)
+      admin-session.ts                # sessão do admin (cookie legua_admin_session)
+      index.ts                        # re-exports
+    hash.ts                           # hashCpf, hashWhatsapp, hashSenha, verificarSenha, gerarTokenAleatorio
+    validations/                      # cadastro.ts, admin.ts (schemas Zod)
+    match/engine.ts                   # motor de cálculo do match
+    data/
+      cursos.ts                       # agrega os JSONs e helpers de navegação
+      cursos-1..4.json                # catálogo de ~158 cursos em 8 áreas
+      quiz-disc.ts                    # 8 perguntas DISC + cálculo + textos
+      quiz-afinidade.ts               # helpers do quiz por curso
+      quiz-afinidade-cursos.json      # 3 perguntas por curso
+      cursos-tecnicos.ts              # ~42 técnicos do Piauí + correlação
+      correlacao-tecnico.ts           # tags, habilitadores e mensagens curadas
   prisma/
-    schema.prisma                 # definicao de todos os modelos e relacoes
-    migrations/                   # migrations geradas pelo Prisma CLI
-    seed.ts                       # seed de trilhas, profissoes e admin inicial
+    schema.prisma
+    migrations/
+    seed.ts                           # 6 trilhas + profissões + admin inicial
   public/
-    images/
+  proxy.ts                            # guard de rotas (middleware do Next 16)
+  prisma.config.ts
+  next.config.ts
   docker-compose.yml
   Dockerfile
+  scripts/docker-entrypoint.sh
   .env.example
-  README.md
 ```
 
-### Banco de Dados
+### Containerização
 
-O PostgreSQL roda em container Docker separado, definido no docker-compose.yml. Todo acesso ao banco passa pelo Prisma Client. Nao existe SQL escrito manualmente fora do contexto de migrations geradas pelo Prisma. O arquivo `prisma/seed.ts` popula as trilhas, profissoes e o usuario administrador inicial.
+`docker-compose.yml` tem dois serviços: `db` (`postgres:16-alpine`, volume persistente, healthcheck) e `app` (build com `target: development`, bind mount do código com volumes anônimos para `node_modules` e `.next`). O `Dockerfile` é multi-stage (`base → deps → builder → runner`) com um alvo `development` separado usado pelo compose.
 
-### Containerizacao
-
-O projeto tem dois servicos no docker-compose.yml:
-
-1. `app`: imagem baseada em `node:24-alpine`, build em multi-stage para producao enxuta
-2. `db`: imagem `postgres:16-alpine` com volume persistente para os dados
-
-O ambiente de desenvolvimento usa `docker compose up` para subir ambos os servicos. Hot reload do Next.js e configurado via volume mount do codigo-fonte no container de desenvolvimento.
+O `scripts/docker-entrypoint.sh` na subida: `prisma generate` → `prisma migrate deploy` (ou `prisma db push` como fallback se não houver migrations) → seed condicional (só roda se não houver nenhum admin cadastrado) → start.
 
 
-## Modulos do MVP - Checklist de Desenvolvimento
+## Modelo de Dados
 
-### Modulo 0 - Infraestrutura e Configuracao Base
+Todos os modelos estão em `prisma/schema.prisma`. Enums: `AdminRole`, `Preocupacao`, `AnoEscolar`, `ModalidadeTrilha`, `TipoEvento`, `RendaFamiliar`, `PerfilEmpreendedor`, `DiscPerfil` (D/I/S/C), `AreaDISC` (HUMANAS/EXATAS/BIOLOGICAS), `FaixaResultado` (ALTA/MEDIA/BAIXA).
 
-- [ ] Criar repositorio com estrutura de pastas definida acima
-- [ ] Configurar `package.json` com Next.js 16 e Node.js 24 como engine minima
-- [ ] Configurar TypeScript com `tsconfig.json` estrito
-- [ ] Criar `Dockerfile` com build multi-stage (development e production)
-- [ ] Criar `docker-compose.yml` com servicos `app` e `db`
-- [ ] Configurar variaveis de ambiente via `.env.local` (nao commitado) e `.env.example` (commitado)
-- [ ] Instalar e configurar Prisma: `npm install prisma @prisma/client`
-- [ ] Inicializar Prisma com `npx prisma init` apontando para o PostgreSQL do container
-- [ ] Criar instancia singleton do PrismaClient em `lib/db/index.ts`
-- [ ] Configurar ESLint e Prettier com regras do projeto
-- [ ] Validar que `docker compose up` sobe os dois servicos com hot reload funcionando
-- [ ] Validar que a conexao com o banco e estabelecida ao iniciar a aplicacao
+### Estudante
 
+Identidade e perfil vocacional num só lugar:
+- Identidade: `email` (único) + `senhaHash` (bcrypt). `cpfHash` (único) e `whatsappHash` guardados apenas como SHA-256 (irreversível, nunca exibidos).
+- Dados: `nome`, `dataNascimento`, `escolaNome`, `escolaAno` (`AnoEscolar`), `cursoTecnico` (slug opcional), `rendaFamiliar`, `perfilEmpreendedor`, `preocupacoes` (`Preocupacao[]`).
+- Perfil vocacional (calculado no cadastro): `areaQuizH/E/B` (contagens de respostas por área), `discPerfil`, `respostasDisc` (Json bruto para auditoria).
+- Recuperação: `tokenSenhaHash` + `tokenSenhaExpiraEm` (token temporário gerado pelo admin).
+- Controle: `ativo`, `criadoEm`, `atualizadoEm`.
 
-### Modulo 1 - Schema do Banco de Dados e Seed
+### Admin
 
-Todos os modelos sao definidos em `prisma/schema.prisma`. O Prisma CLI gera as migrations automaticamente a partir das alteracoes no schema. Nao e necessario escrever SQL manualmente.
+`nome`, `email` (único), `senhaHash` (bcrypt), `role` (`AdminRole`, default EDITOR), `ativo`.
 
-- [ ] Definir modelo `Estudante` no schema Prisma
-  - id, nome, dataNascimento, cpfHash, whatsapp, escolaNome, escolaAno, cursoTecnico (opcional), areaAfinidade, preocupacaoPrincipal, criadoEm, atualizadoEm
-- [ ] Definir modelo `Admin` no schema Prisma
-  - id, nome, email, senhaHash, role (SUPER_ADMIN, EDITOR), ativo, criadoEm, atualizadoEm
-- [ ] Definir modelo `Trilha` no schema Prisma
-  - id, slug, titulo, modalidade, descricaoCurta, descricaoCompleta, comoEntrar, duracao, custoEstimado, primeirosPassos, ordem, ativo, criadoEm, atualizadoEm
-- [ ] Definir modelo `Profissao` no schema Prisma
-  - id, nome, descricao, trilhaId (FK), ativo, criadoEm
-- [ ] Definir modelo `Simulacao` no schema Prisma
-  - id, estudanteId (FK), trilhaId (FK), narrativaAluno, narrativaProfissional, iniciadaEm, concluidaEm (opcional)
-- [ ] Definir modelo `ResultadoMatch` no schema Prisma
-  - id, estudanteId (FK), trilhaId (FK), simulacaoId (FK), pontuacao (Int), justificativa, proximoPasso, compartilhado, criadoEm
-- [ ] Definir modelo `EventoEngajamento` no schema Prisma
-  - id, estudanteId (FK), tipoEvento, payload (Json), criadoEm
-- [ ] Executar `npx prisma migrate dev --name init` para gerar a migration inicial
-- [ ] Criar `prisma/seed.ts` com as 6 trilhas do MVP, profissoes de cada trilha e usuario admin inicial
-  - Trilhas: Bacharelado Presencial, Bacharelado EAD, Tecnologo, Curso Tecnico, Concurso Publico, Mercado Direto
-  - Narrativas "Um dia como aluno" e "Um dia como profissional" com contexto nordestino e piauiense
-  - Admin inicial com email e senha temporaria definidos via variavel de ambiente
-- [ ] Configurar script `prisma.seed` no `package.json`
-- [ ] Executar `npx prisma db seed` e validar dados inseridos via `npx prisma studio`
+### Trilha
+
+`slug` (único), `titulo`, `modalidade`, `descricaoCurta`, `descricaoCompleta`, `comoEntrar`, `duracao`, `custoEstimado`, `primeirosPassos`, `ordem`, `ativo`. Os campos `narrativaAluno`/`narrativaProfissional` são **legado** (a narrativa hoje vem do JSON do curso) e ficam opcionais só para não quebrar dados existentes.
+
+### Profissao
+
+`nome`, `descricao`, `trilhaId` (FK, cascade), `ativo`. Usada no seed e no admin. O catálogo navegável de cursos é estático (ver seção de Catálogo).
+
+### Simulacao
+
+Liga `estudanteId` ↔ `trilhaId` ↔ (`areaSlug`, `cursoSlug`). Copia `narrativaAluno`/`narrativaProfissional` do curso (snapshot), guarda `respostasAfinidade` (Json), `iniciadaEm` e `concluidaEm` (nulo até concluir). Relação 1:1 opcional com `ResultadoMatch`.
+
+### ResultadoMatch
+
+Snapshot imutável do cálculo, 1:1 com `Simulacao`:
+- `pontuacao` (0–100), `pontuacaoArea` (0–60), `pontuacaoCurso` (0–40), `faixa`.
+- `tituloDisc`, `areaDominante`, `cursoSlug`.
+- `justificativa`, `proximoPasso`.
+- `contextoBlocos` (Json: blocos verde/azul/cinza), `explicacao` (Json: breakdown numérico da tela "como foi calculado").
+- `compartilhado`, `criadoEm`.
+
+### EventoEngajamento
+
+Telemetria genérica: `estudanteId` (opcional, `onDelete: SetNull`), `tipoEvento` (`TipoEvento`), `payload` (Json), `criadoEm`.
 
 
-### Modulo 2 - Autenticacao e Sessao
+## Autenticação e Sessão
 
-Este modulo implementa dois mecanismos de sessao independentes: um para o estudante e outro para o administrador. O estudante nao tem senha: e identificado pelo CPF e whatsapp no cadastro. O administrador autentica com email e senha.
+Dois domínios de sessão **totalmente independentes** (cookies, secrets e max-age separados):
 
-- [ ] Criar `lib/auth/session.ts` com funcoes de criacao e leitura de sessao do estudante via cookie HTTPOnly
-- [ ] Criar `lib/auth/admin-session.ts` com funcoes de criacao e leitura de sessao de admin via cookie HTTPOnly separado
-- [ ] Implementar JWT assinado com secret configurado em variavel de ambiente para ambos os casos
-- [ ] Criar middleware em `middleware.ts` com tres regras:
-  - Rotas em `(auth)` exigem cookie de sessao de estudante valido
-  - Rotas em `(admin)` exigem cookie de sessao de admin valido
-  - Rotas publicas nao exigem autenticacao
-- [ ] Criar `app/api/auth/route.ts` com POST para criacao de sessao do estudante apos cadastro
-- [ ] Criar `app/api/auth/logout/route.ts` com POST para encerramento de sessao do estudante
-- [ ] Criar `app/api/admin/auth/route.ts` com POST para login de administrador com email e senha
-  - Verificar senha com bcrypt
-  - Retornar erro claro para credenciais invalidas
-- [ ] Criar `app/api/admin/auth/logout/route.ts` com POST para encerramento de sessao de admin
-- [ ] Validar que rotas protegidas redirecionam corretamente sem sessao valida
-- [ ] Validar que nenhum cookie de sessao e acessivel via JavaScript no cliente
+| | Estudante | Admin |
+|---|---|---|
+| Cookie | `legua_session` | `legua_admin_session` |
+| Secret | `SESSION_SECRET` | `ADMIN_SESSION_SECRET` |
+| Max-age | `SESSION_MAX_AGE` (7 dias) | `ADMIN_SESSION_MAX_AGE` (8h) |
+| Identificação | e-mail + senha (bcrypt) | e-mail + senha (bcrypt) |
 
+- `lib/auth/edge.ts` contém **apenas** `verifySessionToken` (usa `jwtVerify`). É o único módulo de auth que o `proxy.ts` importa, por ser compatível com o edge runtime.
+- `lib/auth/session.ts` e `admin-session.ts` criam/leem/encerram cookies via `next/headers`. O JWT carrega `sub` (id do usuário) e `role`. Cookies são `httpOnly`, `sameSite=lax`, `secure` em produção.
 
-### Modulo 3 - Cadastro em Tres Passos
+**Autorização em duas camadas (defesa em profundidade):**
 
-O cadastro e a primeira experiencia do estudante. Deve ser leve, claro e sem atrito. O CPF e coletado mas armazenado apenas como hash (SHA-256) para identificacao sem exposicao de dado sensivel.
+1. `proxy.ts` intercepta `/trilhas`, `/perfil` (sessão de estudante) e `/admin` exceto `/admin/login` (sessão de admin), redirecionando para `/entrar` ou `/admin/login` com `?redirect=`. O matcher exclui `/api/*`, estáticos e `robots.txt`.
+2. **Cada Route Handler e cada layout protegido re-verifica a sessão** por conta própria (`lerSessaoEstudante()` / `lerSessaoAdmin()`). O proxy é conveniência de UX, não a fronteira de segurança.
 
-- [ ] Criar `app/(public)/cadastro/page.tsx` como Server Component com estado gerenciado em Client Component filho
-- [ ] Implementar componente `components/cadastro/PassoCadastro.tsx` com controle de etapa atual (1, 2 ou 3)
-- [ ] Passo 1: Dados Pessoais
-  - Campos: nome completo, data de nascimento, CPF, WhatsApp
-  - Validacao client-side com Zod antes de avancar
-  - Mascara de CPF e WhatsApp
-  - Texto explicativo sobre o CPF para reduzir desconfianca
-- [ ] Passo 2: Dados da Escola
-  - Campos: nome da escola, ano (1o, 2o, 3o), curso tecnico (opcional, com campo "nao tenho")
-- [ ] Passo 3: Perfil de Interesse
-  - Campo: area de afinidade (saude, tecnologia, educacao, seguranca publica, negocios, artes, agropecuaria)
-  - Campo: principal preocupacao sobre o futuro (nao saber o que escolher, nao ter dinheiro para estudar, nao passar no vestibular, nao encontrar emprego, outra)
-- [ ] Criar `app/api/estudantes/route.ts` com POST para persistencia do cadastro via Prisma
-  - Validacao server-side com Zod
-  - Hash do CPF com SHA-256 antes de persistir
-  - Criacao de sessao apos cadastro bem-sucedido
-  - Retorno de erro claro em caso de CPF ja cadastrado
-- [ ] Indicador visual de progresso nos tres passos ("Passo 1 de 3")
-- [ ] Botao "Voltar" funcional entre passos sem perda dos dados ja preenchidos
-- [ ] Validar fluxo completo end-to-end em mobile (viewport 375px)
+Há **isolamento por dono**: rotas de simulação/match/resultado checam `estudanteId === sessao.sub` antes de devolver dados.
 
 
-### Modulo 4 - Mapa de Trilhas
+## Fluxo do Estudante
 
-O mapa de trilhas e a tela central do produto. Deve surpreender o estudante ao mostrar, pela primeira vez, todos os caminhos existentes em um unico lugar.
+### Cadastro (`components/cadastro/PassoCadastro.tsx`)
 
-- [ ] Criar `app/(auth)/trilhas/page.tsx` como Server Component que busca trilhas via Prisma
-- [ ] Criar `app/api/trilhas/route.ts` com GET para listagem de trilhas ativas
-  - Suporte a filtro por modalidade via query param
-- [ ] Criar componente `components/trilhas/CardTrilha.tsx`
-  - Exibir titulo, modalidade, descricao curta e indicador visual de categoria
-  - Responsivo: grid de 1 coluna em mobile, 2 colunas em tablet, 3 em desktop
-  - Estado de foco e toque visiveis (sem depender apenas de hover)
-- [ ] Criar componente `components/trilhas/FiltroTrilhas.tsx`
-  - Filtrar por modalidade (presencial, EAD, tecnico, concurso, mercado)
-  - Implementado como Client Component com estado local
-  - Filtro visual com botoes de selecao, sem dropdown
-- [ ] Saudacao personalizada com o primeiro nome do estudante no topo da pagina
-- [ ] Validar carregamento correto das 6 trilhas do seed
-- [ ] Validar filtragem funcional sem recarregar a pagina
+Wizard de 4 passos num único Client Component com estado local e barra de progresso:
 
+1. **Dados pessoais + renda**: nome, e-mail, senha (+confirmação, com olho de mostrar/ocultar), data de nascimento, CPF (com máscara e validação dos dígitos verificadores), WhatsApp (opcional), faixa de renda familiar.
+2. **Escola**: nome da escola, ano, curso técnico (combobox com busca, navegação por teclado e opção "não faço nenhum" — a lista vem de `lib/data/cursos-tecnicos.ts`).
+3. **Futuro**: perfil empreendedor (estável/equilíbrio/empreendedor/alto risco) + preocupações (múltipla escolha).
+4. **Quiz DISC**: 8 perguntas que auto-avançam; cada opção pontua simultaneamente uma área (H/E/B) e um perfil DISC (D/I/S/C). O estudante nunca vê os rótulos.
 
-### Modulo 5 - Tela Interna da Trilha
+Entre o passo 1 e o 2, o cliente chama `/api/estudantes/verificar-email` e `/api/estudantes/verificar-cpf` para detectar duplicidade antes de prosseguir. O submit final faz `POST /api/estudantes`, que valida com Zod (`cadastroSchema`), calcula o DISC no servidor (`calcularDisc`), persiste o estudante (CPF/WhatsApp como hash), cria a sessão e registra `SESSAO_INICIADA`. Em seguida o cliente navega para `/perfil-vocacional`.
 
-Quando o estudante clica em um card, ve as informacoes que nunca ninguem explicou de forma clara.
+### Perfil vocacional (`/perfil-vocacional`)
 
-- [ ] Criar `app/(auth)/trilhas/[slug]/page.tsx` como Server Component
-  - Buscar trilha pelo slug via Prisma incluindo profissoes associadas
-  - Retornar 404 para slug invalido
-- [ ] Criar `app/api/trilhas/[slug]/route.ts` com GET para detalhe da trilha
-- [ ] Exibir blocos de informacao: o que e, como entrar, tempo de duracao, custo estimado, profissoes possiveis dentro desse caminho
-- [ ] Linguagem simples, sem jargoes, com exemplos concretos do contexto nordestino
-- [ ] Botao destacado "Entrar na simulacao" que direciona para o simulador desta trilha
-- [ ] Botao "Voltar para o mapa" sem perder o estado do filtro anterior
-- [ ] Validar renderizacao correta para cada uma das 6 trilhas
+Mostra o retrato gerado pelo quiz: rótulo do perfil DISC humanizado (Decisor/Influenciador/Estável/Analítico), área dominante com barras H/E/B, pontos fortes, cuidados e — se houver — destaque do curso técnico. A sigla DISC nunca aparece. Inclui aviso metodológico ("ponto de partida, não diagnóstico").
 
+### Navegação Trilhas → Áreas → Curso
 
-### Modulo 6 - Simulador de Carreira
+- `/trilhas`: 6 cards, saudação personalizada, filtro client-side por **grupo** (superior=PRESENCIAL+EAD, técnico, concurso, mercado) via query param `?grupo=`.
+- `/trilhas/[slug]`: detalhe da trilha (o que é, como entrar, duração, custo, primeiros passos, profissões) com CTA para entrar na simulação.
+- `/trilhas/[slug]/areas`: áreas de conhecimento que têm ao menos um curso compatível com a modalidade da trilha (`areasPorTrilha`).
+- `/trilhas/[slug]/areas/[areaSlug]`: cursos da área filtrados pela trilha (`cursosPorTrilha`).
+- `/trilhas/[slug]/areas/[areaSlug]/[cursoSlug]`: detalhe do curso (duração, salário médio, narrativas em abas via `TabsCurso`) com CTA para simular.
 
-O simulador e onde a experiencia muda de nivel. No MVP, o conteudo e estatico, produzido com qualidade editorial e contexto nordestino real.
+A rota legada `/trilhas/[slug]/simulador` apenas redireciona para `/areas` (a simulação é sempre por curso).
 
-- [ ] Criar `app/(auth)/trilhas/[slug]/simulador/page.tsx`
-- [ ] Criar `app/api/simulacoes/route.ts` com POST para registrar inicio de simulacao via Prisma
-  - Persistir estudanteId, trilhaId e iniciadaEm ao acessar o simulador
-- [ ] Criar componente `components/simulador/NarrativaSimulador.tsx`
-  - Exibir a narrativa em duas etapas distintas: "Um dia como aluno" e "Um dia como profissional"
-  - Progresso visual entre as duas etapas
-  - Botao "Continuar" entre as etapas
-  - Leitura fluida, paragrafos curtos, linguagem proxima do estudante
-- [ ] Ao concluir as duas etapas, chamar POST em `/api/match` com os dados da simulacao
-- [ ] Persistir `concluidaEm` na simulacao ao transicionar para resultado
-- [ ] Validar que o inicio da simulacao e registrado mesmo se o estudante nao concluir
-- [ ] Validar narrativas para cada uma das 6 trilhas (conteudo editorial)
+### Simulador (`components/simulador/SimuladorCurso.tsx`)
+
+A página `.../[cursoSlug]/simulador/page.tsx` é um Server Component que **cria a `Simulacao` no carregamento** (persistindo as narrativas do curso) e registra `SIMULACAO_INICIADA`. O componente cliente é uma máquina de estados de 4 fases:
+
+`NARRATIVA_ALUNO → QUIZ_ALUNO → NARRATIVA_PROFISSIONAL → QUIZ_PROFISSIONAL → (envio)`
+
+As perguntas vêm de `obterQuizCurso(cursoSlug)` (1 pergunta fase ALUNO peso 1 + 2 fase PROFISSIONAL peso 2). Ao final, junta todas as respostas e faz um único `POST /api/match`.
+
+> Observação: existe um `POST /api/simulacoes` que cria simulação isoladamente, mas o fluxo real **não o usa** (a página cria a simulação direto). O `GET /api/simulacoes` ainda serve o histórico do perfil. Tratar como ponto de limpeza futura.
+
+### Match e Resultado (`/api/match`, `.../simulador/resultado`)
+
+`POST /api/match` é **idempotente**: valida a sessão e o dono da simulação; se já houver resultado, devolve o existente. Caso contrário chama `calcularMatch`, marca a simulação como concluída, persiste o `ResultadoMatch` e registra `SIMULACAO_CONCLUIDA`.
+
+A página de resultado (Server Component) registra `RESULTADO_VISUALIZADO` e exibe: score grande com faixa colorida, breakdown 60/40, título DISC + justificativa, próximo passo, card de orientação técnico×curso (quando houver), blocos de contexto (verde/azul/cinza), a seção "como foi calculado" (`ComoFoiCalculado`) e os botões de simular outro curso / compartilhar.
 
 
-### Modulo 7 - Motor de Match e Tela de Resultado
+## Catálogo Estático de Cursos
 
-O resultado e o momento de maior impacto emocional. Deve ser claro, empatico e terminar com uma acao concreta.
+O catálogo navegável **não está no banco** — vive em JSON versionado, carregado em build/runtime por `lib/data/cursos.ts`:
 
-- [ ] Criar `lib/match/engine.ts` com a logica de calculo do match
-  - Entrada: areaAfinidade do estudante, preocupacaoPrincipal e slug da trilha simulada
-  - Saida: pontuacao (0-100), justificativa em texto e proximo passo concreto
-  - No MVP, o motor e uma tabela de correspondencia (lookup table): area de afinidade x trilha = pontuacao base, ajustada pela preocupacao principal
-  - A logica deve ser facilmente substituivel por um modelo mais sofisticado em versoes futuras
-- [ ] Criar `app/api/match/route.ts` com POST para calcular e persistir o resultado via Prisma
-  - Validar que o estudante concluiu a simulacao antes de calcular
-  - Persistir resultado no modelo `ResultadoMatch`
-- [ ] Criar `app/(auth)/trilhas/[slug]/simulador/resultado/page.tsx`
-  - Exibir pontuacao de compatibilidade de forma visual (porcentagem ou barra de progresso)
-  - Exibir justificativa humanizada em texto
-  - Exibir proximo passo concreto em destaque
-  - Botao "Simular outra carreira" voltando para o mapa de trilhas
-  - Botao "Compartilhar pelo WhatsApp" com link de compartilhamento pre-formatado
-- [ ] Implementar logica de compartilhamento via WhatsApp
-  - URL: `https://wa.me/?text=` com mensagem pre-formatada contendo o resultado
-  - Atualizar `compartilhado = true` no modelo `ResultadoMatch` ao clicar
-- [ ] Validar que o resultado e unico e coerente para cada combinacao estudante x trilha
+- `cursos-1..4.json` (~158 cursos em 8 áreas: saúde, exatas, humanas, linguística, tecnologia, negócios, artes, agropecuária). Cada curso tem `slug`, `nome`, `descricaoCurta`, `duracao`, `salarioMedio`, `narrativaEstudante` e `narrativaProfissional` (com contexto piauiense).
+- `courseModalidades` mapeia cada curso às trilhas (modalidades) a que pertence — um curso pode estar em várias. É a base de `cursosPorTrilha` / `areasPorTrilha`.
+- `quiz-afinidade-cursos.json` tem 3 perguntas por curso (com fallback genérico em `quiz-afinidade.ts`).
+
+Decisão de design: conteúdo editorial pesado e estável é estático (rápido, versionável); só dados por-usuário e mutáveis vão ao Postgres. As 6 Trilhas e suas Profissões são populadas pelo seed (upsert idempotente).
 
 
-### Modulo 8 - Historico de Simulacoes
+## Motor de Match (`lib/match/engine.ts`)
 
-O historico permite que o estudante retorne e veja tudo que ja explorou.
+Determinístico, sem ML, totalmente transparente. A entrada/saída é tipada (`CalcularInput` / `ResultadoMatchEngine`) para ser **facilmente substituível** por um modelo mais sofisticado no futuro.
 
-- [ ] Criar `app/(auth)/perfil/page.tsx` como Server Component
-  - Buscar todas as simulacoes concluidas do estudante autenticado via Prisma com include de ResultadoMatch
-- [ ] Adicionar handler GET em `app/api/simulacoes/route.ts` para listar simulacoes do estudante autenticado (o mesmo arquivo ja tem o POST criado no Modulo 6; o Next.js suporta multiplos metodos HTTP no mesmo route.ts via funcoes exportadas separadas)
-- [ ] Exibir lista de trilhas simuladas com pontuacao de match de cada uma
-- [ ] Link para repetir a simulacao de uma trilha ja explorada
-- [ ] Estado vazio claro para estudante que ainda nao simulou nenhuma carreira
-- [ ] Validar que o estudante so ve suas proprias simulacoes (isolamento por sessao)
+### Bloco 1 — Compatibilidade real (0–100)
+
+**Componente A — Afinidade de área (0–60):**
+1. Mapeia o `areaSlug` do curso para uma área DISC (`areaCursoParaAreaDisc`; ex.: saúde→BIOLOGICAS, tecnologia→EXATAS).
+2. `fração = respostasDISC_naquela_área / total` → base `= round(18 + fração·42)` (piso 18, teto 60).
+3. **Bônus de curso técnico**: classifica a correlação entre o técnico do aluno e o curso simulado e soma `DIRETA +10 / TRANSVERSAL +5 / AREA +3 / NENHUMA 0` (com cap em 60).
+
+**Componente B — Identificação com a simulação (0–40):**
+- As 3 perguntas de afinidade viram percentual ponderado (`SIM=1, MAIS_OU_MENOS=0.5, NAO=0`) e escalam para 0–40 (`calcularAfinidadeCurso`).
+
+**Faixa:** `≥65 ALTA / ≥35 MEDIA / <35 BAIXA`.
+
+Além do número, o motor produz `tituloDisc` (frase da matriz 4×3 perfil DISC × área dominante — a sigla nunca aparece), `justificativa`, `proximoPasso` (template por trilha) e um card de orientação técnico×curso.
+
+### Bloco 2 — Análise de contexto (não afeta a nota)
+
+`gerarContexto` cruza renda, perfil empreendedor, preocupações, ano escolar e curso técnico com a trilha simulada e gera blocos:
+- 🟢 verde (oportunidade): trilha gratuita + renda baixa, ou "já está no caminho" do técnico.
+- 🔵 azul (orientação): ProUni/FIES, ENEM não é a única porta, renda enquanto estuda, etc.
+- ⚪ cinza (ponto neutro): alertas de perfil (ex.: empreendedor × concurso, estável × mercado direto).
+
+### Subsistema de correlação técnico ↔ curso
+
+Curado em três arquivos:
+- `cursos-tecnicos.ts` — técnicos do Piauí com `area` DISC, `cursosRelacionados[]` (ponte direta) e `tagsAplicacao[]` (domínios). Esta lista também alimenta o dropdown do cadastro.
+- `correlacao-tecnico.ts` — vocabulário fechado de 19 tags, conceito de **curso habilitador** (TI, marketing, design, gestão, comunicação são transversais) e **mensagens curadas por par (tag × família)** com fallback paramétrico.
+- `classificarCorrelacao` decide DIRETA / TRANSVERSAL / AREA / NENHUMA. A TRANSVERSAL é a parte engenhosa: reconhece combinações raras (ex.: técnico em Alimentos + simular Ciência da Computação → software para a cadeia alimentícia).
+
+`explicacao` serializa todo o breakdown numérico para a tela "como foi calculado".
 
 
-### Modulo 9 - Metricas e Rastreamento de Engajamento
+## Métricas e Rastreamento de Engajamento
 
-As tres perguntas de sucesso do MVP precisam ser respondidas com dados reais.
+`POST /api/eventos` grava `EventoEngajamento`. Eventos registrados ao longo do fluxo (não centralizados): `SESSAO_INICIADA`, `LOGIN`, `SIMULACAO_INICIADA`, `SIMULACAO_CONCLUIDA`, `RESULTADO_VISUALIZADO`, `RESULTADO_COMPARTILHADO`. Ao compartilhar, o handler também seta `compartilhado=true` no `ResultadoMatch`.
 
-- [ ] Criar `app/api/eventos/route.ts` com POST para registro de eventos via Prisma
-- [ ] Registrar evento `sessao_iniciada` no middleware ao autenticar
-- [ ] Registrar evento `trilha_visualizada` ao acessar tela interna de qualquer trilha
-- [ ] Registrar eventos de simulacao nos endpoints ja existentes dos modulos 6 e 7
-- [ ] Registrar evento `resultado_compartilhado` ao clicar em compartilhar
-- [ ] Criar queries Prisma documentadas para calcular as tres metricas de sucesso do MVP:
-  - Taxa de retorno: estudantes com mais de uma sessao / total de estudantes
-  - Taxa de conclusao: simulacoes concluidas / simulacoes iniciadas
-  - Taxa de compartilhamento: resultados compartilhados / resultados visualizados
+As três métricas-norte do MVP derivam desses eventos: taxa de retorno (sessões por estudante), taxa de conclusão (concluídas/iniciadas) e taxa de compartilhamento (compartilhados/visualizados).
 
 
-### Modulo 10 - Design System e Responsividade
+## Área Administrativa
 
-O design system do Léguas e baseado em contraste forte: fundo azul escuro, tipografia clara e amarelo como cor de destaque. A paleta foi definida a partir da identidade visual do produto.
+Domínio paralelo sob `app/admin/`, com login e sessão próprios. `app/admin/layout.tsx` aplica `noindex`; `app/admin/(protected)/layout.tsx` re-verifica admin ativo e renderiza a sidebar. Todos os CRUDs seguem o mesmo padrão de handler: `lerSessaoAdmin()` → validação Zod (`lib/validations/admin.ts`) → Prisma.
 
-#### Paleta de Cores
+- **Dashboard**: contagens (estudantes, simulações iniciadas/concluídas, compartilhados) + trilhas mais simuladas (`groupBy`).
+- **Trilhas / Profissões**: CRUD com DELETE **lógico** (`ativo=false`).
+- **Estudantes**: listagem paginada com busca por nome; detalhe sem o CPF (apenas indicador de hash); gerar **token de senha temporária** (`/[id]/senha` — token de 8 caracteres, hash bcrypt, validade 24h, devolvido em texto puro só uma vez); DELETE **físico** (cascateia simulações, resultados e eventos).
+
+
+## Design System e Responsividade (`app/globals.css`)
+
+A paleta atual é **base clara** (mudou em relação ao planejamento original de fundo escuro):
 
 ```css
-/* Cores primarias */
---color-background:   #12203C;  /* azul escuro - fundo principal, header, sidebar */
---color-surface:      #1E3358;  /* azul medio - cards, hover de elementos no fundo escuro */
---color-text:         #F5F6F8;  /* quase branco - texto principal sobre fundo escuro */
---color-accent:       #E2AC40;  /* amarelo - CTAs, destaques, indicadores de progresso */
-
-/* Cores de suporte */
---color-accent-hover: #C99930;  /* amarelo escurecido - estado hover do accent */
---color-border:       #2E4A73;  /* azul acinzentado - bordas e divisores */
---color-text-muted:   #8B9AB0;  /* cinza azulado - textos secundarios, labels */
---color-text-dark:    #12203C;  /* azul escuro - texto sobre fundos claros */
---color-surface-light:#F5F6F8;  /* quase branco - fundo de areas claras, inputs */
+--color-background: #ffffff;   /* fundo das páginas */
+--color-surface:    #f5f6f8;   /* cards e inputs */
+--color-text:       #12203c;   /* azul escuro: texto principal */
+--color-text-soft:  #1e3358;   /* azul médio: títulos/links */
+--color-text-muted: #6b7a91;   /* cinza azulado: secundário */
+--color-accent:     #e2ac40;   /* amarelo: CTAs, destaques, foco */
+--color-accent-hover:#c99930;
+--color-accent-soft:#fdf3d8;
+--color-border:     #d9deea;
+--color-danger:     #c0392b;
+--color-success:    #2f9e6e;
 ```
 
-#### Uso das Cores por Contexto
+Classes utilitárias: `.container`, `.card`, `.btn`/`.btn-primary`/`.btn-secondary`/`.btn-ghost`, `.input`/`.select`/`.textarea`, `.label`, `.muted`, `.error`, `.grid-cards`, `.skip-link`. O styling concreto das páginas é majoritariamente inline.
 
-- Fundo principal de paginas, header e navegacao: `--color-background`
-- Cards sobre o fundo azul: `--color-surface`
-- Botao primario (CTA principal): fundo `--color-accent`, texto `--color-text-dark`
-- Botao secundario: borda `--color-accent`, texto `--color-accent`, fundo transparente
-- Textos sobre fundo escuro: `--color-text`
-- Textos secundarios e placeholders: `--color-text-muted`
-- Indicadores de progresso e destaques visuais: `--color-accent`
-- Inputs e areas de formulario: fundo `--color-surface-light`, texto `--color-text-dark`
-
-#### Checklist de Responsividade e Acessibilidade
-
-- [ ] Definir todas as CSS custom properties acima em `globals.css`
-- [ ] Configurar tipografia base: minimo 16px para corpo de texto em mobile
-- [ ] Todos os componentes devem funcionar em viewports de 320px a 1440px
-- [ ] Botoes e areas clicaveis com area minima de 44x44px (padrao de acessibilidade)
-- [ ] Formularios com labels visiveis (nao apenas placeholder)
-- [ ] Foco de teclado visivel em todos os elementos interativos
-- [ ] Ratio de contraste WCAG AA validado para texto sobre fundo (minimo 4.5:1)
-- [ ] Testar em Chrome Mobile (iOS e Android) via DevTools e em dispositivo real
-- [ ] Validar que a aplicacao carrega em menos de 3 segundos em 3G (simular via DevTools)
+Requisitos mantidos: corpo ≥16px, alvos clicáveis ≥44px, foco visível (`:focus-visible`), grid responsivo (1/2/3 colunas), mobile-first de 320px a 1440px.
 
 
-### Modulo 11 - Area Administrativa
-
-A area administrativa e acessivel somente por administradores autenticados via email e senha. Ela permite gerenciar todo o conteudo do produto sem precisar alterar codigo.
-
-#### Autenticacao de Admin
-
-- [ ] Criar `app/(admin)/login/page.tsx` com formulario de email e senha
-- [ ] Criar `app/(admin)/layout.tsx` que verifica cookie de sessao de admin e redireciona para login se ausente
-- [ ] A rota `/admin` nao e indexada por mecanismos de busca (`robots.txt` e meta noindex)
-
-#### Dashboard
-
-- [ ] Criar `app/(admin)/dashboard/page.tsx` com numeros gerais:
-  - Total de estudantes cadastrados
-  - Total de simulacoes iniciadas e concluidas
-  - Total de resultados compartilhados
-  - Trilhas mais simuladas
-
-#### Gerenciamento de Trilhas
-
-- [ ] Criar `app/(admin)/trilhas/page.tsx` com listagem de todas as trilhas (ativas e inativas)
-- [ ] Criar `app/(admin)/trilhas/nova/page.tsx` com formulario de criacao de trilha
-  - Campos: titulo, slug (gerado automaticamente a partir do titulo, editavel), modalidade, descricao curta, descricao completa, como entrar, duracao, custo estimado, primeiros passos, narrativa aluno, narrativa profissional, ordem, ativo
-- [ ] Criar `app/(admin)/trilhas/[id]/editar/page.tsx` com formulario de edicao
-- [ ] Criar `app/api/admin/trilhas/route.ts` com GET (listagem) e POST (criacao)
-- [ ] Criar `app/api/admin/trilhas/[id]/route.ts` com GET, PUT e DELETE
-  - DELETE deve ser logico (campo `ativo = false`), nao fisico
-- [ ] Criar componente `components/admin/TabelaTrilhas.tsx`
-
-#### Gerenciamento de Profissoes
-
-- [ ] Criar `app/(admin)/profissoes/page.tsx` com listagem de profissoes agrupadas por trilha
-- [ ] Criar `app/(admin)/profissoes/nova/page.tsx` com formulario de criacao
-  - Campos: nome, descricao, trilha associada, ativo
-- [ ] Criar `app/(admin)/profissoes/[id]/editar/page.tsx` com formulario de edicao
-- [ ] Criar `app/api/admin/profissoes/route.ts` com GET e POST
-- [ ] Criar `app/api/admin/profissoes/[id]/route.ts` com GET, PUT e DELETE logico
-
-#### Gerenciamento de Estudantes
-
-- [ ] Criar `app/(admin)/estudantes/page.tsx` com listagem paginada de estudantes
-  - Filtros por escola, ano, area de afinidade e data de cadastro
-  - Busca por nome
-- [ ] Criar `app/(admin)/estudantes/[id]/page.tsx` com detalhe completo do estudante
-  - Dados pessoais (CPF nao exibido, apenas indicador de hash)
-  - Historico de simulacoes
-  - Resultados de match
-  - Opcoes: editar dados, gerar nova senha temporaria, desativar conta
-- [ ] Criar `app/api/admin/estudantes/route.ts` com GET paginado
-- [ ] Criar `app/api/admin/estudantes/[id]/route.ts` com GET, PUT e DELETE logico
-- [ ] Criar `app/api/admin/estudantes/[id]/senha/route.ts` com POST para geracao de senha temporaria
-  - Gerar token aleatorio de 8 caracteres
-  - Registrar hash do token no banco com validade de 24 horas
-  - Retornar o token em texto puro apenas uma vez na resposta da API
-  - O estudante usa o token no proximo login no lugar da identificacao habitual
-- [ ] Validar que o admin nao consegue ver o CPF original de nenhum estudante (dado irreversivel)
-
-#### Componentes Compartilhados do Admin
-
-- [ ] Criar componente `components/admin/Sidebar.tsx` com navegacao lateral
-- [ ] Criar componente `components/admin/TabelaPaginada.tsx` reutilizavel
-- [ ] Criar componente `components/admin/FormularioTrilha.tsx` compartilhado entre criacao e edicao
-- [ ] Todos os formularios do admin com validacao client-side via Zod
-
-
-### Modulo 12 - Documentacao Tecnica (README)
-
-A documentacao e parte obrigatoria do MVP. Qualquer pessoa do time deve conseguir clonar o repositorio e rodar o projeto localmente seguindo o README sem precisar perguntar nada para ninguem.
-
-- [ ] Criar `README.md` na raiz do repositorio com as seguintes secoes:
-
-#### Secao: Visao Geral
-
-Descricao curta do produto e da stack utilizada (Next.js 16, Node.js 24, Prisma, PostgreSQL, Docker).
-
-#### Secao: Pre-requisitos
-
-Lista do que precisa estar instalado antes de comecar:
-- Docker e Docker Compose
-- Node.js 24 ou superior
-- npm ou pnpm
-
-#### Secao: Clonando e Configurando o Ambiente
-
-```bash
-# 1. Clonar o repositorio
-git clone <url-do-repositorio>
-cd legua
-
-# 2. Copiar o arquivo de variaveis de ambiente
-cp .env.example .env.local
-# Editar .env.local com os valores reais (ver secao de variaveis)
-
-# 3. Subir os containers (banco de dados e aplicacao)
-docker compose up
-```
-
-#### Secao: O que Sao Migrations
-
-Explicacao objetiva: migrations sao arquivos que descrevem as mudancas no schema do banco de dados ao longo do tempo. No Léguas, o Prisma gerencia as migrations automaticamente: quando o `prisma/schema.prisma` e alterado, o Prisma CLI gera um novo arquivo de migration em `prisma/migrations/` e o aplica no banco. Isso garante que todos os ambientes (desenvolvimento, staging, producao) tenham exatamente o mesmo schema.
-
-#### Secao: Comandos Prisma
-
-```bash
-# Gerar uma nova migration apos alterar o schema.prisma
-npx prisma migrate dev --name descricao-da-mudanca
-
-# Aplicar migrations pendentes (usado em CI e producao)
-npx prisma migrate deploy
-
-# Popular o banco com dados iniciais (trilhas, profissoes, admin)
-npx prisma db seed
-
-# Abrir o Prisma Studio para inspecionar os dados no navegador
-npx prisma studio
-
-# Regenerar o Prisma Client apos mudancas no schema (geralmente automatico)
-npx prisma generate
-
-# Resetar o banco e reaplicar todas as migrations e seed (apenas dev)
-npx prisma migrate reset
-```
-
-#### Secao: Sequencia Completa de Comandos para Primeiro Acesso
-
-```bash
-# 1. Clonar e configurar
-git clone <url-do-repositorio>
-cd legua
-cp .env.example .env.local
-# editar .env.local
-
-# 2. Instalar dependencias
-npm install
-
-# 3. Subir o banco de dados
-docker compose up db -d
-
-# 4. Aplicar migrations e popular o banco
-npx prisma migrate dev
-npx prisma db seed
-
-# 5. Subir a aplicacao em modo de desenvolvimento
-npm run dev
-
-# Alternativa: subir tudo junto com Docker
-docker compose up
-```
-
-#### Secao: Variaveis de Ambiente
-
-Documentar cada variavel do `.env.example` com descricao e exemplo de valor.
-
-#### Secao: Estrutura de Pastas
-
-Descricao resumida de cada pasta principal do projeto.
-
-#### Secao: Acesso ao Admin
-
-Informar a rota de acesso (`/admin`) e que as credenciais iniciais sao definidas via variavel de ambiente no seed.
-
-- [ ] Validar que o README funciona do zero em uma maquina limpa seguindo apenas os passos documentados
-
-
-## Ordem de Implementacao Recomendada
-
-A implementacao segue esta sequencia para que cada modulo seja testavel antes de depender do seguinte:
-
-1. Modulo 0: Infraestrutura e configuracao base (com Prisma)
-2. Modulo 1: Schema do banco e seed
-3. Modulo 2: Autenticacao e sessao (estudante e admin)
-4. Modulo 10: Design system base (pode rodar em paralelo com 2 e 3)
-5. Modulo 3: Cadastro em tres passos
-6. Modulo 4: Mapa de trilhas
-7. Modulo 5: Tela interna da trilha
-8. Modulo 6: Simulador de carreira
-9. Modulo 7: Motor de match e tela de resultado
-10. Modulo 8: Historico de simulacoes
-11. Modulo 9: Metricas e rastreamento
-12. Modulo 11: Area administrativa
-13. Modulo 12: Documentacao tecnica
-
-
-## Conteudo Editorial Necessario Antes do Lancamento
-
-O conteudo e tao critico quanto o codigo. As narrativas do simulador precisam estar prontas antes dos testes com usuarios. Para cada uma das 6 trilhas, e necessario produzir:
-
-- Descricao curta para o card do mapa (ate 80 caracteres)
-- Descricao completa para a tela interna (3 a 5 paragrafos)
-- Como entrar: instrucoes praticas sem jargao
-- Duracao e custo estimado com exemplos reais do Piaui
-- Lista de profissoes possiveis dentro daquela trilha (minimo 5 por trilha)
-- Narrativa "Um dia como aluno" com referencias nordestinas (400 a 600 palavras)
-- Narrativa "Um dia como profissional" com referencias nordestinas (400 a 600 palavras)
-- Proximo passo concreto para cada trilha (instrucao direta de uma ou duas frases)
-
-
-## Variaveis de Ambiente Necessarias
+## Variáveis de Ambiente (`.env.example`)
 
 ```
-# Banco de dados (Prisma usa DATABASE_URL diretamente)
+# Banco (Prisma usa DATABASE_URL diretamente)
 DATABASE_URL=postgresql://legua:senha@db:5432/legua
 POSTGRES_USER=legua
 POSTGRES_PASSWORD=senha
 POSTGRES_DB=legua
 
-# Sessao do estudante
+# Sessão do estudante
 SESSION_SECRET=string-longa-e-aleatoria-minimo-32-caracteres
 SESSION_MAX_AGE=604800
 
-# Sessao do administrador (secret separado do estudante)
+# Sessão do administrador (secret separado)
 ADMIN_SESSION_SECRET=outra-string-longa-e-aleatoria-minimo-32-caracteres
 ADMIN_SESSION_MAX_AGE=28800
 
@@ -646,28 +401,58 @@ ADMIN_SESSION_MAX_AGE=28800
 ADMIN_INITIAL_EMAIL=admin@legua.com.br
 ADMIN_INITIAL_PASSWORD=trocar-na-primeira-entrada
 
-# Aplicacao
+# Aplicação
 NEXT_PUBLIC_APP_URL=http://localhost:3000
-NODE_ENV=development
+```
+
+`SESSION_SECRET` e `ADMIN_SESSION_SECRET` precisam ter no mínimo 32 caracteres (validado em runtime). No docker-compose, `DATABASE_URL` do serviço `app` é sobrescrito para apontar para o host `legua-db`.
+
+
+## Comandos Úteis
+
+```bash
+# Desenvolvimento
+npm run dev
+
+# Prisma
+npm run prisma:generate     # gerar client
+npm run prisma:migrate      # migrate dev (cria/aplica migration)
+npm run prisma:deploy       # migrate deploy (CI/produção)
+npm run prisma:seed         # tsx prisma/seed.ts (6 trilhas + profissões + admin)
+npm run prisma:studio
+npm run prisma:reset
+
+# Subir tudo com Docker (db + app, com seed condicional no entrypoint)
+docker compose up
 ```
 
 
-## Criterios de Aceitacao do MVP Completo
+## Conteúdo Editorial
 
-O MVP esta pronto para testes com usuarios reais quando:
-
-- [ ] Um estudante consegue se cadastrar do zero e chegar ao resultado de match em menos de 10 minutos
-- [ ] O fluxo completo funciona em um celular Android com Chrome em conexao 3G
-- [ ] Todas as 6 trilhas tem conteudo completo e revisado
-- [ ] As tres metricas de sucesso sao coletadas e consultaveis
-- [ ] Nenhum dado sensivel (CPF em texto puro, token de sessao) e acessivel via DevTools do navegador
-- [ ] A aplicacao sobe com `docker compose up` sem configuracao adicional alem do `.env.local`
-- [ ] O botao de compartilhar gera um link valido no WhatsApp com o resultado do estudante
-- [ ] O admin consegue criar, editar e desativar trilhas sem alterar codigo
-- [ ] O admin consegue visualizar e gerenciar estudantes sem ver o CPF original
-- [ ] O README permite que um desenvolvedor novo rode o projeto do zero sem perguntar nada
+O conteúdo é tão crítico quanto o código. Antes do lançamento, cada curso do catálogo (`lib/data/cursos-*.json`) precisa de: descrição curta, duração, salário médio e as narrativas "um dia como aluno" e "um dia como profissional" com referências nordestinas/piauienses. Cada curso precisa também de suas 3 perguntas de afinidade em `quiz-afinidade-cursos.json` (caso contrário cai num fallback genérico que distorce o match). As 6 trilhas e suas profissões ficam no `seed.ts`.
 
 
-## O que Fica Fora do Escopo deste CLAUDE.md
+## Critérios de Aceitação do MVP
 
-Este arquivo cobre exclusivamente o MVP. As funcionalidades de versao 1.1 (simulador interativo com escolhas, mais trilhas, historico expandido) e versao 2.0 (personalizacao por regiao, trilha de preparacao, dashboard para escolas) serao planejadas em arquivo separado apos a validacao do MVP com usuarios reais.
+- [ ] Um estudante se cadastra do zero e chega ao resultado de match em menos de 10 minutos.
+- [ ] O fluxo completo funciona em celular Android com Chrome em 3G.
+- [ ] Todas as 6 trilhas têm áreas e cursos com conteúdo completo e revisado.
+- [ ] As três métricas de sucesso são coletáveis a partir dos eventos.
+- [ ] Nenhum dado sensível (CPF em texto puro, token de sessão) é acessível via DevTools.
+- [ ] A aplicação sobe com `docker compose up` sem configuração além do `.env.local`.
+- [ ] O compartilhamento gera um link válido no WhatsApp com o resultado.
+- [ ] O admin cria, edita e desativa trilhas sem alterar código e gerencia estudantes sem ver o CPF original.
+
+
+## Dívidas Técnicas e Pontos de Atenção
+
+- **Código órfão**: `POST /api/simulacoes` e os campos `narrativaAluno`/`narrativaProfissional` da `Trilha` não são usados pelo fluxo atual.
+- **Token de senha temporária**: o admin gera o token (`/[id]/senha`) e o schema tem os campos, mas o fluxo de consumo do token no login do estudante ainda não está implementado.
+- **Breakdown da nota**: o bônus de curso técnico está embutido no componente de área (0–60); a UI mostra "afinidade de área X/60" já incluindo o bônus.
+- **Styling inline** em larga escala dificulta consistência; não há camada de componentes de UI além das classes utilitárias.
+- **`gerarTokenAleatorio`** usa `Math.random` — aceitável para token de uso único de 24h, mas `crypto` seria mais robusto.
+
+
+## Fora do Escopo deste Documento
+
+Funcionalidades de versão 1.1 (simulador interativo com escolhas ramificadas, histórico expandido) e versão 2.0 (personalização por região, trilha de preparação, dashboard para escolas) serão planejadas em arquivo separado após a validação do MVP com usuários reais.

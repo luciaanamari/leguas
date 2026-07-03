@@ -4,6 +4,11 @@ import { useState, useEffect, useRef, type FormEvent } from "react";
 import { useRouter } from "next/navigation";
 import { perguntasDisc } from "@/lib/data/quiz-disc";
 import { cursosTecnicos } from "@/lib/data/cursos-tecnicos";
+import QuizDisc, {
+  contarRespostasDisc,
+  quizDiscCompleto,
+  serializarRespostasDisc,
+} from "@/components/cadastro/QuizDisc";
 
 type Passo = 1 | 2 | 3 | 4;
 
@@ -27,6 +32,8 @@ type PreocupacaoOpcao =
   | "MEDO_ESCOLHER_ERRADO"
   | "NAO_CONHECO_OPCOES";
 
+type SexoOpcao = "FEMININO" | "MASCULINO" | "NAO_INFORMADO";
+
 type OpcaoDisc = "A" | "B" | "C" | "D";
 
 type EstadoForm = {
@@ -36,11 +43,15 @@ type EstadoForm = {
   senha: string;
   confirmarSenha: string;
   dataNascimento: string;
+  sexo: "" | SexoOpcao;
   cpf: string;
   whatsapp: string;
   rendaFamiliar: "" | RendaOpcao;
   // Passo 2
+  organizacaoId: string;
+  escolaId: string;
   escolaNome: string;
+  matricula: string;
   escolaAno: "" | "PRIMEIRO" | "SEGUNDO" | "TERCEIRO";
   cursoTecnico: string;
   // Passo 3
@@ -56,10 +67,14 @@ const inicial: EstadoForm = {
   senha: "",
   confirmarSenha: "",
   dataNascimento: "",
+  sexo: "",
   cpf: "",
   whatsapp: "",
   rendaFamiliar: "",
+  organizacaoId: "",
+  escolaId: "",
   escolaNome: "",
+  matricula: "",
   escolaAno: "",
   cursoTecnico: "",
   perfilEmpreendedor: "",
@@ -73,6 +88,12 @@ const opcoesRenda: { value: RendaOpcao; label: string }[] = [
   { value: "DE_2_5K_A_5K", label: "R$ 2.500 a R$ 5.000" },
   { value: "ACIMA_5K", label: "Acima de R$ 5.000" },
   { value: "PREFIRO_NAO_INFORMAR", label: "Prefiro não informar" },
+];
+
+const opcoesSexo: { value: SexoOpcao; label: string }[] = [
+  { value: "FEMININO", label: "Feminino" },
+  { value: "MASCULINO", label: "Masculino" },
+  { value: "NAO_INFORMADO", label: "Prefiro não informar" },
 ];
 
 const opcoesPerfil: {
@@ -440,15 +461,33 @@ function SelecaoCursoTecnico({
   );
 }
 
-export default function PassoCadastro() {
+export type EscolaContexto = {
+  organizacaoId: string;
+  escolaId: string;
+  escolaNome: string;
+  organizacaoNome: string;
+};
+
+export default function PassoCadastro({
+  escolaContexto,
+}: {
+  escolaContexto?: EscolaContexto;
+} = {}) {
   const router = useRouter();
   const [passo, setPasso] = useState<Passo>(1);
-  const [estado, setEstado] = useState<EstadoForm>(inicial);
+  const [estado, setEstado] = useState<EstadoForm>(() =>
+    escolaContexto
+      ? {
+          ...inicial,
+          organizacaoId: escolaContexto.organizacaoId,
+          escolaId: escolaContexto.escolaId,
+        }
+      : inicial,
+  );
   const [erros, setErros] = useState<Record<string, string>>({});
   const [enviando, setEnviando] = useState(false);
   const [verificando, setVerificando] = useState(false);
   const [erroGeral, setErroGeral] = useState<string | null>(null);
-  const [perguntaDiscIdx, setPerguntaDiscIdx] = useState(0);
 
   function atualiza<K extends keyof EstadoForm>(key: K, value: EstadoForm[K]) {
     setEstado((s) => ({ ...s, [key]: value }));
@@ -464,19 +503,6 @@ export default function PassoCadastro() {
           : [...s.preocupacoes, p],
       };
     });
-  }
-
-  function responderDisc(perguntaId: number, opcao: OpcaoDisc) {
-    setEstado((s) => ({
-      ...s,
-      respostasDisc: { ...s.respostasDisc, [perguntaId]: opcao },
-    }));
-    // Avanca automaticamente apos selecionar
-    setTimeout(() => {
-      setPerguntaDiscIdx((idx) =>
-        idx < perguntasDisc.length - 1 ? idx + 1 : idx,
-      );
-    }, 200);
   }
 
   function validaPasso1(): boolean {
@@ -502,9 +528,15 @@ export default function PassoCadastro() {
       }
     }
 
-    if (estado.cpf.replace(/\D/g, "").length !== 11) novos.cpf = "CPF deve ter 11 dígitos";
-    else if (!validaCpfMath(estado.cpf))
-      novos.cpf = "CPF inválido. Verifique os números digitados.";
+    if (!estado.sexo) novos.sexo = "Selecione uma opção";
+
+    // CPF é opcional: só valida se algo foi digitado.
+    const cpfDig = estado.cpf.replace(/\D/g, "");
+    if (cpfDig.length > 0) {
+      if (cpfDig.length !== 11) novos.cpf = "CPF deve ter 11 dígitos";
+      else if (!validaCpfMath(estado.cpf))
+        novos.cpf = "CPF inválido. Verifique os números digitados.";
+    }
 
     const wapp = estado.whatsapp.replace(/\D/g, "");
     if (wapp.length > 0 && (wapp.length < 10 || wapp.length > 11))
@@ -516,7 +548,10 @@ export default function PassoCadastro() {
 
   function validaPasso2(): boolean {
     const novos: Record<string, string> = {};
-    if (estado.escolaNome.trim().length < 2) novos.escolaNome = "Informe o nome da escola";
+    // No cadastro por link institucional a matrícula é obrigatória (só no front).
+    if (escolaContexto && !estado.matricula.trim()) {
+      novos.matricula = "Informe a sua matrícula";
+    }
     if (!estado.escolaAno) novos.escolaAno = "Selecione o ano";
     setErros(novos);
     return Object.keys(novos).length === 0;
@@ -534,11 +569,9 @@ export default function PassoCadastro() {
 
   function validaPasso4(): boolean {
     const novos: Record<string, string> = {};
-    const respondidas = perguntasDisc.filter(
-      (p) => estado.respostasDisc[p.id] != null,
-    ).length;
-    if (respondidas < perguntasDisc.length) {
-      novos.disc = `Responda todas as ${perguntasDisc.length} perguntas (faltam ${perguntasDisc.length - respondidas})`;
+    if (!quizDiscCompleto(estado.respostasDisc)) {
+      const faltam = perguntasDisc.length - contarRespostasDisc(estado.respostasDisc);
+      novos.disc = `Responda todas as ${perguntasDisc.length} perguntas (faltam ${faltam})`;
     }
     setErros(novos);
     return Object.keys(novos).length === 0;
@@ -556,18 +589,19 @@ export default function PassoCadastro() {
         senha: estado.senha,
         confirmarSenha: estado.confirmarSenha,
         dataNascimento: estado.dataNascimento,
+        sexo: estado.sexo,
         cpf: estado.cpf,
         whatsapp: estado.whatsapp,
         rendaFamiliar: estado.rendaFamiliar,
+        organizacaoId: estado.organizacaoId,
+        escolaId: estado.escolaId,
         escolaNome: estado.escolaNome,
+        matricula: estado.matricula,
         escolaAno: estado.escolaAno,
         cursoTecnico: estado.cursoTecnico,
         perfilEmpreendedor: estado.perfilEmpreendedor,
         preocupacoes: estado.preocupacoes,
-        respostasDisc: perguntasDisc.map((p) => ({
-          perguntaId: p.id,
-          opcaoId: estado.respostasDisc[p.id]!,
-        })),
+        respostasDisc: serializarRespostasDisc(estado.respostasDisc),
       };
       const resp = await fetch("/api/estudantes", {
         method: "POST",
@@ -651,15 +685,11 @@ export default function PassoCadastro() {
       setPasso(3);
     } else if (passo === 3 && validaPasso3()) {
       setPasso(4);
-      setPerguntaDiscIdx(0);
     }
   }
 
-  const perguntaDiscAtual = perguntasDisc[perguntaDiscIdx];
   const totalDisc = perguntasDisc.length;
-  const respondidasDisc = perguntasDisc.filter(
-    (p) => estado.respostasDisc[p.id] != null,
-  ).length;
+  const respondidasDisc = contarRespostasDisc(estado.respostasDisc);
 
   return (
     <form onSubmit={enviar} className="card" noValidate>
@@ -754,6 +784,27 @@ export default function PassoCadastro() {
           />
           {erros.dataNascimento && <p className="error">{erros.dataNascimento}</p>}
 
+          <label className="label" htmlFor="sexo" style={{ marginTop: "1rem" }}>
+            Sexo
+          </label>
+          <p className="muted" style={{ marginBottom: "0.5rem", fontSize: "0.85rem" }}>
+            Usado apenas para estatísticas. Não influencia seu resultado de compatibilidade.
+          </p>
+          <select
+            id="sexo"
+            className="select"
+            value={estado.sexo}
+            onChange={(e) => atualiza("sexo", e.target.value as SexoOpcao)}
+          >
+            <option value="">Selecione</option>
+            {opcoesSexo.map((op) => (
+              <option key={op.value} value={op.value}>
+                {op.label}
+              </option>
+            ))}
+          </select>
+          {erros.sexo && <p className="error">{erros.sexo}</p>}
+
           <label className="label" htmlFor="cpf" style={{ marginTop: "1rem" }}>
             CPF
           </label>
@@ -767,15 +818,12 @@ export default function PassoCadastro() {
             onChange={(e) => atualiza("cpf", mascaraCpf(e.target.value))}
           />
           <p className="muted" style={{ marginTop: "0.25rem", fontSize: "0.8rem" }}>
-            Guardado de forma cifrada, nunca aparece em texto puro.
+            Usamos o CPF para identificar sua conta de forma única.
           </p>
           {erros.cpf && <p className="error">{erros.cpf}</p>}
 
           <label className="label" htmlFor="whats" style={{ marginTop: "1rem" }}>
-            WhatsApp{" "}
-            <span style={{ color: "var(--color-text-muted)", fontWeight: 400 }}>
-              (opcional)
-            </span>
+            WhatsApp
           </label>
           <input
             id="whats"
@@ -840,17 +888,53 @@ export default function PassoCadastro() {
             Sobre sua escola
           </legend>
 
-          <label className="label" htmlFor="escola">
-            Nome da escola
-          </label>
-          <input
-            id="escola"
-            className="input"
-            type="text"
-            value={estado.escolaNome}
-            onChange={(e) => atualiza("escolaNome", e.target.value)}
-          />
-          {erros.escolaNome && <p className="error">{erros.escolaNome}</p>}
+          {escolaContexto ? (
+            <>
+              <div
+                className="card"
+                style={{ background: "var(--color-surface)", marginBottom: "1rem" }}
+              >
+                <p className="muted" style={{ margin: 0, fontSize: "0.8rem" }}>
+                  Você está se cadastrando em
+                </p>
+                <strong style={{ display: "block", fontSize: "1.05rem", marginTop: "0.15rem" }}>
+                  {escolaContexto.escolaNome}
+                </strong>
+                <span className="muted" style={{ fontSize: "0.9rem" }}>
+                  {escolaContexto.organizacaoNome}
+                </span>
+              </div>
+
+              <label className="label" htmlFor="matricula">
+                Matrícula
+              </label>
+              <input
+                id="matricula"
+                className="input"
+                type="text"
+                maxLength={50}
+                placeholder="Número da sua matrícula na escola"
+                value={estado.matricula}
+                onChange={(e) => atualiza("matricula", e.target.value)}
+              />
+              {erros.matricula && <p className="error">{erros.matricula}</p>}
+            </>
+          ) : (
+            <>
+              <label className="label" htmlFor="escolaNome">
+                Nome da escola onde você estuda
+              </label>
+              <input
+                id="escolaNome"
+                className="input"
+                type="text"
+                maxLength={120}
+                placeholder="Ex.: Escola Estadual José de Deus"
+                value={estado.escolaNome}
+                onChange={(e) => atualiza("escolaNome", e.target.value)}
+              />
+            </>
+          )}
 
           <label className="label" htmlFor="ano" style={{ marginTop: "1rem" }}>
             Em que ano você está?
@@ -972,148 +1056,12 @@ export default function PassoCadastro() {
         </fieldset>
       )}
 
-      {/* ── Passo 4: Quiz DISC ──────────────────────────────────────── */}
-      {passo === 4 && perguntaDiscAtual && (
-        <fieldset style={{ border: 0, padding: 0, margin: 0 }}>
-          <legend style={{ fontSize: "1.25rem", fontWeight: 700, marginBottom: "0.25rem" }}>
-            Quiz vocacional
-          </legend>
-          <p className="muted" style={{ marginBottom: "1rem" }}>
-            Não existe resposta certa. Escolha o que mais combina com você.
-          </p>
-
-          <div style={{ marginBottom: "1rem" }}>
-            <div
-              style={{
-                display: "flex",
-                justifyContent: "space-between",
-                fontSize: "0.82rem",
-                marginBottom: "0.4rem",
-              }}
-            >
-              <span className="muted">
-                Pergunta {perguntaDiscIdx + 1} de {totalDisc}
-              </span>
-              <span style={{ color: "var(--color-accent)", fontWeight: 700 }}>
-                {respondidasDisc}/{totalDisc} respondidas
-              </span>
-            </div>
-            <div
-              aria-hidden
-              style={{
-                height: 4,
-                borderRadius: 999,
-                background: "var(--color-border)",
-                overflow: "hidden",
-              }}
-            >
-              <div
-                style={{
-                  height: "100%",
-                  width: `${((perguntaDiscIdx + 1) / totalDisc) * 100}%`,
-                  background: "var(--color-accent)",
-                  transition: "width 250ms ease",
-                }}
-              />
-            </div>
-          </div>
-
-          <h3 style={{ fontSize: "1.05rem", margin: "0 0 1rem" }}>
-            {perguntaDiscAtual.texto}
-          </h3>
-
-          <div style={{ display: "flex", flexDirection: "column", gap: "0.6rem" }}>
-            {perguntaDiscAtual.opcoes.map((opcao) => {
-              const isSelected =
-                estado.respostasDisc[perguntaDiscAtual.id] === opcao.id;
-              return (
-                <button
-                  key={opcao.id}
-                  type="button"
-                  onClick={() => responderDisc(perguntaDiscAtual.id, opcao.id)}
-                  style={{
-                    display: "flex",
-                    alignItems: "flex-start",
-                    gap: "0.7rem",
-                    padding: "0.85rem 1rem",
-                    border: `2px solid ${isSelected ? "var(--color-accent)" : "var(--color-border)"}`,
-                    borderRadius: "0.5rem",
-                    background: isSelected
-                      ? "rgba(226,172,64,0.12)"
-                      : "transparent",
-                    cursor: "pointer",
-                    textAlign: "left",
-                    width: "100%",
-                  }}
-                >
-                  <span
-                    style={{
-                      flexShrink: 0,
-                      width: 22,
-                      height: 22,
-                      borderRadius: "50%",
-                      border: `2px solid ${isSelected ? "var(--color-accent)" : "var(--color-border)"}`,
-                      background: isSelected ? "var(--color-accent)" : "transparent",
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "center",
-                      marginTop: 1,
-                    }}
-                  >
-                    {isSelected && (
-                      <span
-                        style={{
-                          width: 8,
-                          height: 8,
-                          borderRadius: "50%",
-                          background: "var(--color-text-dark)",
-                          display: "block",
-                        }}
-                      />
-                    )}
-                  </span>
-                  <span style={{ lineHeight: 1.5, fontSize: "0.95rem" }}>
-                    {opcao.texto}
-                  </span>
-                </button>
-              );
-            })}
-          </div>
-
-          <div
-            style={{
-              marginTop: "1rem",
-              display: "flex",
-              justifyContent: "space-between",
-              gap: "0.5rem",
-            }}
-          >
-            <button
-              type="button"
-              className="btn btn-ghost"
-              onClick={() =>
-                setPerguntaDiscIdx((i) => Math.max(0, i - 1))
-              }
-              disabled={perguntaDiscIdx === 0}
-            >
-              ← Anterior
-            </button>
-            <button
-              type="button"
-              className="btn btn-ghost"
-              onClick={() =>
-                setPerguntaDiscIdx((i) =>
-                  Math.min(totalDisc - 1, i + 1),
-                )
-              }
-              disabled={perguntaDiscIdx >= totalDisc - 1}
-            >
-              Próxima →
-            </button>
-          </div>
-
-          {erros.disc && <p className="error" style={{ marginTop: "1rem" }}>{erros.disc}</p>}
-        </fieldset>
+      {passo === 4 && (
+        <QuizDisc
+          respostas={estado.respostasDisc}
+          onChange={(respostas) => atualiza("respostasDisc", respostas)}
+          erro={erros.disc}
+        />
       )}
 
       {erroGeral && (

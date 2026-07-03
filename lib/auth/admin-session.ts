@@ -1,5 +1,6 @@
 import { SignJWT } from "jose";
 import { cookies } from "next/headers";
+import type { AdminRole } from "@prisma/client";
 import { verifySessionToken, type SessionPayload } from "./edge";
 
 const COOKIE_NAME = "legua_admin_session";
@@ -14,11 +15,23 @@ function getConfig() {
   return { secret, maxAge };
 }
 
-export async function criarSessaoAdmin(adminId: string): Promise<void> {
+export type AdminSessaoInput = {
+  id: string;
+  role: AdminRole;
+  organizacaoId?: string | null;
+  escolaId?: string | null;
+};
+
+export async function criarSessaoAdmin(admin: AdminSessaoInput): Promise<void> {
   const { secret, maxAge } = getConfig();
-  const token = await new SignJWT({ role: "admin" })
+  const token = await new SignJWT({
+    role: "admin",
+    adminRole: admin.role,
+    organizacaoId: admin.organizacaoId ?? null,
+    escolaId: admin.escolaId ?? null,
+  })
     .setProtectedHeader({ alg: "HS256" })
-    .setSubject(adminId)
+    .setSubject(admin.id)
     .setIssuedAt()
     .setExpirationTime(`${maxAge}s`)
     .sign(encoder.encode(secret));

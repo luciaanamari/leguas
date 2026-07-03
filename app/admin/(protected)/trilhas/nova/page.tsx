@@ -1,7 +1,13 @@
 import Link from "next/link";
+import { redirect } from "next/navigation";
+import { lerEscopoAdminGlobal } from "@/lib/auth";
 import FormularioTrilha from "@/components/admin/FormularioTrilha";
 
-export default function NovaTrilhaPage() {
+export default async function NovaTrilhaPage() {
+  if (!(await lerEscopoAdminGlobal())) {
+    redirect("/admin/dashboard");
+  }
+
   return (
     <div>
       <Link href="/admin/trilhas" className="muted" style={{ textDecoration: "none" }}>

@@ -48,6 +48,11 @@ LEGUA_PIT.docx
 Questionarios_Piaui_para_o_Mundo.docx
 _docx_extracted.txt
 
-# Claude Code (ferramentas locais)
-.claude/
-docs/*
+# uploads de branding (logos por organização)
+/public/uploads/logos/*
+!/public/uploads/logos/.gitkeep
+
+# scripts locais de dev/teste (produção usa só docker-entrypoint.sh)
+/scripts/test-*.ts
+/scripts/verificar-ciclo1.ts
+/scripts/neutralizar-narrativas.ts

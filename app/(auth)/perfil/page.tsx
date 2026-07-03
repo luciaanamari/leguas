@@ -4,7 +4,10 @@ import { prisma } from "@/lib/db";
 import { lerSessaoEstudante } from "@/lib/auth";
 import EditarPerfilForm from "@/components/perfil/EditarPerfilForm";
 import ApagarSimulacao from "@/components/perfil/ApagarSimulacao";
+import FotoPerfil from "@/components/perfil/FotoPerfil";
+import { urlAssinada } from "@/lib/storage";
 import { tituloDiscArea, type DiscLetra } from "@/lib/data/quiz-disc";
+import type { AreaDISC } from "@prisma/client";
 
 const labelAnoEscolar: Record<string, string> = {
   PRIMEIRO: "1º ano",
@@ -87,10 +90,15 @@ export default async function PerfilPage() {
       areaQuizH: true,
       areaQuizE: true,
       areaQuizB: true,
+      fotoPerfilKey: true,
       criadoEm: true,
     },
   });
   if (!estudante) redirect("/entrar");
+
+  const fotoUrl = estudante.fotoPerfilKey
+    ? await urlAssinada(estudante.fotoPerfilKey)
+    : null;
 
   const areas = {
     HUMANAS: estudante.areaQuizH,
@@ -110,6 +118,30 @@ export default async function PerfilPage() {
     },
     orderBy: { iniciadaEm: "desc" },
   });
+
+  const perfis = await prisma.perfilEstudante.findMany({
+    where: { estudanteId: sessao.sub },
+    select: {
+      id: true,
+      discPerfil: true,
+      areaQuizH: true,
+      areaQuizE: true,
+      areaQuizB: true,
+      vigente: true,
+      criadoEm: true,
+    },
+    orderBy: { criadoEm: "desc" },
+  });
+
+  function areaDominantePerfil(p: (typeof perfis)[number]): AreaDISC {
+    const areas = {
+      HUMANAS: p.areaQuizH,
+      EXATAS: p.areaQuizE,
+      BIOLOGICAS: p.areaQuizB,
+    } as const;
+    return (Object.entries(areas) as [AreaDISC, number][])
+      .sort((a, b) => b[1] - a[1])[0]?.[0] ?? "HUMANAS";
+  }
 
   const concluidas = simulacoes.filter((s) => s.concluidaEm !== null);
   const emAndamento = simulacoes.filter((s) => s.concluidaEm === null);
@@ -146,6 +178,10 @@ export default async function PerfilPage() {
           </span>
         </div>
 
+        <div className="card" style={{ marginBottom: "1rem" }}>
+          <FotoPerfil fotoUrl={fotoUrl} />
+        </div>
+
         <div
           className="card"
           style={{
@@ -172,7 +208,42 @@ export default async function PerfilPage() {
           <p className="muted" style={{ margin: 0, fontSize: "0.88rem" }}>
             Área dominante: {labelArea[areaDominante]}
           </p>
+          <Link
+            href="/perfil/quiz"
+            className="btn btn-secondary"
+            style={{ marginTop: "1rem", fontSize: "0.88rem" }}
+          >
+            Refazer meu quiz
+          </Link>
         </div>
+
+        {perfis.length > 1 && (
+          <div className="card" style={{ marginBottom: "1rem", padding: "1rem 1.25rem" }}>
+            <h2 style={{ fontSize: "1rem", margin: "0 0 0.75rem" }}>Histórico do quiz</h2>
+            <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "grid", gap: "0.5rem" }}>
+              {perfis.map((p) => {
+                const area = areaDominantePerfil(p);
+                const titulo = tituloDiscArea[p.discPerfil as DiscLetra][area];
+                return (
+                  <li
+                    key={p.id}
+                    style={{
+                      fontSize: "0.88rem",
+                      padding: "0.5rem 0",
+                      borderBottom: "1px solid var(--color-border)",
+                    }}
+                  >
+                    <strong>{titulo}</strong>
+                    <span className="muted" style={{ marginLeft: "0.5rem" }}>
+                      {new Date(p.criadoEm).toLocaleDateString("pt-BR")}
+                      {p.vigente ? " · vigente" : ""}
+                    </span>
+                  </li>
+                );
+              })}
+            </ul>
+          </div>
+        )}
 
         <div className="card" style={{ padding: "0 1.25rem" }}>
           <InfoRow label="Nome" value={estudante.nome} />

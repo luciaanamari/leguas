@@ -121,7 +121,7 @@ export type ResultadoMatchEngine = {
   explicacao: ExplicacaoMatch;
 };
 
-interface CalcularInput {
+export interface CalcularInput {
   // Perfil do estudante (cadastro)
   areaQuizH: number;
   areaQuizE: number;
@@ -327,7 +327,7 @@ function proximoPassoPorTrilha(slug: string, cursoNome: string): string {
   const gen = proximosPassosTrilha[slug];
   return gen
     ? gen(cursoNome)
-    : `Procure pessoas que já trilharam o caminho de ${cursoNome} e converse com elas sobre como começaram.`;
+    : `Procure pessoas que já trilharam o caminho de ${cursoNome} e converse com essas pessoas sobre como começaram.`;
 }
 
 // ── Geracao de blocos de contexto (sem afetar nota) ─────────────────────

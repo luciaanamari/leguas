@@ -1,0 +1,36 @@
+name: CI
+
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    env:
+      SESSION_SECRET: ci-session-secret-minimo-32-caracteres-ok
+      ADMIN_SESSION_SECRET: ci-admin-secret-minimo-32-caracteres-ok
+      DATABASE_URL: postgresql://legua:senha@localhost:5432/legua
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+          cache: npm
+
+      - name: Instalar dependências
+        run: npm ci
+
+      - name: Gerar Prisma Client
+        run: npm run prisma:generate
+
+      - name: Verificações automáticas do Ciclo 1
+        run: npm run verify:ciclo1
+
+      - name: Testes unitários
+        run: npm run test
+
+      - name: Build de produção
+        run: npm run build

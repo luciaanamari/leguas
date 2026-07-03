@@ -2,6 +2,7 @@
 
 import { useState, type FormEvent } from "react";
 import { useRouter } from "next/navigation";
+import Link from "next/link";
 
 export default function LoginEstudanteForm() {
   const router = useRouter();
@@ -64,6 +65,20 @@ export default function LoginEstudanteForm() {
         autoComplete="current-password"
         required
       />
+
+      <p className="muted" style={{ marginTop: "0.5rem", fontSize: "0.85rem", lineHeight: 1.45 }}>
+        Recebeu um código da escola? Use o mesmo e-mail do cadastro e cole o código no campo
+        senha acima.
+      </p>
+
+      <p style={{ marginTop: "0.75rem", textAlign: "right" }}>
+        <Link
+          href="/esqueci-senha"
+          style={{ fontSize: "0.88rem", color: "var(--color-text-soft)" }}
+        >
+          Esqueci minha senha
+        </Link>
+      </p>
 
       {erro && (
         <p className="error" style={{ marginTop: "1rem" }}>

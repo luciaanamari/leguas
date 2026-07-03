@@ -1,6 +1,22 @@
+import { redirect } from "next/navigation";
+import type { Prisma } from "@prisma/client";
 import { prisma } from "@/lib/db";
+import { escopoDeQuery, lerEscopoAdmin } from "@/lib/auth";
+
+function subtituloDashboard(role: string): string {
+  if (role === "ORG_ADMIN") return "Números da sua organização.";
+  if (role === "ESCOLA_ADMIN") return "Números da sua escola.";
+  return "Visão geral dos números do Léguas.";
+}
 
 export default async function DashboardPage() {
+  const escopo = await lerEscopoAdmin();
+  if (!escopo) redirect("/admin/login");
+
+  const filtroEstudante: Prisma.EstudanteWhereInput = escopoDeQuery(escopo);
+  const filtroPorEstudante: Prisma.SimulacaoWhereInput = { estudante: filtroEstudante };
+  const filtroResultado: Prisma.ResultadoMatchWhereInput = { estudante: filtroEstudante };
+
   const [
     totalEstudantes,
     totalSimulacoesIniciadas,
@@ -8,12 +24,17 @@ export default async function DashboardPage() {
     totalCompartilhados,
     trilhasMaisSimuladas,
   ] = await Promise.all([
-    prisma.estudante.count(),
-    prisma.simulacao.count(),
-    prisma.simulacao.count({ where: { concluidaEm: { not: null } } }),
-    prisma.resultadoMatch.count({ where: { compartilhado: true } }),
+    prisma.estudante.count({ where: filtroEstudante }),
+    prisma.simulacao.count({ where: filtroPorEstudante }),
+    prisma.simulacao.count({
+      where: { ...filtroPorEstudante, concluidaEm: { not: null } },
+    }),
+    prisma.resultadoMatch.count({
+      where: { ...filtroResultado, compartilhado: true },
+    }),
     prisma.simulacao.groupBy({
       by: ["trilhaId"],
+      where: filtroPorEstudante,
       _count: { trilhaId: true },
       orderBy: { _count: { trilhaId: "desc" } },
       take: 5,
@@ -31,7 +52,7 @@ export default async function DashboardPage() {
     <div>
       <h1 style={{ fontSize: "1.75rem", marginBottom: "0.25rem" }}>Dashboard</h1>
       <p className="muted" style={{ marginBottom: "2rem" }}>
-        Visão geral dos números do Léguas.
+        {subtituloDashboard(escopo.adminRole)}
       </p>
 
       <section

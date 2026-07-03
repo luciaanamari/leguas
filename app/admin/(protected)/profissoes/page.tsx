@@ -1,7 +1,13 @@
 import Link from "next/link";
+import { redirect } from "next/navigation";
 import { prisma } from "@/lib/db";
+import { lerEscopoAdminGlobal } from "@/lib/auth";
 
 export default async function AdminProfissoesPage() {
+  if (!(await lerEscopoAdminGlobal())) {
+    redirect("/admin/dashboard");
+  }
+
   const profissoes = await prisma.profissao.findMany({
     include: { trilha: { select: { titulo: true, slug: true } } },
     orderBy: [{ trilhaId: "asc" }, { nome: "asc" }],

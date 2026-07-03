@@ -24,6 +24,11 @@ export async function POST(req: Request) {
     return NextResponse.json({ error: "Credenciais inválidas." }, { status: 401 });
   }
 
-  await criarSessaoAdmin(admin.id);
+  await criarSessaoAdmin({
+    id: admin.id,
+    role: admin.role,
+    organizacaoId: admin.organizacaoId,
+    escolaId: admin.escolaId,
+  });
   return NextResponse.json({ id: admin.id, nome: admin.nome, role: admin.role });
 }

@@ -13,6 +13,20 @@ datasource db {
 enum AdminRole {
   SUPER_ADMIN
   EDITOR
+  ORG_ADMIN
+  ESCOLA_ADMIN
+}
+
+enum Sexo {
+  FEMININO
+  MASCULINO
+  NAO_INFORMADO
+}
+
+enum StatusSolicitacaoSenha {
+  PENDENTE
+  ATENDIDA
+  CANCELADA
 }
 
 enum Preocupacao {
@@ -46,6 +60,7 @@ enum TipoEvento {
   RESULTADO_COMPARTILHADO
   LOGIN
   LOGOUT
+  QUIZ_REFITO
 }
 
 enum RendaFamiliar {
@@ -82,48 +97,156 @@ enum FaixaResultado {
   BAIXA
 }
 
+model Organizacao {
+  id            String   @id @default(cuid())
+  nome          String
+  slug          String   @unique
+  cnpj          String?
+  contato       String?
+  // Branding white-label (F6) — ver M4
+  logoUrl       String?
+  corBackground String?
+  corSurface    String?
+  corAccent     String?
+  corText       String?
+  ativo         Boolean  @default(true)
+  criadoEm      DateTime @default(now())
+  atualizadoEm  DateTime @updatedAt
+  escolas       Escola[]
+  admins        Admin[]
+}
+
+model Escola {
+  id            String      @id @default(cuid())
+  nome          String
+  inep          String?
+  municipio     String?
+  organizacaoId String
+  organizacao   Organizacao @relation(fields: [organizacaoId], references: [id])
+  // Logo próprio da escola (URL pública no object storage). Tem prioridade
+  // sobre o logo da organização nas telas da escola.
+  logoUrl       String?
+  ativo         Boolean     @default(true)
+  criadoEm      DateTime    @default(now())
+  atualizadoEm  DateTime    @updatedAt
+  admins        Admin[]
+  estudantes    Estudante[]
+  links         LinkCadastro[]
+
+  @@index([organizacaoId])
+}
+
+// Link institucional de cadastro (revisão Ciclo 1).
+// A tenancy é resolvida pela rota /e/{slug}; cada escola nasce com um link
+// permanente (porta estável de login) e pode ter links de campanha.
+model LinkCadastro {
+  id               String    @id @default(cuid())
+  escolaId         String
+  escola           Escola    @relation(fields: [escolaId], references: [id], onDelete: Cascade)
+  slug             String    @unique
+  rotulo           String?
+  ativo            Boolean   @default(true)
+  permanente       Boolean   @default(false)
+  // Fase 2 — campos presentes no schema, ainda não usados pelo fluxo:
+  codigoConvite    String?   @unique
+  expiraEm         DateTime?
+  totalCadastros   Int       @default(0)
+  criadoPorAdminId String?
+  criadoEm         DateTime  @default(now())
+  atualizadoEm     DateTime  @updatedAt
+
+  @@index([escolaId])
+  @@index([ativo])
+}
+
 model Estudante {
-  id                   String                @id @default(cuid())
-  nome                 String
-  email                String?               @unique
-  senhaHash            String?
-  dataNascimento       DateTime
-  cpfHash              String                @unique
-  whatsappHash         String?
-  rendaFamiliar        RendaFamiliar
-  escolaNome           String
-  escolaAno            AnoEscolar
-  cursoTecnico         String?
-  perfilEmpreendedor   PerfilEmpreendedor
-  preocupacoes         Preocupacao[]
-  // Quiz vocacional DISC (8 perguntas) - feito uma vez no cadastro
-  areaQuizH            Int                   @default(0)
-  areaQuizE            Int                   @default(0)
-  areaQuizB            Int                   @default(0)
-  discPerfil           DiscPerfil
-  respostasDisc        Json
-  ativo                Boolean               @default(true)
-  tokenSenhaHash       String?
-  tokenSenhaExpiraEm   DateTime?
-  criadoEm             DateTime              @default(now())
-  atualizadoEm         DateTime              @updatedAt
-  simulacoes           Simulacao[]
-  resultados           ResultadoMatch[]
-  eventos              EventoEngajamento[]
+  id                 String                @id @default(cuid())
+  nome               String
+  email              String?               @unique
+  senhaHash          String?
+  dataNascimento     DateTime
+  cpfHash            String?               @unique
+  whatsappHash       String?
+  sexo               Sexo                  @default(NAO_INFORMADO)
+  rendaFamiliar      RendaFamiliar
+  escolaNome         String
+  escolaId           String?
+  escola             Escola?               @relation(fields: [escolaId], references: [id])
+  escolaAno          AnoEscolar
+  cursoTecnico       String?
+  // Matrícula: exigida no cadastro por link institucional (bloqueio no front);
+  // nula no cadastro independente.
+  matricula          String?
+  // Chave da foto de perfil no bucket privado (servida por URL assinada).
+  fotoPerfilKey      String?
+  perfilEmpreendedor PerfilEmpreendedor
+  preocupacoes       Preocupacao[]
+  // Quiz vocacional DISC — vigente denormalizado; histórico em PerfilEstudante (F1)
+  areaQuizH          Int                   @default(0)
+  areaQuizE          Int                   @default(0)
+  areaQuizB          Int                   @default(0)
+  discPerfil         DiscPerfil
+  respostasDisc      Json
+  ativo              Boolean               @default(true)
+  tokenSenhaHash     String?
+  tokenSenhaExpiraEm DateTime?
+  criadoEm           DateTime              @default(now())
+  atualizadoEm       DateTime              @updatedAt
+  perfis             PerfilEstudante[]
+  solicitacoesSenha  SolicitacaoRedefinicaoSenha[]
+  simulacoes         Simulacao[]
+  resultados         ResultadoMatch[]
+  eventos            EventoEngajamento[]
 
   @@index([escolaNome])
+  @@index([escolaId])
   @@index([criadoEm])
 }
 
+model PerfilEstudante {
+  id            String    @id @default(cuid())
+  estudanteId   String
+  estudante     Estudante @relation(fields: [estudanteId], references: [id], onDelete: Cascade)
+  areaQuizH     Int
+  areaQuizE     Int
+  areaQuizB     Int
+  discPerfil    DiscPerfil
+  respostasDisc Json
+  vigente       Boolean   @default(true)
+  criadoEm      DateTime  @default(now())
+
+  @@index([estudanteId])
+}
+
+model SolicitacaoRedefinicaoSenha {
+  id                 String                 @id @default(cuid())
+  estudanteId        String
+  estudante          Estudante              @relation(fields: [estudanteId], references: [id], onDelete: Cascade)
+  status             StatusSolicitacaoSenha @default(PENDENTE)
+  atendidaPorAdminId String?
+  criadoEm           DateTime               @default(now())
+  atendidaEm         DateTime?
+
+  @@index([estudanteId])
+  @@index([status])
+}
+
 model Admin {
-  id           String    @id @default(cuid())
-  nome         String
-  email        String    @unique
-  senhaHash    String
-  role         AdminRole @default(EDITOR)
-  ativo        Boolean   @default(true)
-  criadoEm     DateTime  @default(now())
-  atualizadoEm DateTime  @updatedAt
+  id            String       @id @default(cuid())
+  nome          String
+  email         String       @unique
+  senhaHash     String
+  role          AdminRole    @default(EDITOR)
+  ativo         Boolean      @default(true)
+  organizacaoId String?
+  organizacao   Organizacao? @relation(fields: [organizacaoId], references: [id])
+  escolaId      String?
+  escola        Escola?      @relation(fields: [escolaId], references: [id])
+  criadoEm      DateTime     @default(now())
+  atualizadoEm  DateTime     @updatedAt
+
+  @@index([organizacaoId])
+  @@index([escolaId])
 }
 
 model Trilha {

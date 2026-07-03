@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { redirect } from "next/navigation";
-import { lerSessaoAdmin } from "@/lib/auth";
+import { lerEscopoAdmin, escopoSolicitacoesSenha } from "@/lib/auth";
 import { prisma } from "@/lib/db";
 import LogoutButton from "@/components/ui/LogoutButton";
 import AdminNav from "@/components/admin/AdminNav";
@@ -8,13 +8,21 @@ import AdminNav from "@/components/admin/AdminNav";
 export const dynamic = "force-dynamic";
 
 export default async function AdminProtectedLayout({ children }: { children: React.ReactNode }) {
-  const sessao = await lerSessaoAdmin();
-  if (!sessao) redirect("/admin/login");
+  const escopo = await lerEscopoAdmin();
+  if (!escopo) redirect("/admin/login");
+
   const admin = await prisma.admin.findUnique({
-    where: { id: sessao.sub },
-    select: { nome: true, ativo: true, role: true },
+    where: { id: escopo.sub },
+    select: { nome: true, role: true, escolaId: true },
   });
-  if (!admin || !admin.ativo) redirect("/admin/login");
+  if (!admin) redirect("/admin/login");
+
+  let solicitacoesPendentes = 0;
+  if (admin.role !== "EDITOR") {
+    solicitacoesPendentes = await prisma.solicitacaoRedefinicaoSenha.count({
+      where: escopoSolicitacoesSenha(escopo),
+    });
+  }
 
   return (
     <div style={{ minHeight: "100vh", display: "grid", gridTemplateColumns: "240px 1fr" }}>
@@ -39,7 +47,11 @@ export default async function AdminProtectedLayout({ children }: { children: Rea
         >
           Léguas <span style={{ color: "var(--color-accent-hover)" }}>Admin</span>
         </Link>
-        <AdminNav />
+        <AdminNav
+          role={admin.role}
+          escolaId={admin.escolaId}
+          solicitacoesPendentes={solicitacoesPendentes}
+        />
         <div
           style={{
             marginTop: "2rem",

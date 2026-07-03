@@ -1,8 +1,14 @@
 import Link from "next/link";
+import { redirect } from "next/navigation";
 import { prisma } from "@/lib/db";
+import { lerEscopoAdminGlobal } from "@/lib/auth";
 import FormularioProfissao from "@/components/admin/FormularioProfissao";
 
 export default async function NovaProfissaoPage() {
+  if (!(await lerEscopoAdminGlobal())) {
+    redirect("/admin/dashboard");
+  }
+
   const trilhas = await prisma.trilha.findMany({
     where: { ativo: true },
     orderBy: { titulo: "asc" },

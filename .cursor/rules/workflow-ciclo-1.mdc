@@ -1,0 +1,52 @@
+---
+description: Workflow obrigatório do Ciclo 1 — aprovação prévia e avanço task a task
+alwaysApply: true
+---
+
+# Ciclo 1 — Workflow obrigatório (definitivo)
+
+## Regra 1: Jamais alterar código sem aprovação prévia
+
+**Em hipótese alguma** criar, editar ou apagar arquivos de código, schema, migration, config ou dependências sem antes:
+
+1. Ler `docs/PLANO_CICLO_1.md` (e `CLAUDE.md` para contexto do estado atual)
+2. Apresentar ao usuário um **plano de alteração** contendo:
+   - Qual **task** da milestone está em questão
+   - **Arquivos** que serão criados, modificados ou removidos
+   - **Resumo das modificações** em cada arquivo (o que muda e por quê)
+3. **Aguardar aprovação explícita** do usuário
+4. Só então executar as alterações aprovadas — nada além do que foi aprovado
+
+Se o usuário pedir algo novo ou ajustar o escopo, voltar ao passo 2 antes de tocar em qualquer arquivo.
+
+Exceções: perguntas puramente informativas, leitura de arquivos e comandos de diagnóstico **somente leitura** (ex.: `git status`, listar arquivos) — desde que não modifiquem o projeto.
+
+## Regra 2: Milestones como tasks
+
+- Cada **milestone** (M0–M7) do `docs/PLANO_CICLO_1.md` é um conjunto de **tasks**
+- Decompor a milestone em tasks concretas (ex.: schema, migration, RBAC, seed, testes)
+- Avançar **uma task por vez**: propor → aprovar → implementar → confirmar → próxima task
+- Só considerar a milestone concluída quando o **portão de avanço** do plano estiver cumprido
+- Não pular tasks nem antecipar milestones futuras sem aprovação
+
+## Regra 3: Escopo e referências
+
+- Plano do Ciclo 1: `docs/PLANO_CICLO_1.md`
+- Estado implementado atual: `CLAUDE.md`
+- Ciclo 2 e Ciclo 3 estão **fora de escopo** até novo planejamento
+
+## Formato da proposta (usar sempre antes de codar)
+
+```
+## Task: [nome da task] (Milestone Mx)
+
+### Arquivos
+| Arquivo | Ação | Modificação |
+|---------|------|-------------|
+| ...     | criar/editar/remover | ... |
+
+### Resumo
+[breve descrição do que será feito]
+
+Aguardo sua aprovação para prosseguir.
+```

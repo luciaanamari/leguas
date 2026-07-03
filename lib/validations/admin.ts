@@ -41,3 +41,48 @@ export const estudanteUpdateSchema = z.object({
   escolaNome: z.string().trim().min(2).max(160).optional(),
   ativo: z.coerce.boolean().optional(),
 });
+
+export const organizacaoSchema = z.object({
+  nome: z.string().trim().min(2).max(160),
+  slug: z
+    .string()
+    .trim()
+    .min(2)
+    .max(80)
+    .regex(/^[a-z0-9-]+$/, "Use apenas letras minúsculas, números e hífen"),
+  cnpj: z.string().trim().max(18).optional().nullable(),
+  contato: z.string().trim().max(160).optional().nullable(),
+  ativo: z.coerce.boolean().optional().default(true),
+});
+
+export type OrganizacaoInput = z.infer<typeof organizacaoSchema>;
+
+export const escolaSchema = z.object({
+  nome: z.string().trim().min(2).max(160),
+  organizacaoId: z.string().min(1),
+  inep: z.string().trim().max(20).optional().nullable(),
+  municipio: z.string().trim().max(120).optional().nullable(),
+  ativo: z.coerce.boolean().optional().default(true),
+});
+
+export type EscolaInput = z.infer<typeof escolaSchema>;
+
+export const criarOrgAdminSchema = z.object({
+  nome: z.string().trim().min(2).max(120),
+  email: z.string().trim().email().max(160),
+});
+
+export type CriarOrgAdminInput = z.infer<typeof criarOrgAdminSchema>;
+
+export const criarEscolaAdminSchema = z.object({
+  nome: z.string().trim().min(2).max(120),
+  email: z.string().trim().email().max(160),
+});
+
+export type CriarEscolaAdminInput = z.infer<typeof criarEscolaAdminSchema>;
+
+export const gerarSenhaEstudanteSchema = z.object({
+  solicitacaoId: z.string().min(1).optional(),
+});
+
+export type GerarSenhaEstudanteInput = z.infer<typeof gerarSenhaEstudanteSchema>;

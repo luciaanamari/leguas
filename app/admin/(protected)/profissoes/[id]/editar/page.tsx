@@ -1,11 +1,16 @@
 import Link from "next/link";
-import { notFound } from "next/navigation";
+import { notFound, redirect } from "next/navigation";
 import { prisma } from "@/lib/db";
+import { lerEscopoAdminGlobal } from "@/lib/auth";
 import FormularioProfissao from "@/components/admin/FormularioProfissao";
 
 type Params = Promise<{ id: string }>;
 
 export default async function EditarProfissaoPage({ params }: { params: Params }) {
+  if (!(await lerEscopoAdminGlobal())) {
+    redirect("/admin/dashboard");
+  }
+
   const { id } = await params;
   const [profissao, trilhas] = await Promise.all([
     prisma.profissao.findUnique({ where: { id } }),

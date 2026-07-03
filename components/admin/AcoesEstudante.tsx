@@ -2,6 +2,8 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import Link from "next/link";
+import BotaoCopiar from "./BotaoCopiar";
 
 type Props = {
   estudante: { id: string; ativo: boolean };
@@ -177,10 +179,24 @@ export default function AcoesEstudante({ estudante }: Props) {
           style={{ marginTop: "0.75rem", borderColor: "var(--color-accent)", borderWidth: 2 }}
         >
           <p className="muted" style={{ margin: 0, fontSize: "0.85rem" }}>
-            Token temporário (válido por 24h, mostre uma única vez):
+            Token temporário (válido por 24h, mostre uma única vez). O aluno usa em{" "}
+            <Link href="/entrar" style={{ fontWeight: 700 }}>
+              /entrar
+            </Link>
+            , não no login admin.
           </p>
-          <p style={{ fontSize: "1.4rem", letterSpacing: "0.15em", margin: "0.5rem 0 0" }}>
+          <p
+            style={{
+              fontSize: "1.4rem",
+              letterSpacing: "0.15em",
+              margin: "0.5rem 0 0",
+              display: "flex",
+              alignItems: "center",
+              gap: "0.5rem",
+            }}
+          >
             <code>{tokenTemp}</code>
+            <BotaoCopiar valor={tokenTemp} titulo="Copiar token" />
           </p>
         </div>
       )}

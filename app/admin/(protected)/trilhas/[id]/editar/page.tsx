@@ -1,11 +1,16 @@
 import Link from "next/link";
-import { notFound } from "next/navigation";
+import { notFound, redirect } from "next/navigation";
 import { prisma } from "@/lib/db";
+import { lerEscopoAdminGlobal } from "@/lib/auth";
 import FormularioTrilha from "@/components/admin/FormularioTrilha";
 
 type Params = Promise<{ id: string }>;
 
 export default async function EditarTrilhaPage({ params }: { params: Params }) {
+  if (!(await lerEscopoAdminGlobal())) {
+    redirect("/admin/dashboard");
+  }
+
   const { id } = await params;
   const trilha = await prisma.trilha.findUnique({ where: { id } });
   if (!trilha) notFound();

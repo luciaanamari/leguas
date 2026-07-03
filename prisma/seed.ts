@@ -2,6 +2,7 @@ import { PrismaClient, AdminRole, ModalidadeTrilha } from "@prisma/client";
 import { Pool } from "pg";
 import { PrismaPg } from "@prisma/adapter-pg";
 import bcrypt from "bcryptjs";
+import { slugUnico } from "../lib/slug";
 
 const pool = new Pool({ connectionString: process.env.DATABASE_URL });
 const adapter = new PrismaPg(pool);
@@ -86,9 +87,9 @@ const trilhas: TrilhaSeed[] = [
     primeirosPassos:
       "Liste 3 cursos que te interessam, procure no site do MEC e-MEC se a faculdade é credenciada, e visite o polo mais perto de você.",
     narrativaAluno:
-      "Você mora em Oeiras, no interior do Piauí. Tem 19 anos, trabalha de manhã como atendente em uma farmácia e começou o curso de Administração EAD pela faculdade UNINASSAU em fevereiro. Sua rotina mudou bastante.\n\nDe manhã, das 7h às 13h, você está na farmácia. Almoça em casa, descansa 40 minutos e abre o notebook no quarto. Hoje a aula é de Matemática Financeira. O professor gravou um vídeo de 50 minutos explicando juros compostos com exemplos práticos: como funciona um financiamento de moto, como o banco calcula o cheque especial, como uma poupança rende. Você assiste pausando quando precisa, anota no caderno e refaz dois exercícios no fim.\n\nDepois da aula, você entra no fórum da turma. Um colega de Floriano postou uma dúvida sobre a fórmula da tabela price. Você responde com base no que entendeu. A tutora confirma sua resposta no dia seguinte. O ritmo é diferente: ninguém te cobra estar online às 14h em ponto, mas no fim da semana você precisa ter cumprido três atividades. Quem não se organiza, atrasa.\n\nUma vez por mês, no sábado, você vai até o polo no centro de Oeiras. Lá, faz a prova presencial das matérias do bimestre. Encontra uns 30 colegas, todos da região. Alguns são professoras que querem virar gestoras de escola, outros são donos de pequenos comércios, outros começaram cedo como você. Vocês trocam contato, formam grupos no WhatsApp para estudar juntos.\n\nÀ noite, você assiste mais uma aula gravada, dessa vez de Gestão de Pessoas. Termina às 22h. Não foi um dia leve, mas você está construindo algo. O diploma vai ter o nome da faculdade impresso, sem distinção entre EAD e presencial. E, mais importante, você não precisou abandonar a cidade, a família ou o emprego para conquistar isso.",
+      "Você mora em Oeiras, no interior do Piauí. Tem 19 anos, trabalha de manhã como atendente em uma farmácia e começou o curso de Administração EAD pela faculdade UNINASSAU em fevereiro. Sua rotina mudou bastante.\n\nDe manhã, das 7h às 13h, você está na farmácia. Almoça em casa, descansa 40 minutos e abre o notebook no quarto. Hoje a aula é de Matemática Financeira. O professor gravou um vídeo de 50 minutos explicando juros compostos com exemplos práticos: como funciona um financiamento de moto, como o banco calcula o cheque especial, como uma poupança rende. Você assiste pausando quando precisa, anota no caderno e refaz dois exercícios no fim.\n\nDepois da aula, você entra no fórum da turma. Um colega de Floriano postou uma dúvida sobre a fórmula da tabela price. Você responde com base no que entendeu. A tutora confirma sua resposta no dia seguinte. O ritmo é diferente: ninguém te cobra estar online às 14h em ponto, mas no fim da semana você precisa ter cumprido três atividades. Quem não se organiza, atrasa.\n\nUma vez por mês, no sábado, você vai até o polo no centro de Oeiras. Lá, faz a prova presencial das matérias do bimestre. Encontra uns 30 colegas, todos da região. Alguns são educadores que querem virar gestoras de escola, outros são donos de pequenos comércios, outros começaram cedo como você. Vocês trocam contato, formam grupos no WhatsApp para estudar juntos.\n\nÀ noite, você assiste mais uma aula gravada, dessa vez de Gestão de Pessoas. Termina às 22h. Não foi um dia leve, mas você está construindo algo. O diploma vai ter o nome da faculdade impresso, sem distinção entre EAD e presencial. E, mais importante, você não precisou abandonar a cidade, a família ou o emprego para conquistar isso.",
     narrativaProfissional:
-      "Você se formou em Administração pela EAD e há dois anos abriu, com um sócio, uma loja de produtos para festas em Floriano. Hoje, terça-feira, acorda às 6h40, leva o filho para a escola e às 8h abre a loja no centro da cidade.\n\nO dia começa com a conferência do estoque. Chegou uma encomenda de balões, descartáveis e itens de decoração. Você confere nota fiscal, atualiza o sistema, repõe as prateleiras. Sua sócia chega às 9h e atende os primeiros clientes. Uma mãe quer organizar o aniversário de 6 anos da filha, tema bailarina. Você sugere combinações de cores, calcula o orçamento, fecha em R$ 480.\n\nÀs 11h, você está na sala dos fundos. Abre o computador e revisa as contas a pagar. Aquela aula de gestão financeira da faculdade te ensinou a separar dinheiro da loja do dinheiro pessoal. Você usa uma planilha simples, controla o fluxo de caixa, sabe quanto pode investir em estoque e quanto guardar como reserva. No mês passado, o lucro líquido foi de R$ 6.200, dividido com a sócia.\n\nÀ tarde, depois do almoço em casa, você atende mais clientes, conversa com fornecedores no WhatsApp, fecha uma parceria com um buffet local. Às 17h, sai mais cedo porque tem reunião do grupo da igreja. Sua sócia fica até as 18h.\n\nA loja não é gigante, mas é estável, sustenta duas famílias e cresce todo ano. Você não precisou sair de Floriano para virar empreendedor. Aprendeu pelo curso, aplicou na prática, e hoje seus colegas de turma da EAD viram o que você construiu. Alguns viram referência. Você sente que valeu cada noite estudando no quarto.",
+      "Você se formou em Administração pela EAD e há dois anos abriu, com um sócio, uma loja de produtos para festas em Floriano. Hoje, terça-feira, acorda às 6h40, acompanha a criança da família para a escola e às 8h abre a loja no centro da cidade.\n\nO dia começa com a conferência do estoque. Chegou uma encomenda de balões, descartáveis e itens de decoração. Você confere nota fiscal, atualiza o sistema, repõe as prateleiras. Seu sócio chega às 9h e atende os primeiros clientes. Uma mãe quer organizar o aniversário de 6 anos da filha, tema bailarina. Você sugere combinações de cores, calcula o orçamento, fecha em R$ 480.\n\nÀs 11h, você está na sala dos fundos. Abre o computador e revisa as contas a pagar. Aquela aula de gestão financeira da faculdade te ensinou a separar dinheiro da loja do dinheiro pessoal. Você usa uma planilha simples, controla o fluxo de caixa, sabe quanto pode investir em estoque e quanto guardar como reserva. No mês passado, o lucro líquido foi de R$ 6.200, dividido com a sócia.\n\nÀ tarde, depois do almoço em casa, você atende mais clientes, conversa com fornecedores no WhatsApp, fecha uma parceria com um buffet local. Às 17h, sai mais cedo porque tem reunião do grupo da igreja. Seu sócio fica até as 18h.\n\nA loja não é gigante, mas é estável, sustenta duas famílias e cresce todo ano. Você não precisou sair de Floriano para virar empreendedor. Aprendeu pelo curso, aplicou na prática, e hoje seus colegas de turma da EAD viram o que você construiu. Alguns viram referência. Você sente que valeu cada noite estudando no quarto.",
     ordem: 2,
     profissoes: [
       {
@@ -170,9 +171,9 @@ const trilhas: TrilhaSeed[] = [
     primeirosPassos:
       "Procure o site do IFPI e veja quais técnicos têm oferta na sua região. Confira o edital do próximo processo seletivo.",
     narrativaAluno:
-      "Você tem 17 anos, mora em Parnaíba e está no segundo ano do curso técnico em Enfermagem no IFPI. As aulas começam às 7h e vão até as 12h. À tarde, você faz estágio no Hospital Estadual Dirceu Arcoverde.\n\nDe manhã, você está em sala. Hoje é aula de Anatomia. A professora trouxe um modelo do sistema circulatório e está explicando como o sangue percorre o coração. Vocês são em 30 alunos, dos 14 aos 19 anos. Alguns querem virar enfermeiros formados, outros estão pensando em medicina, outros vão direto para o mercado depois de formados como técnicos. Você ainda não decidiu o caminho longo, mas sabe que esse técnico abre porta.\n\nNo intervalo, a turma desce para a cantina. R$ 5 e você come um cuscuz com ovo e suco. Uma colega, que mora no bairro Lourival Parente, divide a marmita com você. Conversa-se sobre o pavor do prova de Microbiologia da semana que vem, sobre o estágio, sobre o caso do paciente do leito 12 que melhorou.\n\nDepois do almoço em casa, você pega o ônibus para o hospital. No estágio, está acompanhando uma técnica em enfermagem com 20 anos de experiência. Hoje, você ajuda a verificar pressão de três pacientes, faz o curativo de uma senhora que caiu em casa, conversa com um senhor de 70 anos que está internado há uma semana. Ele conta sobre os filhos, e você só escuta. Sua chefe te disse, no primeiro dia: escutar é metade do cuidado. Você nunca esqueceu.\n\nÀs 18h, volta para casa. Está cansada, mas com a sensação de quem fez algo útil hoje. Sabe que ainda é estudante, mas já está aprendendo o que é cuidar de alguém. Em pouco mais de um ano, com o diploma na mão, já pode ser contratada como técnica em enfermagem em qualquer hospital. O salário inicial gira em torno de R$ 1.700 a R$ 2.500. É um começo. E você já tem mais experiência prática do que muito colega que está no terceiro ano de faculdade.",
+      "Você tem 17 anos, mora em Parnaíba e está no segundo ano do curso técnico em Enfermagem no IFPI. As aulas começam às 7h e vão até as 12h. À tarde, você faz estágio no Hospital Estadual Dirceu Arcoverde.\n\nDe manhã, você está em sala. Hoje é aula de Anatomia. A professora trouxe um modelo do sistema circulatório e está explicando como o sangue percorre o coração. Vocês são em 30 alunos, dos 14 aos 19 anos. Alguns querem virar enfermeiros formados, outros estão pensando em medicina, outros vão direto para o mercado depois de formados como técnicos. Você ainda não decidiu o caminho longo, mas sabe que esse técnico abre porta.\n\nNo intervalo, a turma desce para a cantina. R$ 5 e você come um cuscuz com ovo e suco. Uma colega, que mora no bairro Lourival Parente, divide a marmita com você. Conversa-se sobre o pavor do prova de Microbiologia da semana que vem, sobre o estágio, sobre o caso do paciente do leito 12 que melhorou.\n\nDepois do almoço em casa, você pega o ônibus para o hospital. No estágio, está acompanhando uma técnica em enfermagem com 20 anos de experiência. Hoje, você ajuda a verificar pressão de três pacientes, faz o curativo de uma senhora que caiu em casa, conversa com um senhor de 70 anos que está internado há uma semana. Ele conta sobre os filhos, e você só escuta. Sua chefe te disse, no primeiro dia: escutar é metade do cuidado. Você nunca esqueceu.\n\nÀs 18h, volta para casa. Está cansada, mas com a sensação de quem fez algo útil hoje. Sabe que ainda é estudante, mas já está aprendendo o que é cuidar de alguém. Em pouco mais de um ano, com o diploma na mão, já pode ser contratado como técnico em enfermagem em qualquer hospital. O salário inicial gira em torno de R$ 1.700 a R$ 2.500. É um começo. E você já tem mais experiência prática do que muito colega que está no terceiro ano de faculdade.",
     narrativaProfissional:
-      "Você é técnica em enfermagem há cinco anos. Trabalha em dois lugares: meio expediente em uma clínica particular em Teresina e plantões noturnos a cada quinze dias no Hospital Getúlio Vargas. Hoje, sexta-feira, é dia da clínica.\n\nVocê acorda às 6h, leva o filho para a escola, chega na clínica às 7h30. O dia começa com a passagem de plantão: a colega da noite te conta como ficaram os pacientes, quem tomou remédio, quem ainda não. Você confere a planilha, separa os medicamentos do dia, organiza o material para os procedimentos.\n\nÀs 8h, chega o primeiro paciente. Um senhor que faz hemodiálise três vezes por semana. Você prepara o acesso, monitora os sinais vitais durante o procedimento, fica atenta a qualquer mudança. Conversa com ele sobre a neta que faz aniversário no sábado. Ele te mostra fotos no celular. Daqui a quatro horas, você vai desligar a máquina e ele vai para casa.\n\nDas 11h às 14h, você atende mais cinco pacientes: aplicação de medicamento, coleta de sangue, curativo, retirada de pontos, vacinação infantil. Cada um exige atenção total. Erro em enfermagem custa caro. Você aprendeu isso no IFPI e nunca esqueceu.\n\nÀs 14h, encerra na clínica e vai para casa. À tarde, descansa, busca o filho na escola, faz almoço, estuda um pouco. Está se preparando para o concurso da prefeitura, que abre um edital com vagas para técnicos em enfermagem. O salário inicial é de R$ 3.100, com estabilidade. Se passar, fecha a clínica e fica só com o concurso e os plantões esporádicos.\n\nGanha hoje R$ 3.500 por mês somando os dois trabalhos. Não é rico, mas é estável, ajuda em casa, sustenta o filho. Há cinco anos era estudante. Hoje é referência na clínica. Comprou um carro usado no ano passado. Está pagando a faculdade de Enfermagem em ritmo lento, EAD, à noite, sem pressa. Quer ser enfermeira plena daqui a três anos. O técnico foi a base. O que veio depois foi consequência do que você plantou.",
+      "Você trabalha como técnico em enfermagem há cinco anos. Trabalha em dois lugares: meio expediente em uma clínica particular em Teresina e plantões noturnos a cada quinze dias no Hospital Getúlio Vargas. Hoje, sexta-feira, é dia da clínica.\n\nVocê acorda às 6h, acompanha a criança da família para a escola, chega na clínica às 7h30. O dia começa com a passagem de plantão: a colega da noite te conta como ficaram os pacientes, quem tomou remédio, quem ainda não. Você confere a planilha, separa os medicamentos do dia, organiza o material para os procedimentos.\n\nÀs 8h, chega o primeiro paciente. Um senhor que faz hemodiálise três vezes por semana. Você prepara o acesso, monitora os sinais vitais durante o procedimento, fica em atenção a qualquer mudança. Conversa com ele sobre a neta que faz aniversário no sábado. Ele te mostra fotos no celular. Daqui a quatro horas, você vai desligar a máquina e ele vai para casa.\n\nDas 11h às 14h, você atende mais cinco pacientes: aplicação de medicamento, coleta de sangue, curativo, retirada de pontos, vacinação infantil. Cada um exige atenção total. Erro em enfermagem custa caro. Você aprendeu isso no IFPI e nunca esqueceu.\n\nÀs 14h, encerra na clínica e vai para casa. À tarde, descansa, busca o filho na escola, faz almoço, estuda um pouco. Está se preparando para o concurso da prefeitura, que abre um edital com vagas para técnicos em enfermagem. O salário inicial é de R$ 3.100, com estabilidade. Se passar, fecha a clínica e fica só com o concurso e os plantões esporádicos.\n\nGanha hoje R$ 3.500 por mês somando os dois trabalhos. Não é rico, mas é estável, ajuda em casa, sustenta o filho. Há cinco anos era estudante. Hoje é referência na clínica. Comprou um carro usado no ano passado. Está pagando a faculdade de Enfermagem em ritmo lento, EAD, à noite, sem pressa. Quer ser enfermeira plena daqui a três anos. O técnico foi a base. O que veio depois foi consequência do que você plantou.",
     ordem: 4,
     profissoes: [
       {
@@ -255,9 +256,9 @@ const trilhas: TrilhaSeed[] = [
     primeirosPassos:
       "Pense em 3 coisas que você gosta de fazer ou tem facilidade. Procure cursos curtos no SENAI, SENAC ou plataformas como Hotmart e Udemy.",
     narrativaAluno:
-      "Você tem 18 anos, mora em Teresina e decidiu não fazer faculdade - pelo menos não agora. Sempre gostou de cabelo e desde os 13 anos cortava o cabelo dos primos no quintal. Em janeiro, se matriculou no curso de Cabeleireiro Profissional do SENAC: 6 meses, R$ 1.400 parcelado.\n\nO curso começa às 13h e vai até as 17h, de segunda a sexta. De manhã, das 8h às 12h, você trabalha como auxiliar em um salão no bairro Saci. Ganha R$ 50 por dia mais gorjetas. Sua função é lavar cabelo, levar produto, organizar a bancada. Mas, na prática, você está aprendendo muito mais: observa cada movimento das cabeleireiras experientes, escuta a conversa com as clientes, entende como elas precificam, como gerenciam o tempo, como fidelizam.\n\nNo SENAC, à tarde, a aula é técnica. Hoje você aprendeu degradê na nuca. O instrutor passou no quadro o ângulo do pente, a posição da tesoura, e fez em três alunos como demonstração. Depois foi a vez dos alunos. Você cortou na primeira tentativa em uma cabeça de manequim. Depois foi para um colega, que confiou em você. Saiu bom. O instrutor aprovou.\n\nNo intervalo, vocês conversam. A turma é diversa: tem gente saindo do ensino médio como você, gente com 30 anos mudando de profissão, gente que já corta há anos e veio buscar o diploma do SENAC. Vocês trocam ideias, marcam de cortar de graça uns nos outros no fim de semana para praticar.\n\nÀ noite, você não tem aula. Aproveita para postar no Instagram fotos dos cortes que fez no salão (com autorização). Está montando seu portfólio digital. Em 6 meses, quando se formar, quer começar a atender em domicílio até juntar dinheiro pra alugar uma cadeira em um salão.\n\nÉ uma rotina cansativa: trabalho de manhã, curso à tarde, prática no fim de semana. Mas em menos de um ano, você vai estar formada, com clientes próprias e ganhando o suficiente para se sustentar. Sua mãe queria que você fizesse faculdade. Você não fechou essa porta, mas escolheu outra primeiro. Ela respeita.",
+      "Você tem 18 anos, mora em Teresina e decidiu não fazer faculdade - pelo menos não agora. Sempre gostou de cabelo e desde os 13 anos cortava o cabelo dos primos no quintal. Em janeiro, se matriculou no curso de Cabeleireiro Profissional do SENAC: 6 meses, R$ 1.400 parcelado.\n\nO curso começa às 13h e vai até as 17h, de segunda a sexta. De manhã, das 8h às 12h, você trabalha como auxiliar em um salão no bairro Saci. Ganha R$ 50 por dia mais gorjetas. Sua função é lavar cabelo, levar produto, organizar a bancada. Mas, na prática, você está aprendendo muito mais: observa cada movimento das profissionais experientes do salão, escuta a conversa com as clientes, entende como elas precificam, como gerenciam o tempo, como fidelizam.\n\nNo SENAC, à tarde, a aula é técnica. Hoje você aprendeu degradê na nuca. O instrutor passou no quadro o ângulo do pente, a posição da tesoura, e fez em três alunos como demonstração. Depois foi a vez dos alunos. Você cortou na primeira tentativa em uma cabeça de manequim. Depois foi para um colega, que confiou em você. Saiu bom. O instrutor aprovou.\n\nNo intervalo, vocês conversam. A turma é diversa: tem gente saindo do ensino médio como você, gente com 30 anos mudando de profissão, gente que já corta há anos e veio buscar o diploma do SENAC. Vocês trocam ideias, marcam de cortar de graça uns nos outros no fim de semana para praticar.\n\nÀ noite, você não tem aula. Aproveita para postar no Instagram fotos dos cortes que fez no salão (com autorização). Está montando seu portfólio digital. Em 6 meses, quando se formar, quer começar a atender em domicílio até juntar dinheiro pra alugar uma cadeira em um salão.\n\nÉ uma rotina cansativa: trabalho de manhã, curso à tarde, prática no fim de semana. Mas em menos de um ano, você vai estar formada, com clientes próprios e ganhando o suficiente para se sustentar. Sua mãe queria que você fizesse faculdade. Você não fechou essa porta, mas escolheu outra primeiro. A família respeita.",
     narrativaProfissional:
-      "Você é cabeleireira há quatro anos. Há dois anos, abriu seu próprio salão pequeno no bairro Promorar, em Teresina. É um espaço de 30 metros quadrados, com duas cadeiras: uma sua, outra alugada para uma manicure parceira. Hoje, sábado, é o dia mais corrido da semana.\n\nVocê chega no salão às 7h30. Tem cinco clientes agendadas até as 13h e mais três no fim de semana. Abre a porta, varre o chão, organiza as tesouras, esteriliza os pentes, prepara o café. Sua primeira cliente é Dona Marina, 60 anos, que vem fazer escova e coloração toda quinzena. Você conhece o cabelo dela melhor do que ela própria. Conversam sobre os netos, sobre a igreja, sobre o tempo. Em 1h45 está pronta.\n\nDas 9h30 às 13h, mais quatro clientes. Cortes diversos: uma menina de 8 anos (a mãe explicou exatamente como queria, você executou), uma senhora que vai a um casamento à tarde (penteado preso), uma estudante universitária (corte curtinho moderno, primeira vez no salão, indicação de uma amiga), um homem (corte social rápido, R$ 35).\n\nÀs 13h você fecha por uma hora para almoçar. Pede um marmitex no boteco em frente, come sentada na cadeira. Atualiza a agenda no caderno. Confere quanto fez de manhã: R$ 480 brutos. Tirando produtos usados e a parte da manicure parceira, fica com cerca de R$ 380 só do sábado de manhã.\n\nDe tarde, mais três clientes. Termina às 18h. No mês, com a média de movimento, fatura entre R$ 8 mil e R$ 10 mil brutos. Tirando aluguel do espaço (R$ 800), conta de luz, materiais e impostos do MEI, sobra entre R$ 6 mil e R$ 7 mil líquidos. Mais do que muito amigo seu formado em faculdade ganha.\n\nVocê tem 22 anos, salão próprio, agenda cheia, mais de 3 mil seguidores no Instagram que viraram clientes. Está pensando em alugar uma sala maior no ano que vem para colocar uma terceira cadeira. Quer um dia ter uma rede pequena, com 3 ou 4 salões em bairros diferentes. Tem amigas que escolheram fazer faculdade. Você escolheu correr por fora. Os caminhos não competem - cada um construiu o que faz sentido para si. E o seu fez muito sentido.",
+      "Você trabalha como cabeleireiro há quatro anos. Há dois anos, abriu seu próprio salão pequeno no bairro Promorar, em Teresina. É um espaço de 30 metros quadrados, com duas cadeiras: uma sua, outra alugada para uma manicure parceira. Hoje, sábado, é o dia mais corrido da semana.\n\nVocê chega no salão às 7h30. Tem cinco clientes agendadas até as 13h e mais três no fim de semana. Abre a porta, varre o chão, organiza as tesouras, esteriliza os pentes, prepara o café. Seu primeiro cliente do dia é Dona Marina, 60 anos, que vem fazer escova e coloração toda quinzena. Você conhece o cabelo dela melhor do que ela própria. Conversam sobre os netos, sobre a igreja, sobre o tempo. Em 1h45 o serviço está pronto.\n\nDas 9h30 às 13h, mais quatro clientes. Cortes diversos: uma menina de 8 anos (a mãe explicou exatamente como queria, você executou), uma senhora que vai a um casamento à tarde (penteado preso), uma estudante universitária (corte curtinho moderno, primeira vez no salão, indicação de uma amiga), um homem (corte social rápido, R$ 35).\n\nÀs 13h você fecha por uma hora para almoçar. Pede um marmitex no boteco em frente, come sentada na cadeira. Atualiza a agenda no caderno. Confere quanto fez de manhã: R$ 480 brutos. Tirando produtos usados e a parte da manicure parceira, fica com cerca de R$ 380 só do sábado de manhã.\n\nDe tarde, mais três clientes. Termina às 18h. No mês, com a média de movimento, fatura entre R$ 8 mil e R$ 10 mil brutos. Tirando aluguel do espaço (R$ 800), conta de luz, materiais e impostos do MEI, sobra entre R$ 6 mil e R$ 7 mil líquidos. Mais do que muito amigo seu formado em faculdade ganha.\n\nVocê tem 22 anos, salão próprio, agenda cheia, mais de 3 mil seguidores no Instagram que viraram clientes. Está pensando em alugar uma sala maior no ano que vem para colocar uma terceira cadeira. Quer um dia ter uma rede pequena, com 3 ou 4 salões em bairros diferentes. Tem amigas que escolheram fazer faculdade. Você escolheu correr por fora. Os caminhos não competem - cada um construiu o que faz sentido para si. E o seu fez muito sentido.",
     ordem: 6,
     profissoes: [
       {
@@ -308,6 +309,110 @@ async function main() {
     },
   });
   console.log(`Admin inicial criado: ${adminEmail}`);
+
+  // Organização e escolas exemplo (Ciclo 1)
+  const organizacao = await prisma.organizacao.upsert({
+    where: { slug: "seduc-pi" },
+    update: { nome: "Secretaria de Educação do Piauí", ativo: true },
+    create: {
+      nome: "Secretaria de Educação do Piauí",
+      slug: "seduc-pi",
+      contato: "seduc@piaui.gov.br",
+      ativo: true,
+    },
+  });
+
+  const escolasSeed = [
+    { nome: "EE José de Deus", municipio: "Teresina", inep: "22000001" },
+    { nome: "EE Dirceu Arcoverde", municipio: "Teresina", inep: "22000002" },
+    { nome: "EE Raimundo Portela", municipio: "Picos", inep: "22000003" },
+  ];
+
+  const escolas: { id: string; nome: string }[] = [];
+  for (const e of escolasSeed) {
+    const existente = await prisma.escola.findFirst({
+      where: { organizacaoId: organizacao.id, nome: e.nome },
+    });
+    const escola =
+      existente ??
+      (await prisma.escola.create({
+        data: {
+          nome: e.nome,
+          municipio: e.municipio,
+          inep: e.inep,
+          organizacaoId: organizacao.id,
+        },
+      }));
+    escolas.push(escola);
+
+    // Link permanente de cadastro/login por escola (revisão Ciclo 1).
+    const jaTemPermanente = await prisma.linkCadastro.findFirst({
+      where: { escolaId: escola.id, permanente: true },
+    });
+    if (!jaTemPermanente) {
+      const slug = await slugUnico(escola.nome, async (s) => {
+        return (await prisma.linkCadastro.count({ where: { slug: s } })) > 0;
+      });
+      await prisma.linkCadastro.create({
+        data: {
+          escolaId: escola.id,
+          slug,
+          rotulo: "Link principal",
+          permanente: true,
+          ativo: true,
+        },
+      });
+      console.log(`  Link permanente "${slug}" criado para ${escola.nome}.`);
+    }
+  }
+  console.log(
+    `Organização "${organizacao.nome}" com ${escolas.length} escolas.`,
+  );
+
+  const orgAdminEmail =
+    process.env.ORG_ADMIN_INITIAL_EMAIL || "org@legua.com.br";
+  const orgAdminPassword =
+    process.env.ORG_ADMIN_INITIAL_PASSWORD || "orgadmin123";
+  await prisma.admin.upsert({
+    where: { email: orgAdminEmail },
+    update: {
+      organizacaoId: organizacao.id,
+      escolaId: null,
+      role: AdminRole.ORG_ADMIN,
+    },
+    create: {
+      nome: "Admin Organização SEDUC-PI",
+      email: orgAdminEmail,
+      senhaHash: await bcrypt.hash(orgAdminPassword, 12),
+      role: AdminRole.ORG_ADMIN,
+      organizacaoId: organizacao.id,
+      ativo: true,
+    },
+  });
+  console.log(`ORG_ADMIN criado: ${orgAdminEmail}`);
+
+  const escolaAdminEmail =
+    process.env.ESCOLA_ADMIN_INITIAL_EMAIL || "escola@legua.com.br";
+  const escolaAdminPassword =
+    process.env.ESCOLA_ADMIN_INITIAL_PASSWORD || "escolaadmin123";
+  await prisma.admin.upsert({
+    where: { email: escolaAdminEmail },
+    update: {
+      organizacaoId: organizacao.id,
+      escolaId: escolas[0]!.id,
+      role: AdminRole.ESCOLA_ADMIN,
+    },
+    create: {
+      nome: `Admin ${escolas[0]!.nome}`,
+      email: escolaAdminEmail,
+      senhaHash: await bcrypt.hash(escolaAdminPassword, 12),
+      role: AdminRole.ESCOLA_ADMIN,
+      organizacaoId: organizacao.id,
+      escolaId: escolas[0]!.id,
+      ativo: true,
+    },
+  });
+  console.log(`ESCOLA_ADMIN criado: ${escolaAdminEmail}`);
 
   // Trilhas e profissões
   for (const t of trilhas) {
