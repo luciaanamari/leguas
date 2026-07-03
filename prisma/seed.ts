@@ -2,7 +2,34 @@ import { PrismaClient, AdminRole, ModalidadeTrilha } from "@prisma/client";
 import { Pool } from "pg";
 import { PrismaPg } from "@prisma/adapter-pg";
 import bcrypt from "bcryptjs";
-import { slugUnico } from "../lib/slug";
+
+// Helpers de slug embutidos aqui de propósito: o seed roda no runner de
+// produção (via docker-entrypoint), onde a pasta lib/ NÃO é copiada. Manter o
+// seed autossuficiente evita "Cannot find module '../lib/slug'".
+function slugify(texto: string): string {
+  return texto
+    .normalize("NFD")
+    .replace(/[̀-ͯ]/g, "")
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "")
+    .replace(/-{2,}/g, "-")
+    .slice(0, 60);
+}
+
+async function slugUnico(
+  base: string,
+  existe: (slug: string) => Promise<boolean>,
+): Promise<string> {
+  const raiz = slugify(base) || "escola";
+  let candidato = raiz;
+  let n = 1;
+  while (await existe(candidato)) {
+    n += 1;
+    candidato = `${raiz.slice(0, 56)}-${n}`;
+  }
+  return candidato;
+}
 
 const pool = new Pool({ connectionString: process.env.DATABASE_URL });
 const adapter = new PrismaPg(pool);

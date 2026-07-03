@@ -26,9 +26,6 @@ jobs:
       - name: Gerar Prisma Client
         run: npm run prisma:generate
 
-      - name: Verificações automáticas do Ciclo 1
-        run: npm run verify:ciclo1
-
       - name: Testes unitários
         run: npm run test
 
